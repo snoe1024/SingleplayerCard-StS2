@@ -42,5 +42,17 @@
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "At the start of your next turn, draw {Cards:diff()} {Cards:plural:card|cards}, gain {Energy:energyIcons()}, and gain {Block:diff()} [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "Tutor",
-  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choose a card in your [gold]Draw Pile[/gold] to add to your [gold]Hand[/gold]."
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choose a card in your [gold]Draw Pile[/gold] to add to your [gold]Hand[/gold].",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "Bone Legion",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.description": "[gold]Summon[/gold] {Summon:diff()} for each enemy.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "Glimpse Beyond",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.description": "At the start of your next {IfUpgraded:show:3|2} turns, add a [gold]Soul[/gold] to your hand.",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "Underworld",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "This turn, whenever you apply [gold]Doom[/gold], deal damage equal to that amount.",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "Cacophony",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy."
 }

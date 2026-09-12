@@ -15,5 +15,14 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを1枚手札に加える。",
 
   "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.title": "星座",
-  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "次のターン開始時、カードを引き、エナジーとブロックを得る。"
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "次のターン開始時、カードを引き、エナジーとブロックを得る。",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "彼方への一瞥",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "次の{Amount}ターン開始時、手札にソウルを加える。",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "冥界",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "破滅を与える度に、その量に等しいダメージを与える。",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "不協和音",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードがX枚引かれるたび、ランダムな敵にダメージを与える。"
 }

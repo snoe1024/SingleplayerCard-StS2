@@ -42,5 +42,17 @@
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "次のターン開始時、カードを{Cards:diff()}枚引き、{Energy:energyIcons()}と{Block:diff()}[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "教示",
-  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。"
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "骨の軍団",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.description": "敵1体につき[gold]召喚[/gold]{Summon:diff()}。",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "彼方への一瞥",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.description": "次の{IfUpgraded:show:3|2}ターン開始時、手札に[gold]ソウル[/gold]を加える。",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "冥界",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "このターン、[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "不協和音",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。"
 }

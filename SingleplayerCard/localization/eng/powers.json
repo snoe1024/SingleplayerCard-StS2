@@ -15,5 +15,14 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.description": "At the start of your next turn, add a random Colorless card to your hand.",
 
   "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.title": "Constellation",
-  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "At the start of your next turn, draw a card, gain Energy, and gain Block."
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "At the start of your next turn, draw a card, gain Energy, and gain Block.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Glimpse Beyond",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "At the start of your next {Amount} turns, add a Soul to your hand.",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Underworld",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "Whenever you apply Doom, deal damage equal to that amount.",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Cacophony",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Every X cards drawn, deal damage to a random enemy."
 }
