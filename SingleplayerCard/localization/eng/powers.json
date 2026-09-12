@@ -6,5 +6,14 @@
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Takes double damage this turn from Attack cards that were not in hand when this was applied.",
 
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Stealth",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "Gains Block whenever damage is dealt by means other than an Attack card."
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "Gains Block whenever damage is dealt by means other than an Attack card.",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "Hammer Time",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Whenever you play Sovereign Blade, replay every card that Forged this turn.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.title": "Generous Gift",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.description": "At the start of your next turn, add a random Colorless card to your hand.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.title": "Constellation",
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "At the start of your next turn, draw a card, gain Energy, and gain Block."
 }

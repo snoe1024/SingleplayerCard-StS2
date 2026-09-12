@@ -27,5 +27,20 @@
   "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "エンチャントされていない手札の全てのアタックカードに、[gold]有毒{Venomous:diff()}[/gold]を付ける。",
 
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "影隠し",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]保留。[/gold]このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。"
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]保留。[/gold]このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "ハンマータイム",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "[gold]ソヴリン・ブレード[/gold]をプレイしたとき、そのターンに使った[gold]鍛造[/gold]効果のあるカードをもう一度プレイする。",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "寛大なる施し",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.description": "次のターン開始時、ランダムな{IfUpgraded:show:[gold]アップグレード済みの[/gold]}無色カードを1枚手札に加える。",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "策謀",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.description": "カードを{Cards:diff()}枚引く。",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "星座",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "次のターン開始時、カードを{Cards:diff()}枚引き、{Energy:energyIcons()}と{Block:diff()}[gold]ブロック[/gold]を得る。",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "教示",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。"
 }

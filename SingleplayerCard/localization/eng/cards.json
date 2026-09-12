@@ -27,5 +27,20 @@
   "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "Give all un-enchanted Attack cards in your hand [gold]Venomous {Venomous:diff()}[/gold].",
 
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "Shadow Vanish",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]Retain.[/gold] This turn, gain Dexterity equal to the number of non-Skill cards in your hand."
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]Retain.[/gold] This turn, gain Dexterity equal to the number of non-Skill cards in your hand.",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "Hammer Time",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Whenever you play [gold]Sovereign Blade[/gold], replay every card that [gold]Forged[/gold] this turn.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "Generous Gift",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.description": "At the start of your next turn, add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your hand.",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "Scheme",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.description": "Draw {Cards:diff()} cards.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "Constellation",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "At the start of your next turn, draw {Cards:diff()} {Cards:plural:card|cards}, gain {Energy:energyIcons()}, and gain {Block:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "Tutor",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choose a card in your [gold]Draw Pile[/gold] to add to your [gold]Hand[/gold]."
 }

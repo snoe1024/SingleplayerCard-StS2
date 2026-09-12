@@ -6,5 +6,14 @@
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "このターン、付与された時点で手札になかったアタックカードから受けるダメージが2倍になる。",
 
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "隠密",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "アタックカード以外でダメージを発生させるたび、ブロックを得る。"
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "アタックカード以外でダメージを発生させるたび、ブロックを得る。",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "ハンマータイム",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "ソヴリン・ブレードをプレイしたとき、そのターンに使った鍛造効果のあるカードをもう一度プレイする。",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.title": "寛大なる施し",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを1枚手札に加える。",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.title": "星座",
+  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "次のターン開始時、カードを引き、エナジーとブロックを得る。"
 }
