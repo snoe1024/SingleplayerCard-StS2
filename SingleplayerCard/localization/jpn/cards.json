@@ -95,6 +95,9 @@
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "手助け",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "次のカードから得るブロック値を倍にする。",
 
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "連携",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.description": "このターン、手札のカードの枚数と同じ筋力を得る。",
+
   "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "ものまね",
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。",
 
