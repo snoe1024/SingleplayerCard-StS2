@@ -30,26 +30,40 @@ namespace SingleplayerCard.SingleplayerCardCode.Patch;
 // async Task method, but it runs synchronously up to its first await, and its call to FilterCards
 // comes before any await), so the very click that changed the checkbox would render one step
 // behind. Prefixing UpdateFilter avoids that entirely.
-public static class CardLibraryMultiplayerFilterPatch
+//
+// IMPORTANT: [HarmonyPatch] must go on the CLASS, with [HarmonyPrefix]/[HarmonyPostfix] on the
+// method inside (matching AnotherAct's StartRunLobbyGetActPatch). Putting [HarmonyPatch] directly
+// on the method itself (inside an otherwise-unmarked class) compiles fine but this game's bundled
+// Harmony build never actually applies such patches -- harmony.PatchAll() finished with no error
+// and zero entries in harmony.GetPatchedMethods() for two patches written that way. See
+// gotchas.md for the debugging trail (reflecting NCardLibrary/NCardLibraryGrid's actual runtime
+// methods to first rule out a stale-decompile method-name mismatch).
+internal static class CardLibraryMultiplayerFilterState
 {
-    private static bool _viewingMultiplayerCards = true;
+    public static bool ViewingMultiplayerCards = true;
+}
 
-    [HarmonyPatch(typeof(NCardLibrary), "UpdateFilter")]
+[HarmonyPatch(typeof(NCardLibrary), "UpdateFilter")]
+public static class NCardLibraryUpdateFilterPatch
+{
     [HarmonyPrefix]
-    public static void UpdateFilterPrefix(NCardLibrary __instance)
+    public static void Prefix(NCardLibrary __instance)
     {
         var tickbox = Traverse.Create(__instance).Field("_viewMultiplayerCards").GetValue<NTickbox>();
         if (tickbox != null)
         {
-            _viewingMultiplayerCards = tickbox.IsTicked;
+            CardLibraryMultiplayerFilterState.ViewingMultiplayerCards = tickbox.IsTicked;
         }
     }
+}
 
-    [HarmonyPatch(typeof(NCardLibraryGrid), nameof(NCardLibraryGrid.FilterCards), new[] { typeof(Func<CardModel, bool>), typeof(List<SortingOrders>) })]
+[HarmonyPatch(typeof(NCardLibraryGrid), nameof(NCardLibraryGrid.FilterCards), new[] { typeof(Func<CardModel, bool>), typeof(List<SortingOrders>) })]
+public static class NCardLibraryGridFilterCardsPatch
+{
     [HarmonyPrefix]
-    public static void FilterCardsPrefix(ref Func<CardModel, bool> filter)
+    public static void Prefix(ref Func<CardModel, bool> filter)
     {
         Func<CardModel, bool> original = filter;
-        filter = card => original(card) && (card is not SingleplayerCardCard || !_viewingMultiplayerCards);
+        filter = card => original(card) && (card is not SingleplayerCardCard || !CardLibraryMultiplayerFilterState.ViewingMultiplayerCards);
     }
 }

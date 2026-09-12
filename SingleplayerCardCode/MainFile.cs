@@ -17,6 +17,12 @@ public partial class MainFile : Node
     {
         Harmony harmony = new(ModId);
 
-        harmony.PatchAll();
+        // Pass our own assembly explicitly rather than relying on the parameterless overload's
+        // Assembly.GetCallingAssembly(): since BaseLib invokes this method via reflection
+        // (MethodInfo.Invoke), that resolution can be unpredictable. Not confirmed as the cause of
+        // any specific bug here, but it removes one variable when debugging why a patch didn't
+        // apply -- see sts2_dev_knowledge/topics/harmony-patching.md for the actual bug that was
+        // found (an attribute-placement mistake, not this).
+        harmony.PatchAll(typeof(MainFile).Assembly);
     }
 }
