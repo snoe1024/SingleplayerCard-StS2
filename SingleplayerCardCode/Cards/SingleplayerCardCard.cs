@@ -37,11 +37,17 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
         DroWasOnAtCreation = DuplicateReworkManager.IsEnabled();
     }
 
+    // Whether the Rework (DRO-on) effect should be shown/used right now. The canonical instance
+    // (Card Library/compendium browsing, not an owned card -- see IsCanonical) never goes through
+    // AfterCloned, so it reads the live option instead of a frozen value; an owned instance uses its
+    // own frozen DroWasOnAtCreation. Cards with a DRO-dependent effect should gate their OnPlay,
+    // OnUpgrade, and description text on this rather than reading DroWasOnAtCreation or
+    // DuplicateReworkManager directly (see CoordinateSolo for a worked example).
+    protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsEnabled() : DroWasOnAtCreation;
+
     // Lets the title alone distinguish which effect a card instance has, without opening its
-    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback. The
-    // canonical instance (Card Library/compendium browsing, not an owned card -- see IsCanonical)
-    // never goes through AfterCloned, so it always reflects the live option instead of a frozen value.
-    public override string Title => ((IsCanonical ? DuplicateReworkManager.IsEnabled() : DroWasOnAtCreation) ? "[R] " : "[S] ") + base.Title;
+    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback.
+    public override string Title => (DroActiveForDisplay ? "[R] " : "[S] ") + base.Title;
 
     // Override in ported cards to reuse the original multiplayer card's vanilla portrait instead of
     // a mod-specific placeholder image. Values are the original card's Id.Entry (e.g. "DEMONIC_SHIELD")
