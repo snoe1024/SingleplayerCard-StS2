@@ -1,4 +1,7 @@
 {
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "悪魔の盾",
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "HPを1失う。この戦闘中失ったHP分の[gold]ブロック[/gold]を得る。"
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "HPを1失う。この戦闘中失ったHP分の[gold]ブロック[/gold]を得る。",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "タンク",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。"
 }

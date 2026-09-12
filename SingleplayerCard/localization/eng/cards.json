@@ -1,4 +1,7 @@
 {
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "Demonic Shield",
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "Lose 1 HP. Gain Block equal to the HP you have lost this combat."
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "Tank",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker."
 }
