@@ -95,6 +95,9 @@
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "Helping Hand",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "Double the Block gained from your next card.",
 
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "Coordinate",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.description": "This turn, gain Strength equal to the number of cards in your hand.",
+
   "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "Mimicry",
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.",
 
