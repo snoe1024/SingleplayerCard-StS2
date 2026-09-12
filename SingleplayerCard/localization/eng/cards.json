@@ -12,5 +12,20 @@
   "SINGLEPLAYERCARD-BLAZE_SOLO.description": "Gain {Strength:diff()} [gold]Strength[/gold] for each card you have discarded this turn.",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "Outrage",
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your hand."
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your hand.",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "Pincer Attack",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.description": "This turn, the enemy takes double damage from Attack cards not currently in your hand.",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "Stealth",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.description": "[gold]Sly.[/gold] Whenever you deal damage by means other than an Attack card, gain {StealthPowerSolo:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Blade Symphony",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Play every [gold]Shiv[/gold] in your Discard Pile or Exhaust Pile (Upgraded).",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "Concoct",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "Give all un-enchanted Attack cards in your hand [gold]Venomous {Venomous:diff()}[/gold].",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "Shadow Vanish",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]Retain.[/gold] This turn, gain Dexterity equal to the number of non-Skill cards in your hand."
 }

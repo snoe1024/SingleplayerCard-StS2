@@ -12,5 +12,20 @@
   "SINGLEPLAYERCARD-BLAZE_SOLO.description": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{Strength:diff()}を得る。",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "アウトレイジ",
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。"
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "挟撃",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.description": "このターン、対象の敵は今手札にないアタックカードから受けるダメージが2倍になる。",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "隠密",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.description": "[gold]スライ。[/gold]アタックカード以外でダメージを発生させるたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "ブレイド・シンフォニー",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "捨て札または破棄札にある[gold]ナイフ[/gold]を全て(アップグレードして)プレイする。",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "調合",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "エンチャントされていない手札の全てのアタックカードに、[gold]有毒{Venomous:diff()}[/gold]を付ける。",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "影隠し",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]保留。[/gold]このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。"
 }

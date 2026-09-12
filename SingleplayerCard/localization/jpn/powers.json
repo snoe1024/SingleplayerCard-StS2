@@ -1,4 +1,10 @@
 {
   "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "タンク",
-  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。"
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "挟撃",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "このターン、付与された時点で手札になかったアタックカードから受けるダメージが2倍になる。",
+
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "隠密",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "アタックカード以外でダメージを発生させるたび、ブロックを得る。"
 }
