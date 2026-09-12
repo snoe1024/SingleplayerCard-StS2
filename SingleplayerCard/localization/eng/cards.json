@@ -54,5 +54,20 @@
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "This turn, whenever you apply [gold]Doom[/gold], deal damage equal to that amount.",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "Cacophony",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy."
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy.",
+
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.title": "Energy Surge",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.description": "At the start of each of your next {IfUpgraded:show:3|2} turns, gain 1 {energyPrefix:energyIcons(1)}.",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "Ignition",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.description": "[gold]Channel[/gold] [gold]Plasma[/gold]. Trigger the Passive of all [gold]Plasma[/gold] orbs.",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "Hibernate",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.description": "This turn, your [gold]Frost[/gold] triggers its Passive twice.\n[gold]Channel[/gold] {Repeat:diff()} [gold]Frost[/gold].",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "One for All",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Your 0 {energyPrefix:energyIcons(1)} Attacks deal {OneForAllPower:diff()} additional damage.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "Imitation Learning",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "At the end of each of your next {IfUpgraded:show:3|2} turns, play a copy of the last Power you played."
 }

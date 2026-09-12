@@ -24,5 +24,14 @@
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "破滅を与える度に、その量に等しいダメージを与える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "不協和音",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードがX枚引かれるたび、ランダムな敵にダメージを与える。"
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードがX枚引かれるたび、ランダムな敵にダメージを与える。",
+
+  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.title": "エナジーサージ",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.description": "次のターン開始時、エナジーを得る。",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "冬眠",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "このターン、フロストは自動効果を2回発動する。",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "次のターン終了時、最後にプレイしたパワーのコピーをプレイする。"
 }

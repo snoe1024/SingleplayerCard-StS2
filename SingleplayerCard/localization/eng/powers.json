@@ -24,5 +24,14 @@
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "Whenever you apply Doom, deal damage equal to that amount.",
 
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Cacophony",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Every X cards drawn, deal damage to a random enemy."
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Every X cards drawn, deal damage to a random enemy.",
+
+  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.title": "Energy Surge",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.description": "At the start of your next turns, gain Energy.",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Hibernate",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Your Frost triggers its Passive twice this turn.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitation Learning",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "At the end of your next turns, play a copy of the last Power you played."
 }

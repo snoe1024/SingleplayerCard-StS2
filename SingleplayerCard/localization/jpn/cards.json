@@ -54,5 +54,20 @@
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "このターン、[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "不協和音",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。"
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。",
+
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.title": "エナジーサージ",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.description": "次の{IfUpgraded:show:3|2}ターンの開始時、1{energyPrefix:energyIcons(1)}を得る。",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "イグニッション",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.description": "[gold]プラズマ[/gold]を[gold]生成[/gold]する。すべての[gold]プラズマ[/gold]オーブの自動効果を発動する。",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "冬眠",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.description": "このターン、自身の[gold]フロスト[/gold]は自動効果を2回発動する。\n[gold]フロスト{Repeat:diff()}を生成[/gold]する。",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "ワン・フォー・オール",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "0{energyPrefix:energyIcons(1)}のアタックは、追加で{OneForAllPower:diff()}ダメージを与える。",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "模倣学習",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "次の{IfUpgraded:show:3|2}ターン終了時、最後にプレイしたパワーのコピーをプレイする。"
 }
