@@ -10,7 +10,12 @@ namespace SingleplayerCard.SingleplayerCardCode.Config;
 // change the manager, not every card.
 public sealed class SingleplayerCardConfig : SimpleModConfig
 {
-    public bool DuplicateReworkOption { get; set; } = true;
+    // ModConfig's property scanner only picks up static properties (CheckConfigProperties in the
+    // decompiled BaseLib source requires propertyInfo.GetMethod.IsStatic, silently skipping instance
+    // properties with just a warning log) -- an instance property here compiles fine but leaves
+    // ConfigProperties empty, so HasSettings()/VisibleInModList() both stay false and
+    // ModConfigRegistry.Register() silently declines to register the mod at all.
+    public static bool DuplicateReworkOption { get; set; } = true;
 
     public override void SetupConfigUI(Control optionContainer)
     {

@@ -15,6 +15,6 @@ public static class DuplicateReworkManager
 {
     public static bool IsEnabled(ModelId? cardId = null, Player? contextPlayer = null)
     {
-        return MainFile.Config.DuplicateReworkOption;
+        return SingleplayerCardConfig.DuplicateReworkOption;
     }
 }
