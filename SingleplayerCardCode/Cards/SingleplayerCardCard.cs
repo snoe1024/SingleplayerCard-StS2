@@ -12,17 +12,36 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     CustomCardModel(cost, type, rarity, target)
 {
     // Snapshot of the Duplicate Rework Option (see .claude/loadmap.md and DuplicateReworkManager) at
-    // the moment this specific card instance was created. [SavedProperty] persists it per-instance
-    // (survives save/load and run history reconstruction, per Guilty/MadScience's use of the same
-    // attribute in the vanilla source), so a card's actual effect and title never retroactively
-    // change just because the player later flips the option -- old runs/decks keep showing what was
-    // really true when the card was made, and only newly-created instances pick up a changed option.
+    // the moment this specific card instance actually became an owned/mutable card. [SavedProperty]
+    // persists it per-instance (survives save/load and run history reconstruction, per
+    // Guilty/MadScience's use of the same attribute in the vanilla source), so a card's actual effect
+    // and title never retroactively change just because the player later flips the option -- old
+    // runs/decks keep showing what was really true when the card was made.
+    //
+    // This CANNOT be a property initializer: every CardModel type has exactly one canonical instance,
+    // built once at boot via ModelDb.Init()'s Activator.CreateInstance (see decompiled ModelDb.cs),
+    // and every owned copy is derived from it via AbstractModel.MutableClone(), which uses
+    // MemberwiseClone() -- a shallow field copy that never re-runs the constructor or field/property
+    // initializers. A property initializer here would only ever run once, for that one boot-time
+    // canonical instance, and every subsequent clone would just inherit that same frozen value
+    // forever regardless of when it was actually obtained. AfterCloned() is the hook CardModel
+    // documents for exactly this ("clean up shallow-copied references" after MemberwiseClone), and it
+    // runs before FromSerializable applies saved [SavedProperty] values on top, so loading a real
+    // historical value still correctly overrides this.
     [SavedProperty]
-    public bool DroWasOnAtCreation { get; private set; } = DuplicateReworkManager.IsEnabled();
+    public bool DroWasOnAtCreation { get; private set; }
+
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        DroWasOnAtCreation = DuplicateReworkManager.IsEnabled();
+    }
 
     // Lets the title alone distinguish which effect a card instance has, without opening its
-    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback.
-    public override string Title => (DroWasOnAtCreation ? "[R] " : "[S] ") + base.Title;
+    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback. The
+    // canonical instance (Card Library/compendium browsing, not an owned card -- see IsCanonical)
+    // never goes through AfterCloned, so it always reflects the live option instead of a frozen value.
+    public override string Title => ((IsCanonical ? DuplicateReworkManager.IsEnabled() : DroWasOnAtCreation) ? "[R] " : "[S] ") + base.Title;
 
     // Override in ported cards to reuse the original multiplayer card's vanilla portrait instead of
     // a mod-specific placeholder image. Values are the original card's Id.Entry (e.g. "DEMONIC_SHIELD")
