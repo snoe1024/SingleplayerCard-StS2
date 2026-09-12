@@ -36,9 +36,14 @@ public sealed class CoordinateSolo : SingleplayerCardCard
     // (see AfterCloned's comment in SingleplayerCardCard), so branching this list itself on
     // DroActiveForDisplay would not track the option correctly. Always declare the full set of vars
     // either branch might need, and choose which ones are actually used at read time instead.
+    // Uses the default single-arg PowerVar constructor (name = "StrengthPower", matching vanilla's own
+    // SetupStrike.cs) rather than a custom name -- this card only ever declares one Strength var, so
+    // there's no name collision to avoid, and the default name is what DynamicVarSet.Strength expects.
+    // A custom name is only needed if a single card's two branches must coexist as two independent
+    // vars of the same power type.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new PowerVar<StrengthPower>("XdroStrength", 5m)
+        new PowerVar<StrengthPower>(5m)
     };
 
     public CoordinateSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
@@ -57,7 +62,7 @@ public sealed class CoordinateSolo : SingleplayerCardCard
         }
         else
         {
-            await PowerCmd.Apply<CoordinatePowerSolo>(choiceContext, Owner.Creature, DynamicVars["XdroStrength"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<CoordinatePowerSolo>(choiceContext, Owner.Creature, DynamicVars.Strength.BaseValue, Owner.Creature, this);
         }
     }
 
@@ -69,7 +74,7 @@ public sealed class CoordinateSolo : SingleplayerCardCard
         }
         else
         {
-            DynamicVars["XdroStrength"].UpgradeValueBy(3m);
+            DynamicVars.Strength.UpgradeValueBy(3m);
         }
     }
 

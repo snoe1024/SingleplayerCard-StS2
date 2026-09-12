@@ -65,7 +65,7 @@
 
   "SINGLEPLAYERCARD-COORDINATE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "このターン、手札のカードの枚数と同じ筋力を得る。",
-  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{XdroStrength:diff()}を得る。",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。",
 
