@@ -69,5 +69,38 @@
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Your 0 {energyPrefix:energyIcons(1)} Attacks deal {OneForAllPower:diff()} additional damage.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "Imitation Learning",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "At the end of each of your next {IfUpgraded:show:3|2} turns, play a copy of the last Power you played."
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "At the end of each of your next {IfUpgraded:show:3|2} turns, play a copy of the last Power you played.",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "Gang Up",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Deal 10 damage.\nReplay every other Attack card you have played on this enemy this turn.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "Tag Team",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Deal {Damage:diff()} damage.\nThe next Attack you play on the enemy is played an extra time.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "Knockdown",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.description": "Deal {Damage:diff()} damage.\nNext turn, the enemy takes {IfUpgraded:show:triple|double} damage.",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.title": "The Ball",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.description": "Deal {Damage:diff()} damage.\nIncrease this card's damage by {Increase:diff()} this combat and shuffle it into a random spot in your Draw Pile, Hand, or Discard Pile.",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "Believe in You",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.description": "Next turn, once you have played an Attack, a Skill, and a Power, gain {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "Intercept",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.description": "Gain {Block:diff()} [gold]Block[/gold]. Gain 1 [gold]Weak[/gold].",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "War Council",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.description": "Draw 2 cards. At the start of your next turn, draw 2 more cards.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "Helping Hand",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "Double the Block gained from your next card.",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "Mimicry",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "Gather",
+  "SINGLEPLAYERCARD-GATHER_SOLO.description": "Gain Block equal to the sum of the Block values of all other cards in your hand.",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "Beacon of Hope",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]Innate.[/gold] At the end of your turn, gain half the [gold]Block[/gold] you gained that turn at the start of your next turn."
 }

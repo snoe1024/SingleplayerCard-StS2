@@ -33,5 +33,23 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "このターン、フロストは自動効果を2回発動する。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "次のターン終了時、最後にプレイしたパワーのコピーをプレイする。"
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "次のターン終了時、最後にプレイしたパワーのコピーをプレイする。",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "タッグチーム",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "次にこの敵にプレイするアタックは、もう1回プレイされる。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "ノックダウン",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが2〜3倍になる。",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "お前を信じる",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "このターンにアタック、スキル、パワーの全てをプレイしたら、エナジーを得る。",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.title": "作戦会議",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.description": "次のターン開始時、カードを引く。",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "手助け",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得るブロック値を倍にする。",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "希望の道標",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "ターン終了時、得たブロックの半分を次のターン開始時に獲得する。"
 }

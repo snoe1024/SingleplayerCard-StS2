@@ -33,5 +33,23 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Your Frost triggers its Passive twice this turn.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitation Learning",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "At the end of your next turns, play a copy of the last Power you played."
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "At the end of your next turns, play a copy of the last Power you played.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Tag Team",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack you play on this enemy is played an extra time.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Knockdown",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "Starting next turn, takes double/triple damage for that turn.",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "Believe in You",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "Once an Attack, a Skill, and a Power have all been played this turn, gain Energy.",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.title": "War Council",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.description": "At the start of your next turn, draw cards.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Helping Hand",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Doubles the Block gained from your next card.",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Beacon of Hope",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "At the end of your turn, banks half the Block you gained to grant at the start of your next turn."
 }

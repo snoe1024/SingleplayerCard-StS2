@@ -69,5 +69,38 @@
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "0{energyPrefix:energyIcons(1)}のアタックは、追加で{OneForAllPower:diff()}ダメージを与える。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "次の{IfUpgraded:show:3|2}ターン終了時、最後にプレイしたパワーのコピーをプレイする。"
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "次の{IfUpgraded:show:3|2}ターン終了時、最後にプレイしたパワーのコピーをプレイする。",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "総攻撃",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "10ダメージを与える。\nこのターンにこの敵に使用した《総攻撃》以外のアタックカードをもう一度プレイする。",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "タッグチーム",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "{Damage:diff()}ダメージを与える。\n次に対象の敵にプレイするアタックは、もう1回プレイされる。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "ノックダウン",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.description": "{Damage:diff()}ダメージを与える。\n次のターン、敵は{IfUpgraded:show:3|2}倍のダメージを受ける。",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.title": "ボール",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.description": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、山札・手札・捨て札の内ランダムな場所に加える。",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "お前を信じる",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.description": "次のターン、アタック、スキル、パワーの全てをプレイしたとき、{Energy:energyIcons()}を得る。",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "インターセプト",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。[gold]弱体[/gold]1を得る。",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "作戦会議",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.description": "カードを2枚引く。次のターン開始時、カードを2枚引く。",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "手助け",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "次のカードから得るブロック値を倍にする。",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "ものまね",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "結集",
+  "SINGLEPLAYERCARD-GATHER_SOLO.description": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "希望の道標",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]天賦。[/gold]ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"
 }
