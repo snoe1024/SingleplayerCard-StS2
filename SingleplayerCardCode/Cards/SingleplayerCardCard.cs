@@ -1,14 +1,29 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using SingleplayerCard.SingleplayerCardCode.Config;
 using SingleplayerCard.SingleplayerCardCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Saves.Runs;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards;
 
 public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity rarity, TargetType target) :
     CustomCardModel(cost, type, rarity, target)
 {
+    // Snapshot of the Duplicate Rework Option (see .claude/loadmap.md and DuplicateReworkManager) at
+    // the moment this specific card instance was created. [SavedProperty] persists it per-instance
+    // (survives save/load and run history reconstruction, per Guilty/MadScience's use of the same
+    // attribute in the vanilla source), so a card's actual effect and title never retroactively
+    // change just because the player later flips the option -- old runs/decks keep showing what was
+    // really true when the card was made, and only newly-created instances pick up a changed option.
+    [SavedProperty]
+    public bool DroWasOnAtCreation { get; private set; } = DuplicateReworkManager.IsEnabled();
+
+    // Lets the title alone distinguish which effect a card instance has, without opening its
+    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback.
+    public override string Title => (DroWasOnAtCreation ? "[R] " : "[S] ") + base.Title;
+
     // Override in ported cards to reuse the original multiplayer card's vanilla portrait instead of
     // a mod-specific placeholder image. Values are the original card's Id.Entry (e.g. "DEMONIC_SHIELD")
     // and its vanilla CardPoolModel folder name (e.g. "ironclad", matching IroncladCardPool.Title
