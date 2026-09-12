@@ -17,6 +17,11 @@ namespace SingleplayerCard.SingleplayerCardCode.Config;
 // dictionary merge, see decompiled LocTable.cs) before the settings screen ever reads it.
 internal static class SettingsUiCardTextSync
 {
+    // Matches TypePrefix.GetPrefix()'s derivation (uppercased root namespace + '-') for this mod's
+    // own namespace -- hardcoded rather than computed since every loc key in this codebase already
+    // assumes this exact literal (see e.g. localization/*/cards.json).
+    private const string ModPrefix = "SINGLEPLAYERCARD-";
+
     public static void Sync()
     {
         LocTable cardsTable = LocManager.Instance.GetTable("cards");
@@ -31,7 +36,7 @@ internal static class SettingsUiCardTextSync
                 continue;
             }
 
-            string settingsPrefix = "SINGLEPLAYERCARD-" + StringHelper.Slugify(property.Name);
+            string settingsPrefix = ModPrefix + StringHelper.Slugify(property.Name);
 
             string vanillaTitleKey = variantFor.VanillaCardId + ".title";
             if (cardsTable.HasEntry(vanillaTitleKey))
@@ -106,9 +111,9 @@ internal static class SettingsUiCardTextSync
 
     private static string FormatHoverTemplate(string templateKey, string reworkText, string? originalText)
     {
-        LocString template = new("settings_ui", templateKey);
-        template.Add("rework", new LocString("settings_ui", "CARD_VARIANT.Rework").GetFormattedText());
-        template.Add("original", new LocString("settings_ui", "CARD_VARIANT.Original").GetFormattedText());
+        LocString template = new("settings_ui", ModPrefix + templateKey);
+        template.Add("rework", new LocString("settings_ui", ModPrefix + "CARD_VARIANT.Rework").GetFormattedText());
+        template.Add("original", new LocString("settings_ui", ModPrefix + "CARD_VARIANT.Original").GetFormattedText());
         template.Add("reworked_card_text", reworkText);
         template.Add("original_card_text", originalText ?? "");
         return template.GetFormattedText();
