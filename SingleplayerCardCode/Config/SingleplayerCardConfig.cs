@@ -22,11 +22,14 @@ namespace SingleplayerCard.SingleplayerCardCode.Config;
 //
 // [ConfigHoverTipsByDefault] turns on a hover tip for every property here without needing
 // [ConfigHoverTip] repeated 36 times -- each one reads its text from
-// "settings_ui"."{ModPrefix}{PROPERTY_NAME}.hover.desc". Every card's hover text shows the Rework
-// (and, where available, Original) effect verbatim at base (pre-upgrade) values; for the
-// CardVariantNoOriginal cards it explains WHY there's no Original choice, distinguishing two
-// different reasons per loadmap.md: the xDRO effect either breaks outright (breaks) or would be
-// word-for-word identical to the Rework effect anyway (identical) -- see settings_ui.json's comments.
+// "settings_ui"."{ModPrefix}{PROPERTY_NAME}.hover.desc". That key's actual VALUE, and each property's
+// ".title" row label, are never hand-authored: SettingsUiCardTextSync.Sync() (called from
+// SetupConfigUI below) computes them at runtime from the vanilla card's own title and this mod's own
+// card description text, so neither can drift from a retranslation or a balance change. Only the
+// three CONFIG_HOVER_TEXT_* templates and the CARD_VARIANT option labels live in settings_ui.json.
+// [XdroUnavailableReason] on the CardVariantNoOriginal properties selects which template explains the
+// missing Original choice, per two distinct reasons loadmap.md calls out: the xDRO effect either
+// breaks outright (Breaks) or is word-for-word identical to the Rework effect anyway (Identical).
 [ConfigHoverTipsByDefault]
 public sealed class SingleplayerCardConfig : SimpleModConfig
 {
@@ -45,6 +48,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TANK")]
+    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
     public static CardVariantNoOriginal Tank { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
@@ -97,6 +101,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("HAMMER_TIME")]
+    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
     public static CardVariantNoOriginal HammerTime { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
@@ -112,6 +117,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TUTOR")]
+    [XdroUnavailableReason(XdroUnavailableReason.Identical)]
     public static CardVariantNoOriginal Tutor { get; set; } = CardVariantNoOriginal.Rework;
 
     // --- ネクロバインダーのカード ---
@@ -154,6 +160,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("ONE_FOR_ALL")]
+    [XdroUnavailableReason(XdroUnavailableReason.Identical)]
     public static CardVariantNoOriginal OneForAll { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
@@ -170,6 +177,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TAG_TEAM")]
+    [XdroUnavailableReason(XdroUnavailableReason.Identical)]
     public static CardVariantNoOriginal TagTeam { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
@@ -187,6 +195,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("INTERCEPT")]
+    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
     public static CardVariantNoOriginal Intercept { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
@@ -203,6 +212,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("MIMIC")]
+    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
     public static CardVariantNoOriginal Mimicry { get; set; } = CardVariantNoOriginal.Rework;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
@@ -211,10 +221,12 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("BEACON_OF_HOPE")]
+    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
     public static CardVariantNoOriginal BeaconOfHope { get; set; } = CardVariantNoOriginal.Rework;
 
     public override void SetupConfigUI(Control optionContainer)
     {
+        SettingsUiCardTextSync.Sync();
         GenerateOptionsForAllProperties(optionContainer);
     }
 }
