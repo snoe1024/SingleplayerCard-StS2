@@ -6,5 +6,11 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.title": "ミッドナイト",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]にあるカード1枚につき、コストが1減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、このターンのコストが2減少する。"
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]にあるカード1枚につき、コストが1減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、このターンのコストが2減少する。",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "ブレイズ",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.description": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{Strength:diff()}を得る。",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "アウトレイジ",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。"
 }

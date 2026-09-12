@@ -6,5 +6,11 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker.",
 
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.title": "Midnight",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "Deal {Damage:diff()} damage.\nCosts 1 less for each card in your [gold]Discard Pile[/gold].\nCosts 2 less this turn for each card [gold]Exhausted[/gold] this turn."
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "Deal {Damage:diff()} damage.\nCosts 1 less for each card in your [gold]Discard Pile[/gold].\nCosts 2 less this turn for each card [gold]Exhausted[/gold] this turn.",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "Blaze",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.description": "Gain {Strength:diff()} [gold]Strength[/gold] for each card you have discarded this turn.",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "Outrage",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your hand."
 }
