@@ -1,20 +1,25 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
-using MegaCrit.Sts2.Core.Models;
 
 namespace SingleplayerCard.SingleplayerCardCode.Config;
 
-// Populates each SingleplayerCardConfig dropdown's row label and hover text by reading the actual
-// vanilla card title and this mod's own card description text -- never a hand-authored copy -- so
-// there is nothing to keep in sync if a vanilla title is retranslated or a card's effect/numbers
-// change. BaseLib's settings UI (GetLabelText/AddHoverTip, see decompiled ModConfig.cs/
-// NConfigOptionRow.cs) only ever reads from the "settings_ui" loc table by a fixed
-// {ModPrefix}{PROPERTY_NAME}.title/.hover.desc key, with no hook to point it at a different table, so
-// this writes the resolved text directly into "settings_ui" via LocTable.MergeWith (a plain public
-// dictionary merge, see decompiled LocTable.cs) before the settings screen ever reads it.
+// Populates each SingleplayerCardConfig dropdown's row label by reading the vanilla card's own title
+// -- never a hand-authored copy -- so a future vanilla retranslation or rename is picked up
+// automatically. BaseLib's GetLabelText only ever reads "settings_ui"."{ModPrefix}{PROPERTY_NAME}.title"
+// with no hook to point it at a different table (confirmed via decompile), so this writes the resolved
+// title directly into that table via LocTable.MergeWith (a plain public dictionary merge) before the
+// settings screen ever reads it.
+//
+// Hover text is NOT derived this way: an earlier version tried resolving it live from each card's own
+// ".descriptionRework"/".descriptionXdro" against the canonical instance's DynamicVars, but that has
+// two real problems raised during testing -- {Var:diff()} only renders a single live-colored number,
+// not the base(upgraded) notation loadmap.md actually uses, and any resolution hiccup (a missing key,
+// an unexpected var) would leak literal "{Var:diff()}" text into a tooltip with no visual indication
+// anything went wrong. So hover text stays hand-authored per card
+// ("{PROPERTY}.hover.desc.rework"/".hover.desc.xdro" in settings_ui.json, including base(upgraded)
+// values as literal text), only assembled through the three shared CONFIG_HOVER_TEXT_* templates.
 internal static class SettingsUiCardTextSync
 {
     // Matches TypePrefix.GetPrefix()'s derivation (uppercased root namespace + '-') for this mod's
@@ -44,25 +49,22 @@ internal static class SettingsUiCardTextSync
                 overrides[settingsPrefix + ".title"] = cardsTable.GetRawText(vanillaTitleKey);
             }
 
-            overrides[settingsPrefix + ".hover.desc"] = BuildHoverText(property, cardsTable);
+            // BuildHoverText reads the ".hover.desc.rework"/".hover.desc.xdro" entries already present
+            // in settingsTable (hand-authored, see settings_ui.json) and combines them through the
+            // shared templates; the RESULT gets written back under the plain ".hover.desc" key that
+            // BaseLib's own AddHoverTip() (invoked later, inside GenerateOptionsForAllProperties) reads.
+            overrides[settingsPrefix + ".hover.desc"] = BuildHoverText(property, settingsTable);
         }
 
         settingsTable.MergeWith(overrides);
     }
 
-    private static string BuildHoverText(PropertyInfo property, LocTable cardsTable)
+    private static string BuildHoverText(PropertyInfo property, LocTable settingsTable)
     {
-        // Property names were deliberately chosen to match their card class name minus "Solo" (see
-        // SingleplayerCardConfig's own per-card comments), so the card's own Id.Entry -- and its
-        // description loc keys -- can be derived the same way BaseLib derives Id.Entry itself
-        // (StringHelper.Slugify(typeName), see decompiled ModelDb.GetEntry) rather than needing yet
-        // another attribute just to store it.
-        string soloCardId = StringHelper.Slugify(property.Name) + "_SOLO";
-        CardModel? card = FindCanonicalCard(soloCardId);
-
-        string reworkKey = soloCardId + ".descriptionRework";
-        string plainKey = soloCardId + ".description";
-        string reworkText = ResolveCardText(card, cardsTable, cardsTable.HasEntry(reworkKey) ? reworkKey : plainKey);
+        string settingsPrefix = ModPrefix + StringHelper.Slugify(property.Name);
+        string reworkText = settingsTable.HasEntry(settingsPrefix + ".hover.desc.rework")
+            ? settingsTable.GetRawText(settingsPrefix + ".hover.desc.rework")
+            : "";
 
         XdroUnavailableReasonAttribute? reasonAttribute = property.GetCustomAttribute<XdroUnavailableReasonAttribute>();
         if (reasonAttribute != null)
@@ -72,41 +74,13 @@ internal static class SettingsUiCardTextSync
                 : FormatHoverTemplate("CONFIG_HOVER_TEXT_REWORK_MATCH", reworkText, null);
         }
 
-        string xdroKey = soloCardId + ".descriptionXdro";
-        if (cardsTable.HasEntry(xdroKey))
+        string xdroKey = settingsPrefix + ".hover.desc.xdro";
+        if (settingsTable.HasEntry(xdroKey))
         {
-            string xdroText = ResolveCardText(card, cardsTable, xdroKey);
-            return FormatHoverTemplate("CONFIG_HOVER_TEXT_NORMAL", reworkText, xdroText);
+            return FormatHoverTemplate("CONFIG_HOVER_TEXT_NORMAL", reworkText, settingsTable.GetRawText(xdroKey));
         }
 
-        // The card's xDRO branch hasn't been split out of a single ".description" yet (ongoing
-        // per-card work) -- show whatever single effect currently exists rather than erroring.
         return FormatHoverTemplate("CONFIG_HOVER_TEXT_REWORK_MATCH", reworkText, null);
-    }
-
-    private static CardModel? FindCanonicalCard(string soloCardId)
-    {
-        System.Type? cardType = typeof(SingleplayerCardConfig).Assembly.GetTypes()
-            .FirstOrDefault(t => ModelDb.GetEntry(t) == soloCardId && typeof(CardModel).IsAssignableFrom(t));
-        return cardType == null ? null : ModelDb.GetByIdOrNull<CardModel>(ModelDb.GetId(cardType));
-    }
-
-    // Resolves a card description's raw text (which may contain {Var:diff()}-style placeholders)
-    // against the canonical (never-upgraded) instance's own DynamicVars, matching what the card
-    // actually shows in play at base value -- the "未UG版" text the user asked for.
-    private static string ResolveCardText(CardModel? card, LocTable cardsTable, string key)
-    {
-        if (!cardsTable.HasEntry(key))
-        {
-            return "";
-        }
-        if (card == null)
-        {
-            return cardsTable.GetRawText(key);
-        }
-        LocString description = new("cards", key);
-        card.DynamicVars.AddTo(description);
-        return description.GetFormattedText();
     }
 
     private static string FormatHoverTemplate(string templateKey, string reworkText, string? originalText)
