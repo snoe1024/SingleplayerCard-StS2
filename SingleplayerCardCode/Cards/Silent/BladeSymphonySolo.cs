@@ -24,6 +24,10 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "BLADE_SYMPHONY";
+
+    protected override string OriginalVanillaCardPool => "silent";
+
     public BladeSymphonySolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }

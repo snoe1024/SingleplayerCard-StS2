@@ -20,6 +20,10 @@ public sealed class TutorSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "TUTOR";
+
+    protected override string OriginalVanillaCardPool => "regent";
+
     public TutorSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }

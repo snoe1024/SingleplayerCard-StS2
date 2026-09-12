@@ -20,6 +20,10 @@ public sealed class ConstellationSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "CONSTELLATION";
+
+    protected override string OriginalVanillaCardPool => "regent";
+
     public override int CanonicalStarCost => 2;
 
     public override bool GainsBlock => true;

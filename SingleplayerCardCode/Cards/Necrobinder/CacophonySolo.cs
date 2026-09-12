@@ -21,6 +21,10 @@ public sealed class CacophonySolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "CACOPHONY";
+
+    protected override string OriginalVanillaCardPool => "necrobinder";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new CardsVar(12),

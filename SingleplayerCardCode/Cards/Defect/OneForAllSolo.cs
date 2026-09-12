@@ -21,6 +21,10 @@ public sealed class OneForAllSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "ONE_FOR_ALL";
+
+    protected override string OriginalVanillaCardPool => "defect";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<OneForAllPower>(3m) };
 
     public OneForAllSolo() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)

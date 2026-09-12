@@ -20,6 +20,10 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "ENERGY_SURGE";
+
+    protected override string OriginalVanillaCardPool => "defect";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { EnergyHoverTip };

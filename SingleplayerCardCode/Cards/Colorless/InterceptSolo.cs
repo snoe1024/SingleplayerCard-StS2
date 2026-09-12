@@ -21,6 +21,10 @@ public sealed class InterceptSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "INTERCEPT";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public override bool GainsBlock => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new BlockVar(10m, ValueProp.Move) };

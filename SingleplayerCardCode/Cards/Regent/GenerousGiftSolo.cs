@@ -19,6 +19,10 @@ public sealed class GenerousGiftSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "LARGESSE";
+
+    protected override string OriginalVanillaCardPool => "regent";
+
     public GenerousGiftSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

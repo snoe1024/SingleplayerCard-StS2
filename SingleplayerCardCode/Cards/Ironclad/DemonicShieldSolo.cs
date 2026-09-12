@@ -22,6 +22,10 @@ public sealed class DemonicShieldSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "DEMONIC_SHIELD";
+
+    protected override string OriginalVanillaCardPool => "ironclad";
+
     public override bool GainsBlock => true;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };

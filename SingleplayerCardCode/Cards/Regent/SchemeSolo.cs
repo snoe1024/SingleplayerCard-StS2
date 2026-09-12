@@ -19,6 +19,10 @@ public sealed class SchemeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "PLOT";
+
+    protected override string OriginalVanillaCardPool => "regent";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new CardsVar(2) };
 
     public SchemeSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

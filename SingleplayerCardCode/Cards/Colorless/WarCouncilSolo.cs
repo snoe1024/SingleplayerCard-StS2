@@ -17,6 +17,10 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "HUDDLE_UP";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public WarCouncilSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

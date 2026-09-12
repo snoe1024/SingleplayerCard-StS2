@@ -17,6 +17,10 @@ public sealed class HammerTimeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "HAMMER_TIME";
+
+    protected override string OriginalVanillaCardPool => "regent";
+
     public HammerTimeSolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }

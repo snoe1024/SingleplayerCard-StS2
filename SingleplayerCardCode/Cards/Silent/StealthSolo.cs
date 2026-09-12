@@ -19,6 +19,10 @@ public sealed class StealthSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "SNEAKY";
+
+    protected override string OriginalVanillaCardPool => "silent";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Sly };
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<StealthPowerSolo>(1m) };

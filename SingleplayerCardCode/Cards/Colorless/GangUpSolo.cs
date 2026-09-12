@@ -26,6 +26,10 @@ public sealed class GangUpSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "GANG_UP";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public GangUpSolo() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }

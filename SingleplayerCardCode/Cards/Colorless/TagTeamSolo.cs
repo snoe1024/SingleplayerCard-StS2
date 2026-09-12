@@ -21,6 +21,10 @@ public sealed class TagTeamSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "TAG_TEAM";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DamageVar(11m, ValueProp.Move) };
 
     public TagTeamSolo() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)

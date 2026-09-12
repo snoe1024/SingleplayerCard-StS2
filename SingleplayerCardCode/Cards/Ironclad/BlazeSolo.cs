@@ -26,6 +26,10 @@ public sealed class BlazeSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "BLAZE";
+
+    protected override string OriginalVanillaCardPool => "ironclad";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<StrengthPower>(2m) };
 
     public BlazeSolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

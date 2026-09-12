@@ -25,6 +25,10 @@ public sealed class MimicrySolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "MIMIC";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
 
     public override bool GainsBlock => true;

@@ -21,6 +21,10 @@ public sealed class BeaconOfHopeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "BEACON_OF_HOPE";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Innate };
 
     public BeaconOfHopeSolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)

@@ -21,6 +21,10 @@ public sealed class GatherSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "RALLY";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public override bool GainsBlock => true;
 
     public GatherSolo() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)

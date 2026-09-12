@@ -19,6 +19,10 @@ public sealed class PincerAttackSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "FLANKING";
+
+    protected override string OriginalVanillaCardPool => "silent";
+
     public PincerAttackSolo() : base(2, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }

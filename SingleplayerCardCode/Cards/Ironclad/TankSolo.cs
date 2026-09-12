@@ -18,6 +18,10 @@ public sealed class TankSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "TANK";
+
+    protected override string OriginalVanillaCardPool => "ironclad";
+
     public TankSolo() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }

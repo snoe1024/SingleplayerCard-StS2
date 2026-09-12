@@ -20,6 +20,10 @@ public sealed class BoneLegionSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "LEGION_OF_BONE";
+
+    protected override string OriginalVanillaCardPool => "necrobinder";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.Static(StaticHoverTip.SummonDynamic, DynamicVars.Summon) };

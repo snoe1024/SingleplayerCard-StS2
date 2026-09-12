@@ -20,6 +20,10 @@ public sealed class ShadowVanishSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "FADE";
+
+    protected override string OriginalVanillaCardPool => "silent";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Retain, CardKeyword.Exhaust };
 
     public ShadowVanishSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)

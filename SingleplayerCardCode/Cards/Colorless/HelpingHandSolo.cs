@@ -16,6 +16,10 @@ public sealed class HelpingHandSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "LIFT";
+
+    protected override string OriginalVanillaCardPool => "colorless";
+
     public HelpingHandSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }

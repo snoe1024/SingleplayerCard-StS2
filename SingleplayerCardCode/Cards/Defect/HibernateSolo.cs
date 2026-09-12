@@ -22,6 +22,10 @@ public sealed class HibernateSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "HIBERNATE";
+
+    protected override string OriginalVanillaCardPool => "defect";
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[]
     {
         HoverTipFactory.Static(StaticHoverTip.Channeling),

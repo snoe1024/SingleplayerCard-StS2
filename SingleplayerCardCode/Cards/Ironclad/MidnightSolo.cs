@@ -29,6 +29,10 @@ public sealed class MidnightSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "MIDNIGHT";
+
+    protected override string OriginalVanillaCardPool => "ironclad";
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DamageVar(42m, ValueProp.Move) };
 
     public MidnightSolo() : base(12, CardType.Attack, CardRarity.Rare, TargetType.AnyEnemy)

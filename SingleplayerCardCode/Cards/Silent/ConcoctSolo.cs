@@ -25,6 +25,10 @@ public sealed class ConcoctSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "CONCOCT";
+
+    protected override string OriginalVanillaCardPool => "silent";
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromPower<PoisonPower>() };
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DynamicVar("Venomous", 1m) };

@@ -19,6 +19,10 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override string OriginalVanillaCardId => "IMITATION_LEARNING";
+
+    protected override string OriginalVanillaCardPool => "defect";
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
 
     public ImitationLearningSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
