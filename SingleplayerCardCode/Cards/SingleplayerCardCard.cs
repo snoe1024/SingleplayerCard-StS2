@@ -35,7 +35,7 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     protected override void AfterCloned()
     {
         base.AfterCloned();
-        DroWasOnAtCreation = DuplicateReworkManager.IsEnabled();
+        DroWasOnAtCreation = DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId);
     }
 
     // Whether the Rework (DRO-on) effect should be shown/used right now. The canonical instance
@@ -44,7 +44,7 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // own frozen DroWasOnAtCreation. Cards with a DRO-dependent effect should gate their OnPlay,
     // OnUpgrade, and description text on this rather than reading DroWasOnAtCreation or
     // DuplicateReworkManager directly (see CoordinateSolo for a worked example).
-    protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsEnabled() : DroWasOnAtCreation;
+    protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId) : DroWasOnAtCreation;
 
     // The vanilla card's own title text where we have one (OriginalVanillaCardId), falling back to
     // this mod's own ".title" key otherwise (e.g. for any wholly original card this mod might add
@@ -86,6 +86,11 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // base game itself just scales that same texture up for its own hover/zoom view.
     protected virtual string? OriginalVanillaCardId => null;
     protected virtual string? OriginalVanillaCardPool => null;
+
+    // Same-assembly accessor for code outside this class hierarchy (e.g. CardPoolGetUnlockedCardsPatch)
+    // that needs a card's vanilla id without needing OriginalVanillaCardId itself to be more than
+    // protected.
+    internal string? VanillaCardIdForConfig => OriginalVanillaCardId;
 
     private string? VanillaPortraitPath => OriginalVanillaCardId != null && OriginalVanillaCardPool != null
         ? ImageHelper.GetImagePath($"atlases/card_atlas.sprites/{OriginalVanillaCardPool}/{OriginalVanillaCardId.ToLowerInvariant()}.tres")
