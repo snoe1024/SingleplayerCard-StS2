@@ -1,111 +1,75 @@
 {
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "悪魔の盾",
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "HPを1失う。この戦闘中失ったHP分の[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-TANK_SOLO.title": "タンク",
   "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.title": "ミッドナイト",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]にあるカード1枚につき、コストが1減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、このターンのコストが2減少する。",
 
-  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "ブレイズ",
   "SINGLEPLAYERCARD-BLAZE_SOLO.description": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{Strength:diff()}を得る。",
 
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "アウトレイジ",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。",
 
-  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "挟撃",
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.description": "このターン、対象の敵は今手札にないアタックカードから受けるダメージが2倍になる。",
 
-  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "隠密",
   "SINGLEPLAYERCARD-STEALTH_SOLO.description": "[gold]スライ。[/gold]アタックカード以外でダメージを発生させるたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "ブレイド・シンフォニー",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "捨て札または破棄札にある[gold]ナイフ[/gold]を全て(アップグレードして)プレイする。",
 
-  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "調合",
   "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "エンチャントされていない手札の全てのアタックカードに、[gold]有毒{Venomous:diff()}[/gold]を付ける。",
 
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "影隠し",
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "[gold]保留。[/gold]このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。",
 
-  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "ハンマータイム",
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "[gold]ソヴリン・ブレード[/gold]をプレイしたとき、そのターンに使った[gold]鍛造[/gold]効果のあるカードをもう一度プレイする。",
 
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "寛大なる施し",
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.description": "次のターン開始時、ランダムな{IfUpgraded:show:[gold]アップグレード済みの[/gold]}無色カードを1枚手札に加える。",
 
-  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "策謀",
   "SINGLEPLAYERCARD-SCHEME_SOLO.description": "カードを{Cards:diff()}枚引く。",
 
-  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "星座",
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "次のターン開始時、カードを{Cards:diff()}枚引き、{Energy:energyIcons()}と{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "教示",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "骨の軍団",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.description": "敵1体につき[gold]召喚[/gold]{Summon:diff()}。",
 
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "彼方への一瞥",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.description": "次の{IfUpgraded:show:3|2}ターン開始時、手札に[gold]ソウル[/gold]を加える。",
 
-  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "冥界",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "このターン、[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
 
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "不協和音",
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。",
 
-  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.title": "エナジーサージ",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.description": "次の{IfUpgraded:show:3|2}ターンの開始時、1{energyPrefix:energyIcons(1)}を得る。",
 
-  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "イグニッション",
   "SINGLEPLAYERCARD-IGNITION_SOLO.description": "[gold]プラズマ[/gold]を[gold]生成[/gold]する。すべての[gold]プラズマ[/gold]オーブの自動効果を発動する。",
 
-  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "冬眠",
   "SINGLEPLAYERCARD-HIBERNATE_SOLO.description": "このターン、自身の[gold]フロスト[/gold]は自動効果を2回発動する。\n[gold]フロスト{Repeat:diff()}を生成[/gold]する。",
 
-  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "ワン・フォー・オール",
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "0{energyPrefix:energyIcons(1)}のアタックは、追加で{OneForAllPower:diff()}ダメージを与える。",
 
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "模倣学習",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "次の{IfUpgraded:show:3|2}ターン終了時、最後にプレイしたパワーのコピーをプレイする。",
 
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "総攻撃",
   "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "10ダメージを与える。\nこのターンにこの敵に使用した《総攻撃》以外のアタックカードをもう一度プレイする。",
 
-  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "タッグチーム",
   "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "{Damage:diff()}ダメージを与える。\n次に対象の敵にプレイするアタックは、もう1回プレイされる。",
 
-  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "ノックダウン",
   "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.description": "{Damage:diff()}ダメージを与える。\n次のターン、敵は{IfUpgraded:show:3|2}倍のダメージを受ける。",
 
-  "SINGLEPLAYERCARD-THE_BALL_SOLO.title": "ボール",
   "SINGLEPLAYERCARD-THE_BALL_SOLO.description": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、山札・手札・捨て札の内ランダムな場所に加える。",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "お前を信じる",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.description": "次のターン、アタック、スキル、パワーの全てをプレイしたとき、{Energy:energyIcons()}を得る。",
 
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "インターセプト",
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.description": "{Block:diff()}[gold]ブロック[/gold]を得る。[gold]弱体[/gold]1を得る。",
 
-  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "作戦会議",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.description": "カードを2枚引く。次のターン開始時、カードを2枚引く。",
 
-  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "手助け",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "次のカードから得るブロック値を倍にする。",
 
-  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "連携",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "このターン、手札のカードの枚数と同じ筋力を得る。",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{XdroStrength:diff()}を得る。",
 
-  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "ものまね",
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-GATHER_SOLO.title": "結集",
   "SINGLEPLAYERCARD-GATHER_SOLO.description": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "希望の道標",
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]天賦。[/gold]ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"
 }

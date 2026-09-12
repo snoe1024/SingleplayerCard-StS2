@@ -4,6 +4,7 @@ using SingleplayerCard.SingleplayerCardCode.Config;
 using SingleplayerCard.SingleplayerCardCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Saves.Runs;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards;
@@ -45,9 +46,35 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // DuplicateReworkManager directly (see CoordinateSolo for a worked example).
     protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsEnabled() : DroWasOnAtCreation;
 
+    // The vanilla card's own title text where we have one (OriginalVanillaCardId), falling back to
+    // this mod's own ".title" key otherwise (e.g. for any wholly original card this mod might add
+    // later). Every ported card's name should track vanilla's exactly -- including if vanilla ever
+    // retranslates or renames it -- rather than us maintaining a second, potentially-drifting copy.
+    private string BaseTitleText => OriginalVanillaCardId != null
+        ? new LocString("cards", OriginalVanillaCardId + ".title").GetFormattedText()
+        : TitleLocString.GetFormattedText();
+
+    // Single-letter DRO indicator as a SUFFIX rather than a prefix, so it doesn't shift the Card
+    // Library's alphabetical sort order: "R" for the Rework/DRO-on effect, "S" for the Solo/xDRO-off
+    // fallback. No leading space in Japanese (a single trailing letter reads naturally there); one
+    // leading space in every other supported language.
+    private string DroSuffix => (LocManager.Instance.Language == "jpn" ? "" : " ") + (DroActiveForDisplay ? "R" : "S");
+
     // Lets the title alone distinguish which effect a card instance has, without opening its
-    // description: "R" for the DRO-on Rework effect, "S" for the DRO-off Solo/xDRO fallback.
-    public override string Title => (DroActiveForDisplay ? "[R] " : "[S] ") + base.Title;
+    // description. Reimplements CardModel.Title's upgrade-suffix logic rather than calling base.Title,
+    // since the base implementation is hardwired to this card's own TitleLocString.
+    public override string Title
+    {
+        get
+        {
+            string title = BaseTitleText;
+            if (IsUpgraded)
+            {
+                title += MaxUpgradeLevel > 1 ? $"+{CurrentUpgradeLevel}" : "+";
+            }
+            return title + DroSuffix;
+        }
+    }
 
     // Override in ported cards to reuse the original multiplayer card's vanilla portrait instead of
     // a mod-specific placeholder image. Values are the original card's Id.Entry (e.g. "DEMONIC_SHIELD")
