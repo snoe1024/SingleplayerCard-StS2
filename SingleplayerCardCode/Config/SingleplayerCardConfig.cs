@@ -19,6 +19,15 @@ namespace SingleplayerCard.SingleplayerCardCode.Config;
 // section name -- BaseLib's SectionTracker keeps reusing the current section for any property with no
 // [ConfigSection] attribute at all (see decompiled SimpleModConfig.GenerateOptionsForAllProperties), it
 // only starts a new one when it sees a DIFFERENT non-null section name.
+//
+// [ConfigHoverTipsByDefault] turns on a hover tip for every property here without needing
+// [ConfigHoverTip] repeated 36 times -- each one reads its text from
+// "settings_ui"."{ModPrefix}{PROPERTY_NAME}.hover.desc". Every card's hover text shows the Rework
+// (and, where available, Original) effect verbatim at base (pre-upgrade) values; for the
+// CardVariantNoOriginal cards it explains WHY there's no Original choice, distinguishing two
+// different reasons per loadmap.md: the xDRO effect either breaks outright (breaks) or would be
+// word-for-word identical to the Rework effect anyway (identical) -- see settings_ui.json's comments.
+[ConfigHoverTipsByDefault]
 public sealed class SingleplayerCardConfig : SimpleModConfig
 {
     private static bool IsPublicBetaAvailable()
