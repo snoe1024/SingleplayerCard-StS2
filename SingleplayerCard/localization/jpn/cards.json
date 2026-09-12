@@ -3,5 +3,8 @@
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "HPを1失う。この戦闘中失ったHP分の[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-TANK_SOLO.title": "タンク",
-  "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。"
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
+
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.title": "ミッドナイト",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]にあるカード1枚につき、コストが1減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、このターンのコストが2減少する。"
 }

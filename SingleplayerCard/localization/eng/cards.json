@@ -3,5 +3,8 @@
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.",
 
   "SINGLEPLAYERCARD-TANK_SOLO.title": "Tank",
-  "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker."
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker.",
+
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.title": "Midnight",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "Deal {Damage:diff()} damage.\nCosts 1 less for each card in your [gold]Discard Pile[/gold].\nCosts 2 less this turn for each card [gold]Exhausted[/gold] this turn."
 }
