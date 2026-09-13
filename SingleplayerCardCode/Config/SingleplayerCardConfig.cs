@@ -148,6 +148,11 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
+    [CardVariantFor("SOULBOUND")]
+    public static CardVariant Soulbound { get; set; } = CardVariant.Rework;
+
+    [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
+    [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("CACOPHONY")]
     public static CardVariant Cacophony { get; set; } = CardVariant.Rework;
 

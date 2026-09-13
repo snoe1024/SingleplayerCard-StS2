@@ -1,50 +1,43 @@
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
-// Backs ImitationLearningSolo (see .claude/loadmap.md "模倣学習" 案1). Vanilla
-// IMITATION_LEARNING_POWER copies another player's Powers as they play them -- meaningless alone.
-// Singleplayer rework: remembers the last Power card the owner played, and at the end of each of
-// the next 2(3) turns, plays a copy of it (whichever one was most recently played counts, so this
-// can cascade if the owner keeps playing new Powers).
+// Backs ImitationLearningSolo's Rework branch (see .claude/loadmap.md "模倣学習" 案1, redesigned
+// 2026-09-14 -- the old 案2 replay-your-own-last-Power design was scrapped for being underwhelming).
+// Applied to a chosen enemy. The first Amount times that enemy gains ANY Buff-type power (its own
+// Strength/Ritual/etc, not something the player did to it), add a random Power card from the
+// player's own character pool to the player's hand at 0 Energy cost, then decrement Amount --
+// removing this power once it hits 0. Fires during the enemy's turn, so with 10 or fewer cards in
+// hand the generated Power(s) sit there ready to play at the start of the owner's next turn.
 public sealed class ImitationLearningPowerSolo : SingleplayerCardPower
 {
-    private CardModel? _lastPower;
-
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (cardPlay.Card.Owner == Owner.Player && cardPlay.Card.Type == CardType.Power)
-        {
-            _lastPower = cardPlay.Card;
-        }
-
-        return Task.CompletedTask;
-    }
-
-    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-    {
-        if (!participants.Contains(Owner) || Amount <= 0)
+        if (Amount <= 0 || power == this || power.Owner != Owner || power.Type != PowerType.Buff || amount <= 0m || Applier?.Player == null)
         {
             return;
         }
 
-        if (_lastPower != null)
+        Player player = Applier.Player;
+        CardModel? card = CardFactory.GetDistinctForCombat(player, player.Character.CardPool.GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint).Where(c => c.Type == CardType.Power), 1, player.RunState.Rng.CombatCardGeneration).FirstOrDefault();
+        if (card != null)
         {
+            card.EnergyCost.SetCustomBaseCost(0);
             Flash();
-            CardModel clone = _lastPower.CreateCloneForPlayer(Owner.Player);
-            await CardCmd.AutoPlay(choiceContext, clone, null);
+            await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, player);
         }
 
         await PowerCmd.Decrement(this);

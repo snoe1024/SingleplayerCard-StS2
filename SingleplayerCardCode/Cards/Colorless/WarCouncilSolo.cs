@@ -7,16 +7,19 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
-using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
 // Original multiplayer card: HUDDLE_UP (Uncommon Skill, Exhaust) -- see .claude/loadmap.md
 // "作戦会議" for current numbers. ALL players draw cards immediately.
 // Singleplayer rework (see .claude/loadmap.md "作戦会議"):
-// - DRO on (案1): draws cards now AND grants more at the start of the owner's next turn
-//   (WarCouncilPowerSolo). Both draw counts are a flat 2 with no upgrade scaling and Exhaust
-//   dropped, exactly matching loadmap.md's own 案1 text (no "(N)" upgrade notation there).
+// - DRO on (案1): draws cards now AND grants more at the start of the owner's next turn, via
+//   vanilla's own DrawCardsNextTurnPower rather than a bespoke power -- a separate custom power
+//   would just duplicate an effect vanilla already implements, and using the shared vanilla power
+//   means it correctly stacks with any other source of "next turn" draw instead of tracking its own
+//   separate total. Both draw counts are a flat 2 with no upgrade scaling and Exhaust dropped,
+//   exactly matching loadmap.md's own 案1 text (no "(N)" upgrade notation there).
 // - DRO off (xDRO): matches the original -- draws immediately, scales with upgrade, keeps Exhaust.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class WarCouncilSolo : SingleplayerCardCard
@@ -49,7 +52,7 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
         if (DroActiveForDisplay)
         {
             await CardPileCmd.Draw(choiceContext, 2, Owner);
-            await PowerCmd.Apply<WarCouncilPowerSolo>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+            await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
         }
         else
         {

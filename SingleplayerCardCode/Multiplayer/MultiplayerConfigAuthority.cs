@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MegaCrit.Sts2.Core.Entities.Multiplayer;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Multiplayer.Game;
 using MegaCrit.Sts2.Core.Multiplayer.Game.Lobby;
 using MegaCrit.Sts2.Core.Runs;
@@ -28,6 +29,14 @@ namespace SingleplayerCard.SingleplayerCardCode.Multiplayer;
 // reading SingleplayerCardConfig directly, so neither needs its own multiplayer-awareness.
 internal static class MultiplayerConfigAuthority
 {
+    // TEMPORARY diagnostic logging (2026-09-14): added to track down a real playtest where a client
+    // with ApplyInMultiplayer enabled locally never saw Solo cards substituted into a multiplayer
+    // run's pool, despite that being explainable via BuildLocalSnapshot() alone even if host sync
+    // failed outright. SingleplayerCardConfigSyncMessage never appeared in that session's log at all
+    // (send or receive), which these lines would have caught directly instead of requiring static code
+    // analysis after the fact. Remove once the root cause is confirmed and fixed.
+    private const string DiagTag = "[SingleplayerCard][MultiplayerConfigAuthority]";
+
     private static StartRunLobby? _activeLobby;
     private static SingleplayerCardConfigSyncMessage? _hostSnapshot;
 
@@ -83,14 +92,19 @@ internal static class MultiplayerConfigAuthority
     // today's placeholder storage).
     public static void EnsureFrozenForCurrentRun()
     {
-        if (IsActiveMultiplayerRun && RunConfigSnapshot.Store.Load() == null)
+        bool alreadyFrozen = RunConfigSnapshot.Store.Load() != null;
+        Log.Info($"{DiagTag} EnsureFrozenForCurrentRun: IsActiveMultiplayerRun={IsActiveMultiplayerRun}, IsClient={IsClient}, alreadyFrozen={alreadyFrozen}");
+        if (IsActiveMultiplayerRun && !alreadyFrozen)
         {
-            RunConfigSnapshot.Store.Save(ResolveSnapshot());
+            SingleplayerCardConfigSyncMessage snapshot = ResolveSnapshot();
+            RunConfigSnapshot.Store.Save(snapshot);
+            Log.Info($"{DiagTag} EnsureFrozenForCurrentRun: froze ApplyInMultiplayer={snapshot.ApplyInMultiplayer}, {snapshot.CardVariants.Count} card variant(s), source={(IsClient ? (_hostSnapshot != null ? "hostSnapshot" : "localFallback") : "localSnapshot(host/singleplayer)")}");
         }
     }
 
     public static void OnLobbyCreated(StartRunLobby lobby)
     {
+        Log.Info($"{DiagTag} OnLobbyCreated: NetService.Type={lobby.NetService.Type}");
         _activeLobby = lobby;
         _hostSnapshot = null;
         // A brand new lobby means whatever was frozen for the PREVIOUS run (if any, within this same
@@ -113,6 +127,7 @@ internal static class MultiplayerConfigAuthority
     // should tear things down and clear stale state for whatever comes next.
     public static void OnLobbyCleanedUp(StartRunLobby lobby, bool disconnectSession)
     {
+        Log.Info($"{DiagTag} OnLobbyCleanedUp: disconnectSession={disconnectSession}");
         if (!disconnectSession)
         {
             return;
@@ -136,23 +151,32 @@ internal static class MultiplayerConfigAuthority
     // toggle didn't register).
     public static void NotifyLocalConfigChanged()
     {
+        Log.Info($"{DiagTag} NotifyLocalConfigChanged: activeLobby={_activeLobby != null}, isHost={_activeLobby?.NetService.Type == NetGameType.Host}");
         if (_activeLobby != null && _activeLobby.NetService.Type == NetGameType.Host)
         {
-            _activeLobby.NetService.SendMessage(BuildLocalSnapshot());
+            SingleplayerCardConfigSyncMessage snapshot = BuildLocalSnapshot();
+            Log.Info($"{DiagTag} NotifyLocalConfigChanged: broadcasting ApplyInMultiplayer={snapshot.ApplyInMultiplayer}, {snapshot.CardVariants.Count} card variant(s)");
+            _activeLobby.NetService.SendMessage(snapshot);
         }
     }
 
     private static void OnPlayerConnected(StartRunLobbyPlayer player)
     {
-        if (_activeLobby == null || _activeLobby.NetService.Type != NetGameType.Host || player.id == _activeLobby.NetService.NetId)
+        bool isHost = _activeLobby?.NetService.Type == NetGameType.Host;
+        bool isSelf = _activeLobby != null && player.id == _activeLobby.NetService.NetId;
+        Log.Info($"{DiagTag} OnPlayerConnected: player={player.id}, isHost={isHost}, isSelf={isSelf}");
+        if (_activeLobby == null || !isHost || isSelf)
         {
             return;
         }
-        _activeLobby.NetService.SendMessage(BuildLocalSnapshot(), player.id);
+        SingleplayerCardConfigSyncMessage snapshot = BuildLocalSnapshot();
+        Log.Info($"{DiagTag} OnPlayerConnected: sending ApplyInMultiplayer={snapshot.ApplyInMultiplayer}, {snapshot.CardVariants.Count} card variant(s) to player {player.id}");
+        _activeLobby.NetService.SendMessage(snapshot, player.id);
     }
 
     private static void HandleConfigSyncMessage(SingleplayerCardConfigSyncMessage message, ulong senderId)
     {
+        Log.Info($"{DiagTag} HandleConfigSyncMessage: received from {senderId}, ApplyInMultiplayer={message.ApplyInMultiplayer}, {message.CardVariants.Count} card variant(s)");
         _hostSnapshot = message;
     }
 

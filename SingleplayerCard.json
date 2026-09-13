@@ -1,9 +1,9 @@
 ﻿{
   "id": "SingleplayerCard",
-  "name": "SingleplayerCard",
-  "author": "Author",
-  "description": "Slay the Spire 2 character mod created from a template for use with BaseLib",
-  "version": "v0.0.0",
+  "name": "Singleplayer Card",
+  "author": "snoe1024",
+  "description": "Mod that adjusts Multiplayer-only cards and adds them so they can be used in Singleplayer.",
+  "version": "v0.1.0",
   "has_pck": true,
   "has_dll": true,
   "min_game_version": "0.105.0",
