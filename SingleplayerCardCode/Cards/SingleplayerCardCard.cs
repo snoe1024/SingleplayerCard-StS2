@@ -97,6 +97,14 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // protected.
     internal string? VanillaCardIdForConfig => OriginalVanillaCardId;
 
+    // SingleplayerOnly (not the CardModel default of None) so these never appear in an actual
+    // multiplayer game's pools by default: CardPoolModel.GetUnlockedCards removes SingleplayerOnly
+    // cards whenever the run itself is multiplayer, exactly mirroring how it already removes vanilla's
+    // own MultiplayerOnly cards from singleplayer pools. CardPoolGetUnlockedCardsPatch is what adds
+    // these back in for multiplayer specifically, and only when SingleplayerCardConfig.ApplyInMultiplayer
+    // (or the multiplayer host's equivalent, see MultiplayerConfigAuthority) is on.
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
+
     private string? VanillaPortraitPath => OriginalVanillaCardId != null && OriginalVanillaCardPool != null
         ? ImageHelper.GetImagePath($"atlases/card_atlas.sprites/{OriginalVanillaCardPool}/{OriginalVanillaCardId.ToLowerInvariant()}.tres")
         : null;

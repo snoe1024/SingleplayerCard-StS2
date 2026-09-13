@@ -1,4 +1,7 @@
 {
+  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "Apply Changes in Multiplayer Too",
+  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "Off by default. When enabled, this mod's changes also apply in multiplayer games: instead of vanilla's multiplayer-exclusive cards, this mod's singleplayer-adapted versions are added to the card pool instead. Every card's Adjusted/Original/Hidden setting below follows the HOST player's configuration for everyone in the session, not each player's own.",
+
   "SINGLEPLAYERCARD-CARD_VARIANT.Rework": "Adjusted",
   "SINGLEPLAYERCARD-CARD_VARIANT.Original": "Original",
   "SINGLEPLAYERCARD-CARD_VARIANT.Disabled": "Hidden",

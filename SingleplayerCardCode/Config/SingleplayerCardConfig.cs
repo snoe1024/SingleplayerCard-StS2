@@ -39,6 +39,16 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
         return branch is PlatformBranch.PublicBeta or PlatformBranch.PrivateBeta or PlatformBranch.DevTest;
     }
 
+    // No [ConfigSection] here on purpose: this property comes before any section attribute, so it
+    // renders as a standalone row above every character group instead of inside a collapsible section
+    // (see the [ConfigSection] note below on how BaseLib decides section boundaries).
+    //
+    // Default OFF: this mod's effects should only ever change multiplayer for a player who explicitly
+    // opts in, since every OTHER connected player is bound by this same value once it's turned on (see
+    // MultiplayerConfigAuthority) -- an unexpected multiplayer pool change for someone who never agreed
+    // to it would be a much worse surprise than an unexpected singleplayer one.
+    public static bool ApplyInMultiplayer { get; set; } = false;
+
     // --- アイアンクラッドのカード ---
 
     [ConfigSection("IroncladCards", CollapsedByDefault = true)]

@@ -3,6 +3,7 @@ using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
 using SingleplayerCard.SingleplayerCardCode.Config;
+using SingleplayerCard.SingleplayerCardCode.Multiplayer;
 
 namespace SingleplayerCard.SingleplayerCardCode;
 
@@ -22,6 +23,18 @@ public partial class MainFile : Node
         Config = new SingleplayerCardConfig();
         Config.Load();
         ModConfigRegistry.Register(ModId, Config);
+
+        // Lets a multiplayer host who tweaks a card's dropdown (or the ApplyInMultiplayer toggle
+        // itself) while clients are already sitting in the lobby push the change out immediately,
+        // rather than leaving them stuck with whatever was true at the moment they joined. See
+        // MultiplayerConfigAuthority; a no-op unless we're currently hosting an open lobby.
+        Config.ConfigChanged += (_, _) => MultiplayerConfigAuthority.NotifyLocalConfigChanged();
+
+        // Must happen before BaseLib's PostModInitPatch.LatePostInit (a prefix on ModelDb.InitIds) --
+        // the point of no return for a run's save shape, same deadline [SavedProperty] itself is bound
+        // by. Registering here, at the top of this mod's own [ModInitializer], is the earliest and
+        // therefore safest place. See ExtendedSaveRunConfigSnapshotStore for what this actually wires up.
+        RunConfigSnapshot.Store = new ExtendedSaveRunConfigSnapshotStore();
 
         Harmony harmony = new(ModId);
 
