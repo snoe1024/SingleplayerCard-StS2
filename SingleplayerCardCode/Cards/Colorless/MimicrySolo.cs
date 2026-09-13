@@ -12,8 +12,8 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: MIMIC (Rare, 1 cost, Skill, Exhaust). Gain Block equal to another
-// player's CURRENT Block stat -- meaningless alone.
+// Original multiplayer card: MIMIC (Rare Skill, Exhaust) -- see .claude/loadmap.md "ものまね" for
+// current numbers. Gain Block equal to another player's CURRENT Block stat -- meaningless alone.
 // Singleplayer rework (see .claude/loadmap.md "ものまね" 案1): instead, gain Block equal to the
 // printed Block value of the single highest-Block card currently in hand (summing all BlockVars on
 // that card if it has more than one; ignores calculated/special block like CalculatedBlockVar).

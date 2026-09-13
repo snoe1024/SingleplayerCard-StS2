@@ -5,16 +5,21 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: ENERGY_SURGE (Uncommon, 1 cost, Skill, Exhaust). ALL players gain
-// 2(3) Energy immediately.
-// Singleplayer rework (see .claude/loadmap.md "エナジーサージ" 案1): a lump 2-3 Energy in one turn
-// is too much for a single Defect, so this instead grants 1 Energy at the start of each of the next
-// 2(3) turns (EnergySurgePowerSolo). Cost lowered to 0 to match.
+// Original multiplayer card: ENERGY_SURGE (Uncommon Skill, Exhaust) -- see .claude/loadmap.md
+// "エナジーサージ" for current numbers. ALL players gain Energy immediately.
+// Singleplayer rework (see .claude/loadmap.md "エナジーサージ"):
+// - DRO on (案1): a lump sum of Energy in one turn is too much for a single Defect, so this instead
+//   grants Energy at the start of each of the next several turns (EnergySurgePowerSolo). Cost
+//   lowered to match.
+// - DRO off (xDRO): matches the original -- grants Energy immediately, at the original's cost.
+// Exhaust kept in both branches, matching the original.
 [Pool(typeof(DefectCardPool))]
 public sealed class EnergySurgeSolo : SingleplayerCardCard
 {
@@ -28,13 +33,49 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { EnergyHoverTip };
 
+    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
+    // still declared unconditionally.
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new EnergyVar(2) };
+
     public EnergySurgeSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
+    }
+
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (!DroActiveForDisplay)
+        {
+            EnergyCost.SetCustomBaseCost(1);
+        }
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
-        await PowerCmd.Apply<EnergySurgePowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+        if (DroActiveForDisplay)
+        {
+            await PowerCmd.Apply<EnergySurgePowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+        }
+        else
+        {
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        if (!DroActiveForDisplay)
+        {
+            DynamicVars.Energy.UpgradeValueBy(1m);
+        }
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -4,16 +4,18 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
-// Original multiplayer card: SNEAKY (Rare, 2 cost, Power, Sly). Gain Block whenever another player
-// attacks an enemy.
-// Singleplayer rework (see .claude/loadmap.md "隠密" 案1): no other player, so instead grants
-// Block whenever the owner deals damage by means other than an Attack card. See StealthPowerSolo.
+// Original multiplayer card: SNEAKY (Rare Power, Sly) -- see .claude/loadmap.md "隠密" for current
+// numbers. Gain Block whenever another player attacks an enemy.
+// Singleplayer rework (see .claude/loadmap.md "隠密"). See StealthPowerSolo for the two branches'
+// actual trigger conditions -- the power itself decides which one fires, based on the DRO state it
+// captured from this card when applied.
 [Pool(typeof(SilentCardPool))]
 public sealed class StealthSolo : SingleplayerCardCard
 {
@@ -40,5 +42,13 @@ public sealed class StealthSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars["StealthPowerSolo"].UpgradeValueBy(1m);
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -7,21 +7,44 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using SingleplayerCard.SingleplayerCardCode.Cards;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
-// Backs KnockdownSolo (see .claude/loadmap.md "ノックダウン" 案1). Vanilla KNOCKDOWN_POWER doubles
-// damage the target takes from OTHER players this turn. Singleplayer rework instead waits until
-// the owner's next turn starts, doubles/triples damage taken for that whole turn, then removes
-// itself at that turn's end -- "next turn" instead of "this turn from others".
+// Backs KnockdownSolo (see .claude/loadmap.md "ノックダウン"). Vanilla KNOCKDOWN_POWER doubles
+// damage the target takes from OTHER players THIS turn. Damage and the multiplier amount are
+// identical between branches -- only the TIMING differs:
+// - DRO on (案1): waits until the owner's next turn starts, doubles/triples damage taken for that
+//   whole turn, then removes itself at that turn's end -- "next turn" instead of "this turn from
+//   others".
+// - DRO off (xDRO): matches the original -- active immediately, for the REST of the current turn.
+// Like StealthPowerSolo, this has no DroActiveForDisplay of its own -- it's captured from the
+// applying card via AfterApplied into a [SavedProperty] field.
 public sealed class KnockdownPowerSolo : SingleplayerCardPower
 {
+    [SavedProperty]
+    public bool DroActiveForDisplay { get; private set; } = true;
+
     private bool _active;
 
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
+
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        if (cardSource is SingleplayerCardCard soloCard)
+        {
+            DroActiveForDisplay = soloCard.DroActiveForDisplay;
+        }
+        if (!DroActiveForDisplay)
+        {
+            _active = true;
+        }
+        return base.AfterApplied(applier, cardSource);
+    }
 
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {

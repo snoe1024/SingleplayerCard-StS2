@@ -8,8 +8,8 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: HAMMER_TIME (Rare, 2(1) cost, Power). Whenever you Forge, all allies
-// Forge as well -- does nothing alone.
+// Original multiplayer card: HAMMER_TIME (Rare Power) -- see .claude/loadmap.md "ハンマータイム"
+// for current numbers. Whenever you Forge, all allies Forge as well -- does nothing alone.
 // Singleplayer rework (see .claude/loadmap.md "ハンマータイム" 案1): instead, whenever Sovereign
 // Blade is played, replay every card that Forged this turn. See HammerTimePowerSolo.
 [Pool(typeof(RegentCardPool))]

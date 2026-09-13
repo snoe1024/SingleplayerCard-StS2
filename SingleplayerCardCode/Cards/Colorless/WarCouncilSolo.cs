@@ -1,17 +1,23 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: HUDDLE_UP (Uncommon, 1 cost, Skill, Exhaust). ALL players draw 2(3)
-// cards immediately.
-// Singleplayer rework (see .claude/loadmap.md "作戦会議" 案1): draws 2 now AND grants another 2 at
-// the start of the owner's next turn (WarCouncilPowerSolo) -- Exhaust dropped in this rework.
+// Original multiplayer card: HUDDLE_UP (Uncommon Skill, Exhaust) -- see .claude/loadmap.md
+// "作戦会議" for current numbers. ALL players draw cards immediately.
+// Singleplayer rework (see .claude/loadmap.md "作戦会議"):
+// - DRO on (案1): draws cards now AND grants more at the start of the owner's next turn
+//   (WarCouncilPowerSolo). Both draw counts are a flat 2 with no upgrade scaling and Exhaust
+//   dropped, exactly matching loadmap.md's own 案1 text (no "(N)" upgrade notation there).
+// - DRO off (xDRO): matches the original -- draws immediately, scales with upgrade, keeps Exhaust.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class WarCouncilSolo : SingleplayerCardCard
 {
@@ -21,13 +27,49 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
+    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
+    // still declared unconditionally.
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new CardsVar(2) };
+
     public WarCouncilSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (!DroActiveForDisplay)
+        {
+            AddKeyword(CardKeyword.Exhaust);
+        }
+    }
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardPileCmd.Draw(choiceContext, 2, Owner);
-        await PowerCmd.Apply<WarCouncilPowerSolo>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+        if (DroActiveForDisplay)
+        {
+            await CardPileCmd.Draw(choiceContext, 2, Owner);
+            await PowerCmd.Apply<WarCouncilPowerSolo>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+        }
+        else
+        {
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        if (!DroActiveForDisplay)
+        {
+            DynamicVars.Cards.UpgradeValueBy(1m);
+        }
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

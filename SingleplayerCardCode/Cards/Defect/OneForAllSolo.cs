@@ -10,8 +10,8 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: ONE_FOR_ALL (Rare, 1 cost, Power). EVERYONE'S 0-cost Attacks deal
-// 3(4) additional damage.
+// Original multiplayer card: ONE_FOR_ALL (Rare Power) -- see .claude/loadmap.md
+// "ワン・フォー・オール" for current numbers. EVERYONE'S 0-cost Attacks deal additional damage.
 // Singleplayer rework (see .claude/loadmap.md "ワン・フォー・オール" 案1, identical to its own
 // xDRO -- the loadmap notes this one works fine unreworked): simply targets yourself instead of
 // ALL allies. Reuses vanilla OneForAllPower as-is since it already has no multiplayer-specific

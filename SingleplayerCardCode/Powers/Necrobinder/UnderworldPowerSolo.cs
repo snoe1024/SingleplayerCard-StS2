@@ -9,28 +9,56 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
+using SingleplayerCard.SingleplayerCardCode.Cards;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
-// Backs UnderworldSolo (see .claude/loadmap.md "冥界" 案1). Vanilla UNDERWORLD_POWER converts other
-// players' Attack damage into Doom applied to the target -- meaningless alone. Singleplayer rework
-// reverses the causality: whenever the owner applies Doom this turn, deal damage equal to that
-// amount to the doomed target. Uses ValueProp.Unpowered (not a powered Attack) so it can't chain
-// into a Deathify-style attack-to-Doom conversion loop.
+// Backs UnderworldSolo (see .claude/loadmap.md "冥界"). Vanilla UNDERWORLD_POWER (damage -> Doom)
+// converts other players' Attack damage into Doom applied to the target -- meaningless targeted at
+// yourself, since it explicitly excludes the power owner's own damage.
+// - DRO on (案1): reverses the causality entirely: whenever the owner applies Doom this turn, deal
+//   damage equal to that amount to the doomed target. Uses ValueProp.Unpowered (not a powered
+//   Attack) so it can't chain into a Deathify-style attack-to-Doom conversion loop.
+// - DRO off (xDRO): keeps vanilla's own damage -> Doom causality, just retargeted at the owner's own
+//   Attack damage instead of "other players'" (there being no one else to trigger off of).
+//
+// Like StealthPowerSolo, this has no DroActiveForDisplay of its own -- it's captured from the
+// applying card via AfterApplied into a [SavedProperty] field.
 public sealed class UnderworldPowerSolo : SingleplayerCardPower
 {
+    [SavedProperty]
+    public bool DroActiveForDisplay { get; private set; } = true;
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromPower<DoomPower>() };
 
+    public override Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        if (cardSource is SingleplayerCardCard soloCard)
+        {
+            DroActiveForDisplay = soloCard.DroActiveForDisplay;
+        }
+        return base.AfterApplied(applier, cardSource);
+    }
+
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power is DoomPower && applier == Owner && amount > 0m)
+        if (DroActiveForDisplay && power is DoomPower && applier == Owner && amount > 0m)
         {
             await CreatureCmd.Damage(choiceContext, power.Owner, amount, ValueProp.Unpowered, Owner);
+        }
+    }
+
+    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
+    {
+        if (!DroActiveForDisplay && dealer == Owner && props.IsPoweredAttack() && result.TotalDamage > 0)
+        {
+            await PowerCmd.Apply<DoomPower>(choiceContext, target, result.TotalDamage, Owner, null);
         }
     }
 

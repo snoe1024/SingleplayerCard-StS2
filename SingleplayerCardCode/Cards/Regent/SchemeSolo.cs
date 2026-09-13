@@ -4,16 +4,21 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: PLOT (Uncommon, 1 cost, Skill). Next turn, ALL players draw 2(3) extra
-// cards.
-// Singleplayer rework (see .claude/loadmap.md "策謀" 案1): "lose the extra draw you'd get at the
-// start of next turn, and draw it now instead" -- i.e. just draw the cards immediately. Upgrade
-// path changes from "+1 card" to "-1 cost" since the card count no longer needs scaling.
+// Original multiplayer card: PLOT (Uncommon Skill) -- see .claude/loadmap.md "策謀" for current
+// numbers. Next turn, ALL players draw extra cards (via vanilla's own DrawCardsNextTurnPower).
+// Singleplayer rework (see .claude/loadmap.md "策謀"):
+// - DRO on (案1): "lose the extra draw you'd get at the start of next turn, and draw it now
+//   instead" -- i.e. just draw the cards immediately. Upgrade path changes from adding an extra
+//   card to reducing cost instead, since the card count no longer needs scaling.
+// - DRO off (xDRO): matches the original exactly -- applies vanilla's own DrawCardsNextTurnPower to
+//   the owner. Cost stays fixed; card count scales on upgrade like the original.
 [Pool(typeof(RegentCardPool))]
 public sealed class SchemeSolo : SingleplayerCardCard
 {
@@ -31,11 +36,33 @@ public sealed class SchemeSolo : SingleplayerCardCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+        if (DroActiveForDisplay)
+        {
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+        }
+        else
+        {
+            await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Cards.BaseValue, Owner.Creature, this);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        if (DroActiveForDisplay)
+        {
+            EnergyCost.UpgradeBy(-1);
+        }
+        else
+        {
+            DynamicVars.Cards.UpgradeValueBy(1m);
+        }
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

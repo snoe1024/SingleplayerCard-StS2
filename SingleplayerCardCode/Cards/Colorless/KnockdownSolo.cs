@@ -5,6 +5,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -12,11 +13,11 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: KNOCKDOWN (Rare, 3 cost, Attack). Deal 10(14) damage; the enemy takes
-// double/triple damage from OTHER players this turn.
-// Singleplayer rework (see .claude/loadmap.md "ノックダウン" 案1): "this turn from others" becomes
-// "next turn" instead -- deal 10(14) damage, and next turn the enemy takes double/triple damage
-// (see KnockdownPowerSolo).
+// Original multiplayer card: KNOCKDOWN (Rare Attack) -- see .claude/loadmap.md "ノックダウン" for
+// current numbers. Deal damage; the enemy takes double/triple damage from OTHER players this turn.
+// Singleplayer rework (see .claude/loadmap.md "ノックダウン"). Damage and multiplier amount are
+// identical between branches -- see KnockdownPowerSolo for the timing difference ("next turn" for
+// 案1 vs "this turn" matching the original for xDRO).
 [Pool(typeof(ColorlessCardPool))]
 public sealed class KnockdownSolo : SingleplayerCardCard
 {
@@ -49,5 +50,13 @@ public sealed class KnockdownSolo : SingleplayerCardCard
     {
         DynamicVars.Damage.UpgradeValueBy(4m);
         DynamicVars["KnockdownPower"].UpgradeValueBy(1m);
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

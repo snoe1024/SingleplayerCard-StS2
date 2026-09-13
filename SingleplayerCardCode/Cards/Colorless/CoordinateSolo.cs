@@ -13,15 +13,15 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: COORDINATE (Uncommon, 1 cost, Skill). Give another player 5(8)
-// Strength this turn.
+// Original multiplayer card: COORDINATE (Uncommon Skill) -- see .claude/loadmap.md "連携" for
+// current numbers. Give another player Strength this turn.
 // Singleplayer rework (see .claude/loadmap.md "連携"). Reference implementation for how a card's
 // DRO-on (Rework/案1) and DRO-off (xDRO) effects coexist in one class -- see SingleplayerCardCard's
 // DroActiveForDisplay for the shared plumbing this relies on.
 // - DRO on (案1): no other player, so instead grants Strength this turn equal to the number of
-//   cards currently in hand. Cost lowers to 0 on upgrade.
-// - DRO off (xDRO): grants a flat 5(8) Strength this turn instead (matching the original amount),
-//   with cost staying 1 always.
+//   cards currently in hand. Cost lowers on upgrade.
+// - DRO off (xDRO): grants a flat Strength this turn instead (matching the original amount), with
+//   cost staying the same always.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class CoordinateSolo : SingleplayerCardCard
 {

@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Orbs;
@@ -12,11 +13,13 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: HIBERNATE (Uncommon, 2 cost, Skill). This turn, your Frost grants ALL
-// allies Block. Channel 2(3) Frost.
-// Singleplayer rework (see .claude/loadmap.md "冬眠" 案1): no allies to share Frost's Block with,
-// so instead Frost's Passive triggers twice this turn (see HibernatePowerSolo) while still
-// Channeling 2(3) Frost.
+// Original multiplayer card: HIBERNATE (Uncommon Skill) -- see .claude/loadmap.md "冬眠" for
+// current numbers. This turn, your Frost grants ALL allies Block. Channel Frost.
+// Singleplayer rework (see .claude/loadmap.md "冬眠"):
+// - DRO on (案1): no allies to share Frost's Block with, so instead Frost's Passive triggers twice
+//   this turn (see HibernatePowerSolo) while still Channeling Frost.
+// - DRO off (xDRO): just Channels Frost, matching the original aside from not needing allies.
+// Same cost and Frost count in both branches.
 [Pool(typeof(DefectCardPool))]
 public sealed class HibernateSolo : SingleplayerCardCard
 {
@@ -41,7 +44,11 @@ public sealed class HibernateSolo : SingleplayerCardCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<HibernatePowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, cardPlay.Card);
+        if (DroActiveForDisplay)
+        {
+            await PowerCmd.Apply<HibernatePowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, cardPlay.Card);
+        }
+
         for (int i = 0; i < DynamicVars.Repeat.IntValue; i++)
         {
             await OrbCmd.Channel<FrostOrb>(choiceContext, Owner);
@@ -51,5 +58,13 @@ public sealed class HibernateSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars.Repeat.UpgradeValueBy(1m);
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

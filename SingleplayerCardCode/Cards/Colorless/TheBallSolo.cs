@@ -5,19 +5,24 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: THE_BALL (public-beta only per loadmap.md; Uncommon, 1 cost, Attack).
-// Deal 10 damage; increase this card's damage by 10(15) this combat and pass it to a random ally
-// (lands in their Draw Pile).
-// Singleplayer rework (see .claude/loadmap.md "ボール" 案1): the increase is halved to 5(10) since
-// there's no longer a rotation of allies diluting how often you see it again, and instead of
-// passing to an ally, the buffed copy lands in a random spot among your own Draw Pile, Hand, or
-// Discard Pile.
+// Original multiplayer card: THE_BALL (public-beta only; Uncommon Attack) -- see
+// .claude/loadmap.md "ボール" for current numbers. Deal damage; increase this card's damage this
+// combat and pass it to a random ally (lands in their Draw Pile).
+// Singleplayer rework (see .claude/loadmap.md "ボール"):
+// - DRO on (案1): the increase is halved since there's no longer a rotation of allies diluting how
+//   often you see it again, and instead of passing to an ally, the buffed copy lands in a random
+//   spot among your own Draw Pile, Hand, or Discard Pile.
+// - DRO off (xDRO): matches the original -- full increase amount, and (mirroring vanilla's own
+//   GetResultLocationForCardPlay, which only ever redirects a Discard result to the target's Draw
+//   Pile at a random position) redirects to your own Draw Pile at random whenever it would
+//   otherwise go to Discard.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class TheBallSolo : SingleplayerCardCard
 {
@@ -29,6 +34,9 @@ public sealed class TheBallSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
+    // Rework/案1 base (5, +5=10 on upgrade) since Rework is this mod's default variant;
+    // AfterCloned overwrites this to xDRO's base (10, +5=15) when that branch is active instead --
+    // same +5 delta either way, so OnUpgrade doesn't need to branch.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(10m, ValueProp.Move),
@@ -37,6 +45,15 @@ public sealed class TheBallSolo : SingleplayerCardCard
 
     public TheBallSolo() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
+    }
+
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (!DroActiveForDisplay)
+        {
+            DynamicVars["Increase"].BaseValue = 10m;
+        }
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -51,9 +68,17 @@ public sealed class TheBallSolo : SingleplayerCardCard
     protected override CardLocation GetResultLocationForCardPlay()
     {
         CardLocation location = base.GetResultLocationForCardPlay();
-        location.pileType = Owner.RunState.Rng.CombatCardGeneration.NextItem(RandomPiles);
-        if (location.pileType != PileType.Hand)
+        if (DroActiveForDisplay)
         {
+            location.pileType = Owner.RunState.Rng.CombatCardGeneration.NextItem(RandomPiles);
+            if (location.pileType != PileType.Hand)
+            {
+                location.position = CardPilePosition.Random;
+            }
+        }
+        else if (location.pileType == PileType.Discard)
+        {
+            location.pileType = PileType.Draw;
             location.position = CardPilePosition.Random;
         }
 
@@ -63,5 +88,13 @@ public sealed class TheBallSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars["Increase"].UpgradeValueBy(5m);
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

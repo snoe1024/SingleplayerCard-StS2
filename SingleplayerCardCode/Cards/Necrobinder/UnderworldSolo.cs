@@ -5,17 +5,18 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: UNDERWORLD (Uncommon, 2 cost, Skill, Exhaust). This turn, whenever
-// OTHER players deal Attack damage, apply that much Doom.
-// Singleplayer rework (see .claude/loadmap.md "冥界" 案1): reworked into UnderworldPowerSolo, which
-// reverses the causality (Doom -> damage instead of damage -> Doom). Cost lowered to 1; Exhaust
-// removed on upgrade like the original.
+// Original multiplayer card: UNDERWORLD (Uncommon Skill, Exhaust) -- see .claude/loadmap.md "冥界"
+// for current numbers. This turn, whenever OTHER players deal Attack damage, apply that much Doom.
+// Singleplayer rework (see .claude/loadmap.md "冥界"): reworked into UnderworldPowerSolo (see its own
+// doc comment for both branches' causality and cost). Rework's cost is lowered from the original;
+// xDRO keeps the original's cost. Exhaust removed on upgrade in both branches, matching the original.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class UnderworldSolo : SingleplayerCardCard
 {
@@ -33,6 +34,15 @@ public sealed class UnderworldSolo : SingleplayerCardCard
     {
     }
 
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (!DroActiveForDisplay)
+        {
+            EnergyCost.SetCustomBaseCost(2);
+        }
+    }
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
@@ -42,5 +52,12 @@ public sealed class UnderworldSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         RemoveKeyword(CardKeyword.Exhaust);
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -44,7 +44,14 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // own frozen DroWasOnAtCreation. Cards with a DRO-dependent effect should gate their OnPlay,
     // OnUpgrade, and description text on this rather than reading DroWasOnAtCreation or
     // DuplicateReworkManager directly (see CoordinateSolo for a worked example).
-    protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId) : DroWasOnAtCreation;
+    //
+    // internal (not just protected): some cards grant a custom Power whose own trigger CONDITION
+    // (not just its amount) differs by branch, not just the amount applied -- that Power needs to
+    // read the applying card's DRO state at apply time to know which behavior to run (see
+    // StealthPowerSolo, which captures this into its own [SavedProperty] field via AfterApplied).
+    // A Power is a different, unrelated class hierarchy from SingleplayerCardCard, so `protected`
+    // alone isn't reachable from it -- same-assembly access is the minimal widening that covers this.
+    internal protected bool DroActiveForDisplay => IsCanonical ? DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId) : DroWasOnAtCreation;
 
     // The vanilla card's own title text where we have one (OriginalVanillaCardId), falling back to
     // this mod's own ".title" key otherwise (e.g. for any wholly original card this mod might add

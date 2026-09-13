@@ -3,20 +3,26 @@ using System.Threading.Tasks;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using System.Linq;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: GLIMPSE_BEYOND (Rare, 1 cost, Skill, Exhaust). ALL players add 3(4)
-// Souls to their Draw Pile immediately.
-// Singleplayer rework (see .claude/loadmap.md "彼方への一瞥" 案1): dumping 3-4 Souls into the draw
-// pile at once is nearly identical to vanilla's own Soul Extraction; instead this spreads delivery
-// out, adding 1 Soul directly to hand at the start of each of the next 2(3) turns (see
-// GlimpseBeyondPowerSolo), guaranteeing draws instead of risking deck-clog all at once.
+// Original multiplayer card: GLIMPSE_BEYOND (Rare Skill, Exhaust) -- see .claude/loadmap.md
+// "彼方への一瞥" for current numbers. ALL players add Souls to their Draw Pile immediately.
+// Singleplayer rework (see .claude/loadmap.md "彼方への一瞥"):
+// - DRO on (案1): dumping that many Souls into the draw pile at once is nearly identical to
+//   vanilla's own Soul Extraction; instead this spreads delivery out, adding a Soul directly to
+//   hand at the start of each of the next several turns (see GlimpseBeyondPowerSolo), guaranteeing
+//   draws instead of risking deck-clog all at once.
+// - DRO off (xDRO): matches the original exactly -- Soul.Create + AddGeneratedCardsToCombat into
+//   the Draw Pile at random positions, same helper vanilla's own OnPlay uses.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class GlimpseBeyondSolo : SingleplayerCardCard
 {
@@ -30,6 +36,10 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromCard<Soul>() };
 
+    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
+    // still declared unconditionally.
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new CardsVar(3) };
+
     public GlimpseBeyondSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
@@ -37,6 +47,31 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<GlimpseBeyondPowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+        if (DroActiveForDisplay)
+        {
+            await PowerCmd.Apply<GlimpseBeyondPowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+        }
+        else
+        {
+            List<Soul> cards = Soul.Create(Owner, DynamicVars.Cards.IntValue, CombatState).ToList();
+            IReadOnlyList<CardPileAddResult> results = await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Draw, Owner, CardPilePosition.Random);
+            CardCmd.PreviewCardPileAdd(results);
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        if (!DroActiveForDisplay)
+        {
+            DynamicVars.Cards.UpgradeValueBy(1m);
+        }
+    }
+
+    protected override void AddExtraArgsToDescription(LocString description)
+    {
+        base.AddExtraArgsToDescription(description);
+        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+        DynamicVars.AddTo(branch);
+        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

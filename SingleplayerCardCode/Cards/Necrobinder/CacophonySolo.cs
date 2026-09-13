@@ -11,11 +11,11 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: CACOPHONY (Rare, 2 cost, Power). Every 33 cards drawn by ALL players,
-// deal 66(99) damage to a random enemy.
-// Singleplayer rework (see .claude/loadmap.md "不協和音" 案1): 33-card windows are far too large
-// for a single player to realistically hit, so this lowers the threshold to 12 draws and the
-// damage to 16(24), keeping the exact same mechanism (CacophonyPowerSolo).
+// Original multiplayer card: CACOPHONY (Rare Power) -- see .claude/loadmap.md "不協和音" for
+// current numbers. Every so many cards drawn by ALL players, deal damage to a random enemy.
+// Singleplayer rework (see .claude/loadmap.md "不協和音"). See CacophonyPowerSolo for the two
+// branches' actual threshold/damage numbers -- the power itself decides which to use, based on
+// values this card sets right after applying it.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class CacophonySolo : SingleplayerCardCard
 {
@@ -25,6 +25,8 @@ public sealed class CacophonySolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "necrobinder";
 
+    // Rework/案1 defaults (12 draws / 16 damage) since Rework is this mod's default variant;
+    // AfterCloned overwrites both to the xDRO values (33 / 66) when that branch is active instead.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new CardsVar(12),
@@ -35,13 +37,28 @@ public sealed class CacophonySolo : SingleplayerCardCard
     {
     }
 
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (!DroActiveForDisplay)
+        {
+            DynamicVars.Cards.BaseValue = 33m;
+            DynamicVars.Damage.BaseValue = 66m;
+        }
+    }
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<CacophonyPowerSolo>(choiceContext, Owner.Creature, DynamicVars.Damage.IntValue, Owner.Creature, this);
+        var power = await PowerCmd.Apply<CacophonyPowerSolo>(choiceContext, Owner.Creature, DynamicVars.Damage.IntValue, Owner.Creature, this);
+        if (power != null)
+        {
+            power.Threshold = DynamicVars.Cards.IntValue;
+            power.DynamicVars.Cards.BaseValue = DynamicVars.Cards.BaseValue;
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(8m);
+        DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 8m : 33m);
     }
 }
