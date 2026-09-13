@@ -19,6 +19,8 @@ public sealed class PincerAttackPowerSolo : SingleplayerCardPower
 {
     private readonly HashSet<CardModel> _excludedCards = new();
 
+    protected override string? OriginalVanillaPowerId => "FLANKING_POWER";
+
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

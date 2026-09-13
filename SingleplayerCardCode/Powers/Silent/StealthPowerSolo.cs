@@ -31,6 +31,8 @@ public sealed class StealthPowerSolo : SingleplayerCardPower
     [SavedProperty]
     public bool DroActiveForDisplay { get; private set; } = true;
 
+    protected override string? OriginalVanillaPowerId => "SNEAKY_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

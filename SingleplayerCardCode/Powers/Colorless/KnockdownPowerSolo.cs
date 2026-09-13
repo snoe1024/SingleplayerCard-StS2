@@ -29,6 +29,8 @@ public sealed class KnockdownPowerSolo : SingleplayerCardPower
 
     private bool _active;
 
+    protected override string? OriginalVanillaPowerId => "KNOCKDOWN_POWER";
+
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

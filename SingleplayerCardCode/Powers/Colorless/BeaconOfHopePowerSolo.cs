@@ -21,6 +21,8 @@ public sealed class BeaconOfHopePowerSolo : SingleplayerCardPower
     private decimal _blockGainedThisTurn;
     private decimal _pendingBlock;
 
+    protected override string? OriginalVanillaPowerId => "BEACON_OF_HOPE_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Single;

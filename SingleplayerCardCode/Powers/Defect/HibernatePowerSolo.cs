@@ -17,6 +17,8 @@ namespace SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 // itself.
 public sealed class HibernatePowerSolo : SingleplayerCardPower
 {
+    protected override string? OriginalVanillaPowerId => "HIBERNATE_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

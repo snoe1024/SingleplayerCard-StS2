@@ -24,6 +24,8 @@ public sealed class HammerTimePowerSolo : SingleplayerCardPower
     private readonly List<CardModel> _forgedThisTurn = new();
     private bool _isReplaying;
 
+    protected override string? OriginalVanillaPowerId => "HAMMER_TIME_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Single;

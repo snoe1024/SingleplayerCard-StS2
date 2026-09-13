@@ -25,6 +25,8 @@ public sealed class CacophonyPowerSolo : SingleplayerCardPower
 {
     public int Threshold { get; set; } = 12;
 
+    protected override string? OriginalVanillaPowerId => "CACOPHONY_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

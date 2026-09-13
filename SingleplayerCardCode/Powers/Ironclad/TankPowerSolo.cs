@@ -20,7 +20,9 @@ public sealed class TankPowerSolo : SingleplayerCardPower
     private const string _damageIncreaseKey = "DamageIncrease";
 
     public const decimal damageIncrease = 1.5m;
-    
+
+    protected override string? OriginalVanillaPowerId => "TANK_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Single;

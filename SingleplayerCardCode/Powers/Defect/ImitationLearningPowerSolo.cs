@@ -19,6 +19,8 @@ public sealed class ImitationLearningPowerSolo : SingleplayerCardPower
 {
     private CardModel? _lastPower;
 
+    protected override string? OriginalVanillaPowerId => "IMITATION_LEARNING_POWER";
+
     public override PowerType Type => PowerType.Buff;
 
     public override PowerStackType StackType => PowerStackType.Counter;
