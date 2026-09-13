@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Saves.Runs;
@@ -44,6 +45,13 @@ public sealed class SoulboundPowerSolo : SingleplayerCardPower
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromCard<Soul>() };
+
+    // Which trigger (and target) applies is fixed once, at apply time, by the owning card's frozen
+    // DRO state -- a DRO-axis split (like Cards' own .descriptionRework/.descriptionXdro), not a
+    // cond()-branch on a per-instance runtime role. See StealthPowerSolo for the same pattern.
+    public override LocString Description => new LocString("powers", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+
+    protected override string SmartDescriptionLocKey => Id.Entry + (DroActiveForDisplay ? ".smartDescriptionRework" : ".smartDescriptionXdro");
 
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
     {

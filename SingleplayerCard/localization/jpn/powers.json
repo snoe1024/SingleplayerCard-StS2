@@ -1,55 +1,66 @@
 {
   "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "タンク",
-  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "敵から受けるダメージが[blue]50%[/blue]増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "挟撃",
-  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "このターン、付与された時点で手札になかったアタックカードから受けるダメージが2倍になる。",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "このターン、付与された時点で手札になかったアタックカードから受けるダメージが[blue]2[/blue]倍になる。",
 
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "隠密",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "アタックカード以外でダメージを発生させるたび、ブロックを得る。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "アタックカード以外でダメージを発生させるたび、[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "アタックカード以外でダメージを発生させるたび、[blue]{Amount}[/blue][gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "敵を攻撃するたび、[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "敵を攻撃するたび、[blue]{Amount}[/blue][gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "ハンマータイム",
-  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "ソヴリン・ブレードをプレイしたとき、そのターンに使った鍛造効果のあるカードをもう一度プレイする。",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "[gold]ソヴリン・ブレード[/gold]をプレイしたとき、そのターンに[gold]鍛造[/gold]したカードをもう一度プレイする。",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "[gold]ソヴリン・ブレード[/gold]をプレイしたとき、そのターンに[gold]鍛造[/gold]したカードをもう一度プレイする。",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "次ターンカード生成",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを1枚手札に加える。",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを[blue]{Amount}[/blue]枚手札に加える。",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "次ターンカード生成+",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "次のターン開始時、アップグレードされたランダムな無色カードを1枚手札に加える。",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "次のターン開始時、ランダムな[gold]アップグレード済みの[/gold]無色カードを[blue]{Amount}[/blue]枚手札に加える。",
 
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "彼方への一瞥",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "次の{Amount}ターン開始時、手札にソウルを加える。",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "次の[blue]{Amount}[/blue]ターンの開始時、手札に[gold]ソウル[/gold]を1枚加える。",
 
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "冥界",
-  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "破滅を与える度に、その量に等しいダメージを与える。",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "このターン、敵に[gold]破滅[/gold]を付与するたび、その量に等しいダメージを与える。",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "このターン、アタックでダメージを与えるたび、そのダメージに等しい[gold]破滅[/gold]を付与する。",
 
   "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "ソウルバウンド",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.description": "選択した敵がそのターン初めてブロックされないアタックダメージを受けた時、山札にソウルを1枚加える。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "選んだ敵がそのターン初めてブロックされないアタックダメージを受けた時、山札に[gold]ソウル[/gold]を1枚加える。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "選んだ敵がそのターン初めてブロックされないアタックダメージを受けた時、山札に[gold]ソウル[/gold]を[blue]{Amount}[/blue]枚加える。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "[gold]ソウル[/gold]を1枚生成するたび、山札に[gold]ソウル[/gold]を1枚加える。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "[gold]ソウル[/gold]を1枚生成するたび、山札に[gold]ソウル[/gold]を[blue]{Amount}[/blue]枚加える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "不協和音",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードがX枚引かれるたび、ランダムな敵にダメージを与える。",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードが[blue]12[/blue]枚引かれるたび、ランダムな敵に[blue]16[/blue]ダメージを与える。",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "あと[blue]{Cards}[/blue]枚カードを引くと、ランダムな敵に[blue]{Amount}[/blue]ダメージを与える。",
 
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "冬眠",
-  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "このターン、フロストは自動効果を2回発動する。",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "このターン、あなたの[gold]フロスト[/gold]は自動効果を2回発動する。",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "このターン、あなたの[gold]フロスト[/gold]は自動効果を2回発動する。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵がバフを獲得する度、ランダムなパワーを手札に加える。そのパワーのコストは0になる。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（[blue]{Amount}[/blue]回まで）。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "タッグチーム",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "次にこの敵にプレイするアタックは、もう1回プレイされる。",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "この敵に次にプレイするアタックは、追加で[blue]{Amount}[/blue]回プレイされる。",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "ノックダウン",
-  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "このターン受けるダメージが2〜3倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "このターン、受けるダメージが[blue]{Amount}[/blue]倍になる。",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "ノックダウン(次ターン)",
-  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが2〜3倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが[blue]{Amount}[/blue]倍になる。",
 
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "お前を信じる",
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "このターンにアタック、スキル、パワーの全てをプレイしたら、エナジーを得る。",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "このターンにアタック、スキル、パワーの全てをプレイしたら、[blue]{Amount}[/blue]{energyPrefix:energyIcons(1)}を得る。",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "手助け",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得るブロック値を倍にする。",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得る[gold]ブロック[/gold]値を倍にし、その後消滅する。",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "希望の道標",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "ターン終了時、得たブロックの半分を次のターン開始時に獲得する。"
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"
 }

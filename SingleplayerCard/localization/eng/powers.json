@@ -1,55 +1,66 @@
 {
   "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Tank",
-  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Takes 50% more damage from enemies. Reflects all blocked Attack damage back at the attacker.",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Takes [blue]50%[/blue] more damage from enemies. Reflects all blocked Attack damage back at the attacker.",
 
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Pincer Attack",
-  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Takes double damage this turn from Attack cards that were not in hand when this was applied.",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Takes [blue]2x[/blue] damage this turn from Attack cards that were not in hand when this was applied.",
 
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Stealth",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.description": "Gains Block whenever damage is dealt by means other than an Attack card.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Gains [gold]Block[/gold] whenever the wielder deals damage by means other than an Attack card.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Whenever the wielder deals damage by means other than an Attack card, gains [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Gains [gold]Block[/gold] whenever the wielder attacks an enemy.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Whenever the wielder attacks an enemy, gains [blue]{Amount}[/blue] [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "Hammer Time",
-  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Whenever you play Sovereign Blade, replay every card that Forged this turn.",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Whenever you play [gold]Sovereign Blade[/gold], replay every card that [gold]Forged[/gold] this turn.",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "Whenever you play [gold]Sovereign Blade[/gold], replay every card that [gold]Forged[/gold] this turn.",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "Next Turn Card Generation",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "At the start of your next turn, add a random Colorless card to your hand.",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "At the start of your next turn, adds [blue]{Amount}[/blue] random Colorless {Amount:plural:card|cards} to your hand.",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "Next Turn Card Generation+",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "At the start of your next turn, add a random, Upgraded Colorless card to your hand.",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "At the start of your next turn, adds [blue]{Amount}[/blue] random, Upgraded Colorless {Amount:plural:card|cards} to your hand.",
 
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Glimpse Beyond",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "At the start of your next {Amount} turns, add a Soul to your hand.",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "At the start of each of your next [blue]{Amount}[/blue] {Amount:plural:turn|turns}, adds a [gold]Soul[/gold] to your hand.",
 
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Underworld",
-  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "Whenever you apply Doom, deal damage equal to that amount.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "This turn, whenever you apply [gold]Doom[/gold] to an enemy, deals damage equal to that amount.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "This turn, whenever you deal Attack damage, applies [gold]Doom[/gold] equal to that amount.",
 
   "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "Soulbound",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.description": "The first time the chosen enemy takes unblocked Attack damage each turn, add a Soul to your Draw Pile.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "The first time the chosen enemy takes unblocked Attack damage each turn, adds a [gold]Soul[/gold] to your Draw Pile.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "The first time the chosen enemy takes unblocked Attack damage each turn, adds [blue]{Amount}[/blue] [gold]{Amount:plural:Soul|Souls}[/gold] to your Draw Pile.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Whenever you generate a [gold]Soul[/gold], adds a [gold]Soul[/gold] to your Draw Pile.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Whenever you generate a [gold]Soul[/gold], adds [blue]{Amount}[/blue] [gold]{Amount:plural:Soul|Souls}[/gold] to your Draw Pile.",
 
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Cacophony",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Every X cards drawn, deal damage to a random enemy.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Every [blue]12[/blue] cards drawn, deals [blue]16[/blue] damage to a random enemy.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "After [blue]{Cards}[/blue] more {Cards:plural:card is drawn|cards are drawn}, deals [blue]{Amount}[/blue] damage to a random enemy.",
 
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Hibernate",
-  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Your Frost triggers its Passive twice this turn.",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "This turn, your [gold]Frost[/gold] triggers its Passive twice.",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "This turn, your [gold]Frost[/gold] triggers its Passive twice.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitation Learning",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first several times this enemy gains a Buff, add a random Power card to your hand at 0 Energy cost.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first [blue]{Amount}[/blue] {Amount:plural:time|times} this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Tag Team",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack you play on this enemy is played an extra time.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack played on this enemy is played an additional [blue]{Amount}[/blue] {Amount:plural:time|times}.",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Knockdown",
-  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "Takes double/triple damage this turn.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "This turn, takes [blue]{Amount}x[/blue] damage.",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "Knockdown (Next Turn)",
-  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Starting next turn, takes double/triple damage for that turn.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Starting next turn, takes [blue]{Amount}x[/blue] damage for that turn.",
 
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "Believe in You",
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "Once an Attack, a Skill, and a Power have all been played this turn, gain Energy.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "Once an Attack, a Skill, and a Power have all been played this turn, gains [blue]{Amount}[/blue] {energyPrefix:energyIcons(1)}.",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Helping Hand",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Doubles the Block gained from your next card.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Doubles the [gold]Block[/gold] gained from your next card, then is removed.",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Beacon of Hope",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "At the end of your turn, banks half the Block you gained to grant at the start of your next turn."
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "At the end of your turn, banks half the [gold]Block[/gold] you gained that turn to grant at the start of your next turn.",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "At the end of your turn, banks half the [gold]Block[/gold] you gained that turn to grant at the start of your next turn."
 }

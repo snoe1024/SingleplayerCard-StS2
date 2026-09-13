@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -38,6 +39,17 @@ public sealed class StealthPowerSolo : SingleplayerCardPower
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.Static(StaticHoverTip.Block) };
+
+    // Which trigger condition is active is fixed once, at apply time, by the owning card's frozen
+    // DRO state -- it never changes for the rest of this instance's life. That makes it a DRO-axis
+    // split (like Cards' own .descriptionRework/.descriptionXdro), not a cond()-branch on a
+    // per-instance runtime role the way vanilla's {OnPlayer}/{ApplierName} are -- see
+    // sts2_dev_knowledge/topics/power-text-writing-conventions.md's own triage rule for this.
+    // Mirrors vanilla TemporaryStrengthPower's own Description/SmartDescriptionLocKey override
+    // pattern (there branching on IsPositive instead of DRO state).
+    public override LocString Description => new LocString("powers", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+
+    protected override string SmartDescriptionLocKey => Id.Entry + (DroActiveForDisplay ? ".smartDescriptionRework" : ".smartDescriptionXdro");
 
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
     {

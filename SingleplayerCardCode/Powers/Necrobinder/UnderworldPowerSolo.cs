@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Saves.Runs;
@@ -36,6 +37,11 @@ public sealed class UnderworldPowerSolo : SingleplayerCardPower
     public override PowerStackType StackType => PowerStackType.Counter;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromPower<DoomPower>() };
+
+    // Causality direction is fixed once, at apply time, by the owning card's frozen DRO state -- a
+    // DRO-axis split (like Cards' own .descriptionRework/.descriptionXdro), not a cond()-branch on a
+    // per-instance runtime role. See StealthPowerSolo for the same pattern and its rationale.
+    public override LocString Description => new LocString("powers", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
 
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
     {
