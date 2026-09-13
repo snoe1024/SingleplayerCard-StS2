@@ -59,6 +59,7 @@ public static class DuplicateReworkManager
         {
             CardVariant variant => variant,
             CardVariantNoOriginal noOriginal => noOriginal == CardVariantNoOriginal.Disabled ? CardVariant.Disabled : CardVariant.Rework,
+            CardVariantOriginalOnly originalOnly => originalOnly == CardVariantOriginalOnly.Disabled ? CardVariant.Disabled : CardVariant.Original,
             _ => CardVariant.Rework
         };
     }

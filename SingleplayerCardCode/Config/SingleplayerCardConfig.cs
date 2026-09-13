@@ -128,7 +128,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TUTOR")]
     [XdroUnavailableReason(XdroUnavailableReason.Identical)]
-    public static CardVariantNoOriginal Tutor { get; set; } = CardVariantNoOriginal.Rework;
+    public static CardVariantOriginalOnly Tutor { get; set; } = CardVariantOriginalOnly.Original;
 
     // --- ネクロバインダーのカード ---
 
@@ -171,7 +171,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("ONE_FOR_ALL")]
     [XdroUnavailableReason(XdroUnavailableReason.Identical)]
-    public static CardVariantNoOriginal OneForAll { get; set; } = CardVariantNoOriginal.Rework;
+    public static CardVariantOriginalOnly OneForAll { get; set; } = CardVariantOriginalOnly.Original;
 
     [ConfigVisibleIf(nameof(IsPublicBetaAvailable))]
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
@@ -188,7 +188,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TAG_TEAM")]
     [XdroUnavailableReason(XdroUnavailableReason.Identical)]
-    public static CardVariantNoOriginal TagTeam { get; set; } = CardVariantNoOriginal.Rework;
+    public static CardVariantOriginalOnly TagTeam { get; set; } = CardVariantOriginalOnly.Original;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("KNOCKDOWN")]
