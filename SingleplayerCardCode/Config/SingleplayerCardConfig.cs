@@ -195,8 +195,7 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("INTERCEPT")]
-    [XdroUnavailableReason(XdroUnavailableReason.Breaks)]
-    public static CardVariantNoOriginal Intercept { get; set; } = CardVariantNoOriginal.Rework;
+    public static CardVariant Intercept { get; set; } = CardVariant.Rework;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("HUDDLE_UP")]
