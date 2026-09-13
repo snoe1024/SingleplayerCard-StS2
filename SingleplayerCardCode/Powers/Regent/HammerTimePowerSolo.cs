@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 
@@ -16,12 +16,18 @@ namespace SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 // Backs HammerTimeSolo (see .claude/loadmap.md "ハンマータイム" 案1). Vanilla HAMMER_TIME_POWER
 // makes all allies Forge whenever the owner Forges -- meaningless alone. Singleplayer rework
-// instead tracks every card that Forged this turn, and whenever Sovereign Blade is played, replays
-// all of them (once each) against Sovereign Blade's target. Guarded against re-entrancy so replayed
-// cards forging again don't trigger another replay pass within the same Sovereign Blade play.
+// instead replays every card played THIS TURN that Forges, whenever Sovereign Blade is played.
+//
+// Deliberately does NOT track Forge plays via an AfterForge hook into an instance list: this power
+// might not even be in play yet when an earlier Forge card is played this turn (Forge card -> THEN
+// Hammer Time -> THEN Sovereign Blade), so a hook-based list would silently miss anything played
+// before Hammer Time itself. Instead, at the moment Sovereign Blade is played, this scans
+// CombatHistory for every CardPlayFinishedEntry that happened this turn (order-independent -- it
+// doesn't matter when this power entered play) and keeps the ones with a ForgeVar of at least 1
+// (the safe cross-card-read pattern -- DynamicVars.Values.OfType<T>() rather than a named accessor,
+// see sts2_dev_knowledge/topics/dynamic-vars.md).
 public sealed class HammerTimePowerSolo : SingleplayerCardPower
 {
-    private readonly List<CardModel> _forgedThisTurn = new();
     private bool _isReplaying;
 
     protected override string? OriginalVanillaPowerId => "HAMMER_TIME_POWER";
@@ -32,16 +38,6 @@ public sealed class HammerTimePowerSolo : SingleplayerCardPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromForge();
 
-    public override Task AfterForge(decimal amount, Player forger, AbstractModel? source)
-    {
-        if (!_isReplaying && forger == Owner.Player && source is CardModel card && !_forgedThisTurn.Contains(card))
-        {
-            _forgedThisTurn.Add(card);
-        }
-
-        return Task.CompletedTask;
-    }
-
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (_isReplaying || cardPlay.Card.Owner != Owner.Player || cardPlay.Card is not SovereignBlade)
@@ -49,7 +45,14 @@ public sealed class HammerTimePowerSolo : SingleplayerCardPower
             return;
         }
 
-        var toReplay = _forgedThisTurn.Where(c => c != cardPlay.Card).ToList();
+        List<CardModel> toReplay = CombatManager.Instance.History.Entries
+            .OfType<CardPlayFinishedEntry>()
+            .Where(e => e.CardPlay.Card.Owner == Owner.Player && e.CardPlay.Card != cardPlay.Card && e.HappenedThisTurn(Owner.CombatState))
+            .Select(e => e.CardPlay.Card)
+            .Where(c => c.DynamicVars.Values.OfType<ForgeVar>().Any(v => v.BaseValue >= 1m))
+            .Distinct()
+            .ToList();
+
         if (toReplay.Count == 0)
         {
             return;
@@ -69,15 +72,5 @@ public sealed class HammerTimePowerSolo : SingleplayerCardPower
         {
             _isReplaying = false;
         }
-    }
-
-    public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
-    {
-        if (participants.Contains(Owner))
-        {
-            _forgedThisTurn.Clear();
-        }
-
-        return Task.CompletedTask;
     }
 }

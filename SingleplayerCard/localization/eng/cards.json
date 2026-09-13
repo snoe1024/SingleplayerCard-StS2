@@ -1,9 +1,13 @@
 {
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.{InCombat:\n{LoseHPAmount:diff()} HP was lost in this combat.|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.{InCombat:\n{LoseHPAmount:diff()} HP was lost in this combat.|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Lose 1 HP. Double your Block.",
 
   "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker.",
 
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "Deal {Damage:diff()} damage.\nCosts 1 less for each card in your [gold]Discard Pile[/gold].\nCosts 1 less this turn for each card [gold]Exhausted[/gold] this turn.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Deal {Damage:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this turn.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Deal {Damage:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {Strength:diff()} [gold]Strength[/gold] for each card you have discarded this turn.",
@@ -40,7 +44,7 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your hand.",
 
   "SINGLEPLAYERCARD-SCHEME_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "Draw {Cards:diff()} cards.",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "At the start of each of your next 3 turns, draw 1 additional card.",
   "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "Next turn, draw {Cards:diff()} cards.",
 
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "{DroEffectText}",
@@ -58,8 +62,12 @@
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Add {Cards:diff()} [gold]Souls[/gold] to your Draw Pile.",
 
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "This turn, whenever you apply [gold]Doom[/gold], deal damage equal to that amount.",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "This turn, whenever you apply [gold]Doom[/gold] to an enemy, deal damage equal to that amount.",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "This turn, whenever you deal Attack damage, apply [gold]Doom[/gold] equal to that amount.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "Choose an enemy. The first time that enemy takes unblocked Attack damage each turn, add a [gold]Soul[/gold] to your [gold]Draw Pile[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Whenever you create a [gold]Soul[/gold], add a [gold]Soul[/gold] to your [gold]Draw Pile[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy.",
 
@@ -78,7 +86,7 @@
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Your 0 {energyPrefix:energyIcons(1)} Attacks deal {OneForAllPower:diff()} additional damage.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "At the end of each of your next {IfUpgraded:show:3|2} turns, play a copy of the last Power you played.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Choose an enemy. The first {IfUpgraded:show:3|2} times that enemy gains a Buff, add a random Power card to your hand. That Power costs 0 Energy.",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "The next {IfUpgraded:show:3|2} times you play a Power, play it again.",
 
   "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "{DroEffectText}",
@@ -115,10 +123,10 @@
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "This turn, gain Strength equal to the number of cards in your hand.",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Until end of turn, gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
-  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.{InCombat:\nCurrently, that would be {BestHandBlock:diff()} Block.|}",
 
   "SINGLEPLAYERCARD-GATHER_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gain Block equal to the sum of the Block values of all other cards in your hand.",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gain Block equal to the sum of the Block values of all other cards in your hand.{InCombat:\nCurrently, that would be {HandBlockTotal:diff()} Block.|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]Innate.[/gold] At the end of your turn, gain half the [gold]Block[/gold] you gained that turn at the start of your next turn."

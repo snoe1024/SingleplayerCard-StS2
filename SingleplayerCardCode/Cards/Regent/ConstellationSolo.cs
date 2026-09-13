@@ -7,8 +7,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
@@ -17,7 +17,12 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 // Energy, and gains Block.
 // Singleplayer rework (see .claude/loadmap.md "星座"):
 // - DRO on (案1): no other player, so the same effect is instead granted at the start of the
-//   owner's own next turn (see ConstellationPowerSolo).
+//   owner's own next turn. Composed from vanilla's own three separate next-turn powers
+//   (DrawCardsNextTurnPower/EnergyNextTurnPower/BlockNextTurnPower) rather than one bespoke power
+//   bundling all three -- a single combined power would be unclear about its exact numbers once
+//   another card's own next-turn draw/energy/block effect stacks alongside it (the combined total
+//   would be split across two differently-shaped powers with no shared display), and vanilla
+//   already has all three pieces individually with correct Counter stacking.
 // - DRO off (xDRO): matches the original -- grants the same draw/Energy/Block immediately instead
 //   of deferring, same numbers as 案1.
 [Pool(typeof(RegentCardPool))]
@@ -49,13 +54,9 @@ public sealed class ConstellationSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (DroActiveForDisplay)
         {
-            var power = await PowerCmd.Apply<ConstellationPowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
-            if (power != null)
-            {
-                power.Cards = DynamicVars.Cards.IntValue;
-                power.Energy = DynamicVars.Energy.IntValue;
-                power.Block = DynamicVars.Block.BaseValue;
-            }
+            await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Cards.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Energy.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<BlockNextTurnPower>(choiceContext, Owner.Creature, DynamicVars.Block.BaseValue, Owner.Creature, this);
         }
         else
         {

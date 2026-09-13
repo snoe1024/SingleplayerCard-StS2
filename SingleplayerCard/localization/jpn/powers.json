@@ -11,11 +11,11 @@
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "ハンマータイム",
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "ソヴリン・ブレードをプレイしたとき、そのターンに使った鍛造効果のあるカードをもう一度プレイする。",
 
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.title": "寛大なる施し",
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを1枚手札に加える。",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "次ターンカード生成",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "次のターン開始時、ランダムな無色カードを1枚手札に加える。",
 
-  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.title": "星座",
-  "SINGLEPLAYERCARD-CONSTELLATION_POWER_SOLO.description": "次のターン開始時、カードを引き、エナジーとブロックを得る。",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "次ターンカード生成+",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "次のターン開始時、アップグレードされたランダムな無色カードを1枚手札に加える。",
 
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "彼方への一瞥",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "次の{Amount}ターン開始時、手札にソウルを加える。",
@@ -23,29 +23,29 @@
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "冥界",
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.description": "破滅を与える度に、その量に等しいダメージを与える。",
 
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "ソウルバウンド",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.description": "選択した敵がそのターン初めてブロックされないアタックダメージを受けた時、山札にソウルを1枚加える。",
+
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "不協和音",
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "カードがX枚引かれるたび、ランダムな敵にダメージを与える。",
-
-  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.title": "エナジーサージ",
-  "SINGLEPLAYERCARD-ENERGY_SURGE_POWER_SOLO.description": "次のターン開始時、エナジーを得る。",
 
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "冬眠",
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "このターン、フロストは自動効果を2回発動する。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "次のターン終了時、最後にプレイしたパワーのコピーをプレイする。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵がバフを獲得する度、ランダムなパワーを手札に加える。そのパワーのコストは0になる。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "タッグチーム",
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "次にこの敵にプレイするアタックは、もう1回プレイされる。",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "ノックダウン",
-  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが2〜3倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "このターン受けるダメージが2〜3倍になる。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "ノックダウン(次ターン)",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが2〜3倍になる。",
 
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "お前を信じる",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "このターンにアタック、スキル、パワーの全てをプレイしたら、エナジーを得る。",
-
-  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.title": "作戦会議",
-  "SINGLEPLAYERCARD-WAR_COUNCIL_POWER_SOLO.description": "次のターン開始時、カードを引く。",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "手助け",
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得るブロック値を倍にする。",

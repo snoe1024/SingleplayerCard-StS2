@@ -1,4 +1,4 @@
 {
   "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "有毒",
-  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "アタックダメージを与える度、毒{Amount}を相手に付与する。"
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "ブロックされないアタックダメージを与える度、毒{Amount}を相手に付与する。"
 }

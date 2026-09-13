@@ -48,7 +48,12 @@ public sealed class UnderworldPowerSolo : SingleplayerCardPower
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (DroActiveForDisplay && power is DoomPower && applier == Owner && amount > 0m)
+        // Must check power.Owner.Side != Owner.Side explicitly: loadmap.md corrected this to say
+        // "whenever you apply Doom to an ENEMY this turn" -- without the side check, a future card
+        // that applies Doom to the OWNER (e.g. a Borrowed Time-style "Doom yourself for Energy" skill,
+        // which existed at an earlier point in this project) would deal that same damage back to the
+        // owner instead of an enemy.
+        if (DroActiveForDisplay && power is DoomPower && applier == Owner && power.Owner.Side != Owner.Side && amount > 0m)
         {
             await CreatureCmd.Damage(choiceContext, power.Owner, amount, ValueProp.Unpowered, Owner);
         }

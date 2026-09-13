@@ -1,13 +1,18 @@
 {
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "HPを1失う。この戦闘中失ったHPに等しい[gold]ブロック[/gold]を得る。{InCombat:\nこの戦闘で{LoseHPAmount:diff()}のHPを失った。|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "HPを1失う。この戦闘中失ったHPに等しい[gold]ブロック[/gold]を得る。{InCombat:\nこの戦闘で{LoseHPAmount:diff()}のHPを失った。|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "HPを1失う。[gold]ブロック[/gold]値を2倍にする。",
 
   "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]にあるカード1枚につき、コストが1減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、このターンのコストが1減少する。",
+  
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{Strength:diff()}を得る。",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "[gold]筋力[/gold]{Strength:diff()}を得る。",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。",
@@ -40,7 +45,7 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "ランダムな{IfUpgraded:show:[gold]アップグレード済みの[/gold]}無色カードを1枚手札に加える。",
 
   "SINGLEPLAYERCARD-SCHEME_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "カードを{Cards:diff()}枚引く。",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "次の3ターン開始時、追加でカードを1枚引く。",
   "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "次のターン、カードを{Cards:diff()}枚引く。",
 
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "{DroEffectText}",
@@ -58,8 +63,12 @@
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "[gold]ソウル[/gold]を{Cards:diff()}枚山札に加える。",
 
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "このターン、[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "このターン、敵に[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "このターン、アタックでダメージを与えるたび、そのダメージに等しい[gold]破滅[/gold]を付与する。",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.description": "{DroEffectText}",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "敵を1体選ぶ。その敵がそのターン初めてブロックされないアタックダメージを受けた時、[gold]山札[/gold]に[gold]ソウル[/gold]を1枚加える。",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "[gold]ソウル[/gold]を1枚生成するたび、[gold]山札[/gold]に[gold]ソウル[/gold]を1枚加える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。",
 
@@ -78,7 +87,7 @@
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "0{energyPrefix:energyIcons(1)}のアタックは、追加で{OneForAllPower:diff()}ダメージを与える。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "次の{IfUpgraded:show:3|2}ターン終了時、最後にプレイしたパワーのコピーをプレイする。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "敵を選択する。その敵がバフを獲得する度、ランダムなパワーを手札に加える(最大{IfUpgraded:show:3|2}回)。そのパワーのコストは0になる。",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "次の{IfUpgraded:show:3|2}枚のパワーをプレイしたとき、もう一度プレイする。",
 
   "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "{DroEffectText}",
@@ -115,10 +124,10 @@
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "このターン、手札のカードの枚数と同じ筋力を得る。",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
-  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。{InCombat:\n現在、獲得できるブロックは{BestHandBlock:diff()}。|}",
 
   "SINGLEPLAYERCARD-GATHER_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。{InCombat:\n現在、獲得できるブロックは{HandBlockTotal:diff()}。|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]天賦。[/gold]ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"

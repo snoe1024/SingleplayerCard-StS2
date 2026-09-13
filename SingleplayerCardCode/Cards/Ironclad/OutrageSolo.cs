@@ -18,10 +18,12 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
 // for current numbers. Adds a copy of itself to every OTHER player's discard pile (not the
 // caster's own) -- so a lone player gets no extra copies at all, only groups do.
 // Singleplayer rework (see .claude/loadmap.md "アウトレイジ"):
-// - DRO on (案1): damage lowered, and always adds a copy to its own discard pile (like vanilla
-//   Rage/Anger), PLUS one more copy for every OTHER copy of this card currently in hand -- so
-//   accumulated copies compound the way extra players would in multiplayer, instead of vanishing
-//   entirely when played solo.
+// - DRO on (案1): damage lowered, and always adds a copy of itself to its own discard pile (like
+//   vanilla Rage/Anger), PLUS a separate copy of every OTHER copy of this card currently in hand --
+//   so accumulated copies compound the way extra players would in multiplayer, instead of vanishing
+//   entirely when played solo. Each hand copy is cloned from itself (not from the played card), so a
+//   copy of an upgraded or Sharp-enchanted Outrage in hand produces a matching upgraded/enchanted
+//   clone rather than a plain one.
 // - DRO off (xDRO): matches the original amount, and always adds exactly one copy to its own
 //   discard pile -- no compounding, since there's no "other players" concept to approximate.
 [Pool(typeof(IroncladCardPool))]
@@ -59,14 +61,14 @@ public sealed class OutrageSolo : SingleplayerCardCard
             return;
         }
 
-        int copiesToAdd = 1;
+        List<CardModel> sourcesToClone = new List<CardModel> { this };
         if (DroActiveForDisplay)
         {
-            copiesToAdd += CardPile.GetCards(Owner, PileType.Hand).Count(c => c is OutrageSolo && c != this);
+            sourcesToClone.AddRange(CardPile.GetCards(Owner, PileType.Hand).Where(c => c is OutrageSolo && c != this));
         }
-        for (int i = 0; i < copiesToAdd; i++)
+        foreach (CardModel source in sourcesToClone)
         {
-            CardModel card = CreateCloneForPlayer(Owner);
+            CardModel card = source.CreateCloneForPlayer(Owner);
             CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, Owner), 2.2f);
         }
     }

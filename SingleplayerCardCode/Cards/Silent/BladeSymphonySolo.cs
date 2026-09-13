@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -17,16 +20,21 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 // Original multiplayer card: BLADE_SYMPHONY (Uncommon Skill) -- see .claude/loadmap.md
 // "ブレイド・シンフォニー" for current numbers. Add Shivs to ALL players' hands.
 // Singleplayer rework (see .claude/loadmap.md "ブレイド・シンフォニー"):
-// - DRO on (案1): no other players to hand Shivs to, so instead this replays every Shiv-tagged card
-//   currently sitting in the Discard or Exhaust pile against a chosen enemy (same AutoPlay pattern as
-//   vanilla KNIFE_TRAP, which only reads the Exhaust pile -- this also covers ones that overflowed to
-//   Discard). Approximates "Shivs generated this turn" as "Shivs currently off the hand/draw/play
-//   piles", since there's no cheap way to timestamp when a specific card instance was generated. No
-//   cost reduction on upgrade (kept cheap enough already).
+// - DRO on (案1): no other players to hand Shivs to, so instead this plays every Shiv generated
+//   THIS TURN, wherever it currently is (hand, hand-overflow discard, reshuffled into the draw pile,
+//   or already Exhausted from an earlier play this turn -- replaying an already-played Shiv is
+//   intentional here, same combo potential as vanilla KNIFE_TRAP's own unrestricted Exhaust-pile
+//   replay, and is a deliberate power source for this branch, not a bug), upgrading each first if
+//   this card is upgraded. Base cost raised to 2 (from 1) and upgrade now reduces cost by 1 (from no
+//   reduction) to compensate for how strong unrestricted replay is. "Generated this turn" comes from
+//   CombatHistory: every Shiv creation already logs a CardGeneratedEntry holding the exact CardModel
+//   instance, and CombatHistoryEntry.HappenedThisTurn filters it to the current turn -- see
+//   sts2_dev_knowledge/topics/gotchas.md for why this beats a per-instance hook (which would break
+//   for a copy of this card generated mid-turn by a Skill Potion).
 // - DRO off (xDRO): matches the original exactly (minus needing other players) -- add 2 Shivs to
-//   hand via Shiv.CreateInHand, same helper vanilla's own OnPlay uses. Cost reduces on upgrade like
-//   the original. TargetType stays AnyEnemy (fixed at construction) even though this branch doesn't
-//   use the target -- a minor UX mismatch accepted for simplicity.
+//   hand via Shiv.CreateInHand, same helper vanilla's own OnPlay uses. Cost stays 1, reduces to 0 on
+//   upgrade, matching the original. TargetType stays AnyEnemy (fixed at construction) even though
+//   this branch doesn't use the target -- a minor UX mismatch accepted for simplicity.
 [Pool(typeof(SilentCardPool))]
 public sealed class BladeSymphonySolo : SingleplayerCardCard
 {
@@ -40,14 +48,26 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
     {
     }
 
+    protected override void AfterCloned()
+    {
+        base.AfterCloned();
+        if (DroActiveForDisplay)
+        {
+            EnergyCost.SetCustomBaseCost(2);
+        }
+    }
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (DroActiveForDisplay)
         {
             ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            var shivs = PileType.Discard.GetPile(Owner).Cards
-                .Concat(PileType.Exhaust.GetPile(Owner).Cards)
-                .Where(c => c.Tags.Contains(CardTag.Shiv))
+
+            List<CardModel> shivs = CombatManager.Instance.History.Entries
+                .OfType<CardGeneratedEntry>()
+                .Where(e => e.Card.Owner == Owner && e.Card.Tags.Contains(CardTag.Shiv) && e.HappenedThisTurn(CombatState))
+                .Select(e => e.Card)
+                .Distinct()
                 .ToList();
 
             bool first = true;
@@ -80,10 +100,7 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        if (!DroActiveForDisplay)
-        {
-            EnergyCost.UpgradeBy(-1);
-        }
+        EnergyCost.UpgradeBy(-1);
     }
 
     protected override void AddExtraArgsToDescription(LocString description)

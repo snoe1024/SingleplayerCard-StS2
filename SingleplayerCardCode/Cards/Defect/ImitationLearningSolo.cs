@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Utils;
@@ -15,20 +16,17 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 // "模倣学習" for current numbers. Choose another player; the next several times they play a Power,
 // you play a copy of it.
 //
-// NOTE (flagged for the mod author, not silently changed): loadmap.md's own closing paragraph
-// argues for 案1 (enemy-buff-triggered 0-cost power draw) as the actual intended design, but this
-// class instead implements 案2 (replay your own last-played Power at the end of each of the next
-// several turns) via ImitationLearningPowerSolo. That mismatch predates this xDRO addition and
-// wasn't changed here -- only the missing xDRO branch below is new.
-//
-// Singleplayer rework (see .claude/loadmap.md "模倣学習"):
-// - DRO on (currently implements 案2, see NOTE above): no other player's Powers to copy, so instead
-//   this remembers the owner's own last-played Power and replays a copy of it at the end of each of
-//   the next several turns (see ImitationLearningPowerSolo).
+// Singleplayer rework (see .claude/loadmap.md "模倣学習", redesigned 2026-09-14): reworked into
+// ImitationLearningPowerSolo (see its own doc comment). The old 案2 design (replay your own
+// last-played Power at turn end) was scrapped for being underwhelming; this now implements loadmap's
+// endorsed 案1 instead.
+// - DRO on (案1): choose an enemy instead of another player. TargetType switches to AnyEnemy for
+//   this branch since 案1 needs a target, unlike the old self-targeted 案2.
 // - DRO off (xDRO): matches the original -- applies vanilla's own ImitationLearningPower
 //   (Core/Models/Powers/ImitationLearningPower.cs) targeted at the OWNER instead of another player,
 //   so playing your own Powers triggers it. That power's logic only checks `cardPlay.Card.Owner ==
 //   PlayerTarget`, with no other multiplayer-specific behavior, so it works correctly self-targeted.
+//   Unchanged from before -- kept self-targeted (TargetType.Self) since there's no enemy involved.
 [Pool(typeof(DefectCardPool))]
 public sealed class ImitationLearningSolo : SingleplayerCardCard
 {
@@ -40,7 +38,9 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
 
-    public ImitationLearningSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
+    public override TargetType TargetType => DroActiveForDisplay ? TargetType.AnyEnemy : TargetType.Self;
+
+    public ImitationLearningSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
     {
     }
 
@@ -49,7 +49,8 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
         if (DroActiveForDisplay)
         {
-            await PowerCmd.Apply<ImitationLearningPowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
+            await PowerCmd.Apply<ImitationLearningPowerSolo>(choiceContext, cardPlay.Target, IsUpgraded ? 3m : 2m, Owner.Creature, this);
         }
         else
         {

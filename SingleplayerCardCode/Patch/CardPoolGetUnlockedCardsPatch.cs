@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Unlocks;
 using SingleplayerCard.SingleplayerCardCode.Cards;
@@ -33,17 +34,29 @@ public static class CardPoolGetUnlockedCardsPatch
         // in their place. The __instance.GetUnlockedCards call below re-enters this same Postfix, but
         // with multiplayerConstraint == None, which can never satisfy this branch -- no infinite
         // recursion.
-        if (multiplayerConstraint == CardMultiplayerConstraint.MultiplayerOnly && MultiplayerConfigAuthority.EffectiveApplyInMultiplayer)
+        if (multiplayerConstraint == CardMultiplayerConstraint.MultiplayerOnly)
         {
-            HashSet<string> portedVanillaIds = DuplicateReworkManager.AllPortedVanillaCardIds.ToHashSet();
-            list.RemoveAll(card => card.MultiplayerConstraint == CardMultiplayerConstraint.MultiplayerOnly && portedVanillaIds.Contains(card.Id.Entry));
-
-            foreach (CardModel card in __instance.GetUnlockedCards(unlockState, CardMultiplayerConstraint.None))
+            bool effectiveApplyInMultiplayer = MultiplayerConfigAuthority.EffectiveApplyInMultiplayer;
+            // TEMPORARY diagnostic logging (2026-09-14) -- see MultiplayerConfigAuthority's own
+            // DiagTag comment for context. Remove once the root cause of a real playtest where this
+            // substitution silently never happened is confirmed and fixed.
+            Log.Info($"[SingleplayerCard][CardPoolGetUnlockedCardsPatch] MultiplayerOnly query on {__instance.GetType().Name}: EffectiveApplyInMultiplayer={effectiveApplyInMultiplayer}, beforeCount={list.Count}");
+            if (effectiveApplyInMultiplayer)
             {
-                if (card is SingleplayerCardCard && !list.Contains(card))
+                HashSet<string> portedVanillaIds = DuplicateReworkManager.AllPortedVanillaCardIds.ToHashSet();
+                int removed = list.RemoveAll(card => card.MultiplayerConstraint == CardMultiplayerConstraint.MultiplayerOnly && portedVanillaIds.Contains(card.Id.Entry));
+
+                int added = 0;
+                foreach (CardModel card in __instance.GetUnlockedCards(unlockState, CardMultiplayerConstraint.None))
                 {
-                    list.Add(card);
+                    if (card is SingleplayerCardCard && !list.Contains(card))
+                    {
+                        list.Add(card);
+                        added++;
+                    }
                 }
+
+                Log.Info($"[SingleplayerCard][CardPoolGetUnlockedCardsPatch] MultiplayerOnly query result: removed={removed}, added={added}, afterCount={list.Count}");
             }
         }
 

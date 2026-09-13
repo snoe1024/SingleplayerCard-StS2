@@ -17,10 +17,13 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 // their Hand.
 // Singleplayer rework (see .claude/loadmap.md "寛大なる施し"):
 // - DRO on (案1): no other player, so instead of giving it immediately, it's granted at the start
-//   of the owner's NEXT turn (see GenerousGiftPowerSolo) -- fits Regent's pattern of deferring
-//   energy/draw-style effects to next turn.
+//   of the owner's NEXT turn -- fits Regent's pattern of deferring energy/draw-style effects to
+//   next turn. Applies one of two separate powers depending on whether THIS play is Upgraded
+//   (NextTurnCardGenerationPowerSolo / NextTurnCardGenerationPlusPowerSolo) rather than one shared
+//   power with a mutable "generate upgraded?" flag -- see those files for why a shared flag breaks
+//   when both an unupgraded and an Upgraded copy are played the same turn.
 // - DRO off (xDRO): matches the original -- grants the card immediately, same generation logic as
-//   GenerousGiftPowerSolo's deferred version.
+//   the deferred powers.
 [Pool(typeof(RegentCardPool))]
 public sealed class GenerousGiftSolo : SingleplayerCardCard
 {
@@ -39,10 +42,13 @@ public sealed class GenerousGiftSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (DroActiveForDisplay)
         {
-            var power = await PowerCmd.Apply<GenerousGiftPowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
-            if (power != null)
+            if (IsUpgraded)
             {
-                power.GenerateUpgraded = IsUpgraded;
+                await PowerCmd.Apply<NextTurnCardGenerationPlusPowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+            }
+            else
+            {
+                await PowerCmd.Apply<NextTurnCardGenerationPowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
             }
         }
         else
