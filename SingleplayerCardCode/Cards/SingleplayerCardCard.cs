@@ -63,16 +63,21 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // Lets the title alone distinguish which effect a card instance has, without opening its
     // description. Reimplements CardModel.Title's upgrade-suffix logic rather than calling base.Title,
     // since the base implementation is hardwired to this card's own TitleLocString.
+    //
+    // DroSuffix goes BEFORE the upgrade "+N" marker, not after: a friend of the user's testing the mod
+    // reported that "+"-then-"R"/"S" reads as though the "+" and the DRO letter are one combined token,
+    // making the upgrade marker easy to miss. Vanilla's own "+" is the more important/frequent signal
+    // (players scan for it constantly), so it stays rightmost, closest to the plain eye-scan position.
     public override string Title
     {
         get
         {
-            string title = BaseTitleText;
+            string title = BaseTitleText + DroSuffix;
             if (IsUpgraded)
             {
                 title += MaxUpgradeLevel > 1 ? $"+{CurrentUpgradeLevel}" : "+";
             }
-            return title + DroSuffix;
+            return title;
         }
     }
 
