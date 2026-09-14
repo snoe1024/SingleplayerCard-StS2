@@ -5,10 +5,12 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
@@ -29,10 +31,14 @@ public sealed class BlazeSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "BLAZE";
 
     protected override string OriginalVanillaCardPool => "ironclad";
-
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];
+    
     // 2m (the Rework/案1 per-discard base) since Rework is this mod's default variant; AfterCloned
     // overwrites this to the xDRO flat amount when that branch is active instead.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<StrengthPower>(2m) };
@@ -81,13 +87,5 @@ public sealed class BlazeSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars.Strength.UpgradeValueBy(DroActiveForDisplay ? 1m : 2m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

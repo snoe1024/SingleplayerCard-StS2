@@ -31,6 +31,8 @@ public sealed class OutrageSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "OUTRAGE";
 
     protected override string OriginalVanillaCardPool => "ironclad";
@@ -79,13 +81,5 @@ public sealed class OutrageSolo : SingleplayerCardCard
         // ("増加し続けるカードがこの強化幅はダメ" -- a compounding card growing this fast on upgrade
         // was too strong); xDRO keeps the original's +4 since it never compounds.
         DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 2m : 4m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

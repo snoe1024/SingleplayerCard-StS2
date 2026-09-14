@@ -22,6 +22,8 @@ public sealed class UnderworldSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "UNDERWORLD";
 
     protected override string OriginalVanillaCardPool => "necrobinder";
@@ -52,12 +54,5 @@ public sealed class UnderworldSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         RemoveKeyword(CardKeyword.Exhaust);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

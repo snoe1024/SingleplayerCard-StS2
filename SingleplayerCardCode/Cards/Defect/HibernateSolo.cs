@@ -25,6 +25,8 @@ public sealed class HibernateSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "HIBERNATE";
 
     protected override string OriginalVanillaCardPool => "defect";
@@ -58,13 +60,5 @@ public sealed class HibernateSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars.Repeat.UpgradeValueBy(1m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

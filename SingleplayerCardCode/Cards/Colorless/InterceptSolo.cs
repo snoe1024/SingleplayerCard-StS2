@@ -29,6 +29,8 @@ public sealed class InterceptSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "INTERCEPT";
 
     protected override string OriginalVanillaCardPool => "colorless";
@@ -62,13 +64,5 @@ public sealed class InterceptSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(DroActiveForDisplay ? 6m : 4m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

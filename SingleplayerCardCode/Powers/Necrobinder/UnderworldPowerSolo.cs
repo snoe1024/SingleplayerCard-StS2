@@ -29,8 +29,12 @@ namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 // applying card via AfterApplied into a [SavedProperty] field.
 public sealed class UnderworldPowerSolo : SingleplayerCardPower
 {
+    // Setter is public, not private -- see SingleplayerCardCard.DroWasOnAtCreation's own comment for
+    // why a private setter breaks BaseLib's [SavedProperty] restore path with "Property set method not
+    // found". This type is currently unsupported by BaseLib for saved values regardless (a startup
+    // warning confirms this), so the public setter is just future-proofing, not a live fix.
     [SavedProperty]
-    public bool DroActiveForDisplay { get; private set; } = true;
+    public bool DroActiveForDisplay { get; set; } = true;
 
     public override PowerType Type => PowerType.Buff;
 

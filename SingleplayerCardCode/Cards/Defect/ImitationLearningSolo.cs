@@ -32,6 +32,8 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "IMITATION_LEARNING";
 
     protected override string OriginalVanillaCardPool => "defect";
@@ -60,12 +62,5 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
                 power.PlayerTarget = Owner;
             }
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

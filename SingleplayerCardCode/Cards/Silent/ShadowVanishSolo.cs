@@ -24,6 +24,8 @@ public sealed class ShadowVanishSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "FADE";
 
     protected override string OriginalVanillaCardPool => "silent";
@@ -61,13 +63,5 @@ public sealed class ShadowVanishSolo : SingleplayerCardCard
         {
             DynamicVars["FlatDexterity"].UpgradeValueBy(3m);
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

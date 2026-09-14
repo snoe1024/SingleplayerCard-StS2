@@ -30,6 +30,8 @@ public sealed class ConstellationSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "CONSTELLATION";
 
     protected override string OriginalVanillaCardPool => "regent";
@@ -69,13 +71,5 @@ public sealed class ConstellationSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(3m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

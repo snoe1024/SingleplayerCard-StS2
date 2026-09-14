@@ -31,6 +31,8 @@ public sealed class DemonicShieldSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "DEMONIC_SHIELD";
 
     protected override string OriginalVanillaCardPool => "ironclad";
@@ -71,13 +73,5 @@ public sealed class DemonicShieldSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         RemoveKeyword(CardKeyword.Exhaust);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -27,6 +27,8 @@ public sealed class CoordinateSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "COORDINATE";
 
     protected override string OriginalVanillaCardPool => "colorless";
@@ -76,17 +78,5 @@ public sealed class CoordinateSolo : SingleplayerCardCard
         {
             DynamicVars.Strength.UpgradeValueBy(3m);
         }
-    }
-
-    // The card's ".description" loc key is just "{DroEffectText}" (see localization/*/cards.json);
-    // this resolves whichever of the two real text bodies (".descriptionRework"/".descriptionXdro")
-    // applies right now and feeds it in as that one variable, so both branches stay fully
-    // translatable in the normal JSON loc files instead of being hardcoded here.
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

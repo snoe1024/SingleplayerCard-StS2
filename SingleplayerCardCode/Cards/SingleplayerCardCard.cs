@@ -1,16 +1,19 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using GamblerMod.GamblerModCode.Patch;
+using MegaCrit.Sts2.Core.Combat;
 using SingleplayerCard.SingleplayerCardCode.Config;
 using SingleplayerCard.SingleplayerCardCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Saves.Runs;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards;
 
 public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity rarity, TargetType target) :
-    CustomCardModel(cost, type, rarity, target)
+    CustomCardModel(cost, type, rarity, target), IDynamicCardDescription
 {
     // Snapshot of the Duplicate Rework Option (see .claude/loadmap.md and DuplicateReworkManager) at
     // the moment this specific card instance actually became an owned/mutable card. [SavedProperty]
@@ -29,8 +32,15 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // documents for exactly this ("clean up shallow-copied references" after MemberwiseClone), and it
     // runs before FromSerializable applies saved [SavedProperty] values on top, so loading a real
     // historical value still correctly overrides this.
+    // Setter MUST be public (not private): confirmed via a real crash on Continue ("Property set
+    // method not found" thrown from CardModel.FromSerializable while restoring this exact property)
+    // that BaseLib's [SavedProperty] restore path can't reach a non-public setter -- every vanilla
+    // example of this attribute (Guilty.CombatsSeen, MadScience.TinkerTimeType/TinkerTimeRider) uses a
+    // fully public setter for the same reason. AssertMutable() isn't added here since the base
+    // CardModel setters vanilla itself uses for [SavedProperty] don't gate on it either for a plain
+    // bool like this; nothing outside AfterCloned() has a reason to set it anyway.
     [SavedProperty]
-    public bool DroWasOnAtCreation { get; private set; }
+    public bool DroWasOnAtCreation { get; set; }
 
     protected override void AfterCloned()
     {
@@ -88,6 +98,15 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
         }
     }
 
+    protected virtual bool DroVersionExists => false;
+    
+    public LocString GetDynamicDescription(LocString original)
+    {
+        if (!DroVersionExists) return original;
+        
+        return new LocString("cards", this.Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
+    }
+
     // Override in ported cards to reuse the original multiplayer card's vanilla portrait instead of
     // a mod-specific placeholder image. Values are the original card's Id.Entry (e.g. "DEMONIC_SHIELD")
     // and its vanilla CardPoolModel folder name (e.g. "ironclad", matching IroncladCardPool.Title
@@ -103,6 +122,23 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     // that needs a card's vanilla id without needing OriginalVanillaCardId itself to be more than
     // protected.
     internal string? VanillaCardIdForConfig => OriginalVanillaCardId;
+
+    // CardModel.GetDescriptionForPile adds several "automatic" variables (IfUpgradedVar, energyPrefix,
+    // etc. -- see decompiled CardModel.cs) to the outer description LocString AFTER
+    // AddExtraArgsToDescription returns. That's too late for the .descriptionRework/.descriptionXdro
+    // branch pattern used throughout this mod (a separate LocString built and formatted via
+    // GetFormattedText() INSIDE AddExtraArgsToDescription, then embedded as "DroEffectText") --
+    // GetFormattedText() resolves eagerly against ONLY its own variable dictionary (LocString.Add(name,
+    // LocString) confirms this: it just calls variable.GetFormattedText() immediately, there's no
+    // deferred/inherited-scope form). Confirmed via two real crashes ("No source extension could handle
+    // the selector named IfUpgraded", then energyPrefix) from templates that used those tokens without
+    // this. Call this on `branch` before formatting it, for whichever of these tokens that branch's
+    // template actually references.
+    protected void AddCommonDescriptionArgs(LocString target)
+    {
+        target.Add(new IfUpgradedVar(IsUpgraded ? UpgradeDisplay.Upgraded : UpgradeDisplay.Normal));
+        target.Add("energyPrefix", EnergyIconHelper.GetPrefix(this));
+    }
 
     // SingleplayerOnly (not the CardModel default of None) so these never appear in an actual
     // multiplayer game's pools by default: CardPoolModel.GetUnlockedCards removes SingleplayerOnly

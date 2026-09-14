@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -40,21 +41,16 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "BLADE_SYMPHONY";
 
     protected override string OriginalVanillaCardPool => "silent";
-
-    public BladeSymphonySolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Shiv>()];
+    
+    public BladeSymphonySolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-    }
-
-    protected override void AfterCloned()
-    {
-        base.AfterCloned();
-        if (DroActiveForDisplay)
-        {
-            EnergyCost.SetCustomBaseCost(2);
-        }
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -101,13 +97,5 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

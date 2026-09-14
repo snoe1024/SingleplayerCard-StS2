@@ -31,11 +31,13 @@ public sealed class ConcoctSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "CONCOCT";
 
     protected override string OriginalVanillaCardPool => "silent";
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromPower<PoisonPower>() };
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromEnchantment<VenomousEnchantmentSolo>();
 
     // 1m (the Rework/案1 base) since Rework is this mod's default variant; AfterCloned overwrites
     // this (and the cost) to the xDRO values when that branch is active instead.
@@ -78,13 +80,5 @@ public sealed class ConcoctSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         DynamicVars["Venomous"].UpgradeValueBy(1m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -17,14 +17,16 @@ namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 // "エナジーサージ" for current numbers. ALL players gain Energy immediately.
 // Singleplayer rework (see .claude/loadmap.md "エナジーサージ"):
 // - DRO on (案1): a lump sum of Energy in one turn is too much for a single Defect, so this instead
-//   grants Energy at the start of each of the next several turns (EnergySurgePowerSolo). Cost
-//   lowered to match.
+//   grants Energy at the start of each of the next several turns, via vanilla's own RadiancePower
+//   rather than a bespoke power (RadiancePower already does exactly this). Cost lowered to match.
 // - DRO off (xDRO): matches the original -- grants Energy immediately, at the original's cost.
 // Exhaust kept in both branches, matching the original.
 [Pool(typeof(DefectCardPool))]
 public sealed class EnergySurgeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
+
+    protected override bool DroVersionExists => true;
 
     protected override string OriginalVanillaCardId => "ENERGY_SURGE";
 
@@ -56,7 +58,7 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
         if (DroActiveForDisplay)
         {
-            await PowerCmd.Apply<RadiancePower>(choiceContext, Owner.Creature, DynamicVars.Energy.IntValue + 1, Owner.Creature, this);
+            await PowerCmd.Apply<RadiancePower>(choiceContext, Owner.Creature, DynamicVars.Energy.IntValue, Owner.Creature, this);
         }
         else
         {
@@ -70,13 +72,5 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
         {
             DynamicVars.Energy.UpgradeValueBy(1m);
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
@@ -47,6 +48,8 @@ public sealed class MidnightSolo : SingleplayerCardCard
     }
     
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
+
+    protected override bool DroVersionExists => true;
 
     protected override string OriginalVanillaCardId => "MIDNIGHT";
 
@@ -149,20 +152,6 @@ public sealed class MidnightSolo : SingleplayerCardCard
         }
         else
         {
-            // Derive vanilla Midnight's own upgrade delta dynamically rather than hardcoding a second
-            // copy of "+12" that could silently drift if vanilla ever rebalances it. ModelDb.Card<T>()
-            // always returns the single shared canonical instance (CardModel.cs's own AssertMutable()
-            // guards would throw if we tried to upgrade it directly), so ToMutable() -> UpgradeInternal()
-            // is the same "clone it, upgrade the throwaway copy, read the result, discard it" pattern
-            // vanilla itself uses for upgrade previews (see NInspectCardScreen.UpdateCardDisplay,
-            // NGridCardHolder.UpdateCardModel, and CardModel.DowngradeInternal, which all do exactly
-            // this). UpgradeInternal() is public and dispatches to Midnight.OnUpgrade() polymorphically,
-            // so no subclass relationship to Midnight is needed here.
-            //
-            // Safe for Midnight specifically because its own OnUpgrade() is a pure DynamicVars
-            // arithmetic call with no Owner/CombatState/RunState access -- the throwaway clone's Owner
-            // stays null. Re-check this assumption before copying this pattern to a different ported
-            // card's xDRO branch.
             CardModel vanillaUpgraded = ModelDb.Card<Midnight>().ToMutable();
             vanillaUpgraded.UpgradeInternal();
             DynamicVars.Damage.UpgradeValueBy(vanillaUpgraded.DynamicVars.Damage.BaseValue - DynamicVars.Damage.BaseValue);

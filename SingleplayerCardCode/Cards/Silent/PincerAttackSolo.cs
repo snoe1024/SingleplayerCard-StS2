@@ -24,6 +24,8 @@ public sealed class PincerAttackSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "FLANKING";
 
     protected override string OriginalVanillaCardPool => "silent";
@@ -46,13 +48,5 @@ public sealed class PincerAttackSolo : SingleplayerCardCard
     protected override void OnUpgrade()
     {
         EnergyCost.UpgradeBy(-1);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

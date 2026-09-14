@@ -1,133 +1,103 @@
 {
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "HPを1失う。この戦闘中失ったHPに等しい[gold]ブロック[/gold]を得る。{InCombat:\nこの戦闘で{LoseHPAmount:diff()}のHPを失った。|}",
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "HPを1失う。[gold]ブロック[/gold]値を2倍にする。",
 
-  "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。ブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
-
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。\nブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
   
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
 
-  "SINGLEPLAYERCARD-BLAZE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと手札にある《アウトレイジ》のコピーを加える。",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこのカードのコピーを1枚[gold]捨て札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "このターン、対象の敵は今手札にないアタックカードから受けるダメージが2倍になる。",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "このターン、対象の敵は今[gold]手札[/gold]にないアタックカードから受けるダメージが2倍になる。",
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "このターン、対象の敵は受けるアタックダメージが2倍になる。",
 
-  "SINGLEPLAYERCARD-STEALTH_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "[gold]スライ。[/gold]アタックカード以外でダメージを発生させるたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
-  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "[gold]スライ。[/gold]敵を攻撃するたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "アタックカード以外でダメージを発生させるたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "敵を攻撃するたび、{StealthPowerSolo:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "捨て札または破棄札にある[gold]ナイフ[/gold]を全て(アップグレードして)プレイする。",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "このターン生成した[gold]ナイフ[/gold]を全てプレイする。",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "手札に[gold]ナイフ[/gold]を2枚加える。",
 
-  "SINGLEPLAYERCARD-CONCOCT_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "エンチャントされていない手札の全てのアタックカードに、[gold]有毒{Venomous:diff()}[/gold]を付ける。",
   "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "このターン、アタックがブロックされずにダメージを与えるたび、[gold]毒{Venomous:diff()}[/gold]を付与する。",
 
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "[gold]保留。[/gold]このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "[gold]保留。[/gold]このターン、{FlatDexterity:diff()}[gold]敏捷[/gold]を得る。",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "このターン、{FlatDexterity:diff()}[gold]敏捷[/gold]を得る。",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "[gold]ソヴリン・ブレード[/gold]をプレイしたとき、そのターンに使った[gold]鍛造[/gold]効果のあるカードをもう一度プレイする。",
 
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "次のターン開始時、ランダムな{IfUpgraded:show:[gold]アップグレード済みの[/gold]}無色カードを1枚手札に加える。",
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "ランダムな{IfUpgraded:show:[gold]アップグレード済みの[/gold]}無色カードを1枚手札に加える。",
 
-  "SINGLEPLAYERCARD-SCHEME_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "次の3ターン開始時、追加でカードを1枚引く。",
   "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "次のターン、カードを{Cards:diff()}枚引く。",
 
-  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "次のターン開始時、カードを{Cards:diff()}枚引き、{Energy:energyIcons()}と{Block:diff()}[gold]ブロック[/gold]を得る。",
   "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "カードを{Cards:diff()}枚引き、{Energy:energyIcons()}と{Block:diff()}[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "敵1体につき[gold]召喚[/gold]{Summon:diff()}。",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]召喚[/gold]{Summon:diff()}。",
 
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "次の{IfUpgraded:show:3|2}ターン開始時、手札に[gold]ソウル[/gold]を加える。",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "[gold]ソウル[/gold]を{Cards:diff()}枚山札に加える。",
 
-  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "このターン、敵に[gold]破滅[/gold]を与える度に、その量に等しいダメージを与える。",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "このターン、アタックでダメージを与えるたび、そのダメージに等しい[gold]破滅[/gold]を付与する。",
 
-  "SINGLEPLAYERCARD-SOULBOUND_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "敵を1体選ぶ。その敵がそのターン初めてブロックされないアタックダメージを受けた時、[gold]山札[/gold]に[gold]ソウル[/gold]を1枚加える。",
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "[gold]ソウル[/gold]を1枚生成するたび、[gold]山札[/gold]に[gold]ソウル[/gold]を1枚加える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。",
 
-  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "次の{IfUpgraded:show:3|2}ターンの開始時、1{energyPrefix:energyIcons(1)}を得る。",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "{Energy:energyIcons()}を得る。",
 
-  "SINGLEPLAYERCARD-IGNITION_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]プラズマ[/gold]を[gold]生成[/gold]する。すべての[gold]プラズマ[/gold]オーブの自動効果を発動する。",
   "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]プラズマ[/gold]を[gold]生成[/gold]する。",
 
-  "SINGLEPLAYERCARD-HIBERNATE_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "このターン、自身の[gold]フロスト[/gold]は自動効果を2回発動する。\n[gold]フロスト{Repeat:diff()}を生成[/gold]する。",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "このターン、自身の[gold]フロスト[/gold]は自動効果を2回発動する。\n[gold]フロスト[/gold]{Repeat:diff()}を[gold]生成[/gold]する。",
   "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]フロスト{Repeat:diff()}を生成[/gold]する。",
 
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "0{energyPrefix:energyIcons(1)}のアタックは、追加で{OneForAllPower:diff()}ダメージを与える。",
 
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "敵を選択する。その敵がバフを獲得する度、ランダムなパワーを手札に加える(最大{IfUpgraded:show:3|2}回)。そのパワーのコストは0になる。",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "次の{IfUpgraded:show:3|2}枚のパワーをプレイしたとき、もう一度プレイする。",
 
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\nこのターンにこの敵に使用した《総攻撃》以外のアタックカードをもう一度プレイする。",
   "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。このターンにプレイしたアタック1枚につき、追加で{BonusPerAttack:diff()}ダメージを与える。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "{Damage:diff()}ダメージを与える。\n次に対象の敵にプレイするアタックは、もう1回プレイされる。",
 
-  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n次のターン、敵は{IfUpgraded:show:3|2}倍のダメージを受ける。",
   "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこのターン、敵は{IfUpgraded:show:3|2}倍のダメージを受ける。",
 
-  "SINGLEPLAYERCARD-THE_BALL_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、山札・手札・捨て札の内ランダムな場所に加える。",
-  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、山札に加える。",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、[gold]山札[/gold]・[gold]手札[/gold]・[gold]捨て札[/gold]の内ランダムな場所に加える。",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、[gold]山札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "次のターン、アタック、スキル、パワーの全てをプレイしたとき、{Energy:energyIcons()}を得る。",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "{Energy:energyIcons()}を得る。",
 
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "{Block:diff()}[gold]ブロック[/gold]を得る。[gold]弱体[/gold]1を得る。",
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "カードを2枚引く。次のターン開始時、カードを2枚引く。",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "カードを{Cards:diff()}枚引く。",
 
-  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "次のカードから得るブロック値を倍にする。",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-COORDINATE_SOLO.description": "{DroEffectText}",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "このターン、手札のカードの枚数と同じ筋力を得る。",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
-  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。{InCombat:\n現在、獲得できるブロックは{BestHandBlock:diff()}。|}",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。{InCombat:\n({BestHandBlock:diff()}[gold]ブロック[/gold]を得る。)|}",
 
-  "SINGLEPLAYERCARD-GATHER_SOLO.description": "{DroEffectText}",
-  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。{InCombat:\n現在、獲得できるブロックは{HandBlockTotal:diff()}。|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。{InCombat:\n({HandBlockTotal:diff()}[gold]ブロック[/gold]を得る。)|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]天賦。[/gold]ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"

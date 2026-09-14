@@ -28,6 +28,8 @@ public sealed class KnockdownSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "KNOCKDOWN";
 
     protected override string OriginalVanillaCardPool => "colorless";
@@ -63,13 +65,5 @@ public sealed class KnockdownSolo : SingleplayerCardCard
     {
         DynamicVars.Damage.UpgradeValueBy(4m);
         DynamicVars["KnockdownPower"].UpgradeValueBy(1m);
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

@@ -29,6 +29,8 @@ public sealed class SchemeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "PLOT";
 
     protected override string OriginalVanillaCardPool => "regent";
@@ -63,13 +65,5 @@ public sealed class SchemeSolo : SingleplayerCardCard
         {
             DynamicVars.Cards.UpgradeValueBy(1m);
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

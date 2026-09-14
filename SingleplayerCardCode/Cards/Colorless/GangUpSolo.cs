@@ -34,6 +34,8 @@ public sealed class GangUpSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "GANG_UP";
 
     protected override string OriginalVanillaCardPool => "colorless";
@@ -117,13 +119,5 @@ public sealed class GangUpSolo : SingleplayerCardCard
         {
             DynamicVars["BonusPerAttack"].UpgradeValueBy(2m);
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

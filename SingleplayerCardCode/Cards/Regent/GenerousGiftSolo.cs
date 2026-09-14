@@ -29,6 +29,8 @@ public sealed class GenerousGiftSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "LARGESSE";
 
     protected override string OriginalVanillaCardPool => "regent";
@@ -64,12 +66,5 @@ public sealed class GenerousGiftSolo : SingleplayerCardCard
                 await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner);
             }
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

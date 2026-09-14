@@ -28,6 +28,8 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "GLIMPSE_BEYOND";
 
     protected override string OriginalVanillaCardPool => "necrobinder";
@@ -65,13 +67,5 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
         {
             DynamicVars.Cards.UpgradeValueBy(1m);
         }
-    }
-
-    protected override void AddExtraArgsToDescription(LocString description)
-    {
-        base.AddExtraArgsToDescription(description);
-        LocString branch = new LocString("cards", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
-        DynamicVars.AddTo(branch);
-        description.Add("DroEffectText", branch.GetFormattedText());
     }
 }

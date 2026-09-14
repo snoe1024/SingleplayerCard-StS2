@@ -3,7 +3,9 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Cards;
 using SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
@@ -19,9 +21,13 @@ public sealed class HammerTimeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "HAMMER_TIME";
 
     protected override string OriginalVanillaCardPool => "regent";
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromCard<SovereignBlade>() ];
 
     public HammerTimeSolo() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
