@@ -34,8 +34,6 @@ public sealed class GangUpSolo : SingleplayerCardCard
 
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
-    protected override bool DroVersionExists => true;
-
     protected override string OriginalVanillaCardId => "GANG_UP";
 
     protected override string OriginalVanillaCardPool => "colorless";
@@ -45,22 +43,12 @@ public sealed class GangUpSolo : SingleplayerCardCard
     // active instead. xDRO's separate per-attack BONUS is tracked by its own var, "BonusPerAttack".
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new DamageVar(10m, ValueProp.Move),
+        new DamageVar(5m, ValueProp.Move),
         new DynamicVar("BonusPerAttack", 5m)
     };
 
-    public GangUpSolo() : base(2, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public GangUpSolo() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-    }
-
-    protected override void AfterCloned()
-    {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
-        {
-            DynamicVars.Damage.BaseValue = 5m;
-            EnergyCost.SetCustomBaseCost(1);
-        }
     }
 
     public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
@@ -86,38 +74,15 @@ public sealed class GangUpSolo : SingleplayerCardCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-        if (DroActiveForDisplay)
-        {
-            await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
-
-            var toReplay = _attacksThisTurn.Where(a => a.Target == cardPlay.Target).Select(a => a.Card).ToList();
-            bool first = true;
-            foreach (CardModel card in toReplay)
-            {
-                await CardCmd.AutoPlay(choiceContext, card, cardPlay.Target, AutoPlayType.Default, skipXCapture: false, !first);
-                first = false;
-            }
-        }
-        else
-        {
-            decimal totalDamage = DynamicVars.Damage.BaseValue + DynamicVars["BonusPerAttack"].BaseValue * _attacksThisTurn.Count;
-            await DamageCmd.Attack(totalDamage).FromCard(this, cardPlay).Targeting(cardPlay.Target)
-                .WithHitFx("vfx/vfx_attack_slash")
-                .Execute(choiceContext);
-        }
+        
+        decimal totalDamage = DynamicVars.Damage.BaseValue + DynamicVars["BonusPerAttack"].BaseValue * _attacksThisTurn.Count;
+        await DamageCmd.Attack(totalDamage).FromCard(this, cardPlay).Targeting(cardPlay.Target)
+            .WithHitFx("vfx/vfx_attack_slash")
+            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-        if (DroActiveForDisplay)
-        {
-            DynamicVars.Damage.UpgradeValueBy(4m);
-        }
-        else
-        {
-            DynamicVars["BonusPerAttack"].UpgradeValueBy(2m);
-        }
+        DynamicVars["BonusPerAttack"].UpgradeValueBy(2m);
     }
 }

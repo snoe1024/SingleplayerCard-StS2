@@ -29,32 +29,20 @@ public sealed class BelieveInYouSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
-    // 1 (the Rework/案1 base) since Rework is this mod's default variant; AfterCloned overwrites
-    // this to the xDRO flat amount (2) when that branch is active instead.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new EnergyVar(1) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new EnergyVar(2) };
 
     public BelieveInYouSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
-    protected override void AfterCloned()
-    {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
-        {
-            DynamicVars.Energy.BaseValue = 2m;
-        }
-    }
-
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
+        
         if (DroActiveForDisplay)
         {
-            await PowerCmd.Apply<BelieveInYouPowerSolo>(choiceContext, Owner.Creature, DynamicVars.Energy.IntValue, Owner.Creature, this);
-        }
-        else
-        {
-            await PlayerCmd.GainEnergy(DynamicVars.Energy.IntValue, Owner);
+            await PowerCmd.Apply<NoEnergyGainPowerSolo>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
+            await PowerCmd.Apply<NoDrawPowerSolo>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
         }
     }
 

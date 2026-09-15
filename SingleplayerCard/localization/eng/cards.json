@@ -69,8 +69,7 @@
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Choose an enemy. The first {IfUpgraded:show:3|2} times that enemy gains a Buff, add a random Power card to your hand. That Power costs 0 Energy.",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "The next {IfUpgraded:show:3|2} times you play a Power, play it again.",
 
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionRework": "Deal {Damage:diff()} damage.\nReplay every other Attack card you have played on this enemy this turn.",
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionXdro": "Deal {Damage:diff()} damage. Deal {BonusPerAttack:diff()} more for each Attack you've played this turn.",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Deal {Damage:diff()} damage. Deal {BonusPerAttack:diff()} more for each Attack you've played this turn.",
 
   "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Deal {Damage:diff()} damage.\nThe next Attack you play on the enemy is played an extra time.",
 
@@ -80,19 +79,19 @@
   "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "Deal {Damage:diff()} damage.\nIncrease this card's damage by {Increase:diff()} this combat and shuffle it into a random spot in your [gold]Draw Pile[/gold], [gold]Hand[/gold], or [gold]Discard Pile[/gold].",
   "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "Deal {Damage:diff()} damage.\nIncrease this card's damage by {Increase:diff()} this combat and shuffle it into your [gold]Draw Pile[/gold].",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Next turn, once you have played an Attack, a Skill, and a Power, gain {Energy:energyIcons()}.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Gain {Energy:energyIcons()}. For the next 2 turns, you cannot gain additional Energy or Draw.",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Gain {Energy:energyIcons()}.",
 
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Gain {Block:diff()} [gold]Block[/gold]. Gain 1 [gold]Weak[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Gain {Block:diff()} [gold]Block[/gold].\nGain 1 [gold]Weak[/gold].",
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
 
-  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Draw 2 cards. At the start of your next turn, draw 2 more cards.",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Draw {Cards:diff()} cards. At the start of your next turn, draw 2 more cards.",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "Draw {Cards:diff()} cards.",
 
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "Double the Block gained from your next card.",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
 
-  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "This turn, gain Strength equal to the number of cards in your hand.",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "Enchant [gold]Training[/gold] {TrainEnchantmentAmount:diff()} to unenchanted card.",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Until end of turn, gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.{InCombat:\nGain {BestHandBlock:diff()} [gold]Block[/gold].|}",
@@ -100,5 +99,5 @@
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gain Block equal to the sum of the Block values of all other cards in your hand.{InCombat:\nGain {HandBlockTotal:diff()} [gold]Block[/gold].|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
 
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]Innate.[/gold] At the end of your turn, gain half the [gold]Block[/gold] you gained that turn at the start of your next turn."
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "The first time you gain [gold]Block[/gold] from a card each turn, you gain same [gold]Block[/gold] on next turn."
 }

@@ -69,8 +69,7 @@
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "敵を選択する。その敵がバフを獲得する度、ランダムなパワーを手札に加える(最大{IfUpgraded:show:3|2}回)。そのパワーのコストは0になる。",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "次の{IfUpgraded:show:3|2}枚のパワーをプレイしたとき、もう一度プレイする。",
 
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\nこのターンにこの敵に使用した《総攻撃》以外のアタックカードをもう一度プレイする。",
-  "SINGLEPLAYERCARD-GANG_UP_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。このターンにプレイしたアタック1枚につき、追加で{BonusPerAttack:diff()}ダメージを与える。",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "{Damage:diff()}ダメージを与える。このターンにプレイしたアタック1枚につき、追加で{BonusPerAttack:diff()}ダメージを与える。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "{Damage:diff()}ダメージを与える。\n次に対象の敵にプレイするアタックは、もう1回プレイされる。",
 
@@ -80,19 +79,19 @@
   "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、[gold]山札[/gold]・[gold]手札[/gold]・[gold]捨て札[/gold]の内ランダムな場所に加える。",
   "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこの戦闘中、このカードのダメージを{Increase:diff()}増加させ、[gold]山札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "次のターン、アタック、スキル、パワーの全てをプレイしたとき、{Energy:energyIcons()}を得る。",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "{Energy:energyIcons()}を得る。2ターンの間、追加でエナジーとドローを獲得できない。",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "{Energy:energyIcons()}を得る。",
 
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "{Block:diff()}[gold]ブロック[/gold]を得る。[gold]弱体[/gold]1を得る。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]弱体[/gold]1を得る。",
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "カードを2枚引く。次のターン開始時、カードを2枚引く。",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "カードを{Cards:diff()}枚引く。次のターン開始時、カードを2枚引く。",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "カードを{Cards:diff()}枚引く。",
 
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "次のカードから得るブロック値を倍にする。",
   "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "このターン、手札のカードの枚数と同じ筋力を得る。",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "エンチャントされていないカードに、[gold]鍛錬[/gold]{TrainEnchantmentAmount:diff()}を付与する。",
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "ターン終了時まで、[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
   "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "手札のカードのうち、最も高いブロック値を持つカードと同じ[gold]ブロック[/gold]を得る。{InCombat:\n({BestHandBlock:diff()}[gold]ブロック[/gold]を得る。)|}",
@@ -100,5 +99,5 @@
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "手札にある《結集》以外の全てのカードが持つブロック値の合計に等しい[gold]ブロック[/gold]を得る。{InCombat:\n({HandBlockTotal:diff()}[gold]ブロック[/gold]を得る。)|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
 
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "[gold]天賦。[/gold]ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "毎ターン、最初にカードから[gold]ブロック[/gold]を得るとき、同じ[gold]ブロック[/gold]を次のターン開始時に得る。"
 }

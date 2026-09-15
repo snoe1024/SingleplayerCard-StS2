@@ -43,24 +43,34 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "This turn, your [gold]Frost[/gold] triggers its Passive twice.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitation Learning",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first [blue]{Amount}[/blue] {Amount:plural:time|times} this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first [blue]2[/blue] times this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "The first [blue]{Amount}[/blue] {Amount:plural:time|times} this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Tag Team",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack played on this enemy is played an additional [blue]{Amount}[/blue] {Amount:plural:time|times}.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack played on this enemy is played an additional [blue]2[/blue] times.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "The next Attack played on this enemy is played an additional [blue]{Amount}[/blue] {Amount:plural:time|times}.",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Knockdown",
-  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "This turn, takes [blue]{Amount}x[/blue] damage.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "This turn, takes [blue]2x[/blue] damage.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "This turn, takes [blue]{Amount}x[/blue] damage.",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "Knockdown (Next Turn)",
-  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Starting next turn, takes [blue]{Amount}x[/blue] damage for that turn.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Starting next turn, takes [blue]2x[/blue] damage for that turn.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "Starting next turn, takes [blue]{Amount}x[/blue] damage for that turn.",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "Believe in You",
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "Once an Attack, a Skill, and a Power have all been played this turn, gains [blue]{Amount}[/blue] {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "No Energy Gain",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "For [blue]2[/blue] turns, you cannot gain any additional {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "For [blue]{Amount}[/blue] turns, you cannot gain any additional {energyPrefix:energyIcons(1)}.",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "No Draw",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "For [blue]2[/blue] turns, you may not draw any more cards.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "For [blue]{Amount}[/blue] turns, you may not draw any more cards.",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Helping Hand",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Doubles the [gold]Block[/gold] gained from your next card, then is removed.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Doubles the [gold]Block[/gold] gained from your next card.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Doubles the [gold]Block[/gold] gained from your next card.",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Beacon of Hope",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "At the end of your turn, banks half the [gold]Block[/gold] you gained that turn to grant at the start of your next turn.",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "At the end of your turn, banks half the [gold]Block[/gold] you gained that turn to grant at the start of your next turn."
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "The first time you gain [gold]Block[/gold] from a card each turn, gain same [gold]Block[/gold] on next turn.",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "The first {Amount:plural:time|[blue]{}[/blue] times} you gain [gold]Block[/gold] from a card each turn, gain same [gold]Block[/gold] on next turn."
 }

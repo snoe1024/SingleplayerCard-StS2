@@ -43,24 +43,34 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "このターン、あなたの[gold]フロスト[/gold]は自動効果を2回発動する。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（[blue]{Amount}[/blue]回まで）。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]2[/blue]回）。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]{Amount}[/blue]回）。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "タッグチーム",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "この敵に次にプレイするアタックは、追加で[blue]{Amount}[/blue]回プレイされる。",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "この敵に次にプレイするアタックは、追加で[blue]1[/blue]回プレイされる。",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "この敵に次にプレイするアタックは、追加で[blue]{Amount}[/blue]回プレイされる。",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "ノックダウン",
-  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "このターン、受けるダメージが[blue]{Amount}[/blue]倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "このターン、この敵が受けるダメージが[blue]2[/blue]倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "このターン、この敵が受けるダメージが[blue]{Amount}[/blue]倍になる。",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "ノックダウン(次ターン)",
-  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "次のターンから、そのターンの間受けるダメージが[blue]{Amount}[/blue]倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "次のターン、この敵が受けるダメージが[blue]2[/blue]倍になる。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "次のターンから、この敵が受けるダメージが[blue]{Amount}[/blue]倍になる。",
 
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.title": "お前を信じる",
-  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_POWER_SOLO.description": "このターンにアタック、スキル、パワーの全てをプレイしたら、[blue]{Amount}[/blue]{energyPrefix:energyIcons(1)}を得る。",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "エナジー獲得不可",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "[blue]2[/blue]ターンの間、追加の{energyPrefix:energyIcons(1)}を得ることができない。",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "[blue]{Amount}[/blue]ターンの間、追加の{energyPrefix:energyIcons(1)}を得ることができない。",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "ドロー不可",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "[blue]2[/blue]ターンの間、追加でカードを引くことができない。",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "[blue]{Amount}[/blue]ターンの間、追加でカードを引くことができない。",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "手助け",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得る[gold]ブロック[/gold]値を倍にし、その後消滅する。",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "次のカードから得る[gold]ブロック[/gold]値を倍にする。",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "次のカードから得る[gold]ブロック[/gold]値を倍にする。",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "希望の道標",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "ターン終了時、そのターンに得た[gold]ブロック[/gold]の半分の値を、次のターン開始時に獲得する。"
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "毎ターン、最初にカードから[gold]ブロック[/gold]を得るとき、同じ[gold]ブロック[/gold]を次のターン開始時に得る。",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "毎ターン、カードから[gold]ブロック[/gold]を得た最初の[blue]{Amount}[/blue]回、同じ[gold]ブロック[/gold]を次のターン開始時に得る。"
 }

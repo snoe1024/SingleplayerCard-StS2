@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -15,6 +16,8 @@ namespace SingleplayerCard.SingleplayerCardCode.Enchantments;
 // Power-excluded types; this narrows further to Attack only, matching the card text).
 public sealed class VenomousEnchantmentSolo : EnchantmentModel
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<PoisonPower>()];
+    
     public override bool CanEnchant(CardModel card)
     {
         return base.CanEnchant(card) && card.Type == CardType.Attack;

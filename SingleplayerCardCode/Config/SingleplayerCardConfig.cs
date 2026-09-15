@@ -188,7 +188,8 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     [ConfigSection("ColorlessCards", CollapsedByDefault = true)]
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("GANG_UP")]
-    public static CardVariant GangUp { get; set; } = CardVariant.Rework;
+    [XdroUnavailableReason(XdroUnavailableReason.Identical)]
+    public static CardVariantOriginalOnly GangUp { get; set; } = CardVariantOriginalOnly.Original;
 
     [ConfigDropdownOverrideLocalization("CARD_VARIANT")]
     [CardVariantFor("TAG_TEAM")]

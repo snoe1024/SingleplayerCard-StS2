@@ -40,7 +40,7 @@ public sealed class InterceptSolo : SingleplayerCardCard
     // 13m (the Rework/案1 base) since Rework is this mod's default variant -- see MidnightSolo's
     // AfterCloned comment for why CanonicalVars can only ever hold one representative number and the
     // Card Library preview won't reflect live DRO toggling.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new BlockVar(13m, ValueProp.Move) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new BlockVar(15m, ValueProp.Move) };
 
     public InterceptSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -49,7 +49,7 @@ public sealed class InterceptSolo : SingleplayerCardCard
     protected override void AfterCloned()
     {
         base.AfterCloned();
-        DynamicVars.Block.BaseValue = DroActiveForDisplay ? 13m : 9m;
+        DynamicVars.Block.BaseValue = DroActiveForDisplay ? 15m : 9m;
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

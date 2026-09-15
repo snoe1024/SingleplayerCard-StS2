@@ -77,9 +77,6 @@ public sealed class OutrageSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        // Rework's upgrade delta was lowered from +4 to +2 per loadmap.md's 2026-09-13 revision
-        // ("増加し続けるカードがこの強化幅はダメ" -- a compounding card growing this fast on upgrade
-        // was too strong); xDRO keeps the original's +4 since it never compounds.
-        DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 2m : 4m);
+        DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 3m : 4m);
     }
 }

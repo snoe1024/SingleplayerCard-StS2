@@ -1,4 +1,8 @@
 {
-  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "Venomous",
-  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "Whenever this card deals unblocked Attack damage, apply {Amount} [gold]Poison[/gold]."
+  "VENOMOUS_ENCHANTMENT_SOLO.title": "Venomous",
+  "VENOMOUS_ENCHANTMENT_SOLO.description": "Whenever this card deals unblocked Attack damage, apply [blue]{Amount}[/blue] [gold]Poison[/gold].",
+  "VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "Envenom {Amount}.",
+
+  "TRAIN_ENCHANTMENT_SOLO.title": "Training",
+  "TRAIN_ENCHANTMENT_SOLO.description": "Gain [blue]{Amount}[/blue] [gold]Strength[/gold] this turn."
 }

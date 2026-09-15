@@ -25,8 +25,6 @@ public sealed class BeaconOfHopeSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
-    public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Innate };
-
     public BeaconOfHopeSolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
@@ -35,5 +33,10 @@ public sealed class BeaconOfHopeSolo : SingleplayerCardCard
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
         await PowerCmd.Apply<BeaconOfHopePowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
+    }
+    
+    protected override void OnUpgrade()
+    {
+        EnergyCost.UpgradeBy(-1);
     }
 }

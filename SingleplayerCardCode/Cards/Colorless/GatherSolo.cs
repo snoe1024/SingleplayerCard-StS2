@@ -39,6 +39,8 @@ public sealed class GatherSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
+
     public override bool GainsBlock => true;
 
     // BlockVar(12m) only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment
@@ -74,7 +76,11 @@ public sealed class GatherSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        if (!DroActiveForDisplay)
+        if (DroActiveForDisplay)
+        {
+            RemoveKeyword(CardKeyword.Exhaust);
+        }
+        else
         {
             DynamicVars.Block.UpgradeValueBy(5m);
         }

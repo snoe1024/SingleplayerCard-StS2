@@ -53,7 +53,7 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
     {
         if (DroActiveForDisplay)
         {
-            await CardPileCmd.Draw(choiceContext, 2, Owner);
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
             await PowerCmd.Apply<DrawCardsNextTurnPower>(choiceContext, Owner.Creature, 2m, Owner.Creature, this);
         }
         else
@@ -64,9 +64,6 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        if (!DroActiveForDisplay)
-        {
-            DynamicVars.Cards.UpgradeValueBy(1m);
-        }
+        DynamicVars.Cards.UpgradeValueBy(1m);
     }
 }
