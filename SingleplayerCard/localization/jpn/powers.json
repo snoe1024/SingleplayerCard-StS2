@@ -72,5 +72,8 @@
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "希望の道標",
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "毎ターン、最初にカードから[gold]ブロック[/gold]を得るとき、同じ[gold]ブロック[/gold]を次のターン開始時に得る。",
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "毎ターン、カードから[gold]ブロック[/gold]を得た最初の[blue]{Amount}[/blue]回、同じ[gold]ブロック[/gold]を次のターン開始時に得る。"
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "毎ターン、カードから[gold]ブロック[/gold]を得た最初の[blue]{Amount}[/blue]回、同じ[gold]ブロック[/gold]を次のターン開始時に得る。",
+
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "渡した",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "この敵が攻撃をしたとき、カードを[gold]山札[/gold]に加える。\nこの敵が死亡したとき、カードを[gold]捨て札[/gold]に加える。"
 }

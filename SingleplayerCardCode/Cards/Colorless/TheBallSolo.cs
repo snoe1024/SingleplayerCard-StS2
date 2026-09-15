@@ -2,32 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
+using SingleplayerCard.SingleplayerCardCode.Keywords;
+using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: THE_BALL (public-beta only; Uncommon Attack) -- see
-// .claude/loadmap.md "ボール" for current numbers. Deal damage; increase this card's damage this
-// combat and pass it to a random ally (lands in their Draw Pile).
-// Singleplayer rework (see .claude/loadmap.md "ボール"):
-// - DRO on (案1): the increase is halved since there's no longer a rotation of allies diluting how
-//   often you see it again, and instead of passing to an ally, the buffed copy lands in a random
-//   spot among your own Draw Pile, Hand, or Discard Pile.
-// - DRO off (xDRO): matches the original -- full increase amount, and (mirroring vanilla's own
-//   GetResultLocationForCardPlay, which only ever redirects a Discard result to the target's Draw
-//   Pile at a random position) redirects to your own Draw Pile at random whenever it would
-//   otherwise go to Discard.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class TheBallSolo : SingleplayerCardCard
 {
-    private static readonly PileType[] RandomPiles = { PileType.Draw, PileType.Hand, PileType.Discard };
-
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
     protected override bool DroVersionExists => true;
@@ -36,26 +29,17 @@ public sealed class TheBallSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
-    // Rework/案1 base (5, +5=10 on upgrade) since Rework is this mod's default variant;
-    // AfterCloned overwrites this to xDRO's base (10, +5=15) when that branch is active instead --
-    // same +5 delta either way, so OnUpgrade doesn't need to branch.
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [SingleplayerCardKeywords.CreateForHandOver().Tip(this)];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(10m, ValueProp.Move),
-        new DynamicVar("Increase", 5m)
+        new DynamicVar("IncreaseRemake", 5m),
+        new DynamicVar("IncreaseXdro", 10m)
     };
 
     public TheBallSolo() : base(1, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
-    }
-
-    protected override void AfterCloned()
-    {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
-        {
-            DynamicVars["Increase"].BaseValue = 10m;
-        }
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -64,19 +48,43 @@ public sealed class TheBallSolo : SingleplayerCardCard
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, cardPlay).Targeting(cardPlay.Target)
             .WithHitFx("vfx/vfx_attack_slash")
             .Execute(choiceContext);
-        DynamicVars.Damage.BaseValue += DynamicVars["Increase"].BaseValue;
+
+        if (DroActiveForDisplay)
+        {
+            DynamicVars.Damage.BaseValue += DynamicVars["IncreaseRemake"].BaseValue;
+            
+            var handOverPowers = cardPlay.Target.GetPowerInstances<HandOverPowerSolo>();
+            var exists = false;
+            foreach (var handOverPower in handOverPowers)
+            {
+                if (handOverPower.HandOverCard == this)
+                {
+                    exists = true;
+                }
+            }
+
+            if (!exists)
+            {
+                var handOverPower = await PowerCmd.Apply<HandOverPowerSolo>(choiceContext, cardPlay.Target, 1m, Owner.Creature, this);
+                handOverPower?.Take(this);
+
+                await CardPileCmd.RemoveFromCombat(this, false);
+            }
+        }
+        else
+        {
+            DynamicVars.Damage.BaseValue += DynamicVars["IncreaseXdro"].BaseValue;
+        }
     }
 
     protected override CardLocation GetResultLocationForCardPlay()
     {
         CardLocation location = base.GetResultLocationForCardPlay();
+        
         if (DroActiveForDisplay)
         {
-            location.pileType = Owner.RunState.Rng.CombatCardGeneration.NextItem(RandomPiles);
-            if (location.pileType != PileType.Hand)
-            {
-                location.position = CardPilePosition.Random;
-            }
+            location.pileType = PileType.None;
+            location.position = CardPilePosition.Bottom;
         }
         else if (location.pileType == PileType.Discard)
         {
@@ -87,8 +95,20 @@ public sealed class TheBallSolo : SingleplayerCardCard
         return location;
     }
 
+    private static Tween? GetTweenForMoveToCreature(IEnumerable<(NCard, PileType?)> cards, Creature target)
+    {
+        throw new NotImplementedException();
+    }
+
     protected override void OnUpgrade()
     {
-        DynamicVars["Increase"].UpgradeValueBy(5m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["IncreaseRemake"].UpgradeValueBy(5m);
+        }
+        else
+        {
+            DynamicVars["IncreaseXdro"].UpgradeValueBy(5m);
+        }
     }
 }

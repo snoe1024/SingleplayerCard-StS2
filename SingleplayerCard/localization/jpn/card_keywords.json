@@ -1,0 +1,4 @@
+{
+  "SINGLEPLAYERCARD-HAND_OVER.title": "渡す",
+  "SINGLEPLAYERCARD-HAND_OVER.description": "[gold]デッキ[/gold]から一時的になくす。\nカードが渡された敵が攻撃をしたとき、そのカードを[gold]山札[/gold]に加える。\nカードを渡された敵が死亡したとき、そのカードを[gold]捨て札[/gold]に加える。"
+}

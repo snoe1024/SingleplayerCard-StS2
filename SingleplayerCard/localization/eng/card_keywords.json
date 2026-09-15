@@ -1,3 +1,4 @@
 {
-  
+  "SINGLEPLAYERCARD-HAND_OVER.title": "Hand over",
+  "SINGLEPLAYERCARD-HAND_OVER.description": "Card will temporary removed from the [gold]Deck[/gold].\nWhen an enemy holding the card attacks, add that card to [gold]Deck Pile[/gold].\nWhen an enemy holding the card dies, add that card to the [gold]Discard Pile[/gold]."
 }
