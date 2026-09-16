@@ -1,4 +1,6 @@
 {
+  "SINGLEPLAYERCARD.mod_title": "Singleplayer Card",
+  
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "Apply Changes in Multiplayer Too",
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "Off by default. When enabled, this mod's changes also apply in multiplayer games: instead of vanilla's multiplayer-exclusive cards, this mod's singleplayer-adapted versions are added to the card pool instead. Every card's Adjusted/Original/Hidden setting below follows the HOST player's configuration for everyone in the session, not each player's own.",
 
@@ -25,11 +27,11 @@
   "SINGLEPLAYERCARD-SILENT_CARDS.title": "Silent Cards",
   "SINGLEPLAYERCARD-PINCER_ATTACK.hover.desc.rework": "This turn, the enemy takes double damage from Attack cards not currently in your hand.",
   "SINGLEPLAYERCARD-PINCER_ATTACK.hover.desc.xdro": "This turn, the enemy takes double Attack damage.",
-  "SINGLEPLAYERCARD-STEALTH.hover.desc.rework": "Sly. Whenever you deal damage by means other than an Attack card, gain 1(2) Block.",
+  "SINGLEPLAYERCARD-STEALTH.hover.desc.rework": "Sly. Whenever you you apply a debuff to an enemy, gain 2(3) Block.",
   "SINGLEPLAYERCARD-STEALTH.hover.desc.xdro": "Sly. Whenever you attack an enemy, gain 1(2) Block.",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.rework": "Play every Shiv you generated this turn (Upgraded).",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.rework": "Whenever you play Shiv this turn, Draw 1 card.",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.xdro": "Add 2 Shivs to your hand.",
-  "SINGLEPLAYERCARD-CONCOCT.hover.desc.rework": "Give all un-enchanted Attack cards in your hand Venomous 1(2).",
+  "SINGLEPLAYERCARD-CONCOCT.hover.desc.rework": "Give all un-enchanted Attack cards in your hand Venomous 2(3).",
   "SINGLEPLAYERCARD-CONCOCT.hover.desc.xdro": "This turn, whenever an Attack deals unblocked damage, apply 3(4) Poison.",
   "SINGLEPLAYERCARD-SHADOW_VANISH.hover.desc.rework": "Retain. This turn, gain Dexterity equal to the number of non-Skill cards in your hand. Exhaust (except on Upgrade).",
   "SINGLEPLAYERCARD-SHADOW_VANISH.hover.desc.xdro": "Retain. This turn, gain 6(9) Dexterity.",
@@ -49,7 +51,7 @@
   "SINGLEPLAYERCARD-NECROBINDER_CARDS.title": "Necrobinder Cards",
   "SINGLEPLAYERCARD-BONE_LEGION.hover.desc.rework": "Summon 5(7) for each enemy. Exhaust.",
   "SINGLEPLAYERCARD-BONE_LEGION.hover.desc.xdro": "Summon 6(8). Exhaust.",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.rework": "At the start of your next 2(3) turns, add a Soul to your hand. Exhaust.",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.rework": "Add a Soul to your Hand. At the start of your next 2(3) turns, add a Soul to your Hand. Exhaust.",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.xdro": "Add 3(4) Souls to your Draw Pile. Exhaust.",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.rework": "This turn, whenever you apply Doom, deal damage equal to that amount. Exhaust (except on Upgrade).",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.xdro": "This turn, whenever an Attack deals damage, apply Doom equal to that damage. Exhaust (except on Upgrade).",
@@ -65,7 +67,7 @@
   "SINGLEPLAYERCARD-HIBERNATE.hover.desc.xdro": "Channel 2(3) Frost.",
   "SINGLEPLAYERCARD-ONE_FOR_ALL.hover.desc.rework": "Your 0 Energy Attacks deal 3(4) additional damage.",
   "SINGLEPLAYERCARD-ONE_FOR_ALL.hover.desc.xdro": "N/A",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.rework": "At the end of each of your next 2(3) turns, play a copy of the last Power you played.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.rework": "The first 2(3) times enemy gains a Buff, add a random Power card to your Hand. It's free to play.",
   "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.xdro": "The next 2(3) Powers you play are played an extra time.",
 
   "SINGLEPLAYERCARD-COLORLESS_CARDS.title": "Colorless Cards",

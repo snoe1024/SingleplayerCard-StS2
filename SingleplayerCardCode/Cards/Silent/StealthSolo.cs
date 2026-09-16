@@ -29,7 +29,11 @@ public sealed class StealthSolo : SingleplayerCardCard
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Sly };
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<StealthPowerSolo>(1m) };
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new PowerVar<StealthPowerSolo>("StealthRemake", 2m),
+        new PowerVar<StealthPowerSolo>("StealthXdro", 1m)
+    ];
 
     public StealthSolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
@@ -38,11 +42,25 @@ public sealed class StealthSolo : SingleplayerCardCard
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
-        await PowerCmd.Apply<StealthPowerSolo>(choiceContext, Owner.Creature, DynamicVars["StealthPowerSolo"].BaseValue, Owner.Creature, this);
+        if (DroActiveForDisplay)
+        {
+            await PowerCmd.Apply<StealthPowerSolo>(choiceContext, Owner.Creature, DynamicVars["StealthRemake"].BaseValue, Owner.Creature, this);
+        }
+        else
+        {
+            await PowerCmd.Apply<StealthPowerSolo>(choiceContext, Owner.Creature, DynamicVars["StealthXdro"].BaseValue, Owner.Creature, this);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["StealthPowerSolo"].UpgradeValueBy(1m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["StealthRemake"].UpgradeValueBy(1m);
+        }
+        else
+        {
+            DynamicVars["StealthXdro"].UpgradeValueBy(1m);
+        }
     }
 }

@@ -1,4 +1,6 @@
 {
+  "SINGLEPLAYERCARD.mod_title": "シングルプレイ専用カード",
+
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "マルチプレイヤーでも変更を適用する",
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "デフォルトはオフ。オンにすると、マルチプレイヤーでもこのMODの調整を適用します。マルチプレイヤー専用のオリジナルカードの代わりに、このMODのシングルプレイヤー版カードがカードプールに追加されます。以下の各カードの調整版/オリジナル/出現しないの設定は、セッション参加者それぞれの設定ではなく、ホストプレイヤーの設定が全員に適用されます。",
 
@@ -25,11 +27,11 @@
   "SINGLEPLAYERCARD-SILENT_CARDS.title": "サイレントのカード",
   "SINGLEPLAYERCARD-PINCER_ATTACK.hover.desc.rework": "このターン、対象の敵は今手札にないアタックカードから受けるダメージが2倍になる。",
   "SINGLEPLAYERCARD-PINCER_ATTACK.hover.desc.xdro": "このターン、対象の敵は受けるアタックダメージが2倍になる。",
-  "SINGLEPLAYERCARD-STEALTH.hover.desc.rework": "スライ。アタックカード以外でダメージを発生させるたび、1(2)ブロックを得る。",
+  "SINGLEPLAYERCARD-STEALTH.hover.desc.rework": "スライ。敵にデバフを付与するたび、2(3)ブロックを得る。",
   "SINGLEPLAYERCARD-STEALTH.hover.desc.xdro": "スライ。敵を攻撃するたび、1(2)ブロックを得る。",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.rework": "このターン生成したナイフを全て(アップグレードして)プレイする。",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.rework": "このターン、ナイフをプレイするたび、カードを1枚引く。",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY.hover.desc.xdro": "手札にナイフを2枚加える。",
-  "SINGLEPLAYERCARD-CONCOCT.hover.desc.rework": "エンチャントされていない手札の全てのアタックカードに、有毒1(2)を付ける。",
+  "SINGLEPLAYERCARD-CONCOCT.hover.desc.rework": "エンチャントされていない手札の全てのアタックカードに、有毒2(3)を付ける。",
   "SINGLEPLAYERCARD-CONCOCT.hover.desc.xdro": "このターン、アタックがブロックされずにダメージを与えるたび、毒3(4)を付与する。",
   "SINGLEPLAYERCARD-SHADOW_VANISH.hover.desc.rework": "保留。このターン、手札のスキル以外のカードの枚数と同じ俊敏を得る。破棄(UG除外)。",
   "SINGLEPLAYERCARD-SHADOW_VANISH.hover.desc.xdro": "保留。このターン、他のプレイヤー1人は敏捷6(9)を得る。",
@@ -49,7 +51,7 @@
   "SINGLEPLAYERCARD-NECROBINDER_CARDS.title": "ネクロバインダーのカード",
   "SINGLEPLAYERCARD-BONE_LEGION.hover.desc.rework": "敵1体につき召喚5(7)。廃棄。",
   "SINGLEPLAYERCARD-BONE_LEGION.hover.desc.xdro": "召喚6(8)。廃棄。",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.rework": "次の2(3)ターン開始時、手札にソウルを加える。破棄。",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.rework": "手札にソウルを1枚加える。次の2(3)ターン開始時、手札にソウルを加える。破棄。",
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.xdro": "ソウルを3(4)枚山札に加える。廃棄。",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.rework": "このターン、破滅を与える度に、その量に等しいダメージを与える。廃棄(UG除外)。",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.xdro": "このターン、アタックでダメージを与えるたび、そのダメージに等しい破滅を付与する。廃棄(UG除外)。",
@@ -65,7 +67,7 @@
   "SINGLEPLAYERCARD-HIBERNATE.hover.desc.xdro": "フロスト2(3)を生成する。",
   "SINGLEPLAYERCARD-ONE_FOR_ALL.hover.desc.rework": "0エナジーのアタックは、追加で3(4)ダメージを与える。",
   "SINGLEPLAYERCARD-ONE_FOR_ALL.hover.desc.xdro": "対応無し",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.rework": "次の2(3)ターン終了時、最後にプレイしたパワーのコピーをプレイする。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.rework": "敵がバフを獲得する度、ランダムなパワーを手札に加える(最大2(3)回)。それはコストを支払わずにプレイできる。",
   "SINGLEPLAYERCARD-IMITATION_LEARNING.hover.desc.xdro": "次の2(3)枚のパワーをプレイしたとき、もう一度プレイする。",
 
   "SINGLEPLAYERCARD-COLORLESS_CARDS.title": "無色カード",

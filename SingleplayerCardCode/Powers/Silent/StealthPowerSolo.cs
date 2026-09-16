@@ -63,11 +63,12 @@ public sealed class StealthPowerSolo : SingleplayerCardPower
         }
         return base.AfterApplied(applier, cardSource);
     }
-
-    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props, Creature target, CardModel? cardSource)
+    
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (DroActiveForDisplay && dealer == Owner && (cardSource == null || cardSource.Type != CardType.Attack))
+        if (DroActiveForDisplay && amount != 0m && power.GetTypeForAmount(amount) == PowerType.Debuff && power.Owner.IsEnemy && applier == base.Owner && !(power is ITemporaryPower))
         {
+            Flash();
             await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null, fast: true);
         }
     }

@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Powers;
 using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
@@ -39,10 +40,14 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
     protected override string OriginalVanillaCardPool => "defect";
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Exhaust };
+    
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new CardsVar("ImitationRemake", 2),
+        new CardsVar("ImitationXdro", 2)
+    ];
 
-    public override TargetType TargetType => DroActiveForDisplay ? TargetType.AnyEnemy : TargetType.Self;
-
-    public ImitationLearningSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.AnyEnemy)
+    public ImitationLearningSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -51,16 +56,23 @@ public sealed class ImitationLearningSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
         if (DroActiveForDisplay)
         {
-            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-            await PowerCmd.Apply<ImitationLearningPowerSolo>(choiceContext, cardPlay.Target, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+            await PowerCmd.Apply<ImitationLearningPowerSolo>(choiceContext, Owner.Creature, DynamicVars["ImitationRemake"].IntValue, Owner.Creature, this);
         }
         else
         {
-            var power = await PowerCmd.Apply<ImitationLearningPower>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
-            if (power != null)
-            {
-                power.PlayerTarget = Owner;
-            }
+            await PowerCmd.Apply<SignalBoostPower>(choiceContext, Owner.Creature, DynamicVars["ImitationXdro"].IntValue, Owner.Creature, this);
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["ImitationRemake"].UpgradeValueBy(1m);
+        }
+        else
+        {
+            DynamicVars["ImitationXdro"].UpgradeValueBy(1m);
         }
     }
 }

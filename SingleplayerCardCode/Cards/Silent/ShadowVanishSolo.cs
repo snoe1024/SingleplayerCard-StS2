@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Powers;
 using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
@@ -30,11 +30,19 @@ public sealed class ShadowVanishSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "silent";
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<DexterityPower>()];
+
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Retain, CardKeyword.Exhaust };
 
     // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
     // still declared unconditionally.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DynamicVar("FlatDexterity", 6m) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new DynamicVar("FlatDexterity", 6m),
+        new CalculationBaseVar(0m),
+        new CalculationExtraVar(1m),
+        new CalculatedVar("DexterityRemake").WithMultiplier((card, _) => CardPile.GetCards(card.Owner, PileType.Hand).Count(c => c.Type != CardType.Skill))
+    ];
 
     public ShadowVanishSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {

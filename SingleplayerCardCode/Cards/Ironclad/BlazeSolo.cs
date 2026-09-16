@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -15,20 +17,9 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
 
-// Original multiplayer card: BLAZE (public-beta only; Uncommon Skill) -- see .claude/loadmap.md
-// "ブレイズ" for current numbers. Give another player Strength.
-// Singleplayer rework (see .claude/loadmap.md "ブレイズ"):
-// - DRO on (案1): no other player to buff, so this instead grants Strength per card discarded this
-//   turn (so far), rewarding a discard-heavy turn instead of being a flat repeatable Strength card.
-//   Tracked via a per-instance counter reset each of the owner's turns and incremented on discard
-//   (all cards, including ones sitting in a pile, receive combat hooks — see
-//   CombatState.IterateHookListeners in the decompiled source).
-// - DRO off (xDRO): a flat Strength gain instead, matching the original amount, ignoring discards.
 [Pool(typeof(IroncladCardPool))]
 public sealed class BlazeSolo : SingleplayerCardCard
 {
-    private int _discardedThisTurn;
-
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
     protected override bool DroVersionExists => true;
@@ -39,9 +30,13 @@ public sealed class BlazeSolo : SingleplayerCardCard
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];
     
-    // 2m (the Rework/案1 per-discard base) since Rework is this mod's default variant; AfterCloned
-    // overwrites this to the xDRO flat amount when that branch is active instead.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new PowerVar<StrengthPower>(2m) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new PowerVar<StrengthPower>(2m),
+        new CalculationBaseVar(0m),
+        new CalculationExtraVar(2m),
+        new CalculatedVar("StrengthRemake").WithMultiplier((card, _) => CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Count(e => e.HappenedThisTurn(card.CombatState)))
+    ];
 
     public BlazeSolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -53,29 +48,14 @@ public sealed class BlazeSolo : SingleplayerCardCard
         DynamicVars.Strength.BaseValue = DroActiveForDisplay ? 2m : 5m;
     }
 
-    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (player == Owner)
-        {
-            _discardedThisTurn = 0;
-        }
-
-        return base.AfterPlayerTurnStart(choiceContext, player);
-    }
-
-    public override Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
-    {
-        _discardedThisTurn++;
-        return base.AfterCardDiscarded(choiceContext, card);
-    }
-
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (DroActiveForDisplay)
         {
-            if (_discardedThisTurn > 0)
+            decimal total = ((CalculatedVar)DynamicVars["StrengthRemake"]).Calculate(null);
+            if (total > 0m)
             {
-                await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, DynamicVars.Strength.BaseValue * _discardedThisTurn, Owner.Creature, this);
+                await PowerCmd.Apply<StrengthPower>(choiceContext, Owner.Creature, total, Owner.Creature, this);
             }
         }
         else
@@ -86,6 +66,13 @@ public sealed class BlazeSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Strength.UpgradeValueBy(DroActiveForDisplay ? 1m : 2m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars.CalculationExtra.UpgradeValueBy(1m);
+        }
+        else
+        {
+            DynamicVars.Strength.UpgradeValueBy(2m);
+        }
     }
 }

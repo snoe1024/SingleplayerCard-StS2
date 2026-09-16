@@ -18,17 +18,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
 
-// Original multiplayer card: MIDNIGHT (public-beta only; Rare Attack, costs 1 less per card Exhausted
-// this combat by ANYONE -- see .claude/loadmap.md "ミッドナイト" for current numbers, which change as
-// balance is tuned and are NOT duplicated here to avoid this comment going stale).
-// Singleplayer rework (see .claude/loadmap.md "ミッドナイト"): base damage lowered so the card isn't a
-// guaranteed-eventually-free finisher (Ironclad has enough cost-reduction tools, especially combined
-// with Blaze, that an unlowered value routinely turned this into a 0-cost, oversized hit), and the
-// cost-reduction trigger changes from "exhausted by anyone" to two triggers of our own: -1 (permanent,
-// this combat) per card discarded, and -1 (this turn only) per card exhausted this turn, approximating
-// "1 per card currently in the discard pile" as "1 per discard event this combat" for simplicity
-// (matches vanilla's own AddThisCombat-per-event pattern for MIDNIGHT; this only diverges if something
-// later removes cards from the discard pile, which is rare).
 [Pool(typeof(IroncladCardPool))]
 public sealed class MidnightSolo : SingleplayerCardCard
 {
@@ -63,12 +52,6 @@ public sealed class MidnightSolo : SingleplayerCardCard
 
     protected override void AfterCloned()
     {
-        // base.AfterCloned() must run FIRST: SingleplayerCardCard.AfterCloned() is what actually sets
-        // DroWasOnAtCreation (from the live DuplicateReworkManager resolution) at the end of its own
-        // body. DroActiveForDisplay reads DroWasOnAtCreation for any non-canonical instance (every
-        // instance that reaches AfterCloned at all), so reading it BEFORE calling base would only ever
-        // see that field's still-default value from the shallow MemberwiseClone -- always false,
-        // regardless of the player's actual setting.
         base.AfterCloned();
 
         if (DroActiveForDisplay)
@@ -110,10 +93,21 @@ public sealed class MidnightSolo : SingleplayerCardCard
             return Task.CompletedTask;
         }
 
-        int amount = CombatManager.Instance.History.Entries.OfType<CardDiscardedEntry>().Count();
-        if (amount > 0)
+        if (DroActiveForDisplay)
         {
-            ReduceCostBy(amount);
+            var amount = CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Select(e => e.HappenedThisTurn(CombatState) ? 2 : 1).Sum();
+            if (amount > 0)
+            {
+                ReduceCostBy(amount);
+            }
+        }
+        else
+        {
+            var amount = CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Count();
+            if (amount > 0)
+            {
+                ReduceCostBy(amount);
+            }
         }
 
         return Task.CompletedTask;
@@ -123,14 +117,8 @@ public sealed class MidnightSolo : SingleplayerCardCard
     {
         if (DroActiveForDisplay)
         {
-            // Per loadmap.md's 2026-09-13 revision this reduction amount is 1, not 2 (Blaze made a
-            // -2-per-exhaust version too easy to break). DecreasedCostInTurn tracks event COUNT (not
-            // total amount reduced) so BeforeSideTurnStart's AddThisCombat(DecreasedCostInTurn) reverts
-            // exactly this much per event at next turn's start -- keeping the amounts here and there in
-            // sync is what makes this reduction genuinely "this turn only" rather than partially
-            // persisting forever.
             DecreasedCostInTurn++;
-            ReduceCostBy(1);
+            ReduceCostBy(2);
         }
         else
         {

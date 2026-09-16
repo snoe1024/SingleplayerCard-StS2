@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
@@ -40,7 +41,11 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
 
     // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
     // still declared unconditionally.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new CardsVar(3) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new CardsVar("SoulsRemake", 2),
+        new CardsVar("SoulsXdro", 3)
+    ];
 
     public GlimpseBeyondSolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)
     {
@@ -51,21 +56,27 @@ public sealed class GlimpseBeyondSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (DroActiveForDisplay)
         {
-            await PowerCmd.Apply<GlimpseBeyondPowerSolo>(choiceContext, Owner.Creature, IsUpgraded ? 3m : 2m, Owner.Creature, this);
+            var soul = Soul.Create(Owner, 1, CombatState);
+            await CardPileCmd.AddGeneratedCardsToCombat(soul, PileType.Hand, Owner, CardPilePosition.Top);
+            await PowerCmd.Apply<GlimpseBeyondPowerSolo>(choiceContext, Owner.Creature, DynamicVars["SoulsRemake"].IntValue, Owner.Creature, this);
         }
         else
         {
-            List<Soul> cards = Soul.Create(Owner, DynamicVars.Cards.IntValue, CombatState).ToList();
-            IReadOnlyList<CardPileAddResult> results = await CardPileCmd.AddGeneratedCardsToCombat(cards, PileType.Draw, Owner, CardPilePosition.Random);
+            var soul = Soul.Create(Owner, DynamicVars["SoulsXdro"].IntValue, CombatState);
+            var results = await CardPileCmd.AddGeneratedCardsToCombat(soul, PileType.Draw, Owner, CardPilePosition.Random);
             CardCmd.PreviewCardPileAdd(results);
         }
     }
 
     protected override void OnUpgrade()
     {
-        if (!DroActiveForDisplay)
+        if (DroActiveForDisplay)
         {
-            DynamicVars.Cards.UpgradeValueBy(1m);
+            DynamicVars["SoulsRemake"].UpgradeValueBy(1m);
+        }
+        else
+        {
+            DynamicVars["SoulsXdro"].UpgradeValueBy(1m);
         }
     }
 }

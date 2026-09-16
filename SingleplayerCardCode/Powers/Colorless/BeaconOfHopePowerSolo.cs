@@ -30,7 +30,7 @@ public sealed class BeaconOfHopePowerSolo : SingleplayerCardPower
     {
         if (creature == Owner && props.IsCardOrMonsterMove() && cardSource != null && amount > 0m)
         {
-            int num = CombatManager.Instance.History.Entries.OfType<BlockGainedEntry>().Count(e => e.HappenedThisTurn(CombatState) && e.CardPlay != null && e.CardPlay.Player.Creature == base.Owner && e.Props.IsCardOrMonsterMove() && e.CardPlay != null);
+            int num = CombatManager.Instance.History.Entries.OfType<BlockGainedEntry>().Count(e => e.HappenedThisTurn(CombatState) && e.CardPlay != null && e.CardPlay.Player.Creature == base.Owner && e.Props.IsCardOrMonsterMove() && e.CardPlay.Card != cardSource);
             if (num < Amount)
             {
                 await PowerCmd.Apply<BlockNextTurnPower>(null, Owner, amount, Owner, null);

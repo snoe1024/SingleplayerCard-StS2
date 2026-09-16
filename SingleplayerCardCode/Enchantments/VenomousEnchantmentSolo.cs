@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -7,6 +8,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using SingleplayerCard.SingleplayerCardCode.Extensions;
 
 namespace SingleplayerCard.SingleplayerCardCode.Enchantments;
 
@@ -14,8 +16,14 @@ namespace SingleplayerCard.SingleplayerCardCode.Enchantments;
 // whenever the enchanted card deals unblocked Attack damage, apply N Poison to the target.
 // Only Attack cards can carry it (EnchantmentModel.CanEnchant already restricts to Attack/Skill/
 // Power-excluded types; this narrows further to Attack only, matching the card text).
-public sealed class VenomousEnchantmentSolo : EnchantmentModel
+public sealed class VenomousEnchantmentSolo : CustomEnchantmentModel
 {
+    public override bool HasExtraCardText => true;
+
+    public override bool ShowAmount => true;
+    
+    protected override string CustomIconPath => $"enchantments/{Id.Entry.ToLowerInvariant()}.png".ImagePath();
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<PoisonPower>()];
     
     public override bool CanEnchant(CardModel card)

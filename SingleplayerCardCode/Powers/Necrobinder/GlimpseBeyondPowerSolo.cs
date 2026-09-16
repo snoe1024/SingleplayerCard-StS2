@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models.Cards;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
@@ -29,8 +30,8 @@ public sealed class GlimpseBeyondPowerSolo : SingleplayerCardPower
             return;
         }
 
-        Soul soul = Soul.Create(Owner.Player, 1, CombatState).First();
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(new[] { soul }, PileType.Hand, Owner.Player, CardPilePosition.Random));
+        var soul = Soul.Create(Owner.Player, 1, CombatState).First();
+        await CardPileCmd.AddGeneratedCardsToCombat([soul], PileType.Hand, Owner.Player, CardPilePosition.Random);
         await PowerCmd.Decrement(this);
     }
 }

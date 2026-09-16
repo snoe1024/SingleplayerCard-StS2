@@ -43,8 +43,8 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "このターン、あなたの[gold]フロスト[/gold]は自動効果を2回発動する。",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模倣学習",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]2[/blue]回）。",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "この敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]{Amount}[/blue]回）。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]2[/blue]回）。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "敵が[gold]バフ[/gold]を得るたび、ランダムなパワーカードをコスト[blue]0[/blue]で手札に加える（あと[blue]{Amount}[/blue]回）。",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "タッグチーム",
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "この敵に次にプレイするアタックは、追加で[blue]1[/blue]回プレイされる。",
@@ -75,5 +75,8 @@
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "毎ターン、カードから[gold]ブロック[/gold]を得た最初の[blue]{Amount}[/blue]回、同じ[gold]ブロック[/gold]を次のターン開始時に得る。",
 
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "渡した",
-  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "この敵が攻撃をしたとき、カードを[gold]山札[/gold]に加える。\nこの敵が死亡したとき、カードを[gold]捨て札[/gold]に加える。"
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "この敵が攻撃をしたとき、カードを[gold]山札[/gold]に加える。\nこの敵が死亡したとき、カードを[gold]捨て札[/gold]に加える。",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "ブレイド・シンフォニー",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "このターン、[gold]ナイフ[/gold]をプレイするたび、[blue]{Amount}[/blue]枚のカードを引く。"
 }

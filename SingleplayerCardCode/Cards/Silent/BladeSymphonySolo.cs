@@ -15,6 +15,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Nodes.CommonUi;
+using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
@@ -49,44 +50,31 @@ public sealed class BladeSymphonySolo : SingleplayerCardCard
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromCard<Shiv>()];
     
-    public BladeSymphonySolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new CardsVar(2)
+    ];
+    
+    public BladeSymphonySolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.None)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+        
+        if (CombatState == null)
+        {
+            return;
+        }
+        
         if (DroActiveForDisplay)
         {
-            ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
-
-            List<CardModel> shivs = CombatManager.Instance.History.Entries
-                .OfType<CardGeneratedEntry>()
-                .Where(e => e.Card.Owner == Owner && e.Card.Tags.Contains(CardTag.Shiv) && e.HappenedThisTurn(CombatState))
-                .Select(e => e.Card)
-                .Distinct()
-                .ToList();
-
-            bool first = true;
-            foreach (CardModel shiv in shivs)
-            {
-                if (IsUpgraded)
-                {
-                    CardCmd.Upgrade(shiv, CardPreviewStyle.None);
-                }
-
-                await CardCmd.AutoPlay(choiceContext, shiv, cardPlay.Target, AutoPlayType.Default, skipXCapture: false, !first);
-                first = false;
-            }
+            await PowerCmd.Apply<BladeSymphonyPowerSolo>(choiceContext, Owner.Creature, 1m, Owner.Creature, this);
         }
         else
         {
-            await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-            if (CombatState == null)
-            {
-                return;
-            }
-
-            for (int i = 0; i < 2; i++)
+            for (var i = 0; i < DynamicVars.Cards.IntValue; i++)
             {
                 await Shiv.CreateInHand(Owner, CombatState);
                 await Cmd.Wait(0.1f);

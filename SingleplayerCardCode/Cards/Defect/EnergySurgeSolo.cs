@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -38,7 +39,11 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
 
     // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
     // still declared unconditionally.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new EnergyVar(2) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new EnergyVar(2),
+        new PowerVar<RadiancePower>(2)
+    ];
 
     public EnergySurgeSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -58,7 +63,7 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
         if (DroActiveForDisplay)
         {
-            await PowerCmd.Apply<RadiancePower>(choiceContext, Owner.Creature, DynamicVars.Energy.IntValue, Owner.Creature, this);
+            await PowerCmd.Apply<RadiancePower>(choiceContext, Owner.Creature, DynamicVars.Power<RadiancePower>().IntValue, Owner.Creature, this);
         }
         else
         {
@@ -68,7 +73,11 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        if (!DroActiveForDisplay)
+        if (DroActiveForDisplay)
+        {
+            DynamicVars.Power<RadiancePower>().UpgradeValueBy(1);
+        }
+        else
         {
             DynamicVars.Energy.UpgradeValueBy(1m);
         }

@@ -29,7 +29,7 @@ public sealed class HammerTimeSolo : SingleplayerCardCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [ HoverTipFactory.FromCard<SovereignBlade>() ];
 
-    public HammerTimeSolo() : base(1, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public HammerTimeSolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
@@ -41,6 +41,6 @@ public sealed class HammerTimeSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Innate);
+        EnergyCost.UpgradeBy(-1);
     }
 }

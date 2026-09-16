@@ -43,8 +43,8 @@
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "This turn, your [gold]Frost[/gold] triggers its Passive twice.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitation Learning",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first [blue]2[/blue] times this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "The first [blue]{Amount}[/blue] {Amount:plural:time|times} this enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "The first [blue]2[/blue] times enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "The first [blue]{Amount}[/blue] {Amount:plural:time|times} enemy gains a [gold]Buff[/gold], adds a random Power card to your hand at [blue]0[/blue] Energy cost.",
 
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Tag Team",
   "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "The next Attack played on this enemy is played an additional [blue]2[/blue] times.",
@@ -75,5 +75,8 @@
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "The first {Amount:plural:time|[blue]{}[/blue] times} you gain [gold]Block[/gold] from a card each turn, gain same [gold]Block[/gold] on next turn.",
 
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "Hand Overed",
-  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "When this enemy attacks, add this card to [gold]Draw Pile[/gold].\nWhen this enemy dies, add this card to [gold]Discard Pile[/gold]."
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "When this enemy attacks, add this card to [gold]Draw Pile[/gold].\nWhen this enemy dies, add this card to [gold]Discard Pile[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Blade Symphony",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Whenever you play [gold]Shiv[/gold] this turn, Draw [blue]{Amount}[/blue] card."
 }

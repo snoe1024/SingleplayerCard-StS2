@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,15 +9,18 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using SingleplayerCard.SingleplayerCardCode.Extensions;
 using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Enchantments;
 
-public sealed class TrainEnchantmentSolo : EnchantmentModel
+public sealed class TrainEnchantmentSolo : CustomEnchantmentModel
 {
     public override bool HasExtraCardText => true;
 
     public override bool ShowAmount => true;
+    
+    protected override string CustomIconPath => $"enchantments/{Id.Entry.ToLowerInvariant()}.png".ImagePath();
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<StrengthPower>()];
 

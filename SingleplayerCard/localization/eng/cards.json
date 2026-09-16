@@ -1,6 +1,6 @@
 {
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.{InCombat:\n{LoseHPAmount:diff()} HP was lost in this combat.|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Lose 1 HP. Gain Block equal to the HP you have lost this combat.{InCombat:\n({LoseHPAmount:diff()} HP was lost in this combat.)|}",
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Lose 1 HP. Double your Block.",
 
   "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
@@ -11,11 +11,11 @@
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Deal {Damage:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {Strength:diff()} [gold]Strength[/gold] for each card you have discarded this turn.",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake}.)|}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {Strength:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your hand.",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your [gold]Hand[/gold].",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "Deal {Damage:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold].",
 
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
@@ -23,27 +23,27 @@
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "This turn, the enemy takes double Attack damage.",
 
   "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Whenever you deal damage by means other than an Attack card, gain {StealthPowerSolo:diff()} [gold]Block[/gold].",
-  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Whenever you attack an enemy, gain {StealthPowerSolo:diff()} [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Whenever you apply a debuff to an enemy, gain {StealthRemake:diff()} [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Whenever you attack an enemy, gain {StealthXdro:diff()} [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Play every [gold]Shiv[/gold] created this turn.",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Add 2 [gold]Shivs[/gold] to your hand.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Whenever you play [gold]Shiv[/gold] this turn, Draw 1 card.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Add 2 [gold]Shivs[/gold] to your [gold]Hand[/gold].",
 
   "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Give all un-enchanted Attack cards in your hand [gold]Venomous {Venomous:diff()}[/gold].",
-  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "This turn, whenever an Attack deals unblocked damage, apply {Venomous:diff()} [gold]Poison[/gold].",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Give all un-enchanted Attack cards in your [gold]Hand[/gold] [gold]Venomous[/gold]{Venomous:diff()}.",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "This turn, whenever an Attack deals unblocked damage, apply {Envenom:diff()} [gold]Poison[/gold].",
 
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "This turn, gain Dexterity equal to the number of non-Skill cards in your hand.",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "This turn, gain Dexterity equal to the number of non-Skill cards in your [gold]Hand[/gold].{InCombat:\n(Gain [gold]Dexterity[/gold]{DexterityRemake}.)|}",
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "This turn, gain {FlatDexterity:diff()} [gold]Dexterity[/gold].",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Whenever you play [gold]Sovereign Blade[/gold], replay every card that [gold]Forged[/gold] this turn.",
 
   "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "At the start of your next turn, add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your hand.",
-  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your hand.",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "At the start of your next turn, add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Add 1 random{IfUpgraded:show: [gold]Upgraded[/gold]} Colorless card to your [gold]Hand[/gold].",
 
   "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "At the start of each of your next 3 turns, draw 1 additional card.",
@@ -61,8 +61,8 @@
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]Summon[/gold] {Summon:diff()}.",
 
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "At the start of your next {IfUpgraded:show:3|2} turns, add a [gold]Soul[/gold] to your hand.",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Add {Cards:diff()} [gold]Souls[/gold] to your Draw Pile.",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "Add a [gold]Soul[/gold] into your [gold]Hand[/gold].\nAt the start of your next {SoulsRemake:diff()} turns, add a [gold]Soul[/gold] to your [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Add {SoulsXdro:diff()} [gold]Souls[/gold] to your Draw Pile.",
 
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "This turn, whenever you apply [gold]Doom[/gold] to an enemy, deal damage equal to that amount.",
@@ -76,7 +76,7 @@
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "At the start of each of your next {IfUpgraded:show:3|2} turns, gain 1 {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "At the start of each of your next {RadiancePower:diff()} turns, gain 1 {energyPrefix:energyIcons(1)}.",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "Gain {Energy:energyIcons()}.",
 
   "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
@@ -91,8 +91,8 @@
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Your 0 {energyPrefix:energyIcons(1)} Attacks deal {OneForAllPower:diff()} additional damage.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Choose an enemy. The first {IfUpgraded:show:3|2} times that enemy gains a Buff, add a random Power card to your hand. That Power costs 0 Energy.",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "The next {IfUpgraded:show:3|2} times you play a Power, play it again.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "The first {ImitationRemake:diff()} times enemy gains a Buff, add a random Power card to your [gold]Hand[/gold]. It's free to play.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "The next {ImitationXdro:diff()} times you play a Power, play it again.",
 
   "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Deal {Damage:diff()} damage. Deal {BonusPerAttack:diff()} more for each Attack you've played this turn.",
@@ -129,10 +129,10 @@
   "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Until end of turn, gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your hand.{InCombat:\nGain {BestHandBlock:diff()} [gold]Block[/gold].|}",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gain Block equal to the highest Block value among cards in your [gold]Hand[/gold].{InCombat:\nGain {BestHandBlock:diff()} [gold]Block[/gold].|}",
 
   "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gain Block equal to the sum of the Block values of all other cards in your hand.{InCombat:\nGain {HandBlockTotal:diff()} [gold]Block[/gold].|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gain Block equal to the sum of the Block values of all other cards in your [gold]Hand[/gold].{InCombat:\nGain {HandBlockTotal:diff()} [gold]Block[/gold].|}",
   "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",

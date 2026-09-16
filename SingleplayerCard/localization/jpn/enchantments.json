@@ -1,8 +1,9 @@
 {
-  "VENOMOUS_ENCHANTMENT_SOLO.title": "有毒",
-  "VENOMOUS_ENCHANTMENT_SOLO.description": "ブロックされないアタックダメージを与える度、[gold]毒[/gold][blue]{Amount}[/blue]を相手に付与する。",
-  "VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "仕込み毒{Amount}。",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "有毒",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "ブロックされないアタックダメージを与える度、[gold]毒[/gold][blue]{Amount}[/blue]を相手に付与する。",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "仕込み毒{Amount}。",
 
-  "TRAIN_ENCHANTMENT_SOLO.title": "鍛錬",
-  "TRAIN_ENCHANTMENT_SOLO.description": "このターン、[gold]筋力[/gold][blue]{Amount}[/blue]を得る。"
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "鍛錬",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "このターン、[gold]筋力[/gold][blue]{Amount}[/blue]を得る。",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "このターン、[gold]筋力[/gold][blue]{Amount}[/blue]を得る。"
 }

@@ -15,17 +15,6 @@ using SingleplayerCard.SingleplayerCardCode.Enchantments;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
-// Original multiplayer card: CONCOCT (Uncommon Skill) -- see .claude/loadmap.md "調合" for current
-// numbers. Choose another player; whenever their Attacks deal unblocked damage this turn, they
-// apply Poison.
-// Singleplayer rework (see .claude/loadmap.md "調合"):
-// - DRO on (案1): no other player to buff, so instead this attaches a new "Venomous" enchantment
-//   (VenomousEnchantmentSolo) to every un-enchanted Attack card currently in hand -- permanent (not
-//   "this turn only"), since enchantments stick to the card rather than expiring.
-// - DRO off (xDRO): matches the original -- applies vanilla's OWN ConcoctPower (Core/Models/Powers/
-//   ConcoctPower.cs) to the owner directly. That power's trigger already checks `dealer == Owner`
-//   with no multiplayer-specific logic, so it works correctly targeted at ourselves with no Solo
-//   reimplementation needed. Costs 0 like the original (Rework keeps the higher cost).
 [Pool(typeof(SilentCardPool))]
 public sealed class ConcoctSolo : SingleplayerCardCard
 {
@@ -37,27 +26,26 @@ public sealed class ConcoctSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "silent";
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => HoverTipFactory.FromEnchantment<VenomousEnchantmentSolo>();
 
-    // 1m (the Rework/案1 base) since Rework is this mod's default variant; AfterCloned overwrites
-    // this (and the cost) to the xDRO values when that branch is active instead.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DynamicVar("Venomous", 1m) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new DynamicVar("Envenom", 3m),
+        new DynamicVar("Venomous", 2m),
+    ];
 
-    public ConcoctSolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public ConcoctSolo() : base(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
     protected override void AfterCloned()
     {
         base.AfterCloned();
-        if (DroActiveForDisplay)
+        if (!DroActiveForDisplay)
         {
-            DynamicVars["Venomous"].BaseValue = 1m;
-        }
-        else
-        {
-            DynamicVars["Venomous"].BaseValue = 3m;
-            EnergyCost.SetCustomBaseCost(0);
+            RemoveKeyword(CardKeyword.Exhaust);
         }
     }
 
@@ -73,12 +61,19 @@ public sealed class ConcoctSolo : SingleplayerCardCard
         }
         else
         {
-            await PowerCmd.Apply<ConcoctPower>(choiceContext, Owner.Creature, DynamicVars["Venomous"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<ConcoctPower>(choiceContext, Owner.Creature, DynamicVars["Envenom"].BaseValue, Owner.Creature, this);
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Venomous"].UpgradeValueBy(1m);
+        if (DroActiveForDisplay)
+        {
+            RemoveKeyword(CardKeyword.Exhaust);
+        }
+        else
+        {
+            DynamicVars["Envenom"].UpgradeValueBy(1m);
+        }
     }
 }
