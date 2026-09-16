@@ -4,6 +4,17 @@
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "Apply Changes in Multiplayer Too",
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "Off by default. When enabled, this mod's changes also apply in multiplayer games: instead of vanilla's multiplayer-exclusive cards, this mod's singleplayer-adapted versions are added to the card pool instead. Every card's Adjusted/Original/Hidden setting below follows the HOST player's configuration for everyone in the session, not each player's own.",
 
+  "SINGLEPLAYERCARD-APPLY_BULK_ACTION.title": "Apply",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_REWORK.title": "Set All Cards to Adjusted",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_REWORK.hover.desc": "Sets every card below to Adjusted.\nA few cards for which no adjusted version exists will remain unchanged.",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_ORIGINAL.title": "Set All Cards to Original",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_ORIGINAL.hover.desc": "Sets every card below to Original.\nA few cards for which original versions would be mechanically broken in single-player mode will remain unchanged.",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_DISABLED.title": "Set All Cards to Hidden",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_DISABLED.hover.desc": "Hides every card below from appearing at all.",
+
   "SINGLEPLAYERCARD-CARD_VARIANT.Rework": "Adjusted",
   "SINGLEPLAYERCARD-CARD_VARIANT.Original": "Original",
   "SINGLEPLAYERCARD-CARD_VARIANT.Disabled": "Hidden",

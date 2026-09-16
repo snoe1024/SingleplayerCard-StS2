@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Reflection;
 using BaseLib.Config;
 using Godot;
 using MegaCrit.Sts2.Core.Platform;
@@ -48,6 +50,97 @@ public sealed class SingleplayerCardConfig : SimpleModConfig
     // MultiplayerConfigAuthority) -- an unexpected multiplayer pool change for someone who never agreed
     // to it would be a much worse surprise than an unexpected singleplayer one.
     public static bool ApplyInMultiplayer { get; set; } = false;
+
+    // Every [CardVariantFor] property in declaration order, cached once via reflection (same lookup
+    // shape as DuplicateReworkManager.BuildLookup, but this one doesn't need to be keyed by vanilla id).
+    private static readonly PropertyInfo[] CardVariantProperties = typeof(SingleplayerCardConfig)
+        .GetProperties(BindingFlags.Public | BindingFlags.Static)
+        .Where(p => p.GetCustomAttribute<CardVariantForAttribute>() != null)
+        .ToArray();
+
+    // Bulk-set buttons (loadmap.md "一括設定ボタン"). Not every card's enum actually HAS a Rework or an
+    // Original choice -- CardVariantNoOriginal cards (Tank, HammerTime, Mimicry, BeaconOfHope) have no
+    // Original because the vanilla xDRO effect breaks outright, and CardVariantOriginalOnly cards
+    // (Tutor, OneForAll, GangUp, TagTeam) have no Rework because vanilla's own effect was already fine
+    // as-is (see CardVariant.cs). Those cards are silently left at whatever they're currently set to by
+    // the Rework/Original buttons below -- there's no third state to fall back to that wouldn't also be
+    // a silent surprise, so the hover tip on each button says so explicitly instead. Disabled always
+    // exists on all three enums, so that button has no such caveat.
+    //
+    // Declared right after ApplyInMultiplayer (before any [ConfigSection]) so these render as top-level
+    // rows above every collapsible per-character section, matching ApplyInMultiplayer's own placement,
+    // rather than silently inheriting whichever section happens to precede them in source order.
+    //
+    // buttonLabelKey works exactly like a property name does: SimpleModConfig.CreateButton passes it
+    // through the same GetLabelText(key) -> StringHelper.Slugify(key) -> LocString.GetIfExists("settings_ui",
+    // $"{ModPrefix}{slug}.title") lookup as every property's row label (confirmed by reading BaseLib's
+    // actual source, not just the decompile -- see SimpleModConfig.cs/ModConfig.cs at
+    // github.com/Alchyr/BaseLib-StS2). So "APPLY_BULK_ACTION" here needs exactly one entry,
+    // "SINGLEPLAYERCARD-APPLY_BULK_ACTION.title", already present in settings_ui.json for both
+    // languages -- no extra prefix, no removing ".title" from the JSON key.
+    //
+    // The reason this silently failed to resolve during testing wasn't the key itself: a
+    // dotnet publish -c ExportRelease without first deleting the mods-folder .pck can leave the OLD
+    // settings_ui.json packed alongside the freshly rebuilt .dll (see gotchas.md) -- LocString.GetIfExists
+    // returns null on any miss with no logging whatsoever (confirmed in LocString.cs), so a stale .pck
+    // silently missing a brand-new key is indistinguishable from a genuinely wrong key from godot.log
+    // alone. Always delete the .pck before republishing when only localization/resource files changed.
+    [ConfigButton("Apply")]
+    private void SetAllCardsToRework()
+    {
+        foreach (PropertyInfo property in CardVariantProperties)
+        {
+            if (property.PropertyType == typeof(CardVariant))
+            {
+                property.SetValue(null, CardVariant.Rework);
+            }
+            else if (property.PropertyType == typeof(CardVariantNoOriginal))
+            {
+                property.SetValue(null, CardVariantNoOriginal.Rework);
+            }
+            // CardVariantOriginalOnly has no Rework value -- left untouched, see comment above.
+        }
+        Changed();
+    }
+
+    [ConfigButton("Apply")]
+    private void SetAllCardsToOriginal()
+    {
+        foreach (PropertyInfo property in CardVariantProperties)
+        {
+            if (property.PropertyType == typeof(CardVariant))
+            {
+                property.SetValue(null, CardVariant.Original);
+            }
+            else if (property.PropertyType == typeof(CardVariantOriginalOnly))
+            {
+                property.SetValue(null, CardVariantOriginalOnly.Original);
+            }
+            // CardVariantNoOriginal has no Original value -- left untouched, see comment above.
+        }
+        Changed();
+    }
+
+    [ConfigButton("Apply")]
+    private void SetAllCardsToDisabled()
+    {
+        foreach (PropertyInfo property in CardVariantProperties)
+        {
+            if (property.PropertyType == typeof(CardVariant))
+            {
+                property.SetValue(null, CardVariant.Disabled);
+            }
+            else if (property.PropertyType == typeof(CardVariantNoOriginal))
+            {
+                property.SetValue(null, CardVariantNoOriginal.Disabled);
+            }
+            else if (property.PropertyType == typeof(CardVariantOriginalOnly))
+            {
+                property.SetValue(null, CardVariantOriginalOnly.Disabled);
+            }
+        }
+        Changed();
+    }
 
     // --- アイアンクラッドのカード ---
 

@@ -4,6 +4,17 @@
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "マルチプレイヤーでも変更を適用する",
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "デフォルトはオフ。オンにすると、マルチプレイヤーでもこのMODの調整を適用します。マルチプレイヤー専用のオリジナルカードの代わりに、このMODのシングルプレイヤー版カードがカードプールに追加されます。以下の各カードの調整版/オリジナル/出現しないの設定は、セッション参加者それぞれの設定ではなく、ホストプレイヤーの設定が全員に適用されます。",
 
+  "SINGLEPLAYERCARD-APPLY_BULK_ACTION.title": "適用",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_REWORK.title": "全カードを調整版にする",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_REWORK.hover.desc": "以下の全カードを「調整版」に設定します。\n調整版が存在しない一部のカードは変更されません。",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_ORIGINAL.title": "全カードをオリジナル版にする",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_ORIGINAL.hover.desc": "以下の全カードを「オリジナル」に設定します。\nオリジナル版がシングルプレイヤーでは効果として破綻してしまう一部のカードは変更されません。",
+
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_DISABLED.title": "全カードを出現しないようにする",
+  "SINGLEPLAYERCARD-SET_ALL_CARDS_TO_DISABLED.hover.desc": "以下の全カードを「出現しない」に設定します。",
+
   "SINGLEPLAYERCARD-CARD_VARIANT.Rework": "調整版",
   "SINGLEPLAYERCARD-CARD_VARIANT.Original": "オリジナル",
   "SINGLEPLAYERCARD-CARD_VARIANT.Disabled": "出現しない",
