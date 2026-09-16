@@ -88,7 +88,7 @@
   "SINGLEPLAYERCARD-TAG_TEAM.hover.desc.xdro": "対応無し",
   "SINGLEPLAYERCARD-KNOCKDOWN.hover.desc.rework": "10(14)ダメージを与える。次のターン、敵は2(3)倍のダメージを受ける。",
   "SINGLEPLAYERCARD-KNOCKDOWN.hover.desc.xdro": "10(14)ダメージを与える。このターン、敵は2(3)倍のダメージを受ける。",
-  "SINGLEPLAYERCARD-THE_BALL.hover.desc.rework": "10ダメージを与える。この戦闘中、このカードのダメージを5(10)増加させ、山札・手札・捨て札の内ランダムな場所に加える。",
+  "SINGLEPLAYERCARD-THE_BALL.hover.desc.rework": "10ダメージを与える。この戦闘中、このカードのダメージを5(10)増加させ、このカードを敵に渡す。",
   "SINGLEPLAYERCARD-THE_BALL.hover.desc.xdro": "10ダメージを与える。この戦闘中、このカードのダメージを10(15)増加させ、山札に加える。",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU.hover.desc.rework": "2(3)エナジーを得る。2ターンの間、追加でエナジーとドローを獲得できない。",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU.hover.desc.xdro": "2(3)エナジーを得る。",

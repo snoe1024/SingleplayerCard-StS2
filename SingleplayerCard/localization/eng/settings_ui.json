@@ -88,7 +88,7 @@
   "SINGLEPLAYERCARD-TAG_TEAM.hover.desc.xdro": "N/A",
   "SINGLEPLAYERCARD-KNOCKDOWN.hover.desc.rework": "Deal 10(14) damage. Next turn, the enemy takes 2(3)x damage.",
   "SINGLEPLAYERCARD-KNOCKDOWN.hover.desc.xdro": "Deal 10(14) damage. This turn, the enemy takes 2(3)x damage.",
-  "SINGLEPLAYERCARD-THE_BALL.hover.desc.rework": "Deal 10 damage. Increase this card's damage by 5(10) this combat and shuffle it into a random spot in your Draw Pile, Hand, or Discard Pile.",
+  "SINGLEPLAYERCARD-THE_BALL.hover.desc.rework": "Deal 10 damage. Increase this card's damage by 5(10) this combat and Hand Over this card to target enemy.",
   "SINGLEPLAYERCARD-THE_BALL.hover.desc.xdro": "Deal 10 damage. Increase this card's damage by 10(15) this combat and add it to your Draw Pile.",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU.hover.desc.rework": "Gain 2(3) Energy. For the next 2 turns, you cannot gain additional Energy or Draw.",
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU.hover.desc.xdro": "Gain 2(3) Energy.",

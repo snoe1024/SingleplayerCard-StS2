@@ -1,9 +1,11 @@
 ﻿using BaseLib.Patches.Content;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
+using SingleplayerCard.SingleplayerCardCode.Extensions;
 
 namespace SingleplayerCard.SingleplayerCardCode.Keywords;
 
@@ -22,7 +24,7 @@ public static class SingleplayerCardKeywords
         var title = new LocString("card_keywords", $"SINGLEPLAYERCARD-HAND_OVER.title");
         var desc = new LocString("card_keywords", $"SINGLEPLAYERCARD-HAND_OVER.description");
         
-        // TODO: insert icon(Texture2D) as 3rd arguments
-        return new TooltipSource(_ => new HoverTip(title, desc.GetFormattedText()));
+        return new TooltipSource(_ => new HoverTip(title, desc.GetFormattedText(),
+            PreloadManager.Cache.GetTexture2D("hand_over_power_solo.png".BigPowerImagePath())));
     }
 }

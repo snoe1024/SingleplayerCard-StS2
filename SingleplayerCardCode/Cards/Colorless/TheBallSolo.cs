@@ -10,8 +10,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Nodes.Cards;
+using MegaCrit.Sts2.Core.Nodes.GodotExtensions;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 using SingleplayerCard.SingleplayerCardCode.Keywords;
 using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
@@ -66,9 +69,14 @@ public sealed class TheBallSolo : SingleplayerCardCard
             if (!exists)
             {
                 var handOverPower = await PowerCmd.Apply<HandOverPowerSolo>(choiceContext, cardPlay.Target, 1m, Owner.Creature, this);
-                handOverPower?.Take(this);
 
-                await CardPileCmd.RemoveFromCombat(this, false);
+                // if HandOver is prevented by Artifact, below process shouldn't be executed. 
+                if (cardPlay.Target.HasPower<HandOverPowerSolo>() && handOverPower is not null)
+                {
+                    handOverPower.Take(this);
+
+                    await FlyToCreature(cardPlay.Target);
+                }
             }
         }
         else
@@ -81,12 +89,7 @@ public sealed class TheBallSolo : SingleplayerCardCard
     {
         CardLocation location = base.GetResultLocationForCardPlay();
         
-        if (DroActiveForDisplay)
-        {
-            location.pileType = PileType.None;
-            location.position = CardPilePosition.Bottom;
-        }
-        else if (location.pileType == PileType.Discard)
+        if (!DroActiveForDisplay && location.pileType == PileType.Discard)
         {
             location.pileType = PileType.Draw;
             location.position = CardPilePosition.Random;
@@ -95,9 +98,18 @@ public sealed class TheBallSolo : SingleplayerCardCard
         return location;
     }
 
-    private static Tween? GetTweenForMoveToCreature(IEnumerable<(NCard, PileType?)> cards, Creature target)
+    private async Task FlyToCreature(Creature target)
     {
-        throw new NotImplementedException();
+        NCard? cardNode = NCard.FindOnTable(this);
+        await CardPileCmd.RemoveFromCombat(this, skipVisuals: true);
+        if (cardNode == null || !cardNode.IsValid())
+        {
+            return;
+        }
+        Control? vfxContainer = target.GetVfxContainer();
+        cardNode.Reparent(vfxContainer);
+        NCardFlyVfx? flyVfx = NCardFlyVfx.Create(cardNode, target, Owner.Character.TrailPath);
+        vfxContainer?.AddChildSafely(flyVfx);
     }
 
     protected override void OnUpgrade()

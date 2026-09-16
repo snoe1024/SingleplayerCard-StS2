@@ -76,6 +76,7 @@
 
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "Hand Overed",
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "When this enemy attacks, add this card to [gold]Draw Pile[/gold].\nWhen this enemy dies, add this card to [gold]Discard Pile[/gold].",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "When this enemy attacks, add [gold]{CardName}[/gold] to your [gold]Draw Pile[/gold].\nWhen this enemy dies, add [gold]{CardName}[/gold] to your [gold]Discard Pile[/gold].",
 
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Blade Symphony",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Whenever you play [gold]Shiv[/gold] this turn, Draw [blue]{Amount}[/blue] card."
