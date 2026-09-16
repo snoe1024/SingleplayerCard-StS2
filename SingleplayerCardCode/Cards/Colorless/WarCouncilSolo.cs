@@ -40,10 +40,16 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of DroActiveForDisplay -- see base class doc comment. Written as an explicit
+    // Add-or-Remove rather than a one-way conditional so a later, corrected call can undo an earlier
+    // wrong guess in either direction.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
+        if (DroActiveForDisplay)
+        {
+            RemoveKeyword(CardKeyword.Exhaust);
+        }
+        else
         {
             AddKeyword(CardKeyword.Exhaust);
         }

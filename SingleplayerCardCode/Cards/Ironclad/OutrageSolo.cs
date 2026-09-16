@@ -37,18 +37,37 @@ public sealed class OutrageSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "ironclad";
 
-    // 8m (the Rework/案1 base) since Rework is this mod's default variant; AfterCloned overwrites
-    // this to the xDRO base when that branch is active instead.
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new DamageVar(8m, ValueProp.Move) };
+    // "Damage" is kept as a plain DamageVar purely as the gameplay-effective/cross-card-visible key
+    // (OnPlay's DamageCmd.Attack reads it, and vanilla's Thrash picks a random Attack card from hand
+    // and reads ITS "Damage" key directly -- see Thrash.OnPlay); RefreshDroBranchState below syncs it
+    // to whichever of DamageRemake/DamageXdro is active. Both branches get their own registered var
+    // (rather than only Remake being "a real DamageVar") so .descriptionRework/.descriptionXdro can
+    // each reference their own number directly -- correct on canonical/Card Library instances too,
+    // since CanonicalVars entries need no mutation to read, unlike Damage itself.
+    // DamageRemake/DamageXdro MUST themselves be DamageVar (not a plain DynamicVar) -- see MidnightSolo's
+    // matching comment: CardModel's UpdateDynamicVarPreview loop calls UpdateCardPreview on every var
+    // regardless of key name, and only DamageVar's override actually recomputes PreviewValue from
+    // current Strength/Vulnerable/Weak/enchantments; a plain DynamicVar leaves :diff() always showing
+    // the raw, un-buffed number (confirmed as a real regression in actual play).
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
+    {
+        new DamageVar(8m, ValueProp.Move),
+        new DamageVar("DamageRemake", 8m, ValueProp.Move),
+        new DamageVar("DamageXdro", 9m, ValueProp.Move)
+    };
 
     public OutrageSolo() : base(0, CardType.Attack, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of DroActiveForDisplay -- see base class doc comment. DamageRemake/DamageXdro
+    // each carry their own upgrade state already (see OnUpgrade), so no separate IsUpgraded branching
+    // is needed here.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        DynamicVars.Damage.BaseValue = DroActiveForDisplay ? 8m : 9m;
+        DynamicVars.Damage.BaseValue = DroActiveForDisplay
+            ? DynamicVars["DamageRemake"].BaseValue
+            : DynamicVars["DamageXdro"].BaseValue;
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -77,6 +96,14 @@ public sealed class OutrageSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 3m : 4m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["DamageRemake"].UpgradeValueBy(3m);
+        }
+        else
+        {
+            DynamicVars["DamageXdro"].UpgradeValueBy(4m);
+        }
+        RefreshDroBranchState();
     }
 }

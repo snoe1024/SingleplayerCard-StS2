@@ -7,16 +7,16 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。\nブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
   "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{DamageRemake:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{DamageXdro:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{CalculationExtra:diff()}を得る。{InCombat:\n([gold]筋力[/gold]{StrengthRemake}を得る。)|}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "{Damage:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと[gold]手札[/gold]にある《アウトレイジ》のコピーを加える。",
-  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "{Damage:diff()}ダメージを与える。\nこのカードのコピーを1枚[gold]捨て札[/gold]に加える。",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "{DamageRemake:diff()}ダメージを与える。\n[gold]捨て札[/gold]に、このカードと[gold]手札[/gold]にある《アウトレイジ》のコピーを加える。",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "{DamageXdro:diff()}ダメージを与える。\nこのカードのコピーを1枚[gold]捨て札[/gold]に加える。",
 
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "このターン、対象の敵は今[gold]手札[/gold]にないアタックカードから受けるダメージが2倍になる。",

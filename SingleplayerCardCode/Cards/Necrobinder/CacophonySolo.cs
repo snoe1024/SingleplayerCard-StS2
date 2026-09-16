@@ -37,13 +37,19 @@ public sealed class CacophonySolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Cards never
+    // upgrades in either branch (only Damage does, matching OnUpgrade below), so it's a fixed value.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
+        if (DroActiveForDisplay)
+        {
+            DynamicVars.Cards.BaseValue = 12m;
+            DynamicVars.Damage.BaseValue = IsUpgraded ? 24m : 16m;
+        }
+        else
         {
             DynamicVars.Cards.BaseValue = 33m;
-            DynamicVars.Damage.BaseValue = 66m;
+            DynamicVars.Damage.BaseValue = IsUpgraded ? 99m : 66m;
         }
     }
 

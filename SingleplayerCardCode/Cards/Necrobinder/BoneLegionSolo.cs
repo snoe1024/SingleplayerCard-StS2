@@ -42,10 +42,12 @@ public sealed class BoneLegionSolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Both
+    // branches share the same +2 upgrade delta (5->7, 6->8), matching OnUpgrade below.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        DynamicVars.Summon.BaseValue = DroActiveForDisplay ? 5m : 6m;
+        decimal baseline = DroActiveForDisplay ? 5m : 6m;
+        DynamicVars.Summon.BaseValue = IsUpgraded ? baseline + 2m : baseline;
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

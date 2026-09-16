@@ -42,10 +42,30 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     [SavedProperty]
     public bool DroWasOnAtCreation { get; set; }
 
+    // Guards AfterCloned's live-config guess below so it only ever fires ONCE per logical card, not
+    // on every MutableClone(). Confirmed via diagnostic logging (.claude/todo.md item 2,
+    // ImitationLearningSolo repro) that MutableClone() -- and therefore AfterCloned() -- fires again
+    // every time an owned card gets a fresh per-combat instance (entering a new combat), not just on
+    // a genuinely new draft or a save-file reload. MemberwiseClone() (which MutableClone() uses) is a
+    // plain shallow field copy, so it already correctly carries DroWasOnAtCreation's real, previously-
+    // frozen value forward into that fresh per-combat instance -- but AfterCloned() then unconditionally
+    // OVERWROTE it with whatever the option happens to say RIGHT NOW, silently re-freezing an already-
+    // owned card to the live setting every single combat. This field is plain (not [SavedProperty]),
+    // so it does NOT survive an actual save-file round trip -- a genuine reload clones fresh from the
+    // canonical instance (see CardModel.FromSerializable's SaveUtil...ToMutable() call) same as a first
+    // draft, correctly re-arming this guard for one more guess, which FromSerializable's subsequent
+    // save.Props.Fill() then immediately overrides with the true historical value same as before.
+    private bool _droBranchGuessed;
+
     protected override void AfterCloned()
     {
         base.AfterCloned();
-        DroWasOnAtCreation = DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId);
+        if (!_droBranchGuessed)
+        {
+            DroWasOnAtCreation = DuplicateReworkManager.IsReworkActive(OriginalVanillaCardId);
+            _droBranchGuessed = true;
+        }
+        RefreshDroBranchState();
     }
 
     // Whether the Rework (DRO-on) effect should be shown/used right now. The canonical instance
@@ -99,11 +119,37 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
     }
 
     protected virtual bool DroVersionExists => false;
-    
+
+    // Cards that bake a DRO-branch-dependent numeric/cost/keyword value (e.g. MidnightSolo's
+    // Damage.BaseValue, EnergySurgeSolo's custom cost) override this instead of stamping that state
+    // directly in their own AfterCloned(). AfterCloned() runs BEFORE CardModel.FromSerializable
+    // restores this card's real DroWasOnAtCreation on a reloaded save (see that property's doc
+    // comment) -- so a value baked only in AfterCloned keeps whichever guess the LIVE config
+    // happened to produce at that instant, silently wrong forever once the option is changed while a
+    // save exists (confirmed root cause of the "text says R but the number is xDRO's" bug reports).
+    // Called again from GetDynamicDescription below on every real Description-getter access
+    // (DynamicCardDisplayPatch's Harmony postfix), which only ever happens well after any load has
+    // fully finished, so it self-heals regardless of AfterCloned/FromSerializable ordering.
+    // MUST be written as a pure function of (DroActiveForDisplay, IsUpgraded/CurrentUpgradeLevel),
+    // never an incremental "+= delta" -- it can fire many times over a card's life, so anything that
+    // only conditionally mutates one direction (e.g. "if xDRO, AddKeyword") needs an explicit opposite
+    // branch too, or a second call with the corrected value can't undo a wrong first guess.
+    protected virtual void RefreshDroBranchState() { }
+
     public LocString GetDynamicDescription(LocString original)
     {
+        // The canonical/Card Library instance is never mutable (see IsCanonical), and every override
+        // of this (SetCustomBaseCost, AddKeyword/RemoveKeyword, DynamicVars.X.BaseValue setters) goes
+        // through AssertMutable() somewhere underneath -- calling it here for canonical would throw
+        // the moment a player opens the Card Library on any of these cards. This does mean the Library
+        // preview keeps showing CanonicalVars' fixed representative number instead of live-branch
+        // numbers regardless (a separate, lower-priority, purely cosmetic known limitation).
+        if (IsMutable)
+        {
+            RefreshDroBranchState();
+        }
         if (!DroVersionExists) return original;
-        
+
         return new LocString("cards", this.Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
     }
 

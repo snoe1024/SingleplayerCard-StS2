@@ -49,13 +49,11 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of DroActiveForDisplay -- see base class doc comment. Cost never changes with
+    // upgrade in either branch, so no IsUpgraded term is needed here.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        if (!DroActiveForDisplay)
-        {
-            EnergyCost.SetCustomBaseCost(1);
-        }
+        EnergyCost.SetCustomBaseCost(DroActiveForDisplay ? 0 : 1);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

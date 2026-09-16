@@ -42,10 +42,13 @@ public sealed class BlazeSolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Rework's
+    // actual gain comes from the separately-tracked CalculationExtra/StrengthRemake formula in
+    // OnPlay below, not this var, so Strength.BaseValue never changes with upgrade on that branch
+    // (matches OnUpgrade, which only ever upgrades CalculationExtra for the Rework branch).
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        DynamicVars.Strength.BaseValue = DroActiveForDisplay ? 2m : 5m;
+        DynamicVars.Strength.BaseValue = DroActiveForDisplay ? 2m : (IsUpgraded ? 7m : 5m);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

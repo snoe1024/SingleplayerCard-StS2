@@ -46,10 +46,12 @@ public sealed class InterceptSolo : SingleplayerCardCard
     {
     }
 
-    protected override void AfterCloned()
+    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment.
+    protected override void RefreshDroBranchState()
     {
-        base.AfterCloned();
-        DynamicVars.Block.BaseValue = DroActiveForDisplay ? 15m : 9m;
+        DynamicVars.Block.BaseValue = DroActiveForDisplay
+            ? (IsUpgraded ? 21m : 15m)
+            : (IsUpgraded ? 13m : 9m);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
