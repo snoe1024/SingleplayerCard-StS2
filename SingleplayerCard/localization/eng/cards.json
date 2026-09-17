@@ -12,7 +12,7 @@
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake:diff()}.)|}",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {Strength:diff()} [gold]Strength[/gold].",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Deal {DamageRemake:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your [gold]Hand[/gold].",
