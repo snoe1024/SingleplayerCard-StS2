@@ -7,7 +7,7 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "自身が敵から受けるダメージが50%増加する。\nブロックしたアタックによるダメージを、攻撃してきた敵に跳ね返す。",
 
   "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{DamageRemake:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "{DamageRemake:diff()}ダメージを与える。\n戦闘中[gold]破棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。\nこのターンに[gold]破棄[/gold]したカード1枚につき、コストが2{energyPrefix:energyIcons(1)}減少する。",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{DamageXdro:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",

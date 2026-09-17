@@ -77,7 +77,7 @@ public sealed class MidnightSolo : SingleplayerCardCard
     {
         if (DroActiveForDisplay)
         {
-            EnergyCost.AddThisCombat(DecreasedCostInTurn);
+            EnergyCost.AddThisCombat(DecreasedCostInTurn * 2);
             DecreasedCostInTurn = 0;
         }
 
@@ -93,7 +93,7 @@ public sealed class MidnightSolo : SingleplayerCardCard
 
         if (DroActiveForDisplay)
         {
-            var amount = CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Select(e => e.HappenedThisTurn(CombatState) ? 2 : 1).Sum();
+            var amount = CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Select(e => e.HappenedThisTurn(CombatState) ? 3 : 1).Sum();
             if (amount > 0)
             {
                 ReduceCostBy(amount);
@@ -116,7 +116,7 @@ public sealed class MidnightSolo : SingleplayerCardCard
         if (DroActiveForDisplay)
         {
             DecreasedCostInTurn++;
-            ReduceCostBy(2);
+            ReduceCostBy(3);
         }
         else
         {

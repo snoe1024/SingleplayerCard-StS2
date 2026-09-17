@@ -2,7 +2,7 @@
   "SINGLEPLAYERCARD.mod_title": "シングルプレイ専用カード",
 
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "マルチプレイヤーでも変更を適用する",
-  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "デフォルトはオフ。オンにすると、マルチプレイヤーでもこのMODの調整を適用します。マルチプレイヤー専用のオリジナルカードの代わりに、このMODのシングルプレイヤー版カードがカードプールに追加されます。以下の各カードの調整版/オリジナル/出現しないの設定は、セッション参加者それぞれの設定ではなく、ホストプレイヤーの設定が全員に適用されます。",
+  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "マルチプレイヤーでも、このMODのシングルプレイヤー版カードがカードプールに追加されます。以下の各カードの調整版/オリジナル/出現しないの設定は、セッション参加者それぞれの設定ではなく、ホストプレイヤーの設定が全員に適用されます。",
 
   "SINGLEPLAYERCARD-APPLY_BULK_ACTION.title": "適用",
 
