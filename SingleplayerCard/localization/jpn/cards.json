@@ -11,7 +11,7 @@
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "{DamageXdro:diff()}ダメージを与える。\n戦闘中[gold]廃棄[/gold]したカード1枚につき、コストが1{energyPrefix:energyIcons(1)}減少する。",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{CalculationExtra:diff()}を得る。{InCombat:\n([gold]筋力[/gold]{StrengthRemake}を得る。)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "このターンに破棄したカード1枚につき、[gold]筋力[/gold]{CalculationExtra:diff()}を得る。{InCombat:\n([gold]筋力[/gold]{StrengthRemake:diff()}を得る。)|}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "[gold]筋力[/gold]{StrengthPower:diff()}を得る。",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",

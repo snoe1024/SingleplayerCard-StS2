@@ -11,7 +11,7 @@
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Deal {DamageXdro:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake}.)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake:diff()}.)|}",
   "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {Strength:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
