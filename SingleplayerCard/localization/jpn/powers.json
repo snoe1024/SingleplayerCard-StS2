@@ -78,6 +78,7 @@
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "この敵が攻撃したとき、カードを[gold]山札[/gold]に加える。\nこの敵が死亡したとき、カードを[gold]捨て札[/gold]に加える。",
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "この敵が攻撃したとき、[gold]{CardName}[/gold]を[gold]山札[/gold]に加える。\nこの敵が死亡したとき、[gold]{CardName}[/gold]を[gold]捨て札[/gold]に加える。",
 
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "ブレイド・シンフォニー",
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "このターン、[gold]ナイフ[/gold]をプレイするたび、[blue]{Amount}[/blue]枚のカードを引く。"
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_POWER_SOLO.title": "ブレイド・シンフォニー",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_POWER_SOLO.description": "このターン、[gold]ナイフ[/gold]をプレイするたび、[blue]1[/blue]枚のカードを引く。",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_POWER_SOLO.smartDescription": "このターン、[gold]ナイフ[/gold]をプレイするたび、[blue]{Amount}[/blue]枚のカードを引く。"
 }
