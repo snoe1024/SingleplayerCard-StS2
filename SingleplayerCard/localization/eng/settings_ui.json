@@ -2,7 +2,7 @@
   "SINGLEPLAYERCARD.mod_title": "Singleplayer Card",
   
   "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.title": "Apply Changes in Multiplayer Too",
-  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "Off by default. When enabled, this mod's changes also apply in multiplayer games: instead of vanilla's multiplayer-exclusive cards, this mod's singleplayer-adapted versions are added to the card pool instead. Every card's Adjusted/Original/Hidden setting below follows the HOST player's configuration for everyone in the session, not each player's own.",
+  "SINGLEPLAYERCARD-APPLY_IN_MULTIPLAYER.hover.desc": "The cards from the single-player version of this mod are also added to the card pool in multiplayer mode. Settings regarding whether each card appears in its adjusted form, original form, or not at all are determined by the host player and apply to everyone, rather than being based on each individual participant's settings.",
 
   "SINGLEPLAYERCARD-APPLY_BULK_ACTION.title": "Apply",
 

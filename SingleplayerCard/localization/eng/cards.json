@@ -7,12 +7,12 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "Take 50% more damage from enemies. Reflect all blocked Attack damage back at the attacker.",
 
   "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Deal {DamageRemake:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this turn.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Deal {DamageRemake:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.\nCosts 2 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this turn.",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Deal {DamageXdro:diff()} damage.\nCosts 1 less {energyPrefix:energyIcons(1)} for each card [gold]Exhausted[/gold] this combat.",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake}.)|}",
-  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {Strength:diff()} [gold]Strength[/gold].",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gain {CalculationExtra:diff()} [gold]Strength[/gold] for each card you have discarded this turn.{InCombat:\n(Gain [gold]Strength[/gold]{StrengthRemake:diff()}.)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
 
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Deal {DamageRemake:diff()} damage.\nAdd a copy of this card to your [gold]Discard Pile[/gold] for itself, plus one more for each other copy of this card in your [gold]Hand[/gold].",

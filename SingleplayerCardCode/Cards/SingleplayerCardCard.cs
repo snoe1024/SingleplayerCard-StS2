@@ -40,7 +40,8 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
         ? new LocString("cards", OriginalVanillaCardId + ".title").GetFormattedText()
         : TitleLocString.GetFormattedText();
 
-    private string DroSuffix => (LocManager.Instance.Language == "jpn" ? "" : " ") + (DroActiveForDisplay ? "R" : "S");
+    private static bool DroNoPrefixSpace => LocManager.Instance.Language is "jpn" or "zhs" or "kor" or "zht";
+    private string DroSuffix => (DroNoPrefixSpace ? "" : " ") + (DroActiveForDisplay ? "R" : "S");
 
     public override string Title
     {
