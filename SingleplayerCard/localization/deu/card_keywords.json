@@ -1,0 +1,4 @@
+{
+  "SINGLEPLAYERCARD-HAND_OVER.title": "Übergabe",
+  "SINGLEPLAYERCARD-HAND_OVER.description": "Die Karte wird vorübergehend aus dem [gold]Deck[/gold] entfernt.\nWenn ein Gegner, der die Karte besitzt, angreift, fügt er die Karte dem [gold]Nachziehstapel[/gold] hinzu.\nWenn ein Gegner, der die Karte besitzt, stirbt, fügt er die Karte dem [gold]Abwurfstapel[/gold] hinzu."
+}

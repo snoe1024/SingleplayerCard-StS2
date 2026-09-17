@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "Giftig",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "Immer wenn diese Karte ungeblockten Angriffsschaden zufügt, wende [blue]{Amount}[/blue] [gold]Gift[/gold] an.",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "Giftig {Amount}.",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "Training",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "Erhalte in diesem Zug [blue]{Amount}[/blue] [gold]Stärke[/gold].",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "Erhalte in diesem Zug [blue]{Amount}[/blue] [gold]Stärke[/gold]."
+}

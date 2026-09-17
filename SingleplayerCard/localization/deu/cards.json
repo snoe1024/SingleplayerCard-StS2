@@ -1,0 +1,140 @@
+{
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Verliere 1 TP. Erhalte [gold]Block[/gold] in Höhe der TP, die du in diesem Kampf verloren hast.{InCombat:\n({LoseHPAmount:diff()} TP wurden in diesem Kampf verloren.)|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Verliere 1 TP. Verdopple deinen [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Erleide 50% mehr Schaden von Gegnern. Reflektiere den gesamten geblockten Angriffsschaden zurück auf den Angreifer.",
+
+  "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Füge {DamageRemake:diff()} Schaden zu.\nKostet 1{energyPrefix:energyIcons(1)} weniger für jede in diesem Kampf [gold]Erschöpfte[/gold] Karte.\nKostet 2{energyPrefix:energyIcons(1)} weniger für jede in diesem Zug [gold]Erschöpfte[/gold] Karte.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Füge {DamageXdro:diff()} Schaden zu.\nKostet 1{energyPrefix:energyIcons(1)} weniger für jede in diesem Kampf [gold]Erschöpfte[/gold] Karte.",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Erhalte {CalculationExtra:diff()} [gold]Stärke[/gold] für jede in diesem Zug abgeworfene Karte.{InCombat:\n(Erhalte {StrengthRemake:diff()} [gold]Stärke[/gold].)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Erhalte {StrengthPower:diff()} [gold]Stärke[/gold].",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Füge {DamageRemake:diff()} Schaden zu.\nNimm eine Kopie dieser Karte in deinen [gold]Abwurfstapel[/gold] für sich selbst, plus eine weitere für jede andere Kopie dieser Karte in deiner [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "Füge {DamageXdro:diff()} Schaden zu.\nNimm eine Kopie dieser Karte in deinen [gold]Abwurfstapel[/gold].",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "Der Gegner nimmt in diesem Zug doppelten Schaden von Angriffskarten, die sich nicht in deiner [gold]Hand[/gold] befinden.",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "Der Gegner nimmt in diesem Zug doppelten Angriffsschaden.",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Immer wenn du einen Debuff auf einen Gegner anwendest, erhalte {StealthRemake:diff()} [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Immer wenn du einen Gegner angreifst, erhalte {StealthXdro:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Immer wenn du in diesem Zug [gold]Messer[/gold] spielst, ziehe 1 Karte.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Erhalte 2 [gold]Messer[/gold] auf deine [gold]Hand[/gold].",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Verzaubere alle unverzauberten Angriffskarten in deiner [gold]Hand[/gold] mit [gold]Giftig[/gold]{Venomous:diff()}.",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "Immer wenn ein Angriff in diesem Zug ungeblockten Schaden zufügt, wende {Envenom:diff()} [gold]Gift[/gold] an.",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "Erhalte in diesem Zug [gold]Geschicklichkeit[/gold] in Höhe der Anzahl an Karten in deiner [gold]Hand[/gold], die keine Fertigkeiten sind.{InCombat:\n(Erhalte {DexterityRemake:diff()} [gold]Geschicklichkeit[/gold].)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "Erhalte in diesem Zug {FlatDexterity:diff()} [gold]Geschicklichkeit[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Immer wenn du [gold]Hoheitsklinge[/gold] spielst, spiele jede Karte erneut, die in diesem Zug [gold]geschmiedet[/gold] hat.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "Zu Beginn deines nächsten Zuges erhalte 1 zufällige{IfUpgraded:show: [gold]Verbesserte[/gold]} Farblose Karte auf deine [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Erhalte 1 zufällige{IfUpgraded:show: [gold]Verbesserte[/gold]} Farblose Karte auf deine [gold]Hand[/gold].",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "Zu Beginn jedes deiner nächsten 3 Züge ziehe 1 Karte mehr.",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "Ziehe im nächsten Zug {Cards:diff()} {Cards:plural:Karte|Karten}.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "Zu Beginn deines nächsten Zuges ziehe {Cards:diff()} {Cards:plural:Karte|Karten}, erhalte {Energy:energyIcons()} und erhalte {Block:diff()} [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "Ziehe {Cards:diff()} {Cards:plural:Karte|Karten}, erhalte {Energy:energyIcons()} und erhalte {Block:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Wähle eine Karte in deinem [gold]Nachziehstapel[/gold], die du auf deine [gold]Hand[/gold] nimmst.",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Beschwöre[/gold] {Summon:diff()} für jeden Gegner.",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]Beschwöre[/gold] {Summon:diff()}.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "Erhalte eine [gold]Seele[/gold] auf deine [gold]Hand[/gold].\nZu Beginn deiner nächsten {SoulsRemake:diff()} Züge erhalte eine [gold]Seele[/gold] auf deine [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Erhalte {SoulsXdro:diff()} [gold]Seelen[/gold] in deinen [gold]Nachziehstapel[/gold].",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "Immer wenn du in diesem Zug [gold]Verderben[/gold] auf einen Gegner anwendest, füge Schaden in Höhe dieser Menge zu.",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "Immer wenn du in diesem Zug Angriffsschaden zufügst, wende [gold]Verderben[/gold] in Höhe dieser Menge an.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "Wähle einen Gegner. Wenn dieser Gegner zum ersten Mal in einem Zug ungeblockten Angriffsschaden erleidet, erhalte eine [gold]Seele[/gold] in deinen [gold]Nachziehstapel[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, erhalte eine [gold]Seele[/gold] in deinen [gold]Nachziehstapel[/gold].",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Füge für je {Cards:diff()} gezogene Karten einem zufälligen Gegner {Damage:diff()} Schaden zu.",
+
+  "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Zu Beginn jedes deiner nächsten {RadiancePower:diff()} Züge erhalte 1 {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "Erhalte {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]Erschaffe[/gold] [gold]Plasma[/gold]. Löse die passive Fähigkeit aller [gold]Plasma[/gold]-Orbs aus.",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]Erschaffe[/gold] [gold]Plasma[/gold].",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "Dein [gold]Frost[/gold] löst in diesem Zug seine passive Fähigkeit zweimal aus.\n[gold]Erschaffe[/gold] {Repeat:diff()} [gold]Frost[/gold].",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]Erschaffe[/gold] {Repeat:diff()} [gold]Frost[/gold].",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Deine 0{energyPrefix:energyIcons(1)}-Angriffe fügen {OneForAllPower:diff()} zusätzlichen Schaden zu.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Die ersten {ImitationRemake:diff()} Male, die der Gegner einen [gold]Buff[/gold] erhält, erhalte eine zufällige Machtkarte auf deine [gold]Hand[/gold]. Sie ist kostenlos spielbar.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "Die nächsten {ImitationXdro:diff()} Male, die du eine Macht spielst, spiele sie erneut.",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Füge {Damage:diff()} Schaden zu. Füge {BonusPerAttack:diff()} mehr zu für jeden in diesem Zug gespielten Angriff.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Füge {Damage:diff()} Schaden zu.\nDer nächste Angriff, den du auf den Gegner spielst, wird ein weiteres Mal gespielt.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "Füge {Damage:diff()} Schaden zu.\nDer Gegner nimmt im nächsten Zug {IfUpgraded:show:dreifachen|doppelten} Schaden.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "Füge {Damage:diff()} Schaden zu.\nDer Gegner nimmt in diesem Zug {IfUpgraded:show:dreifachen|doppelten} Schaden.",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "Füge {Damage:diff()} Schaden zu.\nErhöhe den Schaden dieser Karte für diesen Kampf um {IncreaseRemake:diff()} und [gold]übergib[/gold] diese Karte an den Zielgegner.",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "Füge {Damage:diff()} Schaden zu.\nErhöhe den Schaden dieser Karte für diesen Kampf um {IncreaseXdro:diff()} und mische sie in deinen [gold]Nachziehstapel[/gold].",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Erhalte {Energy:energyIcons()}. Für die nächsten 2 Züge kannst du keine zusätzliche Energie erhalten oder ziehen.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Erhalte {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Erhalte {BlockRemake:diff()} [gold]Block[/gold].\nErhalte 1 [gold]Schwach[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Erhalte {BlockXdro:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Ziehe {Cards:diff()} Karten. Zu Beginn deines nächsten Zuges ziehe 2 Karten mehr.",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "Ziehe {Cards:diff()} Karten.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "Verdopple den [gold]Block[/gold], den du von deiner nächsten Karte erhältst.",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "Erhalte {Block:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "Verzaubere eine unverzauberte Karte mit [gold]Training[/gold]{TrainEnchantmentAmount:diff()}.",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Erhalte bis zum Ende des Zuges {StrengthPower:diff()} [gold]Stärke[/gold].",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Erhalte [gold]Block[/gold] in Höhe des höchsten Blockwerts unter den Karten in deiner [gold]Hand[/gold].{InCombat:\nErhalte {BestHandBlock:diff()} [gold]Block[/gold].|}",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Erhalte [gold]Block[/gold] in Höhe der Summe der Blockwerte aller anderen Karten in deiner [gold]Hand[/gold].{InCombat:\nErhalte {HandBlockTotal:diff()} [gold]Block[/gold].|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Erhalte {Block:diff()} [gold]Block[/gold].",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "Wenn du zum ersten Mal in einem Zug durch eine Karte [gold]Block[/gold] erhältst, erhältst du im nächsten Zug denselben [gold]Block[/gold]."
+}
