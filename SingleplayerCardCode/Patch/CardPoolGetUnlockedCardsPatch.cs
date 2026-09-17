@@ -28,19 +28,9 @@ public static class CardPoolGetUnlockedCardsPatch
     {
         List<CardModel> list = __result.ToList();
 
-        // SingleplayerCardCard.MultiplayerConstraint is SingleplayerOnly, so the original method has
-        // already stripped every Solo card out of an actual multiplayer run's result by this point --
-        // when the feature is on, add them back in and remove vanilla's own MultiplayerOnly originals
-        // in their place. The __instance.GetUnlockedCards call below re-enters this same Postfix, but
-        // with multiplayerConstraint == None, which can never satisfy this branch -- no infinite
-        // recursion.
         if (multiplayerConstraint == CardMultiplayerConstraint.MultiplayerOnly)
         {
             bool effectiveApplyInMultiplayer = MultiplayerConfigAuthority.EffectiveApplyInMultiplayer;
-            // TEMPORARY diagnostic logging (2026-09-14) -- see MultiplayerConfigAuthority's own
-            // DiagTag comment for context. Remove once the root cause of a real playtest where this
-            // substitution silently never happened is confirmed and fixed.
-            Log.Info($"[SingleplayerCard][CardPoolGetUnlockedCardsPatch] MultiplayerOnly query on {__instance.GetType().Name}: EffectiveApplyInMultiplayer={effectiveApplyInMultiplayer}, beforeCount={list.Count}");
             if (effectiveApplyInMultiplayer)
             {
                 HashSet<string> portedVanillaIds = DuplicateReworkManager.AllPortedVanillaCardIds.ToHashSet();
