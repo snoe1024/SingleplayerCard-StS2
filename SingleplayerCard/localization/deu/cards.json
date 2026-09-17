@@ -4,7 +4,7 @@
   "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Verliere 1 TP. Verdopple deinen [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-TANK_SOLO.description": "Erleide 50% mehr Schaden von Gegnern. Reflektiere den gesamten geblockten Angriffsschaden zurück auf den Angreifer.",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Nimm 50% mehr Schaden von Gegnern. Reflektiere den gesamten geblockten Angriffsschaden zurück auf den Angreifer.",
 
   "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Füge {DamageRemake:diff()} Schaden zu.\nKostet 1{energyPrefix:energyIcons(1)} weniger für jede in diesem Kampf [gold]Erschöpfte[/gold] Karte.\nKostet 2{energyPrefix:energyIcons(1)} weniger für jede in diesem Zug [gold]Erschöpfte[/gold] Karte.",
@@ -88,7 +88,7 @@
   "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]Erschaffe[/gold] {Repeat:diff()} [gold]Frost[/gold].",
 
   "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Deine 0{energyPrefix:energyIcons(1)}-Angriffe fügen {OneForAllPower:diff()} zusätzlichen Schaden zu.",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Deine 0-{energyPrefix:energyIcons(1)}-Angriffe fügen {OneForAllPower:diff()} zusätzlichen Schaden zu.",
 
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Die ersten {ImitationRemake:diff()} Male, die der Gegner einen [gold]Buff[/gold] erhält, erhalte eine zufällige Machtkarte auf deine [gold]Hand[/gold]. Sie ist kostenlos spielbar.",

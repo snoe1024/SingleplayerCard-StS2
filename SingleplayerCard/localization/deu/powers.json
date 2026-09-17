@@ -1,54 +1,54 @@
 {
-  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Tank",
-  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Erleidet [blue]50%[/blue] mehr Schaden von Gegnern. Der gesamte geblockte Angriffsschaden wird auf den Angreifer zurückgeworfen.",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Tanken",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Nimm [blue]50%[/blue] mehr Schaden von Gegnern. Reflektiere den gesamten geblockten Angriffsschaden zurück auf den Angreifer.",
 
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Zangenangriff",
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Erleidet in diesem Zug [blue]2x[/blue] Schaden von Angriffskarten, die sich zum Zeitpunkt der Anwendung nicht in der Hand befanden.",
 
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Stealth",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Erhält [gold]Block[/gold], immer wenn der Träger auf andere Weise als durch eine Angriffskarte Schaden zufügt.",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Immer wenn der Träger auf andere Weise als durch eine Angriffskarte Schaden zufügt, erhält er [blue]{Amount}[/blue] [gold]Block[/gold].",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Erhält [gold]Block[/gold], immer wenn der Träger einen Gegner angreift.",
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Immer wenn der Träger einen Gegner angreift, erhält er [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Immer wenn du auf andere Weise als durch eine Angriffskarte Schaden zufügst, erhalte [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Immer wenn du auf andere Weise als durch eine Angriffskarte Schaden zufügst, erhalte [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Immer wenn du einen Gegner angreifst, erhalte [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Immer wenn du einen Gegner angreifst, erhalte [blue]{Amount}[/blue] [gold]Block[/gold].",
 
-  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "Hammer Time",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "Hammertime",
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Immer wenn du [gold]Hoheitsklinge[/gold] spielst, spiele jede Karte erneut, die in diesem Zug [gold]geschmiedet[/gold] hat.",
   "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "Immer wenn du [gold]Hoheitsklinge[/gold] spielst, spiele jede Karte erneut, die in diesem Zug [gold]geschmiedet[/gold] hat.",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "Kartengenerierung im nächsten Zug",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "Fügt zu Beginn deines nächsten Zuges [blue]{Amount}[/blue] zufällige Farblose {Amount:plural:Karte|Karten} zu deiner Hand hinzu.",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "Erhalte zu Beginn deines nächsten Zuges [blue]{Amount}[/blue] zufällige Farblose {Amount:plural:Karte|Karten} auf deine Hand.",
 
   "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "Kartengenerierung im nächsten Zug+",
-  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "Fügt zu Beginn deines nächsten Zuges [blue]{Amount}[/blue] zufällige, verbesserte Farblose {Amount:plural:Karte|Karten} zu deiner Hand hinzu.",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "Erhalte zu Beginn deines nächsten Zuges [blue]{Amount}[/blue] zufällige, verbesserte Farblose {Amount:plural:Karte|Karten} auf deine Hand.",
 
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Blick ins Jenseits",
-  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "Fügt zu Beginn jedes deiner nächsten [blue]{Amount}[/blue] {Amount:plural:Zuges|Züge} deiner Hand eine [gold]Seele[/gold] hinzu.",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "Erhalte zu Beginn jedes deiner nächsten [blue]{Amount}[/blue] {Amount:plural:Zuges|Züge} eine [gold]Seele[/gold] auf deine Hand.",
 
   "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Unterwelt",
-  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "Immer wenn du in diesem Zug [gold]Verderben[/gold] auf einen Gegner anwendest, fügt Schaden in Höhe dieser Menge zu.",
-  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "Immer wenn du in diesem Zug Angriffsschaden zufügst, wendet [gold]Verderben[/gold] in Höhe dieser Menge an.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "Immer wenn du in diesem Zug [gold]Verderben[/gold] auf einen Gegner anwendest, füge Schaden in Höhe dieser Menge zu.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "Immer wenn du in diesem Zug Angriffsschaden zufügst, wende [gold]Verderben[/gold] in Höhe dieser Menge an.",
 
   "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "Seelenbund",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "Wenn der gewählte Gegner zum ersten Mal in einem Zug ungeblockten Angriffsschaden erleidet, fügt deinem [gold]Nachziehstapel[/gold] eine [gold]Seele[/gold] hinzu.",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "Wenn der gewählte Gegner zum ersten Mal in einem Zug ungeblockten Angriffsschaden erleidet, fügt deinem [gold]Nachziehstapel[/gold] [blue]{Amount}[/blue] [gold]{Amount:plural:Seele|Seelen}[/gold] hinzu.",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, fügt deinem [gold]Nachziehstapel[/gold] eine [gold]Seele[/gold] hinzu.",
-  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, fügt deinem [gold]Nachziehstapel[/gold] [blue]{Amount}[/blue] [gold]{Amount:plural:Seele|Seelen}[/gold] hinzu.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "Wenn der gewählte Gegner zum ersten Mal in einem Zug ungeblockten Angriffsschaden erleidet, nimm eine [gold]Seele[/gold] in deinen [gold]Nachziehstapel[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "Wenn der gewählte Gegner zum ersten Mal in einem Zug ungeblockten Angriffsschaden erleidet, nimm [blue]{Amount}[/blue] [gold]{Amount:plural:Seele|Seelen}[/gold] in deinen [gold]Nachziehstapel[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, nimm eine [gold]Seele[/gold] in deinen [gold]Nachziehstapel[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, nimm [blue]{Amount}[/blue] [gold]{Amount:plural:Seele|Seelen}[/gold] in deinen [gold]Nachziehstapel[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Kakophonie",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Für je [blue]12[/blue] gezogene Karten fügt einem zufälligen Gegner [blue]16[/blue] Schaden zu.",
-  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "Nachdem [blue]{Cards}[/blue] weitere {Cards:plural:Karte gezogen wurde|Karten gezogen wurden}, fügt einem zufälligen Gegner [blue]{Amount}[/blue] Schaden zu.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Füge für je [blue]12[/blue] gezogene Karten einem zufälligen Gegner [blue]16[/blue] Schaden zu.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "Nachdem [blue]{Cards}[/blue] weitere {Cards:plural:Karte gezogen wurde|Karten gezogen wurden}, füge einem zufälligen Gegner [blue]{Amount}[/blue] Schaden zu.",
 
-  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Winterschlaf",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Ruhemodus",
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Dein [gold]Frost[/gold] löst in diesem Zug seine passive Fähigkeit zweimal aus.",
   "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "Dein [gold]Frost[/gold] löst in diesem Zug seine passive Fähigkeit zweimal aus.",
 
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Imitationslernen",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "Die ersten [blue]2[/blue] Male, die der Gegner einen [gold]Buff[/gold] erhält, fügt deiner Hand eine zufällige Machtkarte mit [blue]0[/blue] Energiekosten hinzu.",
-  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "Die ersten [blue]{Amount}[/blue] {Amount:plural:Male|Male}, die der Gegner einen [gold]Buff[/gold] erhält, fügt deiner Hand eine zufällige Machtkarte mit [blue]0[/blue] Energiekosten hinzu.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Abgucken und Lernen",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "Die ersten [blue]2[/blue] Male, die der Gegner einen [gold]Buff[/gold] erhält, erhalte eine zufällige Machtkarte mit [blue]0[/blue] Energiekosten auf deine Hand.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "Die ersten [blue]{Amount}[/blue] {Amount:plural:Male|Male}, die der Gegner einen [gold]Buff[/gold] erhält, erhalte eine zufällige Machtkarte mit [blue]0[/blue] Energiekosten auf deine Hand.",
 
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Tag Team",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "Der nächste Angriff, der auf diesen Gegner gespielt wird, wird zusätzlich [blue]2[/blue] Male gespielt.",
-  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "Der nächste Angriff, der auf diesen Gegner gespielt wird, wird zusätzlich [blue]{Amount}[/blue] {Amount:plural:Mal|Male} gespielt.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Teamarbeit",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "Der nächste Angriff, der auf diesen Gegner gespielt wird, wird [blue]2[/blue] weitere Male gespielt.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "Der nächste Angriff, der auf diesen Gegner gespielt wird, wird {Amount:plural:ein weiteres Mal|[blue]{}[/blue] weitere Male} gespielt.",
 
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Zu Boden geworfen",
   "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "Nimmt in diesem Zug [blue]2x[/blue] Schaden.",
@@ -58,19 +58,19 @@
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Nimmt ab dem nächsten Zug für diesen Zug [blue]2x[/blue] Schaden.",
   "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "Nimmt ab dem nächsten Zug für diesen Zug [blue]{Amount}x[/blue] Schaden.",
 
-  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "Kein Energiegewinn",
-  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "Für [blue]2[/blue] Züge kannst du keine zusätzliche {energyPrefix:energyIcons(1)} erhalten.",
-  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "Für [blue]{Amount}[/blue] Züge kannst du keine zusätzliche {energyPrefix:energyIcons(1)} erhalten.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "Keine Energie erhalten",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "Du kannst für [blue]2[/blue] Züge keine weitere {energyPrefix:energyIcons(1)} erhalten.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "Du kannst für [blue]{Amount}[/blue] Züge keine weitere {energyPrefix:energyIcons(1)} erhalten.",
 
-  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "Kein Ziehen",
-  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "Für [blue]2[/blue] Züge kannst du keine weiteren Karten ziehen.",
-  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "Für [blue]{Amount}[/blue] Züge kannst du keine weiteren Karten ziehen.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "Keine Karten",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "Du kannst für [blue]2[/blue] Züge keine Karten mehr ziehen.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "Du kannst für [blue]{Amount}[/blue] Züge keine Karten mehr ziehen.",
 
   "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Hilfreiche Hand",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Verdoppelt den [gold]Block[/gold], den du von deiner nächsten Karte erhältst.",
-  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Verdoppelt den [gold]Block[/gold], den du von deiner nächsten Karte erhältst.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Verdopple den [gold]Block[/gold], den du von deiner nächsten Karte erhältst.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Verdopple den [gold]Block[/gold], den du von deiner nächsten Karte erhältst.",
 
-  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Leuchtfeuer der Hoffnung",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Hoffnungsschimmer",
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "Wenn du zum ersten Mal in einem Zug durch eine Karte [gold]Block[/gold] erhältst, erhältst du im nächsten Zug denselben [gold]Block[/gold].",
   "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "{Amount:plural:Beim ersten Mal|Bei den ersten [blue]{}[/blue] Malen}, dass du in einem Zug durch eine Karte [gold]Block[/gold] erhältst, erhältst du im nächsten Zug denselben [gold]Block[/gold].",
 
@@ -78,7 +78,7 @@
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "Wenn dieser Gegner angreift, fügt diese Karte dem [gold]Nachziehstapel[/gold] hinzu.\nWenn dieser Gegner stirbt, fügt diese Karte dem [gold]Abwurfstapel[/gold] hinzu.",
   "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "Wenn dieser Gegner angreift, fügt [gold]{CardName}[/gold] deinem [gold]Nachziehstapel[/gold] hinzu.\nWenn dieser Gegner stirbt, fügt [gold]{CardName}[/gold] deinem [gold]Abwurfstapel[/gold] hinzu.",
 
-  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Klingensymphonie",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Messersinfonie",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Immer wenn du in diesem Zug [gold]Messer[/gold] spielst, ziehe [blue]1[/blue] Karte.",
   "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.smartDescription": "Immer wenn du in diesem Zug [gold]Messer[/gold] spielst, ziehe {Amount:plural:1 Karte|[blue]{}[/blue] Karten}."
 }
