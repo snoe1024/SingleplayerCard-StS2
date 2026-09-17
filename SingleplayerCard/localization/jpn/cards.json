@@ -35,7 +35,7 @@
   "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "このターン、アタックがブロックされずにダメージを与えるたび、[gold]毒[/gold]{Envenom:diff()}を付与する。",
 
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "このターン、[gold]手札[/gold]のスキル以外のカードの枚数と同じ[gold]敏捷[/gold]を得る。{InCombat:\n([gold]敏捷[/gold]{DexterityRemake}を得る。)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "このターン、[gold]手札[/gold]のスキル以外のカードの枚数と同じ[gold]敏捷[/gold]を得る。{InCombat:\n([gold]敏捷[/gold]{DexterityRemake:diff()}を得る。)|}",
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "このターン、{FlatDexterity:diff()}[gold]敏捷[/gold]を得る。",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",

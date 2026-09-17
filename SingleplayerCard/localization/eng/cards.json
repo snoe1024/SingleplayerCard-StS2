@@ -35,7 +35,7 @@
   "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "This turn, whenever an Attack deals unblocked damage, apply {Envenom:diff()} [gold]Poison[/gold].",
 
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "This turn, gain Dexterity equal to the number of non-Skill cards in your [gold]Hand[/gold].{InCombat:\n(Gain [gold]Dexterity[/gold]{DexterityRemake}.)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "This turn, gain Dexterity equal to the number of non-Skill cards in your [gold]Hand[/gold].{InCombat:\n(Gain [gold]Dexterity[/gold]{DexterityRemake:diff()}.)|}",
   "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "This turn, gain {FlatDexterity:diff()} [gold]Dexterity[/gold].",
 
   "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
