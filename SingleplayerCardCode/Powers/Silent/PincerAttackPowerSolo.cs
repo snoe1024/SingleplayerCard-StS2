@@ -11,10 +11,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
-// Backs PincerAttackSolo (see .claude/loadmap.md "挟撃" 案1). Vanilla FLANKING_POWER doubles
-// damage the target takes from Attacks except the applier's own. Singleplayer has only one
-// attacker, so instead this excludes Attack cards that were already in hand at the moment this
-// was cast -- only Attacks drawn/generated afterward this turn get doubled.
 public sealed class PincerAttackPowerSolo : SingleplayerCardPower
 {
     private readonly HashSet<CardModel> _excludedCards = new();

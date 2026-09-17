@@ -19,24 +19,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
-// Original multiplayer card: BLADE_SYMPHONY (Uncommon Skill) -- see .claude/loadmap.md
-// "ブレイド・シンフォニー" for current numbers. Add Shivs to ALL players' hands.
-// Singleplayer rework (see .claude/loadmap.md "ブレイド・シンフォニー"):
-// - DRO on (案1): no other players to hand Shivs to, so instead this plays every Shiv generated
-//   THIS TURN, wherever it currently is (hand, hand-overflow discard, reshuffled into the draw pile,
-//   or already Exhausted from an earlier play this turn -- replaying an already-played Shiv is
-//   intentional here, same combo potential as vanilla KNIFE_TRAP's own unrestricted Exhaust-pile
-//   replay, and is a deliberate power source for this branch, not a bug), upgrading each first if
-//   this card is upgraded. Base cost raised to 2 (from 1) and upgrade now reduces cost by 1 (from no
-//   reduction) to compensate for how strong unrestricted replay is. "Generated this turn" comes from
-//   CombatHistory: every Shiv creation already logs a CardGeneratedEntry holding the exact CardModel
-//   instance, and CombatHistoryEntry.HappenedThisTurn filters it to the current turn -- see
-//   sts2_dev_knowledge/topics/gotchas.md for why this beats a per-instance hook (which would break
-//   for a copy of this card generated mid-turn by a Skill Potion).
-// - DRO off (xDRO): matches the original exactly (minus needing other players) -- add 2 Shivs to
-//   hand via Shiv.CreateInHand, same helper vanilla's own OnPlay uses. Cost stays 1, reduces to 0 on
-//   upgrade, matching the original. TargetType stays AnyEnemy (fixed at construction) even though
-//   this branch doesn't use the target -- a minor UX mismatch accepted for simplicity.
 [Pool(typeof(SilentCardPool))]
 public sealed class BladeSymphonySolo : SingleplayerCardCard
 {

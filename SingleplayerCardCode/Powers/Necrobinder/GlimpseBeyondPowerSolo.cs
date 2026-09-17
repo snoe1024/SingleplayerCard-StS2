@@ -12,9 +12,6 @@ using MegaCrit.Sts2.Core.Nodes.CommonUi;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
-// Backs GlimpseBeyondSolo (see .claude/loadmap.md "彼方への一瞥" 案1). Ticks down once per owner
-// turn start, adding 1 Soul directly to hand each time, until Amount reaches 0 (PowerCmd.Decrement
-// removes the power automatically at that point, same as vanilla's per-turn counter powers).
 public sealed class GlimpseBeyondPowerSolo : SingleplayerCardPower
 {
     public override PowerType Type => PowerType.Buff;

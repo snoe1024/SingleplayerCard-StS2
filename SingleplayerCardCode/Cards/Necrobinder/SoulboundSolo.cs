@@ -13,12 +13,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: SOULBOUND (Uncommon Power, Innate on upgrade) -- see .claude/loadmap.md
-// "ソウルバウンド" for current numbers. Choose an ally; whenever you generate a Soul, add a Soul to
-// that ally's deck.
-// Singleplayer rework (see .claude/loadmap.md "ソウルバウンド"): reworked into SoulboundPowerSolo
-// (see its own doc comment for both branches' causality). TargetType switches per branch since
-// Rework needs to choose an enemy while xDRO is self-only (there's no ally either way).
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class SoulboundSolo : SingleplayerCardCard
 {

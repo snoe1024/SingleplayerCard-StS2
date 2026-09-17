@@ -14,14 +14,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: ENERGY_SURGE (Uncommon Skill, Exhaust) -- see .claude/loadmap.md
-// "エナジーサージ" for current numbers. ALL players gain Energy immediately.
-// Singleplayer rework (see .claude/loadmap.md "エナジーサージ"):
-// - DRO on (案1): a lump sum of Energy in one turn is too much for a single Defect, so this instead
-//   grants Energy at the start of each of the next several turns, via vanilla's own RadiancePower
-//   rather than a bespoke power (RadiancePower already does exactly this). Cost lowered to match.
-// - DRO off (xDRO): matches the original -- grants Energy immediately, at the original's cost.
-// Exhaust kept in both branches, matching the original.
 [Pool(typeof(DefectCardPool))]
 public sealed class EnergySurgeSolo : SingleplayerCardCard
 {
@@ -37,9 +29,7 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { EnergyHoverTip };
 
-    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
-    // still declared unconditionally.
-    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(2),
         new PowerVar<RadiancePower>(2)
@@ -49,8 +39,6 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of DroActiveForDisplay -- see base class doc comment. Cost never changes with
-    // upgrade in either branch, so no IsUpgraded term is needed here.
     protected override void RefreshDroBranchState()
     {
         EnergyCost.SetCustomBaseCost(DroActiveForDisplay ? 0 : 1);

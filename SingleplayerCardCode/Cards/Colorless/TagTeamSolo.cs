@@ -12,11 +12,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: TAG_TEAM (Uncommon Attack) -- see .claude/loadmap.md "タッグチーム"
-// for current numbers. Deal damage; the next Attack ANOTHER player plays on the enemy is played an
-// extra time.
-// Singleplayer rework (see .claude/loadmap.md "タッグチーム" 案1, identical to its own xDRO): just
-// targets your own next Attack instead of another player's (see TagTeamPowerSolo).
 [Pool(typeof(ColorlessCardPool))]
 public sealed class TagTeamSolo : SingleplayerCardCard
 {

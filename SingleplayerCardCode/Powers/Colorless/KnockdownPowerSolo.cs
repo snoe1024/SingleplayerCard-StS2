@@ -11,15 +11,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
-// Backs KnockdownSolo. Doubles/triples damage the target takes RIGHT NOW, for the rest of the
-// current turn (matches vanilla KNOCKDOWN_POWER's own timing exactly). Applied directly by the xDRO
-// branch; the Rework (案1) branch instead applies KnockdownPendingPowerSolo first, which converts
-// into an application of THIS power at the end of the enemy's turn (i.e. right as the owner's next
-// turn is about to begin) -- see that class's own doc comment for why the two are kept as separate
-// power types instead of one power with an internal "am I active yet?" flag. That flag was invisible
-// to the power's own tooltip, so its description always read the same regardless of whether it was
-// still pending or already active, and stacking two Knockdowns played on different turns could leave
-// the wrong state displayed.
 public sealed class KnockdownPowerSolo : SingleplayerCardPower
 {
     protected override string? OriginalVanillaPowerId => "KNOCKDOWN_POWER";

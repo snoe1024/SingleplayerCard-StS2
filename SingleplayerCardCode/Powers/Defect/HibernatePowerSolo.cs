@@ -11,10 +11,6 @@ using MegaCrit.Sts2.Core.Models.Orbs;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
-// Backs HibernateSolo (see .claude/loadmap.md "冬眠" 案1). Frost orbs already trigger their
-// Passive once automatically at end of turn (engine-driven). This power adds ONE extra manual
-// trigger right before that, so the net effect is "Frost triggers twice this turn", then removes
-// itself.
 public sealed class HibernatePowerSolo : SingleplayerCardPower
 {
     protected override string? OriginalVanillaPowerId => "HIBERNATE_POWER";

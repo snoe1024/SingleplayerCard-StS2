@@ -13,16 +13,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: KNOCKDOWN (Rare Attack) -- see .claude/loadmap.md "ノックダウン" for
-// current numbers. Deal damage; the enemy takes double/triple damage from OTHER players this turn.
-// Singleplayer rework (see .claude/loadmap.md "ノックダウン"). Damage and multiplier amount are
-// identical between branches -- only the TIMING differs:
-// - DRO on (案1): applies KnockdownPendingPowerSolo ("next turn" marker), which converts into
-//   KnockdownPowerSolo at the end of the enemy's turn -- see those two power classes' own doc
-//   comments for why this is two separate power types instead of one power with an internal
-//   "pending vs active" flag.
-// - DRO off (xDRO): applies KnockdownPowerSolo directly -- active immediately, for the REST of the
-//   current turn, matching the original.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class KnockdownSolo : SingleplayerCardCard
 {

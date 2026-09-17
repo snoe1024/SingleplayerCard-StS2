@@ -11,14 +11,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
-// Original multiplayer card: FLANKING (Rare Skill) -- see .claude/loadmap.md "挟撃" for current
-// numbers. This turn, the target enemy takes double Attack damage from other players (not the
-// caster).
-// Singleplayer rework (see .claude/loadmap.md "挟撃"):
-// - DRO on (案1): no other players, so instead the target takes double Attack damage this turn from
-//   any Attack card that was NOT already in hand when this was played (i.e. cards drawn or generated
-//   afterward). See PincerAttackPowerSolo.
-// - DRO off (xDRO): plain double Attack damage this turn from anything, no exclusion.
 [Pool(typeof(SilentCardPool))]
 public sealed class PincerAttackSolo : SingleplayerCardCard
 {

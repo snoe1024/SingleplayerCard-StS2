@@ -32,11 +32,6 @@ public class HandOverPowerSolo : SingleplayerCardPower
 
     public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
 
-    // Registers a plain, always-empty StringVar in CanonicalVars and keeps it in sync from this
-    // setter -- same pattern vanilla's own ImitationLearningPower.PlayerTarget uses for its
-    // "TargetPlayer" var. DynamicVars.AddTo(locString) (see PowerModel.GetHoverTip) adds every
-    // registered var to the smartDescription LocString automatically, so {CardName} just needs to
-    // exist as a var here; no manual wiring on the description-building side.
     public CardModel? HandOverCard
     {
         get
@@ -85,14 +80,6 @@ public class HandOverPowerSolo : SingleplayerCardPower
         await PowerCmd.Remove(this);
     }
 
-    // Re-attaches HandOverCard to the enemy's CombatState (it was fully detached while held, via
-    // reflection since neither hook is exposed publicly -- see the comment on the two field/property
-    // lookups below), then flies it from the enemy's on-screen position to the destination pile using
-    // NCardFlyVfx, the same node vanilla uses for its own card-movement vfx (e.g. Ball's
-    // player-to-player hand-off, CardPileCmd.GiveToAnotherPlayer). There is no live NCard for this
-    // card at this point (it was fully removed from combat -- see TheBallSolo.FlyToCreature's silent
-    // removal -- so no node ever needed cleaning up), so a fresh one is created here purely to animate
-    // the return trip, positioned at the enemy's own vfx spawn point as the flight's start position.
     private async Task ReturnToPile(PileType pileType, CardPilePosition position)
     {
         if (HandOverCard == null)
@@ -106,10 +93,6 @@ public class HandOverPowerSolo : SingleplayerCardPower
             return;
         }
 
-        // HasBeenRemovedFromState/CombatState._allCards have no public API for "put a fully-removed
-        // card back" (RemoveFromCombat's counterpart, CardPileCmd.Add, expects a card that's merely
-        // moving BETWEEN combat piles, not one that was removed from CombatState entirely) -- this
-        // mirrors what CardPileCmd.RemoveFromCombat itself would have flipped on removal.
         PropertyInfo? removedProp = typeof(CardModel).GetProperty("HasBeenRemovedFromState", BindingFlags.Public | BindingFlags.Instance);
         removedProp?.SetValue(HandOverCard, false);
 
@@ -136,9 +119,6 @@ public class HandOverPowerSolo : SingleplayerCardPower
         }
         else
         {
-            // No live scene to animate in (e.g. TestMode) -- NCardFlyVfx would normally fire this once
-            // the flight lands, so without it the pile's displayed count would otherwise go stale (see
-            // the CardAddFinished/ContentsChanged gotcha in sts2_dev_knowledge).
             HandOverCard.Pile?.InvokeCardAddFinished();
         }
     }

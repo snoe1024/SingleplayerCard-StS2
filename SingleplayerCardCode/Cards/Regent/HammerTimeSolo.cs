@@ -10,12 +10,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: HAMMER_TIME (Rare Power) -- see .claude/loadmap.md "ハンマータイム"
-// for current numbers. Whenever you Forge, all allies Forge as well -- does nothing alone.
-// Singleplayer rework (see .claude/loadmap.md "ハンマータイム" 案1): instead, whenever Sovereign
-// Blade is played, replay every card that Forged this turn. See HammerTimePowerSolo.
-// 2026-09-14 balance pass: fixed cost of 1 from the start (was 2, reduced to 1 on upgrade); upgrade
-// now grants Innate instead of reducing cost, matching loadmap.md's "1コスト" / "(UG天賦)" notation.
 [Pool(typeof(RegentCardPool))]
 public sealed class HammerTimeSolo : SingleplayerCardCard
 {

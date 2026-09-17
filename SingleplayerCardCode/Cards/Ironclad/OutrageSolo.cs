@@ -14,18 +14,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
 
-// Original multiplayer card: OUTRAGE (Uncommon Attack) -- see .claude/loadmap.md "アウトレイジ"
-// for current numbers. Adds a copy of itself to every OTHER player's discard pile (not the
-// caster's own) -- so a lone player gets no extra copies at all, only groups do.
-// Singleplayer rework (see .claude/loadmap.md "アウトレイジ"):
-// - DRO on (案1): damage lowered, and always adds a copy of itself to its own discard pile (like
-//   vanilla Rage/Anger), PLUS a separate copy of every OTHER copy of this card currently in hand --
-//   so accumulated copies compound the way extra players would in multiplayer, instead of vanishing
-//   entirely when played solo. Each hand copy is cloned from itself (not from the played card), so a
-//   copy of an upgraded or Sharp-enchanted Outrage in hand produces a matching upgraded/enchanted
-//   clone rather than a plain one.
-// - DRO off (xDRO): matches the original amount, and always adds exactly one copy to its own
-//   discard pile -- no compounding, since there's no "other players" concept to approximate.
 [Pool(typeof(IroncladCardPool))]
 public sealed class OutrageSolo : SingleplayerCardCard
 {
@@ -37,18 +25,6 @@ public sealed class OutrageSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "ironclad";
 
-    // "Damage" is kept as a plain DamageVar purely as the gameplay-effective/cross-card-visible key
-    // (OnPlay's DamageCmd.Attack reads it, and vanilla's Thrash picks a random Attack card from hand
-    // and reads ITS "Damage" key directly -- see Thrash.OnPlay); RefreshDroBranchState below syncs it
-    // to whichever of DamageRemake/DamageXdro is active. Both branches get their own registered var
-    // (rather than only Remake being "a real DamageVar") so .descriptionRework/.descriptionXdro can
-    // each reference their own number directly -- correct on canonical/Card Library instances too,
-    // since CanonicalVars entries need no mutation to read, unlike Damage itself.
-    // DamageRemake/DamageXdro MUST themselves be DamageVar (not a plain DynamicVar) -- see MidnightSolo's
-    // matching comment: CardModel's UpdateDynamicVarPreview loop calls UpdateCardPreview on every var
-    // regardless of key name, and only DamageVar's override actually recomputes PreviewValue from
-    // current Strength/Vulnerable/Weak/enchantments; a plain DynamicVar leaves :diff() always showing
-    // the raw, un-buffed number (confirmed as a real regression in actual play).
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(8m, ValueProp.Move),
@@ -60,9 +36,6 @@ public sealed class OutrageSolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of DroActiveForDisplay -- see base class doc comment. DamageRemake/DamageXdro
-    // each carry their own upgrade state already (see OnUpgrade), so no separate IsUpgraded branching
-    // is needed here.
     protected override void RefreshDroBranchState()
     {
         DynamicVars.Damage.BaseValue = DroActiveForDisplay

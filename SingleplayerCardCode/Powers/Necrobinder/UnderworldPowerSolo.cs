@@ -10,31 +10,16 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
-using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using SingleplayerCard.SingleplayerCardCode.Cards;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
-// Backs UnderworldSolo (see .claude/loadmap.md "冥界"). Vanilla UNDERWORLD_POWER (damage -> Doom)
-// converts other players' Attack damage into Doom applied to the target -- meaningless targeted at
-// yourself, since it explicitly excludes the power owner's own damage.
-// - DRO on (案1): reverses the causality entirely: whenever the owner applies Doom this turn, deal
-//   damage equal to that amount to the doomed target. Uses ValueProp.Unpowered (not a powered
-//   Attack) so it can't chain into a Deathify-style attack-to-Doom conversion loop.
-// - DRO off (xDRO): keeps vanilla's own damage -> Doom causality, just retargeted at the owner's own
-//   Attack damage instead of "other players'" (there being no one else to trigger off of).
-//
-// Like StealthPowerSolo, this has no DroActiveForDisplay of its own -- it's captured from the
-// applying card via AfterApplied into a [SavedProperty] field.
 public sealed class UnderworldPowerSolo : SingleplayerCardPower
 {
-    // Setter is public, not private -- see SingleplayerCardCard.DroWasOnAtCreation's own comment for
-    // why a private setter breaks BaseLib's [SavedProperty] restore path with "Property set method not
-    // found". This type is currently unsupported by BaseLib for saved values regardless (a startup
-    // warning confirms this), so the public setter is just future-proofing, not a live fix.
-    [SavedProperty]
-    public bool DroActiveForDisplay { get; set; } = true;
+    protected override string? OriginalVanillaPowerId => "UNDERWORLD_POWER";
+
+    public bool DroActiveForDisplay { get; private set; } = true;
 
     public override PowerType Type => PowerType.Buff;
 
@@ -42,9 +27,6 @@ public sealed class UnderworldPowerSolo : SingleplayerCardPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromPower<DoomPower>() };
 
-    // Causality direction is fixed once, at apply time, by the owning card's frozen DRO state -- a
-    // DRO-axis split (like Cards' own .descriptionRework/.descriptionXdro), not a cond()-branch on a
-    // per-instance runtime role. See StealthPowerSolo for the same pattern and its rationale.
     public override LocString Description => new LocString("powers", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
 
     public override Task AfterApplied(Creature? applier, CardModel? cardSource)
@@ -58,11 +40,7 @@ public sealed class UnderworldPowerSolo : SingleplayerCardPower
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        // Must check power.Owner.Side != Owner.Side explicitly: loadmap.md corrected this to say
-        // "whenever you apply Doom to an ENEMY this turn" -- without the side check, a future card
-        // that applies Doom to the OWNER (e.g. a Borrowed Time-style "Doom yourself for Energy" skill,
-        // which existed at an earlier point in this project) would deal that same damage back to the
-        // owner instead of an enemy.
+        // Must check Owner.Side not to apply damage because of self-Doom applying card like old version of Borrowed Time
         if (DroActiveForDisplay && power is DoomPower && applier == Owner && power.Owner.Side != Owner.Side && amount > 0m)
         {
             await CreatureCmd.Damage(choiceContext, power.Owner, amount, ValueProp.Unpowered, Owner);

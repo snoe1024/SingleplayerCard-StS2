@@ -40,10 +40,6 @@ public sealed class ConcoctSolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Rework keeps
-    // Exhaust only until upgraded (matches OnUpgrade below, "Upgrade to remove Exhaust"); xDRO never
-    // has it. Written as an explicit Add-or-Remove rather than a one-way conditional so a later,
-    // corrected call can undo an earlier wrong guess in either direction.
     protected override void RefreshDroBranchState()
     {
         if (DroActiveForDisplay && !IsUpgraded)

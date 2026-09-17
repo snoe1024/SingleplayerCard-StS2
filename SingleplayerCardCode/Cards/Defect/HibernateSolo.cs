@@ -13,13 +13,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: HIBERNATE (Uncommon Skill) -- see .claude/loadmap.md "冬眠" for
-// current numbers. This turn, your Frost grants ALL allies Block. Channel Frost.
-// Singleplayer rework (see .claude/loadmap.md "冬眠"):
-// - DRO on (案1): no allies to share Frost's Block with, so instead Frost's Passive triggers twice
-//   this turn (see HibernatePowerSolo) while still Channeling Frost.
-// - DRO off (xDRO): just Channels Frost, matching the original aside from not needing allies.
-// Same cost and Frost count in both branches.
 [Pool(typeof(DefectCardPool))]
 public sealed class HibernateSolo : SingleplayerCardCard
 {

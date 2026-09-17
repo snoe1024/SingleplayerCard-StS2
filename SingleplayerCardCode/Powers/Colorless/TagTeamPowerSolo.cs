@@ -8,12 +8,10 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
-// Backs TagTeamSolo (see .claude/loadmap.md "タッグチーム" 案1, identical to its own xDRO). Vanilla
-// TAG_TEAM_POWER excludes the applier's own Attacks (since the whole point was "another player's
-// next Attack"); this version has no such exclusion since it's meant to apply to the owner's own
-// next Attack against the target.
-public sealed class TagTeamPowerSolo : PowerModel
+public sealed class TagTeamPowerSolo : SingleplayerCardPower
 {
+    protected override string? OriginalVanillaPowerId => "TAG_TEAM_POWER";
+    
     public override PowerType Type => PowerType.Debuff;
 
     public override PowerStackType StackType => PowerStackType.Counter;

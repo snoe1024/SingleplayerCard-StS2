@@ -13,15 +13,6 @@ using MegaCrit.Sts2.Core.Models.Orbs;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: IGNITION (Rare Skill, Exhaust) -- see .claude/loadmap.md "イグニッション"
-// for current numbers. Another player Channels Plasma.
-// Singleplayer rework (see .claude/loadmap.md "イグニッション"):
-// - DRO on (案1): no other player, so instead this Channels Plasma AND immediately triggers the
-//   Passive of every Plasma orb currently slotted (matches vanilla "Fusion" exactly when only the new
-//   orb is counted, but this also retriggers any Plasma orbs already in the queue).
-// - DRO off (xDRO): just Channels Plasma, matching the original card exactly aside from not needing
-//   another player.
-// Exhaust removed on upgrade in both branches, matching the original.
 [Pool(typeof(DefectCardPool))]
 public sealed class IgnitionSolo : SingleplayerCardCard
 {

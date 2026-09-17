@@ -8,8 +8,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
-// Backs HelpingHandSolo (see .claude/loadmap.md "手助け" 案1). Doubles the Block gained from the
-// owner's very next card that grants Block, then removes itself.
 public sealed class HelpingHandPowerSolo : SingleplayerCardPower
 {
     private bool _consumed;

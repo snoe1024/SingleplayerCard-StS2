@@ -12,10 +12,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
-// Backs GenerousGiftSolo's Upgraded case (see .claude/loadmap.md "寛大なる施し" 案1). Identical to
-// NextTurnCardGenerationPowerSolo except the generated card is Upgraded -- kept as a separate power
-// type (rather than a shared flag) so playing both an unupgraded and an Upgraded copy of this card
-// in the same turn resolves each independently. See NextTurnCardGenerationPowerSolo for why.
 public sealed class NextTurnCardGenerationPlusPowerSolo : SingleplayerCardPower
 {
     public override PowerType Type => PowerType.Buff;

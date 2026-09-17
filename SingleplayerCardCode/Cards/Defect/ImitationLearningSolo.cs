@@ -13,21 +13,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Defect;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Defect;
 
-// Original multiplayer card: IMITATION_LEARNING (Rare Skill, Exhaust) -- see .claude/loadmap.md
-// "模倣学習" for current numbers. Choose another player; the next several times they play a Power,
-// you play a copy of it.
-//
-// Singleplayer rework (see .claude/loadmap.md "模倣学習", redesigned 2026-09-14): reworked into
-// ImitationLearningPowerSolo (see its own doc comment). The old 案2 design (replay your own
-// last-played Power at turn end) was scrapped for being underwhelming; this now implements loadmap's
-// endorsed 案1 instead.
-// - DRO on (案1): choose an enemy instead of another player. TargetType switches to AnyEnemy for
-//   this branch since 案1 needs a target, unlike the old self-targeted 案2.
-// - DRO off (xDRO): matches the original -- applies vanilla's own ImitationLearningPower
-//   (Core/Models/Powers/ImitationLearningPower.cs) targeted at the OWNER instead of another player,
-//   so playing your own Powers triggers it. That power's logic only checks `cardPlay.Card.Owner ==
-//   PlayerTarget`, with no other multiplayer-specific behavior, so it works correctly self-targeted.
-//   Unchanged from before -- kept self-targeted (TargetType.Self) since there's no enemy involved.
 [Pool(typeof(DefectCardPool))]
 public sealed class ImitationLearningSolo : SingleplayerCardCard
 {

@@ -16,17 +16,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: GANG_UP (Uncommon Attack) -- see .claude/loadmap.md "総攻撃" for
-// current numbers. Deal damage, with more for each time ANOTHER player attacked the enemy this
-// turn.
-// Singleplayer rework (see .claude/loadmap.md "総攻撃"):
-// - DRO on (案1): no other player to count, so instead this deals flat damage and replays every
-//   OTHER Attack card played against this same enemy so far this turn. Tracked by this card
-//   instance itself listening for AfterCardPlayed while sitting in any pile (all cards receive
-//   combat hooks regardless of pile), reset each turn start.
-// - DRO off (xDRO): matches the original -- flat base damage, plus a per-Attack-played-this-turn
-//   damage bonus (reusing the same tracked list, just counting instead of replaying). Cost lowered
-//   to match the original.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class GangUpSolo : SingleplayerCardCard
 {
@@ -38,9 +27,6 @@ public sealed class GangUpSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
-    // Rework/案1 base (10, +4=14 on upgrade) since Rework is this mod's default variant;
-    // AfterCloned overwrites this to xDRO's flat base (5, no upgrade scaling) when that branch is
-    // active instead. xDRO's separate per-attack BONUS is tracked by its own var, "BonusPerAttack".
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(5m, ValueProp.Move),

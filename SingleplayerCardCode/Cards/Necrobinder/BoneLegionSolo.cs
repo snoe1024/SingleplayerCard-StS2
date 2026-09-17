@@ -11,13 +11,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: LEGION_OF_BONE (Uncommon Skill) -- see .claude/loadmap.md "骨の軍団"
-// for current numbers. ALL players Summon.
-// Singleplayer rework (see .claude/loadmap.md "骨の軍団"):
-// - DRO on (案1): no other players to scale with, so this instead Summons per enemy currently in
-//   the fight (enemy count naturally shrinks over the fight, similar in spirit to Defect's "Chill").
-// - DRO off (xDRO): a flat Summon amount instead, matching the original.
-// Exhaust kept in both branches, matching the original.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class BoneLegionSolo : SingleplayerCardCard
 {
@@ -33,17 +26,12 @@ public sealed class BoneLegionSolo : SingleplayerCardCard
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.Static(StaticHoverTip.SummonDynamic, DynamicVars.Summon) };
 
-    // 5m (the Rework/案1 base) since Rework is this mod's default variant; AfterCloned overwrites
-    // this to the xDRO flat amount when that branch is active instead. Both branches share the same
-    // +2 upgrade delta (5->7, 6->8), so OnUpgrade doesn't need to branch.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new SummonVar(5m) };
 
     public BoneLegionSolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
-    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Both
-    // branches share the same +2 upgrade delta (5->7, 6->8), matching OnUpgrade below.
     protected override void RefreshDroBranchState()
     {
         decimal baseline = DroActiveForDisplay ? 5m : 6m;

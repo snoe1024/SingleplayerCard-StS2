@@ -12,11 +12,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: UNDERWORLD (Uncommon Skill, Exhaust) -- see .claude/loadmap.md "冥界"
-// for current numbers. This turn, whenever OTHER players deal Attack damage, apply that much Doom.
-// Singleplayer rework (see .claude/loadmap.md "冥界"): reworked into UnderworldPowerSolo (see its own
-// doc comment for both branches' causality and cost). Rework's cost is lowered from the original;
-// xDRO keeps the original's cost. Exhaust removed on upgrade in both branches, matching the original.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class UnderworldSolo : SingleplayerCardCard
 {
@@ -36,9 +31,6 @@ public sealed class UnderworldSolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of DroActiveForDisplay -- see base class doc comment. Cost never changes with
-    // upgrade in either branch (upgrade only removes Exhaust, see OnUpgrade below), so no IsUpgraded
-    // term is needed here.
     protected override void RefreshDroBranchState()
     {
         EnergyCost.SetCustomBaseCost(DroActiveForDisplay ? 1 : 2);

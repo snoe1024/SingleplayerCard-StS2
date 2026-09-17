@@ -11,16 +11,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
-// Backs CacophonySolo (see .claude/loadmap.md "不協和音"). Identical mechanism to vanilla
-// CACOPHONY_POWER (count down a per-draw counter, deal damage and reset when it hits 0) for BOTH
-// branches -- only the draw threshold and damage amount (Amount) differ:
-// - DRO on (案1): the original draw-count window (33) is far too large for a single player to
-//   realistically hit, so this lowers both the draw threshold and the damage.
-// - DRO off (xDRO): matches the original exactly (33 draws / 66(99) damage).
-// Threshold is set by CacophonySolo right after PowerCmd.Apply returns, same pattern as
-// GenerousGiftPowerSolo.GenerateUpgraded/ConstellationPowerSolo's extra properties -- the card also
-// pokes DynamicVars.Cards.BaseValue directly at that point so even the FIRST countdown cycle starts
-// from the right branch's threshold, not CanonicalVars' hardcoded default.
 public sealed class CacophonyPowerSolo : SingleplayerCardPower
 {
     public int Threshold { get; set; } = 12;

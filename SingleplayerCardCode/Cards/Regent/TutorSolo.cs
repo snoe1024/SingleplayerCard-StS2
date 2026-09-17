@@ -10,11 +10,6 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: TUTOR (Rare Skill) -- see .claude/loadmap.md "教示" for current
-// numbers. Another player chooses a card in their Draw Pile to add to their Hand.
-// Singleplayer rework (see .claude/loadmap.md "教示" 案1, which is identical to its own xDRO):
-// simply targets yourself instead of another player -- the effect and numbers are otherwise
-// unchanged, since there was nothing multiplayer-specific left to rework once retargeted.
 [Pool(typeof(RegentCardPool))]
 public sealed class TutorSolo : SingleplayerCardCard
 {

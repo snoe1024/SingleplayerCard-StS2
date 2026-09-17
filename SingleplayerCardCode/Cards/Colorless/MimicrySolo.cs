@@ -12,22 +12,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: MIMIC (Rare Skill, Exhaust) -- see .claude/loadmap.md "ものまね" for
-// current numbers. Gain Block equal to another player's CURRENT Block stat -- meaningless alone.
-// Singleplayer rework (see .claude/loadmap.md "ものまね" 案1): instead, gain Block equal to the
-// printed Block value of the single highest-Block card currently in hand (summing all BlockVars on
-// that card if it has more than one; ignores calculated/special block like CalculatedBlockVar). Has
-// no xDRO branch (loadmap.md marks it as "破綻" -- there's no other player to reference at all), so
-// this always uses the Rework behavior; see CardVariantNoOriginal in SingleplayerCardConfig.
-// Passing the result through the normal GainBlock pipeline means Dexterity etc. apply to it exactly
-// as they would to that card, on top of whatever Dexterity already did to the printed value itself
-// -- an intentional "double-dip" the loadmap calls out explicitly, not a bug.
-// A CalculatedVar ("BestHandBlock") mirrors the highest-card computation so the card's own
-// description can show a live preview of how much Block it would currently grant (same technique as
-// DemonicShieldSolo's "HP lost this combat" preview) -- CalculationBase/CalculationExtra are
-// declared as 0/1 so Calculate() reduces to exactly the multiplier lambda's own value (see
-// sts2_dev_knowledge/topics/dynamic-vars.md). OnPlay calls the SAME CalculatedVar rather than
-// recomputing the search separately, so the preview can never drift from the actual effect.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class MimicrySolo : SingleplayerCardCard
 {

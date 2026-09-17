@@ -11,16 +11,6 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: HUDDLE_UP (Uncommon Skill, Exhaust) -- see .claude/loadmap.md
-// "作戦会議" for current numbers. ALL players draw cards immediately.
-// Singleplayer rework (see .claude/loadmap.md "作戦会議"):
-// - DRO on (案1): draws cards now AND grants more at the start of the owner's next turn, via
-//   vanilla's own DrawCardsNextTurnPower rather than a bespoke power -- a separate custom power
-//   would just duplicate an effect vanilla already implements, and using the shared vanilla power
-//   means it correctly stacks with any other source of "next turn" draw instead of tracking its own
-//   separate total. Both draw counts are a flat 2 with no upgrade scaling and Exhaust dropped,
-//   exactly matching loadmap.md's own 案1 text (no "(N)" upgrade notation there).
-// - DRO off (xDRO): matches the original -- draws immediately, scales with upgrade, keeps Exhaust.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class WarCouncilSolo : SingleplayerCardCard
 {
@@ -32,17 +22,12 @@ public sealed class WarCouncilSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "colorless";
 
-    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
-    // still declared unconditionally.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new CardsVar(2) };
 
     public WarCouncilSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
     }
 
-    // Pure function of DroActiveForDisplay -- see base class doc comment. Written as an explicit
-    // Add-or-Remove rather than a one-way conditional so a later, corrected call can undo an earlier
-    // wrong guess in either direction.
     protected override void RefreshDroBranchState()
     {
         if (DroActiveForDisplay)

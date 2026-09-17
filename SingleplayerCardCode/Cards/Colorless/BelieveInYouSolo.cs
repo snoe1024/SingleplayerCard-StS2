@@ -11,13 +11,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: BELIEVE_IN_YOU (Uncommon Skill) -- see .claude/loadmap.md
-// "お前を信じる" for current numbers. Another player gains Energy immediately.
-// Singleplayer rework (see .claude/loadmap.md "お前を信じる"):
-// - DRO on (案1): reflavored as believing in your own tomorrow-self instead of another player --
-//   next turn, once you've played an Attack, a Skill, AND a Power, gain Energy (see
-//   BelieveInYouPowerSolo).
-// - DRO off (xDRO): matches the original -- gain Energy immediately, a flat (different) amount.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class BelieveInYouSolo : SingleplayerCardCard
 {

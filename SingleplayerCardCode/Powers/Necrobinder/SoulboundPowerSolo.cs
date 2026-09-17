@@ -11,33 +11,14 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
-using MegaCrit.Sts2.Core.Saves.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using SingleplayerCard.SingleplayerCardCode.Cards;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
-// Backs SoulboundSolo (see .claude/loadmap.md "ソウルバウンド"). Vanilla SOULBOUND_POWER (Soul
-// generated -> add a Soul to a chosen ally's deck) is meaningless targeted at yourself -- there's no
-// ally to pick.
-// - DRO on (案1): targets a chosen ENEMY instead of an ally. The first time that enemy takes
-//   unblocked Attack damage each of the owner's turns, add Amount Soul(s) to the OWNER's draw pile
-//   (the applier, not this power's own Owner -- Owner here is the targeted enemy).
-// - DRO off (xDRO): keeps vanilla's own Soul-generation trigger, just retargeted at the owner (self)
-//   instead of "an ally" -- there being no one else to grant it to. Guarded against re-entrancy
-//   (_isAddingSoul) exactly like vanilla's own SoulboundPower, since adding a Soul via
-//   AddGeneratedCardsToCombat is itself a Soul generation that would otherwise re-trigger this hook.
-//
-// Like UnderworldPowerSolo, this has no DroActiveForDisplay of its own -- it's captured from the
-// applying card via AfterApplied into a [SavedProperty] field.
 public sealed class SoulboundPowerSolo : SingleplayerCardPower
 {
-    // Setter is public, not private -- see SingleplayerCardCard.DroWasOnAtCreation's own comment for
-    // why a private setter breaks BaseLib's [SavedProperty] restore path with "Property set method not
-    // found". This type is currently unsupported by BaseLib for saved values regardless (a startup
-    // warning confirms this), so the public setter is just future-proofing, not a live fix.
-    [SavedProperty]
-    public bool DroActiveForDisplay { get; set; } = true;
+    public bool DroActiveForDisplay { get; private set; } = true;
 
     private bool _hasTriggeredThisTurn;
     private bool _isAddingSoul;
@@ -50,9 +31,6 @@ public sealed class SoulboundPowerSolo : SingleplayerCardPower
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => new[] { HoverTipFactory.FromCard<Soul>() };
 
-    // Which trigger (and target) applies is fixed once, at apply time, by the owning card's frozen
-    // DRO state -- a DRO-axis split (like Cards' own .descriptionRework/.descriptionXdro), not a
-    // cond()-branch on a per-instance runtime role. See StealthPowerSolo for the same pattern.
     public override LocString Description => new LocString("powers", Id.Entry + (DroActiveForDisplay ? ".descriptionRework" : ".descriptionXdro"));
 
     protected override string SmartDescriptionLocKey => Id.Entry + (DroActiveForDisplay ? ".smartDescriptionRework" : ".smartDescriptionXdro");

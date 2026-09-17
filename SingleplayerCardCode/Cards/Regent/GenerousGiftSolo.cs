@@ -12,18 +12,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Regent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: LARGESSE (Uncommon Skill) -- see .claude/loadmap.md "寛大なる施し" for
-// current numbers. Another player adds a random (Upgraded if this is Upgraded) Colorless card to
-// their Hand.
-// Singleplayer rework (see .claude/loadmap.md "寛大なる施し"):
-// - DRO on (案1): no other player, so instead of giving it immediately, it's granted at the start
-//   of the owner's NEXT turn -- fits Regent's pattern of deferring energy/draw-style effects to
-//   next turn. Applies one of two separate powers depending on whether THIS play is Upgraded
-//   (NextTurnCardGenerationPowerSolo / NextTurnCardGenerationPlusPowerSolo) rather than one shared
-//   power with a mutable "generate upgraded?" flag -- see those files for why a shared flag breaks
-//   when both an unupgraded and an Upgraded copy are played the same turn.
-// - DRO off (xDRO): matches the original -- grants the card immediately, same generation logic as
-//   the deferred powers.
 [Pool(typeof(RegentCardPool))]
 public sealed class GenerousGiftSolo : SingleplayerCardCard
 {

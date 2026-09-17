@@ -12,13 +12,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Silent;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Silent;
 
-// Original multiplayer card: FADE (Uncommon Skill, Retain) -- see .claude/loadmap.md "影隠し" for
-// current numbers. Another player gains Dexterity this turn.
-// Singleplayer rework (see .claude/loadmap.md "影隠し"):
-// - DRO on (案1): no other player, so instead grants Dexterity this turn equal to the number of
-//   non-Skill cards currently in hand.
-// - DRO off (xDRO): a flat Dexterity gain this turn instead, matching the original amount.
-// Retain kept and Exhaust removed on upgrade in both branches, matching the original.
 [Pool(typeof(SilentCardPool))]
 public sealed class ShadowVanishSolo : SingleplayerCardCard
 {
@@ -34,8 +27,6 @@ public sealed class ShadowVanishSolo : SingleplayerCardCard
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => new[] { CardKeyword.Retain, CardKeyword.Exhaust };
 
-    // Only consumed by the xDRO branch -- see CoordinateSolo's CanonicalVars comment for why this is
-    // still declared unconditionally.
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("FlatDexterity", 6m),

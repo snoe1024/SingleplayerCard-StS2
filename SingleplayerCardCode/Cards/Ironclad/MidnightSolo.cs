@@ -44,20 +44,6 @@ public sealed class MidnightSolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "ironclad";
 
-    // "Damage" itself is kept as a plain DamageVar purely as the gameplay-effective/cross-card-visible
-    // key (OnPlay's DamageCmd.Attack reads it, and vanilla's Thrash picks a random Attack card from
-    // hand and reads ITS "Damage" key directly -- see Thrash.OnPlay) -- RefreshDroBranchState below
-    // keeps it synced to whichever of DamageRemake/DamageXdro is the active branch. Registering BOTH
-    // branches as their own named vars (rather than only Remake being "a real DamageVar" and xDRO
-    // existing solely as a literal inside RefreshDroBranchState) is what lets .descriptionRework and
-    // .descriptionXdro each reference their own number directly -- correct on canonical/Card Library
-    // instances too, since CanonicalVars entries need no mutation to read, unlike Damage itself.
-    // DamageRemake/DamageXdro MUST themselves be DamageVar (not a plain DynamicVar) -- CardModel's
-    // UpdateDynamicVarPreview loops over every var in DynamicVars and calls UpdateCardPreview on each
-    // regardless of key name; DamageVar is what makes that call actually recompute PreviewValue from
-    // current Strength/Vulnerable/Weak/enchantments (a plain DynamicVar's UpdateCardPreview is a
-    // no-op, so :diff() -- which reads PreviewValue -- would always show the raw, un-buffed number
-    // regardless of the target's current debuffs; confirmed as a real regression in actual play).
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new DamageVar(36m, ValueProp.Move),
@@ -69,9 +55,6 @@ public sealed class MidnightSolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of DroActiveForDisplay -- see base class doc comment. DamageRemake/DamageXdro
-    // each carry their own upgrade state already (see OnUpgrade), so no separate IsUpgraded branching
-    // is needed here.
     protected override void RefreshDroBranchState()
     {
         DynamicVars.Damage.BaseValue = DroActiveForDisplay

@@ -12,19 +12,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Regent;
 
-// Original multiplayer card: CONSTELLATION (Uncommon Skill) -- see .claude/loadmap.md "星座" for
-// current numbers (cost includes a star-cost component). Another player draws a card, gains
-// Energy, and gains Block.
-// Singleplayer rework (see .claude/loadmap.md "星座"):
-// - DRO on (案1): no other player, so the same effect is instead granted at the start of the
-//   owner's own next turn. Composed from vanilla's own three separate next-turn powers
-//   (DrawCardsNextTurnPower/EnergyNextTurnPower/BlockNextTurnPower) rather than one bespoke power
-//   bundling all three -- a single combined power would be unclear about its exact numbers once
-//   another card's own next-turn draw/energy/block effect stacks alongside it (the combined total
-//   would be split across two differently-shaped powers with no shared display), and vanilla
-//   already has all three pieces individually with correct Counter stacking.
-// - DRO off (xDRO): matches the original -- grants the same draw/Energy/Block immediately instead
-//   of deferring, same numbers as 案1.
 [Pool(typeof(RegentCardPool))]
 public sealed class ConstellationSolo : SingleplayerCardCard
 {

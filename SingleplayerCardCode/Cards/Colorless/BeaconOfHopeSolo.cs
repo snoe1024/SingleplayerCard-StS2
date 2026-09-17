@@ -9,13 +9,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Colorless;
 
-// Original multiplayer card: BEACON_OF_HOPE (Rare Power; cost differs between the normal branch
-// and public beta -- see .claude/loadmap.md "希望の道標" for current numbers). Whenever you gain
-// Block on your turn, other players gain half that much Block.
-// Singleplayer rework (see .claude/loadmap.md "希望の道標" 案1): no other players, so instead
-// banks half of the Block gained during your turn and grants it as Block at the start of your next
-// turn (see BeaconOfHopePowerSolo). Uses the public beta's cost baseline since that's what this
-// machine's decompiled source reflects.
 [Pool(typeof(ColorlessCardPool))]
 public sealed class BeaconOfHopeSolo : SingleplayerCardCard
 {

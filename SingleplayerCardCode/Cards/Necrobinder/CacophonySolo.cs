@@ -11,11 +11,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Necrobinder;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Necrobinder;
 
-// Original multiplayer card: CACOPHONY (Rare Power) -- see .claude/loadmap.md "不協和音" for
-// current numbers. Every so many cards drawn by ALL players, deal damage to a random enemy.
-// Singleplayer rework (see .claude/loadmap.md "不協和音"). See CacophonyPowerSolo for the two
-// branches' actual threshold/damage numbers -- the power itself decides which to use, based on
-// values this card sets right after applying it.
 [Pool(typeof(NecrobinderCardPool))]
 public sealed class CacophonySolo : SingleplayerCardCard
 {
@@ -25,8 +20,6 @@ public sealed class CacophonySolo : SingleplayerCardCard
 
     protected override string OriginalVanillaCardPool => "necrobinder";
 
-    // Rework/案1 defaults (12 draws / 16 damage) since Rework is this mod's default variant;
-    // AfterCloned overwrites both to the xDRO values (33 / 66) when that branch is active instead.
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
         new CardsVar(12),
@@ -37,8 +30,6 @@ public sealed class CacophonySolo : SingleplayerCardCard
     {
     }
 
-    // Pure function of (DroActiveForDisplay, IsUpgraded) -- see base class doc comment. Cards never
-    // upgrades in either branch (only Damage does, matching OnUpgrade below), so it's a fixed value.
     protected override void RefreshDroBranchState()
     {
         if (DroActiveForDisplay)

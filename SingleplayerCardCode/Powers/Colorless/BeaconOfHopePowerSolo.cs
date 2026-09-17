@@ -14,10 +14,6 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace SingleplayerCard.SingleplayerCardCode.Powers.Colorless;
 
-// Backs BeaconOfHopeSolo (see .claude/loadmap.md "希望の道標" 案1). Vanilla BEACON_OF_HOPE_POWER
-// gives other players half of any Block the owner gains -- meaningless alone. Singleplayer rework:
-// tracks Block gained during the owner's own turn, and at that turn's end banks half of it to be
-// granted as Block at the start of the owner's NEXT turn.
 public sealed class BeaconOfHopePowerSolo : SingleplayerCardPower
 {
     protected override string? OriginalVanillaPowerId => "BEACON_OF_HOPE_POWER";

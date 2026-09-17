@@ -3,7 +3,7 @@
   "name": "Singleplayer Card",
   "author": "snoe1024",
   "description": "Mod that adjusts Multiplayer-only cards and adds them so they can be used in Singleplayer.",
-  "version": "v0.3.3",
+  "version": "v0.3.4",
   "has_pck": true,
   "has_dll": true,
   "min_game_version": "0.105.0",

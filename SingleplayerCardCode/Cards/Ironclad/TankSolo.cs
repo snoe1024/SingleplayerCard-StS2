@@ -8,12 +8,6 @@ using SingleplayerCard.SingleplayerCardCode.Powers.Ironclad;
 
 namespace SingleplayerCard.SingleplayerCardCode.Cards.Ironclad;
 
-// Original multiplayer card: TANK (Rare Power) -- see .claude/loadmap.md "タンク" for current
-// numbers. Self takes more damage from enemies; allies take less damage from enemies. Doesn't
-// stack with itself.
-// Singleplayer rework (see .claude/loadmap.md "タンク" 案1): no allies to protect, so instead of
-// reducing ally damage, blocked attack damage is reflected back at the attacker. See TankPowerSolo
-// for the actual effect.
 [Pool(typeof(IroncladCardPool))]
 public sealed class TankSolo : SingleplayerCardCard
 {
