@@ -1,4 +1,4 @@
 {
   "SINGLEPLAYERCARD-HAND_OVER.title": "양도",
-  "SINGLEPLAYERCARD-HAND_OVER.description": "이 카드는 [gold]덱[/gold]에서\n일시적으로 제거됩니다.\n이 카드를 보유한 적이 공격하면,\n그 적의 [gold]뽑을 카드 더미[/gold]에\n이 카드를 추가합니다.\n이 카드를 보유한 적이 죽으면,\n[gold]버린 카드 더미[/gold]에 이 카드를\n추가합니다."
+  "SINGLEPLAYERCARD-HAND_OVER.description": "이 카드는 [gold]덱[/gold]에서 일시적으로 제거됩니다.\n이 카드를 보유한 적이 공격하면, 그 적의 [gold]뽑을 카드 더미[/gold]에 이 카드를 추가합니다.\n이 카드를 보유한 적이 죽으면, [gold]버린 카드 더미[/gold]에 이 카드를 추가합니다."
 }
