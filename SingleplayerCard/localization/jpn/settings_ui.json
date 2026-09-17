@@ -52,7 +52,7 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT.hover.desc.xdro": "ランダムな(アップグレード済みの)無色カードを1枚手札に加える。",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.rework": "ソヴリンブレードをプレイしたとき、そのターンに使った鍛造効果のあるカードをもう一度プレイする。",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.xdro": "対応無し",
-  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "次のターン開始時に追加で引くカードを失い、今引く。",
+  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "次の3ターン開始時、追加でカードを1枚引く。",
   "SINGLEPLAYERCARD-SCHEME.hover.desc.xdro": "次のターン、カードを2(3)枚引く。",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.rework": "次のターン、カードを1枚引き、1エナジーと9(12)ブロックを得る。",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.xdro": "カードを1枚引き、1エナジーと9(12)ブロックを得る。",

@@ -32,7 +32,7 @@ public sealed class BlazeSolo : SingleplayerCardCard
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<StrengthPower>(2m),
+        new PowerVar<StrengthPower>(5m),
         new CalculationBaseVar(0m),
         new CalculationExtraVar(2m),
         new CalculatedVar("StrengthRemake").WithMultiplier((card, _) => CombatManager.Instance.History.Entries.OfType<CardExhaustedEntry>().Count(e => e.HappenedThisTurn(card.CombatState)))
@@ -40,11 +40,6 @@ public sealed class BlazeSolo : SingleplayerCardCard
 
     public BlazeSolo() : base(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
-    }
-
-    protected override void RefreshDroBranchState()
-    {
-        DynamicVars.Strength.BaseValue = DroActiveForDisplay ? 2m : (IsUpgraded ? 7m : 5m);
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
