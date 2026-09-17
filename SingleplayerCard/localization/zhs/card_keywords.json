@@ -1,0 +1,4 @@
+{
+  "SINGLEPLAYERCARD-HAND_OVER.title": "转交",
+  "SINGLEPLAYERCARD-HAND_OVER.description": "这张牌会暂时从你的[gold]牌组[/gold]中移除。\n当持有此牌的敌人攻击时，将此牌加入其[gold]抽牌堆[/gold]。\n当持有此牌的敌人死亡时，将此牌加入[gold]弃牌堆[/gold]。"
+}

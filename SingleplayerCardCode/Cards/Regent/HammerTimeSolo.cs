@@ -15,8 +15,6 @@ public sealed class HammerTimeSolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
-    protected override bool DroVersionExists => true;
-
     protected override string OriginalVanillaCardId => "HAMMER_TIME";
 
     protected override string OriginalVanillaCardPool => "regent";

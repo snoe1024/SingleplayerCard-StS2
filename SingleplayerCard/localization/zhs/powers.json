@@ -1,0 +1,84 @@
+{
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "肉盾",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "受到敌人造成的伤害增加[blue]50%[/blue]。将所有格挡的攻击伤害反弹给攻击者。",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "夹击",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "这回合，受到施加此效果时不在手牌中的攻击牌造成的[blue]2倍[/blue]伤害。",
+
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "鬼祟",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "持有者每当以非攻击牌的方式造成伤害时，获得[gold]格挡[/gold]。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "持有者每当以非攻击牌的方式造成伤害时，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "持有者每当攻击敌人时，获得[gold]格挡[/gold]。",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "持有者每当攻击敌人时，获得[blue]{Amount}[/blue]点[gold]格挡[/gold]。",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "锤子时间",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "每当你打出[gold]君王之剑[/gold]时，重新打出这回合所有触发过[gold]铸造[/gold]的牌。",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "每当你打出[gold]君王之剑[/gold]时，重新打出这回合所有触发过[gold]铸造[/gold]的牌。",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "次回合生成卡牌",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "在你下个回合开始时，将[blue]{Amount}[/blue]张随机无色牌加入你的手牌。",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "次回合生成卡牌+",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "在你下个回合开始时，将[blue]{Amount}[/blue]张随机的已升级无色牌加入你的手牌。",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "彼岸一瞥",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "在你接下来[blue]{Amount}[/blue]个回合开始时，各将一张[gold]灵魂[/gold]加入你的手牌。",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "幽冥之界",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "这回合，每当你给予敌人[gold]灾厄[/gold]时，造成等同于该数值的伤害。",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "这回合，每当你造成攻击伤害时，给予等同于该伤害的[gold]灾厄[/gold]。",
+
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "灵魂绑定",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "被选中的敌人每回合首次受到未被格挡的攻击伤害时，将一张[gold]灵魂[/gold]加入你的抽牌堆。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "被选中的敌人每回合首次受到未被格挡的攻击伤害时，将[blue]{Amount}[/blue]张[gold]灵魂[/gold]加入你的抽牌堆。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "每当你生成一张[gold]灵魂[/gold]时，将一张[gold]灵魂[/gold]加入你的抽牌堆。",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "每当你生成一张[gold]灵魂[/gold]时，将[blue]{Amount}[/blue]张[gold]灵魂[/gold]加入你的抽牌堆。",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "不谐合曲",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "每抽[blue]12[/blue]张牌，对一名随机敌人造成[blue]16[/blue]点伤害。",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "再抽[blue]{Cards}[/blue]张牌后，对一名随机敌人造成[blue]{Amount}[/blue]点伤害。",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "休眠",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "这回合，你的[gold]冰霜[/gold]充能球的被动触发两次。",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "这回合，你的[gold]冰霜[/gold]充能球的被动触发两次。",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "模仿学习",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "敌人前[blue]2[/blue]次获得[gold]增益效果[/gold]时，将一张耗能为[blue]0[/blue]的随机能力牌加入你的手牌。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "敌人前[blue]{Amount}[/blue]次获得[gold]增益效果[/gold]时，将一张耗能为[blue]0[/blue]的随机能力牌加入你的手牌。",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "多人组队",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "下一张对该敌人打出的攻击牌，会额外打出[blue]2[/blue]次。",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "下一张对该敌人打出的攻击牌，会额外打出[blue]{Amount}[/blue]次。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "击倒",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "这回合，受到的伤害为[blue]2倍[/blue]。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "这回合，受到的伤害为[blue]{Amount}倍[/blue]。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "击倒(下回合)",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "从下回合开始，那一回合受到的伤害为[blue]2倍[/blue]。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "从下回合开始，那一回合受到的伤害为[blue]{Amount}倍[/blue]。",
+
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "无法获得能量",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "在[blue]2[/blue]个回合内，你不能获得任何额外的{energyPrefix:energyIcons(1)}。",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "在[blue]{Amount}[/blue]个回合内，你不能获得任何额外的{energyPrefix:energyIcons(1)}。",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "无法抽牌",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "在[blue]2[/blue]个回合内，你不能再抽牌。",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "在[blue]{Amount}[/blue]个回合内，你不能再抽牌。",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "托举",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "使你下一张牌获得的[gold]格挡[/gold]翻倍。",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "使你下一张牌获得的[gold]格挡[/gold]翻倍。",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "希望灯塔",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "每回合首次通过卡牌获得[gold]格挡[/gold]时，在下个回合获得等量的[gold]格挡[/gold]。",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "每回合前[blue]{Amount}[/blue]次通过卡牌获得[gold]格挡[/gold]时，在下个回合获得等量的[gold]格挡[/gold]。",
+
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "已转交",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "当该敌人攻击时，将此牌加入[gold]抽牌堆[/gold]。\n当该敌人死亡时，将此牌加入[gold]弃牌堆[/gold]。",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "当该敌人攻击时，将[gold]{CardName}[/gold]加入你的[gold]抽牌堆[/gold]。\n当该敌人死亡时，将[gold]{CardName}[/gold]加入你的[gold]弃牌堆[/gold]。",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "刀刃交响曲",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "这回合，每当你打出[gold]小刀[/gold]时，抽[blue]1[/blue]张牌。",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.smartDescription": "这回合，每当你打出[gold]小刀[/gold]时，抽[blue]{Amount}[/blue]张牌。"
+}

@@ -1,0 +1,140 @@
+{
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "失去 1 點生命。獲得等同於本場戰鬥中已損失生命的[gold]格擋[/gold]。{InCombat:\n(本場戰鬥已損失 {LoseHPAmount:diff()} 點生命。)|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "失去 1 點生命。將你的[gold]格擋[/gold]值翻倍。",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "受到敵人造成的傷害增加 50%。\n將所有格擋的攻擊傷害反彈給攻擊者。",
+
+  "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "造成 {DamageRemake:diff()} 點傷害。\n本場戰鬥中每[gold]消耗[/gold]一張牌，此牌費用減少 1{energyPrefix:energyIcons(1)}。\n這回合每[gold]消耗[/gold]一張牌，此牌費用減少 2{energyPrefix:energyIcons(1)}。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "造成 {DamageXdro:diff()} 點傷害。\n本場戰鬥中每[gold]消耗[/gold]一張牌，此牌費用減少 1{energyPrefix:energyIcons(1)}。",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "這回合你每丟棄一張牌，獲得 {CalculationExtra:diff()} 層[gold]力量[/gold]。{InCombat:\n(獲得 {StrengthRemake:diff()} 層[gold]力量[/gold]。)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "獲得 {StrengthPower:diff()} 層[gold]力量[/gold]。",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "造成 {DamageRemake:diff()} 點傷害。\n將本牌與[gold]手牌[/gold]中所有《暴怒》的複製品加入你的[gold]棄牌堆[/gold]。",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "造成 {DamageXdro:diff()} 點傷害。\n將一張本牌的複製品加入你的[gold]棄牌堆[/gold]。",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "這回合，敵人受到不在你[gold]手牌[/gold]中的攻擊牌造成的傷害翻倍。",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "這回合，敵人受到的攻擊傷害翻倍。",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "每當你給予敵人一個減益效果時，獲得 {StealthRemake:diff()} 點[gold]格擋[/gold]。",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "每當你攻擊敵人時，獲得 {StealthXdro:diff()} 點[gold]格擋[/gold]。",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "這回合，每當你打出[gold]小刀[/gold]時，抽 1 張牌。",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "將 2 張[gold]小刀[/gold]加入你的[gold]手牌[/gold]。",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "給予你[gold]手牌[/gold]中所有未附魔的攻擊牌[gold]有毒[/gold] {Venomous:diff()}。",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "這回合，每當攻擊牌造成未被格擋的傷害時，給予 {Envenom:diff()} 層[gold]中毒[/gold]。",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "這回合，獲得等同於[gold]手牌[/gold]中非技能牌數量的敏捷。{InCombat:\n(獲得 {DexterityRemake:diff()} 層[gold]敏捷[/gold]。)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "這回合，獲得 {FlatDexterity:diff()} 層[gold]敏捷[/gold]。",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "每當你打出[gold]君王之劍[/gold]時，重新打出這回合所有觸發過[gold]鑄造[/gold]的牌。",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "在你下個回合開始時，將 1 張隨機{IfUpgraded:show:[gold]已升級[/gold]的}無色牌加入你的[gold]手牌[/gold]。",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "將 1 張隨機{IfUpgraded:show:[gold]已升級[/gold]的}無色牌加入你的[gold]手牌[/gold]。",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "在你接下來 3 個回合開始時，各額外抽 1 張牌。",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "下個回合，抽 {Cards:diff()} 張牌。",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "在你下個回合開始時，抽 {Cards:diff()} 張牌，獲得 {Energy:energyIcons()}，並獲得 {Block:diff()} 點[gold]格擋[/gold]。",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "抽 {Cards:diff()} 張牌，獲得 {Energy:energyIcons()}，並獲得 {Block:diff()} 點[gold]格擋[/gold]。",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "選擇你[gold]抽牌堆[/gold]中的一張牌，將其加入[gold]手牌[/gold]。",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "每有一名敵人，[gold]召喚[/gold] {Summon:diff()}。",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]召喚[/gold] {Summon:diff()}。",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "將一張[gold]靈魂[/gold]加入你的[gold]手牌[/gold]。\n在你接下來 {SoulsRemake:diff()} 個回合開始時，各將一張[gold]靈魂[/gold]加入你的[gold]手牌[/gold]。",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "將 {SoulsXdro:diff()} 張[gold]靈魂[/gold]加入你的[gold]抽牌堆[/gold]。",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "這回合，每當你給予敵人[gold]惡兆[/gold]時，造成等同於該數值的傷害。",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "這回合，每當你造成攻擊傷害時，給予等同於該傷害的[gold]惡兆[/gold]。",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "選擇一名敵人。該敵人每回合首次受到未被格擋的攻擊傷害時，將一張[gold]靈魂[/gold]加入你的[gold]抽牌堆[/gold]。",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "每當你生成一張[gold]靈魂[/gold]時，將一張[gold]靈魂[/gold]加入你的[gold]抽牌堆[/gold]。",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "每抽 {Cards:diff()} 張牌，對一名隨機敵人造成 {Damage:diff()} 點傷害。",
+
+  "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "在你接下來 {RadiancePower:diff()} 個回合開始時，各獲得 1{energyPrefix:energyIcons(1)}。",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "獲得 {Energy:energyIcons()}。",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]凝聚[/gold][gold]電漿[/gold]充能球。觸發所有[gold]電漿[/gold]充能球的被動。",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]凝聚[/gold][gold]電漿[/gold]充能球。",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "這回合，你的[gold]冰霜[/gold]充能球的被動觸發兩次。\n[gold]凝聚[/gold] {Repeat:diff()} 個[gold]冰霜[/gold]充能球。",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]凝聚[/gold] {Repeat:diff()} 個[gold]冰霜[/gold]充能球。",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "你 0{energyPrefix:energyIcons(1)} 的攻擊牌造成的傷害提高 {OneForAllPower:diff()} 點。",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "敵人前 {ImitationRemake:diff()} 次獲得強化效果時，將一張隨機能力牌加入你的[gold]手牌[/gold]。這張牌可以免費打出。",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "你接下來 {ImitationXdro:diff()} 次打出能力牌時，將其再次打出。",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "造成 {Damage:diff()} 點傷害。這回合你每打出一張攻擊牌，再造成 {BonusPerAttack:diff()} 點傷害。",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "造成 {Damage:diff()} 點傷害。\n你接下來對該敵人打出的下一張攻擊牌，會額外打出一次。",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "造成 {Damage:diff()} 點傷害。\n下回合，敵人受到的傷害{IfUpgraded:show:提高至 3 倍|翻倍}。",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "造成 {Damage:diff()} 點傷害。\n這回合，敵人受到的傷害{IfUpgraded:show:提高至 3 倍|翻倍}。",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "造成 {Damage:diff()} 點傷害。\n本場戰鬥中，此牌傷害提高 {IncreaseRemake:diff()} 點，並將此牌[gold]轉交[/gold]給目標敵人。",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "造成 {Damage:diff()} 點傷害。\n本場戰鬥中，此牌傷害提高 {IncreaseXdro:diff()} 點，並將此牌洗入你的[gold]抽牌堆[/gold]。",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "獲得 {Energy:energyIcons()}。接下來 2 個回合內，你不能獲得額外的能量或抽牌。",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "獲得 {Energy:energyIcons()}。",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "獲得 {Block:diff()} 點[gold]格擋[/gold]。\n獲得 1 層[gold]虛弱[/gold]。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "獲得 {Block:diff()} 點[gold]格擋[/gold]。",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "抽 {Cards:diff()} 張牌。在你下個回合開始時，再抽 2 張牌。",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "抽 {Cards:diff()} 張牌。",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "使你下一張牌獲得的[gold]格擋[/gold]翻倍。",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "獲得 {Block:diff()} 點[gold]格擋[/gold]。",
+
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "給予一張未附魔的牌[gold]鍛鍊[/gold] {TrainEnchantmentAmount:diff()}。",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "直到本回合結束，獲得 {StrengthPower:diff()} 層[gold]力量[/gold]。",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "獲得等同於[gold]手牌[/gold]中格擋值最高的牌的格擋。{InCombat:\n獲得 {BestHandBlock:diff()} 點[gold]格擋[/gold]。|}",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "獲得等同於[gold]手牌[/gold]中所有其他牌的格擋值總和的格擋。{InCombat:\n獲得 {HandBlockTotal:diff()} 點[gold]格擋[/gold]。|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "獲得 {Block:diff()} 點[gold]格擋[/gold]。",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "每回合首次透過卡牌獲得[gold]格擋[/gold]時，在下個回合獲得等量的[gold]格擋[/gold]。"
+}
