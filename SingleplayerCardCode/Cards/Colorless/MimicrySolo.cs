@@ -29,7 +29,7 @@ public sealed class MimicrySolo : SingleplayerCardCard
     {
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedVar("BestHandBlock").WithMultiplier((card, _) => CardPile.GetCards(card.Owner, PileType.Hand).Where(c => c != card).Select(c => c.DynamicVars.Values.OfType<BlockVar>().Sum(v => v.BaseValue)).DefaultIfEmpty(0m).Max())
+        new CalculatedVar("BestHandBlock").WithMultiplier((card, _) => CardPile.GetCards(card.Owner, PileType.Hand).Where(c => c != card && c.DynamicVars.ContainsKey("Block")).Select(c => c.DynamicVars.Block.BaseValue).DefaultIfEmpty(0m).Max())
     };
 
     public MimicrySolo() : base(1, CardType.Skill, CardRarity.Rare, TargetType.Self)

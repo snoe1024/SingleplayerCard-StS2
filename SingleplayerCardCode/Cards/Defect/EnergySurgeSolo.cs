@@ -44,6 +44,8 @@ public sealed class EnergySurgeSolo : SingleplayerCardCard
         EnergyCost.SetCustomBaseCost(DroActiveForDisplay ? 0 : 1);
     }
 
+    internal protected override int? CanonicalDisplayCost => DroActiveForDisplay ? 0 : 1;
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);

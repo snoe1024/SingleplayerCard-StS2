@@ -32,7 +32,7 @@ public sealed class GatherSolo : SingleplayerCardCard
         new BlockVar(12m, ValueProp.Move),
         new CalculationBaseVar(0m),
         new CalculationExtraVar(1m),
-        new CalculatedVar("HandBlockTotal").WithMultiplier((card, _) => CardPile.GetCards(card.Owner, PileType.Hand).Where(c => c != card).SelectMany(c => c.DynamicVars.Values.OfType<BlockVar>()).Sum(v => v.BaseValue))
+        new CalculatedVar("HandBlockTotal").WithMultiplier((card, _) => CardPile.GetCards(card.Owner, PileType.Hand).Where(c => c != card && c.DynamicVars.ContainsKey("Block")).Sum(c => c.DynamicVars.Block.BaseValue))
     };
 
     public GatherSolo() : base(2, CardType.Skill, CardRarity.Rare, TargetType.Self)

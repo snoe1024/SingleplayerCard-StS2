@@ -113,8 +113,8 @@
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Gain {Energy:energyIcons()}.",
 
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Gain {Block:diff()} [gold]Block[/gold].\nGain 1 [gold]Weak[/gold].",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Gain {BlockRemake:diff()} [gold]Block[/gold].\nGain 1 [gold]Weak[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Gain {BlockXdro:diff()} [gold]Block[/gold].",
 
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Draw {Cards:diff()} cards. At the start of your next turn, draw 2 more cards.",

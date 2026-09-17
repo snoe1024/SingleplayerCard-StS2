@@ -113,8 +113,8 @@
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "{Energy:energyIcons()}を得る。",
 
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "{Block:diff()}[gold]ブロック[/gold]を得る。\n[gold]弱体[/gold]1を得る。",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "{Block:diff()}[gold]ブロック[/gold]を得る。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "{BlockRemake:diff()}[gold]ブロック[/gold]を得る。\n[gold]弱体[/gold]1を得る。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "{BlockXdro:diff()}[gold]ブロック[/gold]を得る。",
 
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "カードを{Cards:diff()}枚引く。次のターン開始時、カードを2枚引く。",

@@ -58,6 +58,13 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
 
     protected virtual bool DroVersionExists => false;
 
+    // Canonical (Card Library) instances can never call CardEnergyCost.SetCustomBaseCost (it requires
+    // AssertMutable), so a card whose cost differs between DRO branches stays frozen at whatever base
+    // cost its constructor passed there, showing the wrong number until drawn into an actual (mutable)
+    // game state. Override this to report the correct live value for canonical instances too --
+    // see CardEnergyCostCanonicalDisplayPatch, which is what actually reads it.
+    internal protected virtual int? CanonicalDisplayCost => null;
+
     // Pure function of (DroActiveForDisplay, IsUpgraded/CurrentUpgradeLevel) -- see
     // sts2_dev_knowledge/model-lifecycle-and-saves.md for why this can't be an incremental "+= delta".
     protected virtual void RefreshDroBranchState() { }

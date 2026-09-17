@@ -113,8 +113,8 @@
   "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "获得{Energy:energyIcons()}。",
 
   "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得1层[gold]虚弱[/gold]。",
-  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "获得{Block:diff()}点[gold]格挡[/gold]。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "获得{BlockRemake:diff()}点[gold]格挡[/gold]。\n获得1层[gold]虚弱[/gold]。",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "获得{BlockXdro:diff()}点[gold]格挡[/gold]。",
 
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "抽{Cards:diff()}张牌。在你下个回合开始时，再抽2张牌。",

@@ -25,7 +25,12 @@ public sealed class InterceptSolo : SingleplayerCardCard
 
     public override bool GainsBlock => true;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[] { new BlockVar(15m, ValueProp.Move) };
+    protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
+    {
+        new BlockVar(13m, ValueProp.Move),
+        new BlockVar("BlockRemake", 13m, ValueProp.Move),
+        new BlockVar("BlockXdro", 9m, ValueProp.Move)
+    };
 
     public InterceptSolo() : base(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
@@ -34,8 +39,8 @@ public sealed class InterceptSolo : SingleplayerCardCard
     protected override void RefreshDroBranchState()
     {
         DynamicVars.Block.BaseValue = DroActiveForDisplay
-            ? (IsUpgraded ? 21m : 15m)
-            : (IsUpgraded ? 13m : 9m);
+            ? DynamicVars["BlockRemake"].BaseValue
+            : DynamicVars["BlockXdro"].BaseValue;
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -49,6 +54,14 @@ public sealed class InterceptSolo : SingleplayerCardCard
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(DroActiveForDisplay ? 6m : 4m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["BlockRemake"].UpgradeValueBy(5m);
+        }
+        else
+        {
+            DynamicVars["BlockXdro"].UpgradeValueBy(4m);
+        }
+        RefreshDroBranchState();
     }
 }

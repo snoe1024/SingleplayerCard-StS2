@@ -36,6 +36,8 @@ public sealed class UnderworldSolo : SingleplayerCardCard
         EnergyCost.SetCustomBaseCost(DroActiveForDisplay ? 1 : 2);
     }
 
+    internal protected override int? CanonicalDisplayCost => DroActiveForDisplay ? 1 : 2;
+
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "PowerUp", Owner.Character.PowerUpAnimDelay);
