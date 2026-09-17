@@ -24,15 +24,15 @@
   "SINGLEPLAYERCARD-CONFIG_HOVER_TEXT_REWORK_MATCH": "{reworked_card_text}",
 
   "SINGLEPLAYERCARD-IRONCLAD_CARDS.title": "铁甲战士卡牌",
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD.hover.desc.rework": "失去1点HP。获得等同于本场战斗中已损失HP的格挡。消耗(升级后除外)。",
-  "SINGLEPLAYERCARD-DEMONIC_SHIELD.hover.desc.xdro": "失去1点HP。将你的格挡值翻倍。消耗(升级后除外)。",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD.hover.desc.rework": "失去1点生命。获得等同于本场战斗中已损失生命的格挡。消耗(升级后除外)。",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD.hover.desc.xdro": "失去1点生命。将你的格挡值翻倍。消耗(升级后除外)。",
   "SINGLEPLAYERCARD-TANK.hover.desc.rework": "受到敌人造成的伤害增加50%。将所有格挡的攻击伤害反弹给攻击者。",
   "SINGLEPLAYERCARD-TANK.hover.desc.xdro": "无对应效果",
   "SINGLEPLAYERCARD-MIDNIGHT.hover.desc.rework": "造成36(48)点伤害。本场战斗中每消耗一张牌，此牌费用减少1点。这回合每消耗一张牌，此牌费用减少2点。",
   "SINGLEPLAYERCARD-MIDNIGHT.hover.desc.xdro": "造成60(72)点伤害。本场战斗中每消耗一张牌，此牌费用减少1点。",
   "SINGLEPLAYERCARD-BLAZE.hover.desc.rework": "这回合你每丢弃一张牌，获得2(3)点力量。",
   "SINGLEPLAYERCARD-BLAZE.hover.desc.xdro": "获得5(7)点力量。",
-  "SINGLEPLAYERCARD-OUTRAGE.hover.desc.rework": "造成8(11)点伤害。将本牌与手牌中所有《狂怒》的复制品加入弃牌堆。",
+  "SINGLEPLAYERCARD-OUTRAGE.hover.desc.rework": "造成8(11)点伤害。将本牌与手牌中所有《群情激愤》的复制品加入弃牌堆。",
   "SINGLEPLAYERCARD-OUTRAGE.hover.desc.xdro": "造成9(13)点伤害。将一张本牌的复制品加入弃牌堆。",
 
   "SINGLEPLAYERCARD-SILENT_CARDS.title": "静默猎手卡牌",
