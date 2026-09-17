@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "맹독",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "이 카드가 막히지 않은 공격 피해를\n줄 때마다, [gold]중독[/gold]을\n[blue]{Amount}[/blue] 부여합니다.",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "맹독 {Amount}",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "단련",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "이번 턴 동안 [gold]힘[/gold]을\n[blue]{Amount}[/blue] 얻습니다.",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "이번 턴 동안 [gold]힘[/gold]을\n[blue]{Amount}[/blue] 얻습니다."
+}
