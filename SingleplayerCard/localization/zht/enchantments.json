@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "有毒",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "每當此牌造成未被格擋的攻擊傷害時，給予 [blue]{Amount}[/blue] 層[gold]中毒[/gold]。",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "染毒 {Amount}。",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "鍛鍊",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "這回合獲得 [blue]{Amount}[/blue] 層[gold]力量[/gold]。",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "這回合獲得 [blue]{Amount}[/blue] 層[gold]力量[/gold]。"
+}
