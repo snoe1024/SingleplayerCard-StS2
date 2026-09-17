@@ -7,7 +7,7 @@
   "SINGLEPLAYERCARD-TANK_SOLO.description": "受到敌人造成的伤害增加50%。\n将所有格挡的攻击伤害反弹给攻击者。",
 
   "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
-  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "造成{DamageRemake:diff()}点伤害。\n本场战斗中每[gold]消耗[/gold]一张牌，此牌费用减少1{energyPrefix:energyIcons(1)}。\n这回合每[gold]消耗[/gold]一张牌，此牌费用减少1{energyPrefix:energyIcons(1)}。",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "造成{DamageRemake:diff()}点伤害。\n本场战斗中每[gold]消耗[/gold]一张牌，此牌费用减少1{energyPrefix:energyIcons(1)}。\n这回合每[gold]消耗[/gold]一张牌，此牌费用减少2{energyPrefix:energyIcons(1)}。",
   "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "造成{DamageXdro:diff()}点伤害。\n本场战斗中每[gold]消耗[/gold]一张牌，此牌费用减少1{energyPrefix:energyIcons(1)}。",
 
   "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
