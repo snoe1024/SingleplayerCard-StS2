@@ -5,7 +5,7 @@
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Zangenangriff",
   "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Erleidet in diesem Zug [blue]2x[/blue] Schaden von Angriffskarten, die sich zum Zeitpunkt der Anwendung nicht in der Hand befanden.",
 
-  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Stealth",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Heimlichkeit",
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Immer wenn du auf andere Weise als durch eine Angriffskarte Schaden zufügst, erhalte [gold]Block[/gold].",
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Immer wenn du auf andere Weise als durch eine Angriffskarte Schaden zufügst, erhalte [blue]{Amount}[/blue] [gold]Block[/gold].",
   "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Immer wenn du einen Gegner angreifst, erhalte [gold]Block[/gold].",
