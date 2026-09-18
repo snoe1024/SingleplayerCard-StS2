@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using GamblerMod.GamblerModCode.Patch;
@@ -41,7 +42,21 @@ public abstract class SingleplayerCardCard(int cost, CardType type, CardRarity r
         : TitleLocString.GetFormattedText();
 
     private static bool DroNoPrefixSpace => LocManager.Instance.Language is "jpn" or "zhs" or "kor" or "zht";
-    private string DroSuffix => (DroNoPrefixSpace ? "" : " ") + (DroActiveForDisplay ? "R" : "S");
+
+    private static readonly Dictionary<string, (string Rework, string Singleplayer)> DroMarkersByLanguage = new()
+    {
+        ["zhs"] = ("调", "单"),
+        ["zht"] = ("調", "單"),
+        ["kor"] = ("조", "싱"),
+        ["deu"] = ("A", "E"),
+        ["fra"] = ("A", "S"),
+        ["rus"] = ("И", "О"),
+    };
+
+    private static (string Rework, string Singleplayer) DroMarkers =>
+        DroMarkersByLanguage.GetValueOrDefault(LocManager.Instance.Language, ("R", "S"));
+
+    private string DroSuffix => (DroNoPrefixSpace ? "" : " ") + (DroActiveForDisplay ? DroMarkers.Rework : DroMarkers.Singleplayer);
 
     public override string Title
     {
