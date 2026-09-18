@@ -1,0 +1,84 @@
+{
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Tanque",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Recibes [blue]50%[/blue] más de daño de los enemigos. Todo el daño de ataque bloqueado por tu [gold]bloqueo[/gold] se refleja en el atacante.",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Ataque de tenaza",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Esta criatura recibe [blue]el doble[/blue] de daño este turno por cartas de ataque que no estaban en la mano cuando se aplicó este efecto.",
+
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Sigilo",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Obtienes [gold]bloqueo[/gold] cada vez que infliges daño por un medio distinto a una carta de ataque.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Cada vez que infliges daño por un medio distinto a una carta de ataque, obtienes [blue]{Amount}[/blue] de [gold]bloqueo[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Obtienes [gold]bloqueo[/gold] cada vez que atacas a un enemigo.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Cada vez que atacas a un enemigo, obtienes [blue]{Amount}[/blue] de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "A trabajar",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Cuando juegas [gold]Espada del soberano[/gold], vuelves a jugar toda carta que haya aplicado [gold]forja[/gold] este turno.",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "Cuando juegas [gold]Espada del soberano[/gold], vuelves a jugar toda carta que haya aplicado [gold]forja[/gold] este turno.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "Generación de cartas (próximo turno)",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "Al comienzo de tu próximo turno, agregas [blue]{Amount}[/blue] {Amount:plural:carta incolora aleatoria|cartas incoloras aleatorias} a tu mano.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "Generación de cartas (próximo turno)+",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "Al comienzo de tu próximo turno, agregas [blue]{Amount}[/blue] {Amount:plural:carta incolora aleatoria mejorada|cartas incoloras aleatorias mejoradas} a tu mano.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Ver más allá",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "Al comienzo de cada uno de tus próximos [blue]{Amount}[/blue] {Amount:plural:turno|turnos}, agregas una carta de [gold]Alma[/gold] a tu mano.",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Inframundo",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "Este turno, cada vez que aplicas [gold]condena[/gold] a un enemigo, infliges daño equivalente a esa cantidad.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "Este turno, cada vez que infliges daño de ataque, aplicas [gold]condena[/gold] equivalente a ese daño.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "Ligamiento anímico",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "La primera vez que el enemigo elegido reciba daño de ataque sin bloquear en cada turno, agregas una carta de [gold]Alma[/gold] a tu mazo de robo.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "La primera vez que el enemigo elegido reciba daño de ataque sin bloquear en cada turno, agregas [blue]{Amount}[/blue] [gold]{Amount:plural:carta de Alma|cartas de Alma}[/gold] a tu mazo de robo.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Cada vez que creas una carta de [gold]Alma[/gold], agregas una carta de [gold]Alma[/gold] a tu mazo de robo.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Cada vez que creas una carta de [gold]Alma[/gold], agregas [blue]{Amount}[/blue] [gold]{Amount:plural:carta de Alma|cartas de Alma}[/gold] a tu mazo de robo.",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Cacofonía",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Cada [blue]12[/blue] cartas robadas, infliges [blue]16[/blue] de daño a un enemigo al azar.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "Después de robar [blue]{Cards}[/blue] {Cards:plural:carta más|cartas más}, infliges [blue]{Amount}[/blue] de daño a un enemigo al azar.",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Hibernación",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Este turno, tu [gold]escarcha[/gold] activa dos veces su [gold]Pasiva[/gold].",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "Este turno, tu [gold]escarcha[/gold] activa dos veces su [gold]Pasiva[/gold].",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Aprendizaje por imitación",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "Las primeras [blue]2[/blue] veces que el enemigo obtenga una [gold]Mejora[/gold], agregas un poder aleatorio a tu mano con un coste de [blue]0[/blue] de energía.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "Las primeras [blue]{Amount}[/blue] {Amount:plural:vez|veces} que el enemigo obtenga una [gold]Mejora[/gold], agregas un poder aleatorio a tu mano con un coste de [blue]0[/blue] de energía.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Ataque en equipo",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "La próxima carta de ataque jugada contra este enemigo se juega [blue]2[/blue] veces más.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "La próxima carta de ataque jugada contra este enemigo se juega {Amount:plural:otra vez|[blue]{}[/blue] veces más}.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Fulminante",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "Este turno, esta criatura recibe [blue]el doble[/blue] de daño.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "Este turno, esta criatura recibe daño [blue]{Amount}[/blue] veces mayor.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "Fulminante (próximo turno)",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "A partir del próximo turno, esta criatura recibe [blue]el doble[/blue] de daño durante ese turno.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "A partir del próximo turno, esta criatura recibe daño [blue]{Amount}[/blue] veces mayor durante ese turno.",
+
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "Sin energía",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "Durante [blue]2[/blue] turnos, no puedes obtener {energyPrefix:energyIcons(1)} adicional.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "Durante [blue]{Amount}[/blue] turnos, no puedes obtener {energyPrefix:energyIcons(1)} adicional.",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "No robarás",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "Durante [blue]2[/blue] turnos, no podrás robar más cartas.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "Durante [blue]{Amount}[/blue] turnos, no podrás robar más cartas.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Mano amiga",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Duplica el [gold]bloqueo[/gold] obtenido de tu próxima carta.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Duplica el [gold]bloqueo[/gold] obtenido de tu próxima carta.",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Faro de la esperanza",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "La primera vez que obtienes [gold]bloqueo[/gold] de una carta en cada turno, obtienes la misma cantidad de [gold]bloqueo[/gold] en el próximo turno.",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "La {Amount:plural:primera vez que obtienes|[blue]{}[/blue] veces que obtienes} [gold]bloqueo[/gold] de una carta en cada turno, obtienes la misma cantidad de [gold]bloqueo[/gold] en el próximo turno.",
+
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "Entregada",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "Cuando este enemigo ataca, agrega esta carta a tu [gold]mazo de robo[/gold].\nCuando este enemigo muere, agrega esta carta a tu [gold]pila de descarte[/gold].",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "Cuando este enemigo ataca, agrega [gold]{CardName}[/gold] a tu [gold]mazo de robo[/gold].\nCuando este enemigo muere, agrega [gold]{CardName}[/gold] a tu [gold]pila de descarte[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Sinfonía filosa",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Cuando juegas una [gold]carta de navaja[/gold] este turno, Robas [blue]1[/blue] carta.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.smartDescription": "Cuando juegas una [gold]carta de navaja[/gold] este turno, Robas {Amount:plural:[blue]1[/blue] carta|[blue]{}[/blue] cartas}."
+}

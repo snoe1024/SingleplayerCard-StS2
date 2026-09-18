@@ -1,0 +1,4 @@
+{
+  "SINGLEPLAYERCARD-HAND_OVER.title": "Entrega",
+  "SINGLEPLAYERCARD-HAND_OVER.description": "La carta se retira temporalmente del [gold]Deck[/gold].\nCuando el enemigo que tiene la carta ataca, agrega esa carta al [gold]mazo de robo[/gold].\nCuando el enemigo que tiene la carta muere, agrega esa carta a la [gold]pila de descarte[/gold]."
+}

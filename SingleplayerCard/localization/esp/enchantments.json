@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "Venenoso",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "Cada vez que esta carta inflige daño de ataque sin bloquear, aplicas [blue]{Amount}[/blue] de [gold]veneno[/gold].",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "Emponzoñar {Amount}.",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "Entrenamiento",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "Obtienes [blue]{Amount}[/blue] de [gold]fuerza[/gold] este turno.",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "Obtienes [blue]{Amount}[/blue] de [gold]fuerza[/gold] este turno."
+}

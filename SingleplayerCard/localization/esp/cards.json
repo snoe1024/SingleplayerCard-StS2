@@ -1,0 +1,140 @@
+{
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Pierdes 1 PV. Obtienes [gold]bloqueo[/gold] por un valor equivalente a los PV perdidos en este combate.{InCombat:\n({LoseHPAmount:diff()} PV perdidos en este combate.)|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Pierdes 1 PV. Duplica tu [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Recibes un 50% más de daño de los enemigos. Todo el daño de ataque bloqueado por tu [gold]bloqueo[/gold] se refleja en el atacante.",
+
+  "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Infliges {DamageRemake:diff()} de daño.\nCuesta 1 menos de {energyPrefix:energyIcons(1)} por cada carta [gold]agotada[/gold] durante este combate.\nCuesta 2 menos de {energyPrefix:energyIcons(1)} por cada carta [gold]agotada[/gold] durante este turno.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Infliges {DamageXdro:diff()} de daño.\nCuesta 1 menos de {energyPrefix:energyIcons(1)} por cada carta [gold]agotada[/gold] durante este combate.",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Obtienes {CalculationExtra:diff()} de [gold]fuerza[/gold] por cada carta que hayas descartado este turno.{InCombat:\n(Obtienes {StrengthRemake:diff()} de [gold]fuerza[/gold].)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Obtienes {StrengthPower:diff()} de [gold]fuerza[/gold].",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Infliges {DamageRemake:diff()} de daño.\nAgregas una copia de esta carta a tu [gold]pila de descarte[/gold] por ella misma, más una adicional por cada otra copia de esta carta en tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "Infliges {DamageXdro:diff()} de daño.\nAgregas una copia de esta carta a tu [gold]pila de descarte[/gold].",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "En este turno, el enemigo recibe el doble de daño por cartas de ataque que no estén actualmente en tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "En este turno, el enemigo recibe el doble de daño de ataque.",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Cuando aplicas un efecto negativo a un enemigo, obtienes {StealthRemake:diff()} de [gold]bloqueo[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Cuando atacas a un enemigo, obtienes {StealthXdro:diff()} de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Cuando juegas una [gold]carta de navaja[/gold] este turno, Robas 1 carta.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Agregas 2 [gold]cartas de navaja[/gold] a tu [gold]mano[/gold].",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Otorgas [gold]Venenoso[/gold]{Venomous:diff()} a todas las cartas de ataque no encantadas en tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "Este turno, cuando un ataque inflija daño sin bloquear, aplicas {Envenom:diff()} de [gold]veneno[/gold].",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "Este turno, obtienes [gold]destreza[/gold] equivalente al número de cartas que no sean Habilidad en tu [gold]mano[/gold].{InCombat:\n(Obtienes {DexterityRemake:diff()} de [gold]destreza[/gold].)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "Este turno, obtienes {FlatDexterity:diff()} de [gold]destreza[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Cuando juegas [gold]Espada del soberano[/gold], vuelves a jugar toda carta que haya aplicado [gold]forja[/gold] este turno.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "Al comienzo de tu próximo turno, agregas 1 carta incolora{IfUpgraded:show: [gold]mejorada[/gold]} al azar a tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Agregas 1 carta incolora{IfUpgraded:show: [gold]mejorada[/gold]} al azar a tu [gold]mano[/gold].",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "Al comienzo de cada uno de tus próximos 3 turnos, robas 1 carta adicional.",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "En el siguiente turno, robas {Cards:diff()} cartas.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "Al comienzo de tu próximo turno, robas {Cards:diff()} {Cards:plural:carta|cartas}, obtienes {Energy:energyIcons()} y {Block:diff()} de [gold]bloqueo[/gold].",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "Robas {Cards:diff()} {Cards:plural:carta|cartas}, obtienes {Energy:energyIcons()} y {Block:diff()} de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Elige una carta de tu [gold]mazo de robo[/gold] para agregar a tu [gold]mano[/gold].",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "Aplicas [gold]invocación[/gold] {Summon:diff()} por cada enemigo.",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "Aplicas [gold]invocación[/gold] {Summon:diff()}.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "Agregas una carta de [gold]Alma[/gold] a tu [gold]mano[/gold].\nAl comienzo de cada uno de tus próximos {SoulsRemake:diff()} turnos, agregas una carta de [gold]Alma[/gold] a tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Agregas {SoulsXdro:diff()} [gold]{SoulsXdro:plural:carta de Alma|cartas de Alma}[/gold] a tu [gold]mazo de robo[/gold].",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "Este turno, cuando aplicas [gold]condena[/gold] a un enemigo, infliges daño equivalente a esa cantidad.",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "Este turno, cuando infliges daño de ataque, aplicas [gold]condena[/gold] equivalente a ese daño.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "Elige un enemigo. La primera vez que ese enemigo reciba daño de ataque sin bloquear en cada turno, agregas una carta de [gold]Alma[/gold] a tu [gold]mazo de robo[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Cuando creas una carta de [gold]Alma[/gold], agregas una carta de [gold]Alma[/gold] a tu [gold]mazo de robo[/gold].",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Cada {Cards:diff()} cartas robadas, infliges {Damage:diff()} de daño a un enemigo al azar.",
+
+  "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Al comienzo de cada uno de tus próximos {RadiancePower:diff()} turnos, obtienes 1 {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "Obtienes {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]Canalizas[/gold] [gold]plasma[/gold]. Activas la [gold]Pasiva[/gold] de todos los orbes de [gold]plasma[/gold].",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]Canalizas[/gold] [gold]plasma[/gold].",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "Este turno, tu [gold]escarcha[/gold] activa dos veces su [gold]Pasiva[/gold].\n[gold]Canaliza[/gold] {Repeat:diff()} de [gold]escarcha[/gold].",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]Canaliza[/gold] {Repeat:diff()} de [gold]escarcha[/gold].",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Tus ataques de 0 {energyPrefix:energyIcons(1)} infligen {OneForAllPower:diff()} de daño adicional.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Las primeras {ImitationRemake:diff()} veces que el enemigo obtenga una [gold]Mejora[/gold], agregas un poder aleatorio a tu [gold]mano[/gold]. Cuesta 0 de energía.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "Las próximas {ImitationXdro:diff()} veces que juegues un poder, vuelves a jugarlo.",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Infliges {Damage:diff()} de daño. Infliges {BonusPerAttack:diff()} de daño adicional por cada ataque que hayas jugado este turno.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Infliges {Damage:diff()} de daño.\nLa próxima carta de ataque que juegues contra el enemigo se jugará otra vez.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "Infliges {Damage:diff()} de daño.\nEn el próximo turno, el enemigo recibe {IfUpgraded:show:el triple|el doble} de daño.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "Infliges {Damage:diff()} de daño.\nEn este turno, el enemigo recibe {IfUpgraded:show:el triple|el doble} de daño.",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "Infliges {Damage:diff()} de daño.\nAumenta el daño de esta carta en {IncreaseRemake:diff()} en este combate y [gold]entrégasela[/gold] al enemigo objetivo.",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "Infliges {Damage:diff()} de daño.\nAumenta el daño de esta carta en {IncreaseXdro:diff()} en este combate y mézclala en tu [gold]mazo de robo[/gold].",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Obtienes {Energy:energyIcons()}. Durante los próximos 2 turnos, no puedes obtener energía adicional ni robar cartas.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Obtienes {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Obtienes {BlockRemake:diff()} de [gold]bloqueo[/gold].\nObtienes 1 de [gold]debilitamiento[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Obtienes {BlockXdro:diff()} de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Robas {Cards:diff()} cartas. Al comienzo de tu próximo turno, robas 2 cartas más.",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "Robas {Cards:diff()} cartas.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "Duplica el [gold]bloqueo[/gold] obtenido de tu próxima carta.",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "Obtienes {Block:diff()} de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "[gold]Encantas[/gold] una carta no encantada con [gold]Entrenamiento[/gold] {TrainEnchantmentAmount:diff()}.",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Hasta el final del turno, obtienes {StrengthPower:diff()} de [gold]fuerza[/gold].",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Obtienes [gold]bloqueo[/gold] por un valor equivalente al mayor valor de [gold]bloqueo[/gold] entre las cartas de tu [gold]mano[/gold].{InCombat:\nObtienes {BestHandBlock:diff()} de [gold]bloqueo[/gold].|}",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Obtienes [gold]bloqueo[/gold] por un valor equivalente a la suma de los valores de [gold]bloqueo[/gold] de todas las demás cartas en tu [gold]mano[/gold].{InCombat:\nObtienes {HandBlockTotal:diff()} de [gold]bloqueo[/gold].|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Obtienes {Block:diff()} de [gold]bloqueo[/gold].",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "La primera vez que obtienes [gold]bloqueo[/gold] de una carta en cada turno, obtienes la misma cantidad de [gold]bloqueo[/gold] en el próximo turno."
+}
