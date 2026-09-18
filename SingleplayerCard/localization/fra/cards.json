@@ -1,0 +1,140 @@
+{
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Perdez 1 PV. Gagnez de l'[gold]Armure[/gold] égale aux PV perdus ce combat.{InCombat:\n({LoseHPAmount:diff()} PV ont été perdus ce combat.)|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Perdez 1 PV. Doublez votre [gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Subissez 50% de dégâts en plus de la part des ennemis. Renvoyez tous les dégâts d'attaque bloqués par votre [gold]Armure[/gold] à l'attaquant.",
+
+  "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Infligez {DamageRemake:diff()} dégâts.\nCoûte 1 {energyPrefix:energyIcons(1)} de moins par carte [gold]Épuisée[/gold] ce combat.\nCoûte 2 {energyPrefix:energyIcons(1)} de moins par carte [gold]Épuisée[/gold] ce tour.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Infligez {DamageXdro:diff()} dégâts.\nCoûte 1 {energyPrefix:energyIcons(1)} de moins par carte [gold]Épuisée[/gold] ce combat.",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Gagnez {CalculationExtra:diff()} de [gold]Force[/gold] pour chaque carte défaussée ce tour.{InCombat:\n(Gagnez {StrengthRemake:diff()} de [gold]Force[/gold].)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Gagnez {StrengthPower:diff()} de [gold]Force[/gold].",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Infligez {DamageRemake:diff()} dégâts.\nAjoutez une copie de cette carte à votre [gold]Défausse[/gold] pour elle-même, plus une supplémentaire pour chaque autre copie de cette carte dans votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "Infligez {DamageXdro:diff()} dégâts.\nAjoutez une copie de cette carte à votre [gold]Défausse[/gold].",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "Ce tour, l'ennemi subit le double des dégâts infligés par les cartes Attaque qui ne sont pas actuellement dans votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "Ce tour, l'ennemi subit le double des dégâts d'attaque.",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Chaque fois que vous appliquez un effet néfaste à un ennemi, gagnez {StealthRemake:diff()} d'[gold]Armure[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Chaque fois que vous attaquez un ennemi, gagnez {StealthXdro:diff()} d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Chaque fois que vous jouez un [gold]Surin[/gold] ce tour, Piochez 1 carte.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Ajoutez 2 [gold]Surins[/gold] à votre [gold]Main[/gold].",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Donnez [gold]Venimeux[/gold]{Venomous:diff()} à toutes les cartes Attaque non enchantées dans votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "Ce tour, chaque fois qu'une Attaque inflige des dégâts non bloqués, appliquez {Envenom:diff()} de [gold]Poison[/gold].",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "Ce tour, gagnez de la [gold]Dextérité[/gold] égale au nombre de cartes non-Compétence dans votre [gold]Main[/gold].{InCombat:\n(Gagnez {DexterityRemake:diff()} de [gold]Dextérité[/gold].)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "Ce tour, gagnez {FlatDexterity:diff()} de [gold]Dextérité[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Chaque fois que vous jouez [gold]Lame souveraine[/gold], rejouez chaque carte ayant [gold]Forgé[/gold] ce tour.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "Au début de votre prochain tour, ajoutez 1 carte Incolore aléatoire{IfUpgraded:show: [gold]Améliorée[/gold]} à votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Ajoutez 1 carte Incolore aléatoire{IfUpgraded:show: [gold]Améliorée[/gold]} à votre [gold]Main[/gold].",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "Au début de chacun de vos 3 prochains tours, piochez 1 carte supplémentaire.",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "Au prochain tour, piochez {Cards:diff()} cartes.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "Au début de votre prochain tour, piochez {Cards:diff()} {Cards:plural:carte|cartes}, gagnez {Energy:energyIcons()}, et gagnez {Block:diff()} d'[gold]Armure[/gold].",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "Piochez {Cards:diff()} {Cards:plural:carte|cartes}, gagnez {Energy:energyIcons()}, et gagnez {Block:diff()} d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choisissez une carte dans votre [gold]Pioche[/gold] à ajouter à votre [gold]Main[/gold].",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Invoquez[/gold] pour {Summon:diff()} pour chaque ennemi.",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]Invoquez[/gold] pour {Summon:diff()}.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "Ajoutez une [gold]Âme[/gold] à votre [gold]Main[/gold].\nAu début de chacun de vos {SoulsRemake:diff()} prochains tours, ajoutez une [gold]Âme[/gold] à votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Ajoutez {SoulsXdro:diff()} [gold]Âmes[/gold] à votre [gold]Pioche[/gold].",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "Ce tour, chaque fois que vous appliquez de la [gold]Fatalité[/gold] à un ennemi, infligez des dégâts égaux à ce montant.",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "Ce tour, chaque fois que vous infligez des dégâts d'attaque, appliquez de la [gold]Fatalité[/gold] égale à ce montant.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "Choisissez un ennemi. La première fois que cet ennemi subit des dégâts d'attaque non bloqués chaque tour, ajoutez une [gold]Âme[/gold] à votre [gold]Pioche[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Chaque fois que vous créez une [gold]Âme[/gold], ajoutez une [gold]Âme[/gold] à votre [gold]Pioche[/gold].",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Toutes les {Cards:diff()} cartes piochées, infligez {Damage:diff()} dégâts à un ennemi aléatoire.",
+
+  "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Au début de chacun de vos {RadiancePower:diff()} prochains tours, gagnez 1 {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "Gagnez {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]Canalisez[/gold] un [gold]Orbe plasmique[/gold]. Déclenchez le Passif de tous les [gold]Orbes plasmiques[/gold].",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]Canalisez[/gold] un [gold]Orbe plasmique[/gold].",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "Ce tour, votre [gold]Orbe glaciaire[/gold] déclenche deux fois son Passif.\n[gold]Canalisez[/gold] {Repeat:diff()} [gold]Orbes glaciaires[/gold].",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]Canalisez[/gold] {Repeat:diff()} [gold]Orbes glaciaires[/gold].",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Vos Attaques coûtant 0 {energyPrefix:energyIcons(1)} infligent {OneForAllPower:diff()} dégâts supplémentaires.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "Les {ImitationRemake:diff()} premières fois que l'ennemi gagne un Buff, ajoutez une carte Pouvoir aléatoire à votre [gold]Main[/gold]. Elle coûte 0 Énergie.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "Les {ImitationXdro:diff()} prochaines fois que vous jouez un Pouvoir, rejouez-le.",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Infligez {Damage:diff()} dégâts. Infligez {BonusPerAttack:diff()} dégâts supplémentaires pour chaque Attaque jouée ce tour.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Infligez {Damage:diff()} dégâts.\nLa prochaine Attaque que vous jouez sur l'ennemi est jouée une fois supplémentaire.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "Infligez {Damage:diff()} dégâts.\nAu prochain tour, l'ennemi subit {IfUpgraded:show:le triple|le double} des dégâts.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "Infligez {Damage:diff()} dégâts.\nCe tour, l'ennemi subit {IfUpgraded:show:le triple|le double} des dégâts.",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "Infligez {Damage:diff()} dégâts.\nAugmentez les dégâts de cette carte de {IncreaseRemake:diff()} pendant ce combat et [gold]Transmettez[/gold]-la à l'ennemi ciblé.",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "Infligez {Damage:diff()} dégâts.\nAugmentez les dégâts de cette carte de {IncreaseXdro:diff()} pendant ce combat et mélangez-la dans votre [gold]Pioche[/gold].",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Gagnez {Energy:energyIcons()}. Pendant les 2 prochains tours, vous ne pouvez gagner ni Énergie ni carte supplémentaire.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Gagnez {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Gagnez {BlockRemake:diff()} d'[gold]Armure[/gold].\nGagnez 1 [gold]Affaibli[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Gagnez {BlockXdro:diff()} d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Piochez {Cards:diff()} cartes. Au début de votre prochain tour, piochez 2 cartes supplémentaires.",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "Piochez {Cards:diff()} cartes.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "Doublez l'[gold]Armure[/gold] gagnée grâce à votre prochaine carte.",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "Gagnez {Block:diff()} d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "[gold]Envoûtez[/gold] une carte non enchantée avec [gold]Entraînement[/gold] {TrainEnchantmentAmount:diff()}.",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "Jusqu'à la fin du tour, gagnez {StrengthPower:diff()} de [gold]Force[/gold].",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Gagnez de l'[gold]Armure[/gold] égale à la valeur d'[gold]Armure[/gold] la plus élevée parmi les cartes de votre [gold]Main[/gold].{InCombat:\nGagnez {BestHandBlock:diff()} d'[gold]Armure[/gold].|}",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Gagnez de l'[gold]Armure[/gold] égale à la somme des valeurs d'[gold]Armure[/gold] de toutes les autres cartes de votre [gold]Main[/gold].{InCombat:\nGagnez {HandBlockTotal:diff()} d'[gold]Armure[/gold].|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Gagnez {Block:diff()} d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "La première fois que vous gagnez de l'[gold]Armure[/gold] grâce à une carte chaque tour, vous gagnez la même quantité d'[gold]Armure[/gold] au tour suivant."
+}

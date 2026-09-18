@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "Venimeux",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "Chaque fois que cette carte inflige des dégâts d'attaque non bloqués, appliquez [blue]{Amount}[/blue] de [gold]Poison[/gold].",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "Envenimer {Amount}.",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "Entraînement",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "Gagnez [blue]{Amount}[/blue] de [gold]Force[/gold] ce tour.",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "Gagnez [blue]{Amount}[/blue] de [gold]Force[/gold] ce tour."
+}

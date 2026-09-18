@@ -1,0 +1,84 @@
+{
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Tank",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Vous subissez [blue]50%[/blue] de dégâts en plus de la part des ennemis. Vous renvoyez tous les dégâts d'attaque bloqués par votre [gold]Armure[/gold] à l'attaquant.",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Attaque en tenaille",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Cette créature subit [blue]2x[/blue] de dégâts ce tour de la part des cartes Attaque qui n'étaient pas en main lorsque cet effet a été appliqué.",
+
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Furtivité",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Gagnez de l'[gold]Armure[/gold] chaque fois que vous infligez des dégâts autrement qu'avec une carte Attaque.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Chaque fois que vous infligez des dégâts autrement qu'avec une carte Attaque, gagnez [blue]{Amount}[/blue] d'[gold]Armure[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Gagnez de l'[gold]Armure[/gold] chaque fois que vous attaquez un ennemi.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Chaque fois que vous attaquez un ennemi, gagnez [blue]{Amount}[/blue] d'[gold]Armure[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "L'heure du marteau",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Chaque fois que vous jouez [gold]Lame souveraine[/gold], rejouez chaque carte ayant [gold]Forgé[/gold] ce tour.",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "Chaque fois que vous jouez [gold]Lame souveraine[/gold], rejouez chaque carte ayant [gold]Forgé[/gold] ce tour.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "Génération de cartes (prochain tour)",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "Au début de votre prochain tour, ajoutez [blue]{Amount}[/blue] {Amount:plural:carte Incolore aléatoire|cartes Incolores aléatoires} à votre main.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "Génération de cartes (prochain tour)+",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "Au début de votre prochain tour, ajoutez [blue]{Amount}[/blue] {Amount:plural:carte Incolore aléatoire Améliorée|cartes Incolores aléatoires Améliorées} à votre main.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Vision de l'au-delà",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "Au début de chacun de vos [blue]{Amount}[/blue] prochains {Amount:plural:tour|tours}, ajoutez une [gold]Âme[/gold] à votre main.",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Enfers",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "Ce tour, chaque fois que vous appliquez de la [gold]Fatalité[/gold] à un ennemi, infligez des dégâts égaux à ce montant.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "Ce tour, chaque fois que vous infligez des dégâts d'attaque, appliquez de la [gold]Fatalité[/gold] égale à ce montant.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "Âme sœur",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "La première fois que l'ennemi choisi subit des dégâts d'attaque non bloqués chaque tour, ajoutez une [gold]Âme[/gold] à votre Pioche.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "La première fois que l'ennemi choisi subit des dégâts d'attaque non bloqués chaque tour, ajoutez [blue]{Amount}[/blue] [gold]{Amount:plural:Âme|Âmes}[/gold] à votre Pioche.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Chaque fois que vous créez une [gold]Âme[/gold], ajoutez une [gold]Âme[/gold] à votre Pioche.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Chaque fois que vous créez une [gold]Âme[/gold], ajoutez [blue]{Amount}[/blue] [gold]{Amount:plural:Âme|Âmes}[/gold] à votre Pioche.",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Cacophonie",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Toutes les [blue]12[/blue] cartes piochées, infligez [blue]16[/blue] dégâts à un ennemi aléatoire.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "Après [blue]{Cards}[/blue] {Cards:plural:carte piochée supplémentaire|cartes piochées supplémentaires}, infligez [blue]{Amount}[/blue] dégâts à un ennemi aléatoire.",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Hibernation",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "Ce tour, votre [gold]Orbe glaciaire[/gold] déclenche deux fois son Passif.",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "Ce tour, votre [gold]Orbe glaciaire[/gold] déclenche deux fois son Passif.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Apprentissage guidé",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "Les [blue]2[/blue] premières fois que l'ennemi gagne un [gold]Buff[/gold], ajoutez une carte Pouvoir aléatoire à votre main pour un coût de [blue]0[/blue] Énergie.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "Les [blue]{Amount}[/blue] {Amount:plural:première fois|premières fois} que l'ennemi gagne un [gold]Buff[/gold], ajoutez une carte Pouvoir aléatoire à votre main pour un coût de [blue]0[/blue] Énergie.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Relais",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "La prochaine Attaque jouée sur cet ennemi est jouée [blue]2[/blue] fois supplémentaires.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "La prochaine Attaque jouée sur cet ennemi est jouée [blue]{Amount}[/blue] {Amount:plural:fois supplémentaire|fois supplémentaires}.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "À terre",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "Ce tour, cette créature subit [blue]2x[/blue] de dégâts.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "Ce tour, cette créature subit [blue]{Amount}x[/blue] de dégâts.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "À terre (prochain tour)",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "À partir du prochain tour, cette créature subit [blue]2x[/blue] de dégâts pour ce tour.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "À partir du prochain tour, cette créature subit [blue]{Amount}x[/blue] de dégâts pour ce tour.",
+
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "Pas de gain d'Énergie",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "Pendant [blue]2[/blue] tours, vous ne pouvez gagner aucune {energyPrefix:energyIcons(1)} supplémentaire.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "Pendant [blue]{Amount}[/blue] tours, vous ne pouvez gagner aucune {energyPrefix:energyIcons(1)} supplémentaire.",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "Pas de pioche",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "Pendant [blue]2[/blue] tours, vous ne pouvez plus piocher de cartes.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "Pendant [blue]{Amount}[/blue] tours, vous ne pouvez plus piocher de cartes.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Coup de main",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Double l'[gold]Armure[/gold] gagnée grâce à votre prochaine carte.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Double l'[gold]Armure[/gold] gagnée grâce à votre prochaine carte.",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Balise d'espoir",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "La première fois que vous gagnez de l'[gold]Armure[/gold] grâce à une carte chaque tour, vous gagnez la même quantité d'[gold]Armure[/gold] au tour suivant.",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "La {Amount:plural:première fois que vous gagnez|[blue]{}[/blue] premières fois que vous gagnez} de l'[gold]Armure[/gold] grâce à une carte chaque tour, vous gagnez la même quantité d'[gold]Armure[/gold] au tour suivant.",
+
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "Transmis",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "Lorsque cet ennemi attaque, ajoutez cette carte à la [gold]Pioche[/gold].\nLorsque cet ennemi meurt, ajoutez cette carte à la [gold]Défausse[/gold].",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "Lorsque cet ennemi attaque, ajoutez [gold]{CardName}[/gold] à votre [gold]Pioche[/gold].\nLorsque cet ennemi meurt, ajoutez [gold]{CardName}[/gold] à votre [gold]Défausse[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Symphonie de lames",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Chaque fois que vous jouez un [gold]Surin[/gold] ce tour, Piochez [blue]1[/blue] carte.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.smartDescription": "Chaque fois que vous jouez un [gold]Surin[/gold] ce tour, Piochez {Amount:plural:une carte|[blue]{}[/blue] cartes}."
+}
