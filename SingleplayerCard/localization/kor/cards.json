@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "[gold]영혼[/gold]을 생성할 때마다, [gold]뽑을 카드 더미[/gold]에 [gold]영혼[/gold]을 1장 추가합니다.",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "뽑는 카드 {Cards:diff()}장마다, 무작위 적에게 피해를 {Damage:diff()} 줍니다.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "뽑는 카드 {CardsRework:diff()}장마다, 무작위 적에게 피해를 {DamageRework:diff()} 줍니다.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "뽑는 카드 {CardsXdro:diff()}장마다, 무작위 적에게 피해를 {DamageXdro:diff()} 줍니다.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "다음 {RadiancePower:diff()}턴 동안 매 턴 시작 시, 1{energyPrefix:energyIcons(1)}를 얻습니다.",

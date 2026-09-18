@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Каждый раз, когда вы создаете [gold]«Душу»[/gold], добавляет [gold]«Душу»[/gold] в вашу [gold]стопку добора[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Наносит {Damage:diff()} урона случайному врагу за каждые {Cards:diff()} {Cards:plural(ru):взятую карту|взятые карты|взятых карт}.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "Наносит {DamageRework:diff()} урона случайному врагу за каждые {CardsRework:diff()} {CardsRework:plural(ru):взятую карту|взятые карты|взятых карт}.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "Наносит {DamageXdro:diff()} урона случайному врагу за каждые {CardsXdro:diff()} {CardsXdro:plural(ru):взятую карту|взятые карты|взятых карт}.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "В начале каждого из следующих {RadiancePower:diff()} ходов дает 1 {energyPrefix:energyIcons(1)}.",

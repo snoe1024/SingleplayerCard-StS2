@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Whenever you create a [gold]Soul[/gold], add a [gold]Soul[/gold] to your [gold]Draw Pile[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Every {Cards:diff()} cards drawn, deal {Damage:diff()} damage to a random enemy.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "Every {CardsRework:diff()} cards drawn, deal {DamageRework:diff()} damage to a random enemy.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "Every {CardsXdro:diff()} cards drawn, deal {DamageXdro:diff()} damage to a random enemy.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "At the start of each of your next {RadiancePower:diff()} turns, gain 1 {energyPrefix:energyIcons(1)}.",

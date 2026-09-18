@@ -66,7 +66,7 @@
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.xdro": "Add 3(4) Souls to your Draw Pile. Exhaust.",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.rework": "This turn, whenever you apply Doom, deal damage equal to that amount. Exhaust (except on Upgrade).",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.xdro": "This turn, whenever an Attack deals damage, apply Doom equal to that damage. Exhaust (except on Upgrade).",
-  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "Every 12 cards drawn, deal 16(24) damage to a random enemy.",
+  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "Every 12 cards drawn, deal 20(28) damage to a random enemy.",
   "SINGLEPLAYERCARD-CACOPHONY.hover.desc.xdro": "Every 33 cards drawn, deal 66(99) damage to a random enemy.",
 
   "SINGLEPLAYERCARD-DEFECT_CARDS.title": "Defect Cards",

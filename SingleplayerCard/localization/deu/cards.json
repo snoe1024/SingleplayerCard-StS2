@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Immer wenn du eine [gold]Seele[/gold] erzeugst, erhalte eine [gold]Seele[/gold] in deinen [gold]Nachziehstapel[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Füge für je {Cards:diff()} gezogene Karten einem zufälligen Gegner {Damage:diff()} Schaden zu.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "Füge für je {CardsRework:diff()} gezogene Karten einem zufälligen Gegner {DamageRework:diff()} Schaden zu.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "Füge für je {CardsXdro:diff()} gezogene Karten einem zufälligen Gegner {DamageXdro:diff()} Schaden zu.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Zu Beginn jedes deiner nächsten {RadiancePower:diff()} Züge erhalte 1 {energyPrefix:energyIcons(1)}.",

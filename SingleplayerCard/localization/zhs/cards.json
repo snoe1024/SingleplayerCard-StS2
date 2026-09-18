@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "每当你生成一张[gold]灵魂[/gold]时，将一张[gold]灵魂[/gold]加入你的[gold]抽牌堆[/gold]。",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "每抽{Cards:diff()}张牌，对一名随机敌人造成{Damage:diff()}点伤害。",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "每抽{CardsRework:diff()}张牌，对一名随机敌人造成{DamageRework:diff()}点伤害。",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "每抽{CardsXdro:diff()}张牌，对一名随机敌人造成{DamageXdro:diff()}点伤害。",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "在你接下来{RadiancePower:diff()}个回合开始时，各获得1{energyPrefix:energyIcons(1)}。",

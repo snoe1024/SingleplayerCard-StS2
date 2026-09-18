@@ -16,46 +16,55 @@ public sealed class CacophonySolo : SingleplayerCardCard
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.SingleplayerOnly;
 
+    protected override bool DroVersionExists => true;
+
     protected override string OriginalVanillaCardId => "CACOPHONY";
 
     protected override string OriginalVanillaCardPool => "necrobinder";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
-        new CardsVar(12),
-        new DamageVar(16m, ValueProp.Unpowered)
+        new CardsVar("CardsRework", 12),
+        new DamageVar("DamageRework", 20m, ValueProp.Unpowered),
+        new CardsVar("CardsXdro", 33),
+        new DamageVar("DamageXdro", 66m, ValueProp.Unpowered)
     };
 
     public CacophonySolo() : base(2, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
     }
 
-    protected override void RefreshDroBranchState()
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (DroActiveForDisplay)
         {
-            DynamicVars.Cards.BaseValue = 12m;
-            DynamicVars.Damage.BaseValue = IsUpgraded ? 24m : 16m;
+            var power = await PowerCmd.Apply<CacophonyPowerSolo>(choiceContext, Owner.Creature, DynamicVars["DamageRework"].IntValue, Owner.Creature, this);
+            if (power != null)
+            {
+                power.Threshold = DynamicVars["CardsRework"].IntValue;
+                power.DynamicVars.Cards.BaseValue = DynamicVars["CardsRework"].BaseValue;
+            }
         }
         else
         {
-            DynamicVars.Cards.BaseValue = 33m;
-            DynamicVars.Damage.BaseValue = IsUpgraded ? 99m : 66m;
-        }
-    }
-
-    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        var power = await PowerCmd.Apply<CacophonyPowerSolo>(choiceContext, Owner.Creature, DynamicVars.Damage.IntValue, Owner.Creature, this);
-        if (power != null)
-        {
-            power.Threshold = DynamicVars.Cards.IntValue;
-            power.DynamicVars.Cards.BaseValue = DynamicVars.Cards.BaseValue;
+            var power = await PowerCmd.Apply<CacophonyPowerSolo>(choiceContext, Owner.Creature, DynamicVars["DamageXdro"].IntValue, Owner.Creature, this);
+            if (power != null)
+            {
+                power.Threshold = DynamicVars["CardsXdro"].IntValue;
+                power.DynamicVars.Cards.BaseValue = DynamicVars["CardsXdro"].BaseValue;
+            }
         }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(DroActiveForDisplay ? 8m : 33m);
+        if (DroActiveForDisplay)
+        {
+            DynamicVars["DamageRework"].UpgradeValueBy(8m);
+        }
+        else
+        {
+            DynamicVars["DamageXdro"].UpgradeValueBy(33m);
+        }
     }
 }

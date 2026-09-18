@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "[gold]ソウル[/gold]を1枚生成するたび、[gold]山札[/gold]に[gold]ソウル[/gold]を1枚加える。",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "カードが{Cards:diff()}枚引かれるたび、ランダムな敵に{Damage:diff()}ダメージを与える。",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "カードが{CardsRework:diff()}枚引かれるたび、ランダムな敵に{DamageRework:diff()}ダメージを与える。",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "カードが{CardsXdro:diff()}枚引かれるたび、ランダムな敵に{DamageXdro:diff()}ダメージを与える。",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "次の{RadiancePower:diff()}ターンの開始時、1{energyPrefix:energyIcons(1)}を得る。",

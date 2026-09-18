@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Chaque fois que vous créez une [gold]Âme[/gold], ajoutez une [gold]Âme[/gold] à votre [gold]Pioche[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Toutes les {Cards:diff()} cartes piochées, infligez {Damage:diff()} dégâts à un ennemi aléatoire.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "Toutes les {CardsRework:diff()} cartes piochées, infligez {DamageRework:diff()} dégâts à un ennemi aléatoire.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "Toutes les {CardsXdro:diff()} cartes piochées, infligez {DamageXdro:diff()} dégâts à un ennemi aléatoire.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Au début de chacun de vos {RadiancePower:diff()} prochains tours, gagnez 1 {energyPrefix:energyIcons(1)}.",

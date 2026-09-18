@@ -73,7 +73,8 @@
   "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Cuando creas una carta de [gold]Alma[/gold], agregas una carta de [gold]Alma[/gold] a tu [gold]mazo de robo[/gold].",
 
   "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
-  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Cada {Cards:diff()} cartas robadas, infliges {Damage:diff()} de daño a un enemigo al azar.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionRework": "Cada {CardsRework:diff()} cartas robadas, infliges {DamageRework:diff()} de daño a un enemigo al azar.",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.descriptionXdro": "Cada {CardsXdro:diff()} cartas robadas, infliges {DamageXdro:diff()} de daño a un enemigo al azar.",
 
   "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "Al comienzo de cada uno de tus próximos {RadiancePower:diff()} turnos, obtienes 1 {energyPrefix:energyIcons(1)}.",

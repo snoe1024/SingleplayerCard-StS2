@@ -55,7 +55,7 @@
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.xdro": "Добавляет 3(4) «Души» в вашу стопку добора. Сжигается.",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.rework": "В этот ход, когда вы накладываете злой рок, наносит урон, равный этому количеству. Сжигается (кроме как при Улучшении).",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.xdro": "В этот ход, когда Атака наносит урон, накладывает злой рок, равный этому урону. Сжигается (кроме как при Улучшении).",
-  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "Наносит 16(24) урона случайному врагу за каждые 12 взятых карт.",
+  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "Наносит 20(28) урона случайному врагу за каждые 12 взятых карт.",
   "SINGLEPLAYERCARD-CACOPHONY.hover.desc.xdro": "Наносит 66(99) урона случайному врагу за каждые 33 взятые карты.",
   "SINGLEPLAYERCARD-DEFECT_CARDS.title": "Карты Дефекта",
   "SINGLEPLAYERCARD-ENERGY_SURGE.hover.desc.rework": "В начале каждого из следующих 2(3) ходов дает 1 энергию. Сжигается.",

@@ -66,7 +66,7 @@
   "SINGLEPLAYERCARD-GLIMPSE_BEYOND.hover.desc.xdro": "뽑을 카드 더미에 영혼을 3(4)장 추가합니다. 소멸.",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.rework": "이번 턴 동안, 적에게 종말을 부여할 때마다, 그 수치만큼 피해를 줍니다. 소멸(강화 시 제외).",
   "SINGLEPLAYERCARD-UNDERWORLD.hover.desc.xdro": "이번 턴 동안, 공격으로 피해를 줄 때마다, 그 피해량만큼 종말을 부여합니다. 소멸(강화 시 제외).",
-  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "뽑는 카드 12장마다, 무작위 적에게 피해를 16(24) 줍니다.",
+  "SINGLEPLAYERCARD-CACOPHONY.hover.desc.rework": "뽑는 카드 12장마다, 무작위 적에게 피해를 20(28) 줍니다.",
   "SINGLEPLAYERCARD-CACOPHONY.hover.desc.xdro": "뽑는 카드 33장마다, 무작위 적에게 피해를 66(99) 줍니다.",
 
   "SINGLEPLAYERCARD-DEFECT_CARDS.title": "디펙트 카드",
