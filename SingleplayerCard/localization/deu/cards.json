@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Wähle eine Karte in deinem [gold]Nachziehstapel[/gold], die du auf deine [gold]Hand[/gold] nimmst.",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "Wähle eine Karte, die du auf deine Hand nimmst.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Beschwöre[/gold] {Summon:diff()} für jeden Gegner.",

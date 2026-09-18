@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Elige una carta de tu [gold]mazo de robo[/gold] para agregar a tu [gold]mano[/gold].",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "Elige una carta para colocar en tu mano.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "Aplicas [gold]invocación[/gold] {Summon:diff()} por cada enemigo.",

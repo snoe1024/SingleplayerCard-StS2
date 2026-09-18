@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Выберите карту из вашей [gold]стопки добора[/gold], чтобы положить ее в [gold]руку[/gold].",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "Выберите карту, которую хотите взять.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Призывает[/gold] {Summon:diff()} за каждого врага.",

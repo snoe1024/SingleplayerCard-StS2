@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choose a card in your [gold]Draw Pile[/gold] to add to your [gold]Hand[/gold].",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "Select a card to put in your Hand.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Summon[/gold] {Summon:diff()} for each enemy.",

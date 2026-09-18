@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "自分の[gold]山札[/gold]からカードを1枚選び、自身の[gold]手札[/gold]に加える。",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "手札に加えるカードを1枚選択。",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "敵1体につき[gold]召喚[/gold]{Summon:diff()}。",

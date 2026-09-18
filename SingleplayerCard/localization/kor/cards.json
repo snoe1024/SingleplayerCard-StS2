@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "[gold]뽑을 카드 더미[/gold]에 있는 카드 1장을 선택해 [gold]손[/gold]으로 가져옵니다.",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "손으로 가져올 카드를 선택하세요.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "적 하나당 [gold]소환[/gold] {Summon:diff()}.",

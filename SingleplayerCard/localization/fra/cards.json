@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Choisissez une carte dans votre [gold]Pioche[/gold] à ajouter à votre [gold]Main[/gold].",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "Sélectionnez une carte à placer dans votre Main.",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Invoquez[/gold] pour {Summon:diff()} pour chaque ennemi.",

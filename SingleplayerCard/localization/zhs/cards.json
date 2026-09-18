@@ -55,6 +55,7 @@
 
   "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-TUTOR_SOLO.description": "选择你[gold]抽牌堆[/gold]中的一张牌，将其加入[gold]手牌[/gold]。",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.selectionScreenPrompt": "选择一张牌放入你的手牌。",
 
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
   "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "每有一名敌人，[gold]召唤[/gold]{Summon:diff()}。",
