@@ -1,0 +1,9 @@
+{
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.title": "Ядовитый",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.description": "Когда эта карта наносит урон атакой по ОЗ, накладывает [blue]{Amount}[/blue] [gold]яда[/gold].",
+  "SINGLEPLAYERCARD-VENOMOUS_ENCHANTMENT_SOLO.extraCardText": "Отравление {Amount}.",
+
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.title": "Тренировка",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.description": "Дает [blue]{Amount}[/blue] [gold]силы[/gold] в этот ход.",
+  "SINGLEPLAYERCARD-TRAIN_ENCHANTMENT_SOLO.extraCardText": "Дает [blue]{Amount}[/blue] [gold]силы[/gold] в этот ход."
+}

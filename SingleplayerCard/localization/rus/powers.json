@@ -1,0 +1,84 @@
+{
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.title": "Танк",
+  "SINGLEPLAYERCARD-TANK_POWER_SOLO.description": "Вы получаете на [blue]50%[/blue] больше урона от атак врагов. Наносит в ответ атакующему весь урон, полученный по вашей [gold]защите[/gold].",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.title": "Атака клещами",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_POWER_SOLO.description": "Это существо получает [blue]в 2 раза[/blue] больше урона в этот ход от карт Атак, которых не было в руке на момент наложения эффекта.",
+
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.title": "Скрытность",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionRework": "Дает [gold]защиту[/gold], когда вы наносите урон не с помощью карты Атаки.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionRework": "Когда вы наносите урон не с помощью карты Атаки, дает [blue]{Amount}[/blue] [gold]защиты[/gold].",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.descriptionXdro": "Дает [gold]защиту[/gold], когда вы атакуете врага.",
+  "SINGLEPLAYERCARD-STEALTH_POWER_SOLO.smartDescriptionXdro": "Когда вы атакуете врага, дает [blue]{Amount}[/blue] [gold]защиты[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.title": "Кузница",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.description": "Когда вы играете [gold]«Клинок монарха»[/gold], разыгрывает повторно каждую карту, которая [gold]закалила[/gold] в этот ход.",
+  "SINGLEPLAYERCARD-HAMMER_TIME_POWER_SOLO.smartDescription": "Когда вы играете [gold]«Клинок монарха»[/gold], разыгрывает повторно каждую карту, которая [gold]закалила[/gold] в этот ход.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.title": "Создание карт (следующий ход)",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_POWER_SOLO.description": "В начале следующего хода добавляет в вашу руку [blue]{Amount}[/blue] {Amount:plural(ru):случайную бесцветную карту|случайные бесцветные карты|случайных бесцветных карт}.",
+
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.title": "Создание карт (следующий ход)+",
+  "SINGLEPLAYERCARD-NEXT_TURN_CARD_GENERATION_PLUS_POWER_SOLO.description": "В начале следующего хода добавляет в вашу руку [blue]{Amount}[/blue] {Amount:plural(ru):случайную улучшенную бесцветную карту|случайные улучшенные бесцветные карты|случайных улучшенных бесцветных карт}.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.title": "Ясновидение",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_POWER_SOLO.description": "В начале каждого из следующих [blue]{Amount}[/blue] ходов добавляет [gold]«Душу»[/gold] в вашу руку.",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.title": "Царство мертвых",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionRework": "В этот ход, когда вы накладываете на врага [gold]злой рок[/gold], наносит урон, равный этому количеству.",
+  "SINGLEPLAYERCARD-UNDERWORLD_POWER_SOLO.descriptionXdro": "В этот ход, когда вы наносите урон атакой, накладывает [gold]злой рок[/gold], равный этому урону.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.title": "Связь душ",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionRework": "Когда выбранный враг впервые за ход получает урон по ОЗ от атаки, добавляет [gold]«Душу»[/gold] в вашу стопку добора.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionRework": "Когда выбранный враг впервые за ход получает урон по ОЗ от атаки, добавляет [blue]{Amount}[/blue] [gold]{Amount:plural(ru):«Душу»|«Души»|«Душ»}[/gold] в вашу стопку добора.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.descriptionXdro": "Каждый раз, когда вы создаете [gold]«Душу»[/gold], добавляет [gold]«Душу»[/gold] в вашу стопку добора.",
+  "SINGLEPLAYERCARD-SOULBOUND_POWER_SOLO.smartDescriptionXdro": "Каждый раз, когда вы создаете [gold]«Душу»[/gold], добавляет [blue]{Amount}[/blue] [gold]{Amount:plural(ru):«Душу»|«Души»|«Душ»}[/gold] в вашу стопку добора.",
+
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.title": "Какофония",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.description": "Наносит [blue]16[/blue] урона случайному врагу за каждые [blue]12[/blue] взятых карт.",
+  "SINGLEPLAYERCARD-CACOPHONY_POWER_SOLO.smartDescription": "Наносит [blue]{Amount}[/blue] урона случайному врагу после того, как вы доберете еще [blue]{Cards}[/blue] {Cards:plural(ru):карту|карты|карт}.",
+
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.title": "Спячка",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.description": "В этот ход [gold]пассивный эффект[/gold] вашей [gold]сферы льда[/gold] срабатывает дважды.",
+  "SINGLEPLAYERCARD-HIBERNATE_POWER_SOLO.smartDescription": "В этот ход [gold]пассивный эффект[/gold] вашей [gold]сферы льда[/gold] срабатывает дважды.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.title": "Имитационное обучение",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.description": "Первые [blue]2[/blue] раза, когда враг получает [gold]Усиление[/gold], добавляет случайный Талант в вашу руку с ценой [blue]0[/blue] энергии.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_POWER_SOLO.smartDescription": "{Amount:plural(ru):Первый раз|Первые [blue]{}[/blue] раза|Первые [blue]{}[/blue] раз}, когда враг получает [gold]Усиление[/gold], добавляет случайный Талант в вашу руку с ценой [blue]0[/blue] энергии.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.title": "Командная работа",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.description": "Следующая сыгранная против этого врага Атака разыгрывается еще [blue]2[/blue] дополнительных раза.",
+  "SINGLEPLAYERCARD-TAG_TEAM_POWER_SOLO.smartDescription": "Следующая сыгранная против этого врага Атака разыгрывается {Amount:plural(ru):еще дополнительный раз|еще [blue]{}[/blue] дополнительных раза|еще [blue]{}[/blue] дополнительных раз}.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.title": "Наповал",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.description": "В этот ход это существо получает [blue]в 2 раза[/blue] больше урона.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_POWER_SOLO.smartDescription": "В этот ход это существо получает [blue]в {Amount} {Amount:plural(ru):раз|раза|раз}[/blue] больше урона.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.title": "Наповал (следующий ход)",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.description": "Начиная со следующего хода, это существо получает [blue]в 2 раза[/blue] больше урона в этот ход.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_PENDING_POWER_SOLO.smartDescription": "Начиная со следующего хода, это существо получает [blue]в {Amount} {Amount:plural(ru):раз|раза|раз}[/blue] больше урона в этот ход.",
+
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.title": "Предел энергии",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.description": "В течение [blue]2[/blue] ходов вы не можете получать дополнительную {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-NO_ENERGY_GAIN_POWER_SOLO.smartDescription": "В течение [blue]{Amount}[/blue] ходов вы не можете получать дополнительную {energyPrefix:energyIcons(1)}.",
+
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.title": "Без добора",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.description": "В течение [blue]2[/blue] ходов вы не можете добирать карты.",
+  "SINGLEPLAYERCARD-NO_DRAW_POWER_SOLO.smartDescription": "В течение [blue]{Amount}[/blue] ходов вы не можете добирать карты.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.title": "Рука помощи",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.description": "Удваивает [gold]защиту[/gold], полученную от следующей сыгранной карты.",
+  "SINGLEPLAYERCARD-HELPING_HAND_POWER_SOLO.smartDescription": "Удваивает [gold]защиту[/gold], полученную от следующей сыгранной карты.",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.title": "Луч надежды",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.description": "Когда вы впервые за ход получаете [gold]защиту[/gold] от карты, вы получаете столько же [gold]защиты[/gold] в следующий ход.",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_POWER_SOLO.smartDescription": "{Amount:plural(ru):Когда вы впервые за ход получаете|Когда вы получаете [blue]{}[/blue] раза за ход|Когда вы получаете [blue]{}[/blue] раз за ход} [gold]защиту[/gold] от карты, вы получаете столько же [gold]защиты[/gold] в следующий ход.",
+
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.title": "Передан",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.description": "Когда этот враг атакует, добавляет эту карту в [gold]стопку добора[/gold].\nКогда этот враг умирает, добавляет эту карту в [gold]стопку сброса[/gold].",
+  "SINGLEPLAYERCARD-HAND_OVER_POWER_SOLO.smartDescription": "Когда этот враг атакует, добавляет [gold]{CardName}[/gold] в вашу [gold]стопку добора[/gold].\nКогда этот враг умирает, добавляет [gold]{CardName}[/gold] в вашу [gold]стопку сброса[/gold].",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "Песнь клинков",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.description": "Когда вы играете [gold]«Заточку»[/gold] в этот ход, Вы добираете [blue]1[/blue] карту.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.smartDescription": "Когда вы играете [gold]«Заточку»[/gold] в этот ход, Вы добираете {Amount:plural(ru):[blue]1[/blue] карту|[blue]{}[/blue] карты|[blue]{}[/blue] карт}."
+}

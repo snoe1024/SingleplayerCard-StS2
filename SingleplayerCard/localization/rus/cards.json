@@ -1,0 +1,140 @@
+{
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionRework": "Вы теряете 1 ОЗ. Дает [gold]защиту[/gold], равную ОЗ, потерянным в этом бою.{InCombat:\n(Потеряно {LoseHPAmount:diff()} ОЗ в этом бою.)|}",
+  "SINGLEPLAYERCARD-DEMONIC_SHIELD_SOLO.descriptionXdro": "Вы теряете 1 ОЗ. Удваивает вашу [gold]защиту[/gold].",
+
+  "SINGLEPLAYERCARD-TANK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TANK_SOLO.description": "Вы получаете на 50% больше урона от атак врагов. Наносит в ответ атакующему весь урон, полученный по вашей [gold]защите[/gold].",
+
+  "SINGLEPLAYERCARD-MIDNIGHT.title": "placeholder",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionRework": "Наносит {DamageRemake:diff()} урона.\nСтоит на 1 {energyPrefix:energyIcons(1)} меньше за каждую [gold]сожженную[/gold] в этом бою карту.\nСтоит еще на 2 {energyPrefix:energyIcons(1)} меньше за каждую [gold]сожженную[/gold] в этот ход карту.",
+  "SINGLEPLAYERCARD-MIDNIGHT_SOLO.descriptionXdro": "Наносит {DamageXdro:diff()} урона.\nСтоит на 1 {energyPrefix:energyIcons(1)} меньше за каждую [gold]сожженную[/gold] в этом бою карту.",
+
+  "SINGLEPLAYERCARD-BLAZE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionRework": "Дает {CalculationExtra:diff()} [gold]силы[/gold] за каждую сброшенную в этот ход карту.{InCombat:\n(Дает {StrengthRemake:diff()} [gold]силы[/gold].)|}",
+  "SINGLEPLAYERCARD-BLAZE_SOLO.descriptionXdro": "Дает {StrengthPower:diff()} [gold]силы[/gold].",
+
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionRework": "Наносит {DamageRemake:diff()} урона.\nДобавляет копию этой карты в вашу [gold]стопку сброса[/gold] за себя, а также еще по одной за каждую другую копию этой карты в вашей [gold]руке[/gold].",
+  "SINGLEPLAYERCARD-OUTRAGE_SOLO.descriptionXdro": "Наносит {DamageXdro:diff()} урона.\nДобавляет копию этой карты в вашу [gold]стопку сброса[/gold].",
+
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionRework": "В этот ход враг получает в 2 раза больше урона от карт Атак, которых нет сейчас в вашей [gold]руке[/gold].",
+  "SINGLEPLAYERCARD-PINCER_ATTACK_SOLO.descriptionXdro": "В этот ход враг получает в 2 раза больше урона от атак.",
+
+  "SINGLEPLAYERCARD-STEALTH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionRework": "Дает {StealthRemake:diff()} [gold]защиты[/gold], когда вы накладываете на врага вредный эффект.",
+  "SINGLEPLAYERCARD-STEALTH_SOLO.descriptionXdro": "Дает {StealthXdro:diff()} [gold]защиты[/gold], когда вы атакуете врага.",
+
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionRework": "Когда вы играете [gold]«Заточку»[/gold] в этот ход, Вы добираете 1 карту.",
+  "SINGLEPLAYERCARD-BLADE_SYMPHONY_SOLO.descriptionXdro": "Добавляет в вашу [gold]руку[/gold] 2 [gold]«Заточки»[/gold].",
+
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionRework": "Дает всем незачарованным картам Атак в вашей [gold]руке[/gold] чары [gold]«Ядовитый»[/gold]{Venomous:diff()}.",
+  "SINGLEPLAYERCARD-CONCOCT_SOLO.descriptionXdro": "В этот ход, когда Атака наносит урон по ОЗ, накладывает {Envenom:diff()} [gold]яда[/gold].",
+
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionRework": "В этот ход дает [gold]ловкость[/gold], равную числу карт не-Умений в вашей [gold]руке[/gold].{InCombat:\n(Дает {DexterityRemake:diff()} [gold]ловкости[/gold].)|}",
+  "SINGLEPLAYERCARD-SHADOW_VANISH_SOLO.descriptionXdro": "В этот ход дает {FlatDexterity:diff()} [gold]ловкости[/gold].",
+
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HAMMER_TIME_SOLO.description": "Когда вы играете [gold]«Клинок монарха»[/gold], разыгрывает повторно каждую карту, которая [gold]закалила[/gold] в этот ход.",
+
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionRework": "В начале следующего хода добавляет в вашу [gold]руку[/gold] случайную{IfUpgraded:show: [gold]улучшенную[/gold]} бесцветную карту.",
+  "SINGLEPLAYERCARD-GENEROUS_GIFT_SOLO.descriptionXdro": "Добавляет в вашу [gold]руку[/gold] случайную{IfUpgraded:show: [gold]улучшенную[/gold]} бесцветную карту.",
+
+  "SINGLEPLAYERCARD-SCHEME_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionRework": "В начале каждого из следующих 3 ходов вы добираете 1 дополнительную карту.",
+  "SINGLEPLAYERCARD-SCHEME_SOLO.descriptionXdro": "В начале следующего хода вы доберете {Cards:diff()} {Cards:plural(ru):карту|карты|карт}.",
+
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionRework": "В начале следующего хода вы добираете {Cards:diff()} {Cards:plural(ru):карту|карты|карт}, получаете {Energy:energyIcons()} и {Block:diff()} [gold]защиты[/gold].",
+  "SINGLEPLAYERCARD-CONSTELLATION_SOLO.descriptionXdro": "Вы добираете {Cards:diff()} {Cards:plural(ru):карту|карты|карт}, получаете {Energy:energyIcons()} и {Block:diff()} [gold]защиты[/gold].",
+
+  "SINGLEPLAYERCARD-TUTOR_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TUTOR_SOLO.description": "Выберите карту из вашей [gold]стопки добора[/gold], чтобы положить ее в [gold]руку[/gold].",
+
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionRework": "[gold]Призывает[/gold] {Summon:diff()} за каждого врага.",
+  "SINGLEPLAYERCARD-BONE_LEGION_SOLO.descriptionXdro": "[gold]Призывает[/gold] {Summon:diff()}.",
+
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionRework": "Добавляет [gold]«Душу»[/gold] в вашу [gold]руку[/gold].\nВ начале каждого из следующих {SoulsRemake:diff()} ходов добавляет [gold]«Душу»[/gold] в вашу [gold]руку[/gold].",
+  "SINGLEPLAYERCARD-GLIMPSE_BEYOND_SOLO.descriptionXdro": "Добавляет {SoulsXdro:diff()} [gold]{SoulsXdro:plural(ru):«Душу»|«Души»|«Душ»}[/gold] в вашу [gold]стопку добора[/gold].",
+
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionRework": "В этот ход, когда вы накладываете на врага [gold]злой рок[/gold], наносит урон, равный этому количеству.",
+  "SINGLEPLAYERCARD-UNDERWORLD_SOLO.descriptionXdro": "В этот ход, когда вы наносите урон атакой, накладывает [gold]злой рок[/gold], равный этому урону.",
+
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionRework": "Выберите врага. Когда этот враг впервые за ход получает урон по ОЗ от атаки, добавляет [gold]«Душу»[/gold] в вашу [gold]стопку добора[/gold].",
+  "SINGLEPLAYERCARD-SOULBOUND_SOLO.descriptionXdro": "Каждый раз, когда вы создаете [gold]«Душу»[/gold], добавляет [gold]«Душу»[/gold] в вашу [gold]стопку добора[/gold].",
+
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-CACOPHONY_SOLO.description": "Наносит {Damage:diff()} урона случайному врагу за каждые {Cards:diff()} {Cards:plural(ru):взятую карту|взятые карты|взятых карт}.",
+
+  "SINGLEPLAYERCARD-ENERGY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionRework": "В начале каждого из следующих {RadiancePower:diff()} ходов дает 1 {energyPrefix:energyIcons(1)}.",
+  "SINGLEPLAYERCARD-ENERGY_SURGE_SOLO.descriptionXdro": "Дает {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-IGNITION_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionRework": "[gold]Заряжает[/gold] [gold]сферу плазмы[/gold]. [gold]Пассивный эффект[/gold] всех [gold]сфер плазмы[/gold] срабатывает еще раз.",
+  "SINGLEPLAYERCARD-IGNITION_SOLO.descriptionXdro": "[gold]Заряжает[/gold] [gold]сферу плазмы[/gold].",
+
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionRework": "В этот ход [gold]пассивный эффект[/gold] вашей [gold]сферы льда[/gold] срабатывает дважды.\n[gold]Заряжает[/gold] {Repeat:diff()} [gold]сферы льда[/gold].",
+  "SINGLEPLAYERCARD-HIBERNATE_SOLO.descriptionXdro": "[gold]Заряжает[/gold] {Repeat:diff()} [gold]сферы льда[/gold].",
+
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-ONE_FOR_ALL_SOLO.description": "Ваши Атаки, стоящие 0 {energyPrefix:energyIcons(1)}, наносят на {OneForAllPower:diff()} урона больше.",
+
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionRework": "{ImitationRemake:plural(ru):В первый раз|Первые {} раза|Первые {} раз}, когда враг получает [gold]Усиление[/gold], добавляет случайный Талант в вашу [gold]руку[/gold]. Он бесплатен для розыгрыша.",
+  "SINGLEPLAYERCARD-IMITATION_LEARNING_SOLO.descriptionXdro": "{ImitationXdro:plural(ru):В следующий раз|Следующие {} раза|Следующие {} раз}, когда вы разыгрываете Талант, вы разыгрываете его копию.",
+
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GANG_UP_SOLO.description": "Наносит {Damage:diff()} урона. Наносит еще {BonusPerAttack:diff()} за каждую сыгранную в этот ход Атаку.",
+
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-TAG_TEAM_SOLO.description": "Наносит {Damage:diff()} урона.\nСледующая сыгранная вами Атака по врагу разыгрывается еще 1 раз.",
+
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionRework": "Наносит {Damage:diff()} урона.\nВ следующий ход враг получает {IfUpgraded:show:тройной|двойной} урон.",
+  "SINGLEPLAYERCARD-KNOCKDOWN_SOLO.descriptionXdro": "Наносит {Damage:diff()} урона.\nВ этот ход враг получает {IfUpgraded:show:тройной|двойной} урон.",
+
+  "SINGLEPLAYERCARD-THE_BALL_SOLO_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionRework": "Наносит {Damage:diff()} урона.\nУрон этой карты повышается на {IncreaseRemake:diff()} до конца боя, а карта [gold]передается[/gold] выбранному врагу.",
+  "SINGLEPLAYERCARD-THE_BALL_SOLO.descriptionXdro": "Наносит {Damage:diff()} урона.\nУрон этой карты повышается на {IncreaseXdro:diff()} до конца боя, а карта перемешивается в вашу [gold]стопку добора[/gold].",
+
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionRework": "Дает {Energy:energyIcons()}. В течение следующих 2 ходов вы не можете получать дополнительную энергию или добирать карты.",
+  "SINGLEPLAYERCARD-BELIEVE_IN_YOU_SOLO.descriptionXdro": "Дает {Energy:energyIcons()}.",
+
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionRework": "Дает {BlockRemake:diff()} [gold]защиты[/gold].\nНакладывает 1 [gold]слабости[/gold].",
+  "SINGLEPLAYERCARD-INTERCEPT_SOLO.descriptionXdro": "Дает {BlockXdro:diff()} [gold]защиты[/gold].",
+
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionRework": "Вы добираете {Cards:diff()} {Cards:plural(ru):карту|карты|карт}. В начале следующего хода вы добираете еще 2 карты.",
+  "SINGLEPLAYERCARD-WAR_COUNCIL_SOLO.descriptionXdro": "Вы добираете {Cards:diff()} {Cards:plural(ru):карту|карты|карт}.",
+
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionRework": "Удваивает [gold]защиту[/gold], полученную от следующей сыгранной карты.",
+  "SINGLEPLAYERCARD-HELPING_HAND_SOLO.descriptionXdro": "Дает {Block:diff()} [gold]защиты[/gold].",
+
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionRework": "Накладывает чары [gold]«Тренировка»[/gold] {TrainEnchantmentAmount:diff()} на незачарованную карту.",
+  "SINGLEPLAYERCARD-COORDINATE_SOLO.descriptionXdro": "До конца хода дает {StrengthPower:diff()} [gold]силы[/gold].",
+
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-MIMICRY_SOLO.description": "Дает [gold]защиту[/gold], равную наибольшему значению [gold]защиты[/gold] среди карт в вашей [gold]руке[/gold].{InCombat:\nДает {BestHandBlock:diff()} [gold]защиты[/gold].|}",
+
+  "SINGLEPLAYERCARD-GATHER_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionRework": "Дает [gold]защиту[/gold], равную сумме значений [gold]защиты[/gold] всех других карт в вашей [gold]руке[/gold].{InCombat:\nДает {HandBlockTotal:diff()} [gold]защиты[/gold].|}",
+  "SINGLEPLAYERCARD-GATHER_SOLO.descriptionXdro": "Дает {Block:diff()} [gold]защиты[/gold].",
+
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.title": "placeholder",
+  "SINGLEPLAYERCARD-BEACON_OF_HOPE_SOLO.description": "Когда вы впервые за ход получаете [gold]защиту[/gold] от карты, вы получаете столько же [gold]защиты[/gold] в следующий ход."
+}
