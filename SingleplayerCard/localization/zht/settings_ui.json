@@ -52,7 +52,7 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT.hover.desc.xdro": "將 1 張隨機(已升級)的無色牌加入你的手牌。",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.rework": "每當你打出君王之劍時，重新打出這回合所有觸發過鑄造的牌。",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.xdro": "無對應效果",
-  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "放棄下回合開始時原本會額外抽的那張牌，改為現在抽取。",
+  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "在你接下來 3 個回合開始時，各額外抽 1 張牌。",
   "SINGLEPLAYERCARD-SCHEME.hover.desc.xdro": "下個回合，抽 2(3) 張牌。",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.rework": "在你下個回合開始時，抽 1 張牌，獲得 1 點能量，並獲得 9(12) 點格擋。",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.xdro": "抽 1 張牌，獲得 1 點能量，並獲得 9(12) 點格擋。",

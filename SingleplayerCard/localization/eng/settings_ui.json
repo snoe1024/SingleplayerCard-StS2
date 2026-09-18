@@ -52,7 +52,7 @@
   "SINGLEPLAYERCARD-GENEROUS_GIFT.hover.desc.xdro": "Add 1 random (Upgraded) Colorless card to your hand.",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.rework": "Whenever you play Sovereign Blade, replay every card that Forged this turn.",
   "SINGLEPLAYERCARD-HAMMER_TIME.hover.desc.xdro": "N/A",
-  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "Lose the extra card you'd draw at the start of next turn, and draw it now instead.",
+  "SINGLEPLAYERCARD-SCHEME.hover.desc.rework": "At the start of each of your next 3 turns, draw 1 additional card.",
   "SINGLEPLAYERCARD-SCHEME.hover.desc.xdro": "Next turn, draw 2(3) cards.",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.rework": "At the start of your next turn, draw a card, gain 1 Energy, and gain 9(12) Block.",
   "SINGLEPLAYERCARD-CONSTELLATION.hover.desc.xdro": "Draw a card, gain 1 Energy, and gain 9(12) Block.",
